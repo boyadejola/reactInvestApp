@@ -12,6 +12,7 @@ import { CacheProvider } from '@emotion/react';
 import { selectCurrLangDir } from 'app/store/i18nSlice';
 import withAppProviders from './withAppProviders';
 import { Auth } from './auth';
+import { ChatwootScript } from "chatwoot-react"
 
 // import axios from 'axios';
 /**
@@ -53,6 +54,7 @@ const App = () => {
                   containerRoot: 'bottom-0 right-0 mb-52 md:mb-68 mr-8 lg:mr-80 z-99',
                 }}
               >
+                 <ChatwootScript token="ScuNgw91dkJhEXDwN5ooDdma" />
                 <FuseLayout />
               </SnackbarProvider>
             </FuseTheme>

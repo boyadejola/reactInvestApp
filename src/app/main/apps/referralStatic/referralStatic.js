@@ -1,5 +1,6 @@
 import FusePageCarded from '@fuse/core/FusePageCarded';
 import withReducer from 'app/store/withReducer';
+import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import DriverHeader from './referralStaticHeader';
 import DriverTable from './referralStaticTable';
@@ -7,7 +8,6 @@ import FuseLoading from '@fuse/core/FuseLoading';
 import Error401 from '../../../fuse-layouts/shared-components/Error401';
 // import { Menus } from '../../auth/store/constants';
 import { useDispatch, useSelector } from 'react-redux';
-import * as React from 'react';
 import reducer from '../../../store/withReducer';
 
 const Root = styled(FusePageCarded)(({ theme }) => ({
