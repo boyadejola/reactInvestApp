@@ -70,7 +70,7 @@ export const submitRegister =
 
 export const registerWithFirebase = (model) => async (dispatch) => {
   if (!firebaseService.auth) {
-    console.warn("Firebase Service didn't initialize, check your configuration");
+    console.warn('Firebase Service didn"t initialize, check your configuration');
 
     return () => false;
   }

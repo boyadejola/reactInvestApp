@@ -11,37 +11,37 @@ import Typography from '@mui/material/Typography';
 function ListsDoc(props) {
   return (
     <>
-      <div className="flex flex-1 flex-grow-0 items-center justify-end">
+      <div className='flex flex-1 flex-grow-0 items-center justify-end'>
         <Button
-          className="normal-case"
-          variant="contained"
-          color="secondary"
-          component="a"
-          href="https://mui.com/components/lists"
-          target="_blank"
-          role="button"
+          className='normal-case'
+          variant='contained'
+          color='secondary'
+          component='a'
+          href='https://mui.com/components/lists'
+          target='_blank'
+          role='button'
         >
           <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          <span className='mx-4'>Reference</span>
         </Button>
       </div>
-      <Typography className="text-40 my-16 font-700" component="h1">
+      <Typography className='text-40 my-16 font-700' component='h1'>
         Lists
       </Typography>
-      <Typography className="description">
+      <Typography className='description'>
         Lists are continuous, vertical indexes of text or images.
       </Typography>
 
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Lists are a continuous group of text or images. They are composed of items containing
         primary and supplemental actions, which are represented by icons and text.
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Basic List
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/BasicList.js')
@@ -50,28 +50,28 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/BasicList.js')}
         />
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The last item of the previous demo shows how you can render a link:
       </Typography>
 
-      <FuseHighlight component="pre" className="language-jsx">
+      <FuseHighlight component='pre' className='language-jsx'>
         {` 
-<ListItemButton component="a" href="#simple-list">
-  <ListItemText primary="Spam" />
+<ListItemButton component='a' href='#simple-list'>
+  <ListItemText primary='Spam' />
 </ListItemButton>
 `}
       </FuseHighlight>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         You can find a{' '}
-        <a href="/guides/routing/#list">demo with React Router following this section</a> of the
+        <a href='/guides/routing/#list'>demo with React Router following this section</a> of the
         documentation.
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Nested List
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/NestedList.js')
@@ -80,12 +80,12 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/NestedList.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Folder List
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/FolderList.js')
@@ -94,16 +94,16 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/FolderList.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Interactive
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Below is an interactive demo that lets you explore the visual results of the different
         settings:
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/InteractiveList.js')
@@ -112,12 +112,12 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/InteractiveList.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Selected ListItem
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/SelectedListItem.js')
@@ -126,17 +126,17 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/SelectedListItem.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Align list items
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         When displaying three lines or more, the avatar is not aligned at the top. You should set
-        the <code>alignItems="flex-start"</code> prop to align the avatar at the top, following the
+        the <code>alignItems='flex-start'</code> prop to align the avatar at the top, following the
         Material Design guidelines:
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/AlignItemsList.js')
@@ -145,22 +145,22 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/AlignItemsList.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         List Controls
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         Checkbox
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         A checkbox can either be a primary action or a secondary action.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The checkbox is the primary action and the state indicator for the list item. The comment
         button is a secondary action and a separate target.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/CheckboxList.js')
@@ -169,12 +169,12 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/CheckboxList.js')}
         />
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The checkbox is the secondary action for the list item and a separate target.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/CheckboxListSecondary.js')
@@ -183,15 +183,15 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/CheckboxListSecondary.js')}
         />
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         Switch
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The switch is the secondary action and a separate target.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/SwitchListSecondary.js')
@@ -200,16 +200,16 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/SwitchListSecondary.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Sticky subheader
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Upon scrolling, subheaders remain pinned to the top of the screen until pushed off screen by
         the next subheader. This feature relies on CSS sticky positioning. (⚠️ no IE 11 support)
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/PinnedSubheaderList.js')
@@ -218,16 +218,16 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/PinnedSubheaderList.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Inset List Item
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The <code>inset</code> prop enables a list item that does not have a leading icon or avatar
         to align correctly with items that do.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/InsetList.js')
@@ -236,16 +236,16 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/InsetList.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Gutterless list
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         When rendering a list within a component that defines its own gutters, <code>ListItem</code>{' '}
         gutters can be disabled with <code>disableGutters</code>.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/GutterlessList.js')
@@ -254,18 +254,18 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/GutterlessList.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Virtualized List
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         In the following example, we demonstrate how to use{' '}
-        <a href="https://github.com/bvaughn/react-window">react-window</a> with the{' '}
+        <a href='https://github.com/bvaughn/react-window'>react-window</a> with the{' '}
         <code>List</code> component. It renders 200 rows and can easily handle more. Virtualization
         helps with performance issues.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/VirtualizedList.js')
@@ -274,22 +274,22 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/VirtualizedList.js')}
         />
       </Typography>
-      <Typography className="mb-40" component="div">
-        The use of <a href="https://github.com/bvaughn/react-window">react-window</a> when possible
+      <Typography className='mb-40' component='div'>
+        The use of <a href='https://github.com/bvaughn/react-window'>react-window</a> when possible
         is encouraged. If this library doesn&#39;t cover your use case, you should consider using{' '}
-        <a href="https://github.com/bvaughn/react-virtualized">react-virtualized</a>, then
-        alternatives like <a href="https://github.com/petyosi/react-virtuoso">react-virtuoso</a>.
+        <a href='https://github.com/bvaughn/react-virtualized'>react-virtualized</a>, then
+        alternatives like <a href='https://github.com/petyosi/react-virtuoso'>react-virtuoso</a>.
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Customization
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Here are some examples of customizing the component. You can learn more about this in the
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href='/customization/how-to-customize/'>overrides documentation page</a>.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/lists/CustomizedList.js')
@@ -298,9 +298,9 @@ function ListsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/CustomizedList.js')}
         />
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         🎨 If you are looking for inspiration, you can check{' '}
-        <a href="https://mui-treasury.com/styles/list-item">
+        <a href='https://mui-treasury.com/styles/list-item'>
           MUI Treasury&#39;s customization examples
         </a>
         .

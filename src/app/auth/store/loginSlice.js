@@ -33,9 +33,9 @@ export const submitLogin =
               //       res.user.role == ZombRoles.player ? authRoles.zombUser :
               //         [], // guest
               roleid: res.user.role,
-              roleName: res.user.role == InvestRoles.superadmin ? "Super Admin" :
-                res.user.role == InvestRoles.admin ? "Admin" :
-                  res.user.role == InvestRoles.user ? "User" :
+              roleName: res.user.role === InvestRoles.superadmin ? "Super Admin" :
+                res.user.role === InvestRoles.admin ? "Admin" :
+                  res.user.role === InvestRoles.user ? "User" :
                     '',
               data: {
                 displayName: res.user.firstName ? `${res.user.firstName} ${res.user.lastName}` : 'User',

@@ -8,27 +8,27 @@ packageName: '@mui/lab'
 
 # Tree View
 
-<p class="description">A tree view widget presents a hierarchical list.</p>
+<p class='description'>A tree view widget presents a hierarchical list.</p>
 
 Tree views can be used to represent a file system navigator displaying folders and files, an item representing a folder can be expanded to reveal the contents of the folder, which may be files, folders, or both.
 
-{{"component": "modules/components/ComponentLinkHeader.js"}}
+{{'component': 'modules/components/ComponentLinkHeader.js'}}
 
 ## Basic tree view
 
-{{"demo": "pages/components/tree-view/FileSystemNavigator.js"}}
+{{'demo': 'pages/components/tree-view/FileSystemNavigator.js'}}
 
 ## Multi-selection
 
 Tree views also support multi-selection.
 
-{{"demo": "pages/components/tree-view/MultiSelectTreeView.js"}}
+{{'demo': 'pages/components/tree-view/MultiSelectTreeView.js'}}
 
 ## Controlled tree view
 
 The tree view also offers a controlled API.
 
-{{"demo": "pages/components/tree-view/ControlledTreeView.js"}}
+{{'demo': 'pages/components/tree-view/ControlledTreeView.js'}}
 
 ## Rich object
 
@@ -50,7 +50,7 @@ const data = {
 };
 ```
 
-{{"demo": "pages/components/tree-view/RichObjectTreeView.js", "defaultCodeOpen": false}}
+{{'demo': 'pages/components/tree-view/RichObjectTreeView.js', 'defaultCodeOpen': false}}
 
 ## ContentComponent prop
 
@@ -58,25 +58,25 @@ You can use the `ContentComponent` prop and the `useTreeItem` hook to further cu
 
 Such as limiting expansion to clicking the icon:
 
-{{"demo": "pages/components/tree-view/IconExpansionTreeView.js", "defaultCodeOpen": false}}
+{{'demo': 'pages/components/tree-view/IconExpansionTreeView.js', 'defaultCodeOpen': false}}
 
 Or increasing the width of the state indicator:
 
-{{"demo": "pages/components/tree-view/BarTreeView.js", "defaultCodeOpen": false}}
+{{'demo': 'pages/components/tree-view/BarTreeView.js', 'defaultCodeOpen': false}}
 
 ## Customization
 
 ### Custom icons, border and animation
 
-{{"demo": "pages/components/tree-view/CustomizedTreeView.js"}}
+{{'demo': 'pages/components/tree-view/CustomizedTreeView.js'}}
 
 ### Gmail clone
 
-{{"demo": "pages/components/tree-view/GmailTreeView.js"}}
+{{'demo': 'pages/components/tree-view/GmailTreeView.js'}}
 
 ## Disabled tree items
 
-{{"demo": "pages/components/tree-view/DisabledTreeItems.js"}}
+{{'demo': 'pages/components/tree-view/DisabledTreeItems.js'}}
 
 The behavior of disabled tree items depends on the `disabledItemsFocusable` prop.
 
@@ -104,4 +104,4 @@ If it is true:
 
 The component follows the WAI-ARIA authoring practices.
 
-To have an accessible tree view you must use `aria-labelledby` or `aria-label` to reference or provide a label on the TreeView, otherwise screen readers will announce it as "tree", making it hard to understand the context of a specific tree item.
+To have an accessible tree view you must use `aria-labelledby` or `aria-label` to reference or provide a label on the TreeView, otherwise screen readers will announce it as 'tree', making it hard to understand the context of a specific tree item.

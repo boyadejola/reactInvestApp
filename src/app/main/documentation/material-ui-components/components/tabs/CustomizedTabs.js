@@ -28,9 +28,9 @@ const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) =
     '"Helvetica Neue"',
     'Arial',
     'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"',
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
   ].join(','),
   '&:hover': {
     color: '#40a9ff',
@@ -48,7 +48,7 @@ const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) =
 const StyledTabs = styled((props) => (
   <Tabs
     {...props}
-    TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+    TabIndicatorProps={{ children: <span className='MuiTabs-indicatorSpan' /> }}
   />
 ))({
   '& .MuiTabs-indicator': {
@@ -89,10 +89,10 @@ export default function CustomizedTabs() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ bgcolor: '#fff' }}>
-        <AntTabs value={value} onChange={handleChange} aria-label="ant example">
-          <AntTab label="Tab 1" />
-          <AntTab label="Tab 2" />
-          <AntTab label="Tab 3" />
+        <AntTabs value={value} onChange={handleChange} aria-label='ant example'>
+          <AntTab label='Tab 1' />
+          <AntTab label='Tab 2' />
+          <AntTab label='Tab 3' />
         </AntTabs>
         <Box sx={{ p: 3 }} />
       </Box>
@@ -100,11 +100,11 @@ export default function CustomizedTabs() {
         <StyledTabs
           value={value}
           onChange={handleChange}
-          aria-label="styled tabs example"
+          aria-label='styled tabs example'
         >
-          <StyledTab label="Workflows" />
-          <StyledTab label="Datasets" />
-          <StyledTab label="Connections" />
+          <StyledTab label='Workflows' />
+          <StyledTab label='Datasets' />
+          <StyledTab label='Connections' />
         </StyledTabs>
         <Box sx={{ p: 3 }} />
       </Box>

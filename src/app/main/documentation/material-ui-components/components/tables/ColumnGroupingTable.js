@@ -73,13 +73,13 @@ export default function ColumnGroupingTable() {
   return (
     <Paper sx={{ width: '100%' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label='sticky table'>
           <TableHead>
             <TableRow>
-              <TableCell align="center" colSpan={2}>
+              <TableCell align='center' colSpan={2}>
                 Country
               </TableCell>
-              <TableCell align="center" colSpan={3}>
+              <TableCell align='center' colSpan={3}>
                 Details
               </TableCell>
             </TableRow>
@@ -100,7 +100,7 @@ export default function ColumnGroupingTable() {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role='checkbox' tabIndex={-1} key={row.code}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
@@ -119,7 +119,7 @@ export default function ColumnGroupingTable() {
       </TableContainer>
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
-        component="div"
+        component='div'
         count={rows.length}
         rowsPerPage={rowsPerPage}
         page={page}

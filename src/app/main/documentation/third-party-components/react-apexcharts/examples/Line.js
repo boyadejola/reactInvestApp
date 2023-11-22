@@ -23,8 +23,8 @@ function Line()
     });
 
     return (
-        <div className="line">
-            <Chart options={state.options} series={state.series} type="line" width="500"/>
+        <div className='line'>
+            <Chart options={state.options} series={state.series} type='line' width='500'/>
         </div>
     );
 }

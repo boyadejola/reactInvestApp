@@ -20,8 +20,8 @@ function Column()
     });
 
     return (
-        <div className="column">
-            <Chart options={state.options} series={state.series} type="bar" width="500"/>
+        <div className='column'>
+            <Chart options={state.options} series={state.series} type='bar' width='500'/>
         </div>
     );
 }

@@ -10,41 +10,41 @@ import Typography from '@mui/material/Typography';
 function SpeedDialDoc(props) {
   return (
     <>
-      <div className="flex flex-1 flex-grow-0 items-center justify-end">
+      <div className='flex flex-1 flex-grow-0 items-center justify-end'>
         <Button
-          className="normal-case"
-          variant="contained"
-          color="secondary"
-          component="a"
-          href="https://mui.com/components/speed-dial"
-          target="_blank"
-          role="button"
+          className='normal-case'
+          variant='contained'
+          color='secondary'
+          component='a'
+          href='https://mui.com/components/speed-dial'
+          target='_blank'
+          role='button'
         >
           <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          <span className='mx-4'>Reference</span>
         </Button>
       </div>
-      <Typography className="text-40 my-16 font-700" component="h1">
+      <Typography className='text-40 my-16 font-700' component='h1'>
         Speed Dial
       </Typography>
-      <Typography className="description">
+      <Typography className='description'>
         When pressed, a floating action button can display three to six related actions in the form
         of a speed dial.
       </Typography>
 
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         If more than six actions are needed, something other than a FAB should be used to present
         them.
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Basic speed dial
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The floating action button can display related actions.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/speed-dial/BasicSpeedDial.js')
@@ -53,12 +53,12 @@ function SpeedDialDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/speed-dial/BasicSpeedDial.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Playground
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/speed-dial/PlaygroundSpeedDial.js')
@@ -67,16 +67,16 @@ function SpeedDialDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/speed-dial/PlaygroundSpeedDial.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Controlled speed dial
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The open state of the component can be controlled with the <code>open</code>/
         <code>onOpen</code>/<code>onClose</code> props.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/speed-dial/ControlledOpenSpeedDial.js')
@@ -85,16 +85,16 @@ function SpeedDialDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/speed-dial/ControlledOpenSpeedDial.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Custom close icon
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         You can provide an alternate icon for the closed and open states using the <code>icon</code>{' '}
         and <code>openIcon</code> props of the <code>SpeedDialIcon</code> component.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/speed-dial/OpenIconSpeedDial.js')
@@ -103,20 +103,20 @@ function SpeedDialDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/speed-dial/OpenIconSpeedDial.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Persistent action tooltips
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The SpeedDialActions tooltips can be displayed persistently so that users don&#39;t have to
         long-press to see the tooltip on touch devices.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         It is enabled here across all devices for demo purposes, but in production it could use the{' '}
         <code>isTouch</code> logic to conditionally set the prop.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/speed-dial/SpeedDialTooltipOpen.js')
@@ -125,13 +125,13 @@ function SpeedDialDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/speed-dial/SpeedDialTooltipOpen.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Accessibility
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         ARIA
       </Typography>
-      <Typography className="text-16 mt-16 mb-10" component="h4">
+      <Typography className='text-16 mt-16 mb-10' component='h4'>
         Required
       </Typography>
       <ul>
@@ -142,7 +142,7 @@ function SpeedDialDoc(props) {
           You should provide a <code>tooltipTitle</code> for each speed dial action.
         </li>
       </ul>
-      <Typography className="text-16 mt-16 mb-10" component="h4">
+      <Typography className='text-16 mt-16 mb-10' component='h4'>
         Provided
       </Typography>
       <ul>
@@ -151,15 +151,15 @@ function SpeedDialDoc(props) {
           <code>aria-controls</code> attributes.
         </li>
         <li>
-          The speed dial actions container has <code>role="menu"</code> and{' '}
+          The speed dial actions container has <code>role='menu'</code> and{' '}
           <code>aria-orientation</code> set according to the direction.
         </li>
         <li>
-          The speed dial actions have <code>role="menuitem"</code>, and an{' '}
+          The speed dial actions have <code>role='menuitem'</code>, and an{' '}
           <code>aria-describedby</code> attribute that references the associated tooltip.
         </li>
       </ul>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         Keyboard
       </Typography>
       <ul>

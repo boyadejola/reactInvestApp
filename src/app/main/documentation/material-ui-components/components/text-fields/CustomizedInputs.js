@@ -105,7 +105,7 @@ const ValidationTextField = styled(TextField)({
 export default function CustomizedInputs() {
   return (
     <Box
-      component="form"
+      component='form'
       noValidate
       sx={{
         display: 'grid',
@@ -113,26 +113,26 @@ export default function CustomizedInputs() {
         gap: 2,
       }}
     >
-      <FormControl variant="standard">
-        <InputLabel shrink htmlFor="bootstrap-input">
+      <FormControl variant='standard'>
+        <InputLabel shrink htmlFor='bootstrap-input'>
           Bootstrap
         </InputLabel>
-        <BootstrapInput defaultValue="react-bootstrap" id="bootstrap-input" />
+        <BootstrapInput defaultValue='react-bootstrap' id='bootstrap-input' />
       </FormControl>
       <RedditTextField
-        label="Reddit"
-        defaultValue="react-reddit"
-        id="reddit-input"
-        variant="filled"
+        label='Reddit'
+        defaultValue='react-reddit'
+        id='reddit-input'
+        variant='filled'
         style={{ marginTop: 11 }}
       />
-      <CssTextField label="Custom CSS" id="custom-css-outlined-input" />
+      <CssTextField label='Custom CSS' id='custom-css-outlined-input' />
       <ValidationTextField
-        label="CSS validation style"
+        label='CSS validation style'
         required
-        variant="outlined"
-        defaultValue="Success"
-        id="validation-outlined-input"
+        variant='outlined'
+        defaultValue='Success'
+        id='validation-outlined-input'
       />
     </Box>
   );

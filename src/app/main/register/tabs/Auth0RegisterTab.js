@@ -27,8 +27,8 @@ function Auth0RegisterTab(props) {
   }
 
   return (
-    <div className="w-full">
-      <Button className="w-full my-48" color="primary" variant="contained" onClick={showDialog}>
+    <div className='w-full'>
+      <Button className='w-full my-48' color='primary' variant='contained' onClick={showDialog}>
         Log In/Sign Up with Auth0
       </Button>
     </div>

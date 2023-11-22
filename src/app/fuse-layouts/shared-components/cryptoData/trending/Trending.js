@@ -23,16 +23,16 @@ const Trending = (props) => {
     try {
       setTrendingStatus(false);
       setError(null);
-      let url = TrendingCoins("usd");
-      let response = await fetch(url);
+      const url = TrendingCoins("usd");
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Something Went Wrong");
       }
-      let data = await response.json();
+      const data = await response.json();
       setTrendingCoins(data);
       setTrendingStatus(true);
-    } catch (error) {
-      setError(error.message);
+    } catch (e) {
+      setError(e.message);
     }
   }, []);
 

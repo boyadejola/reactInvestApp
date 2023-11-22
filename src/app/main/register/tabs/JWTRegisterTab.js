@@ -59,195 +59,195 @@ function JWTRegisterTab(props) {
   }
 
   return (
-    <div className="w-full">
-      <form className="flex flex-col justify-center w-full" onSubmit={handleSubmit(onSubmit)}>
+    <div className='w-full'>
+      <form className='flex flex-col justify-center w-full' onSubmit={handleSubmit(onSubmit)}>
         <Controller
-          name="email"
+          name='email'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type="text"
+              type='text'
               error={!!errors.email}
               helperText={errors?.email?.message}
-              label="Email"
+              label='Email'
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <Icon className='text-20' color='action'>
                       email
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant="outlined"
+              variant='outlined'
               required
             />
           )}
         />
 
         <Controller
-          name="password"
+          name='password'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type="password"
-              label="Password"
+              type='password'
+              label='Password'
               error={!!errors.password}
               helperText={errors?.password?.message}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <Icon className='text-20' color='action'>
                       vpn_key
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant="outlined"
+              variant='outlined'
               required
             />
           )}
         />
 
         <Controller
-          name="passwordConfirm"
+          name='passwordConfirm'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type="password"
-              label="Confirm Password"
+              type='password'
+              label='Confirm Password'
               error={!!errors.passwordConfirm}
               helperText={errors?.passwordConfirm?.message}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <Icon className='text-20' color='action'>
                       vpn_key
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant="outlined"
+              variant='outlined'
               required
             />
           )}
         />
 
         <Controller
-          name="firstName"
+          name='firstName'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type="text"
-              label="First name"
+              type='text'
+              label='First name'
               error={!!errors.firstName}
               helperText={errors?.firstName?.message}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <Icon className='text-20' color='action'>
                       person
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant="outlined"
+              variant='outlined'
               required
             />
           )}
         />
 
         <Controller
-          name="lastName"
+          name='lastName'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type="text"
-              label="Last name"
+              type='text'
+              label='Last name'
               // error={!!errors.firstName}
               // helperText={errors?.firstName?.message}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <Icon className='text-20' color='action'>
                       person
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant="outlined"
+              variant='outlined'
             />
           )}
         />
 
         <Controller
-          name="btcWallet"
+          name='btcWallet'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type="text"
-              label="BTC Wallet Address"
+              type='text'
+              label='BTC Wallet Address'
               // error={!!errors.firstName}
               // helperText={errors?.firstName?.message}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <Icon className='text-20' color='action'>
                     account_balance_wallet
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant="outlined"
+              variant='outlined'
             />
           )}
         />
 
         <Controller
-          name="usdtWallet"
+          name='usdtWallet'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type="text"
-              label="USDT Wallet Address"
+              type='text'
+              label='USDT Wallet Address'
               // error={!!errors.firstName}
               // helperText={errors?.firstName?.message}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <Icon className='text-20' color='action'>
                     account_balance_wallet
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant="outlined"
+              variant='outlined'
             />
           )}
         />
 
         <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          className="w-full mx-auto mt-16"
-          aria-label="REGISTER"
+          type='submit'
+          variant='contained'
+          color='primary'
+          className='w-full mx-auto mt-16'
+          aria-label='REGISTER'
           disabled={_.isEmpty(dirtyFields) || !isValid}
-          value="legacy"
+          value='legacy'
         >
           Register
         </Button>

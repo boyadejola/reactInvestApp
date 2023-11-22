@@ -3,11 +3,11 @@ import Typography from '@mui/material/Typography';
 function UpdatingFuseReactDoc() {
   return (
     <>
-      <Typography variant="h4" className="mb-40 font-700">
+      <Typography variant='h4' className='mb-40 font-700'>
         Updating Fuse React
       </Typography>
 
-      <Typography className="mb-16" component="p">
+      <Typography className="mb-16" component='p'>
         Fuse React isn’t an end product or an extension so there is no easy way to update the
         project. Due to the nature of apps, we cannot give any set instructions for updating Fuse
         React. It heavily depends on your project and it's up to you to update your code. However,
@@ -15,7 +15,7 @@ function UpdatingFuseReactDoc() {
         React updated:
       </Typography>
 
-      <Typography className="my-16" component="div">
+      <Typography className='my-16' component='div'>
         <ol>
           <li className="mb-16">
             The most important one is not to touch the /@fuse directory but sometimes that is going
@@ -30,9 +30,9 @@ function UpdatingFuseReactDoc() {
           <li className="mb-16">
             Before starting your new project,{' '}
             <a
-              href="http://support.withinpixels.com/github"
-              target="_blank"
-              rel="noreferrer noopener"
+              href='http://support.withinpixels.com/github'
+              target='_blank'
+              rel='noreferrer noopener'
             >
               join our Github repo
             </a>

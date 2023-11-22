@@ -10,44 +10,44 @@ import Typography from '@mui/material/Typography';
 function CardsDoc(props) {
   return (
     <>
-      <div className="flex flex-1 flex-grow-0 items-center justify-end">
+      <div className='flex flex-1 flex-grow-0 items-center justify-end'>
         <Button
-          className="normal-case"
-          variant="contained"
-          color="secondary"
-          component="a"
-          href="https://mui.com/components/cards"
-          target="_blank"
-          role="button"
+          className='normal-case'
+          variant='contained'
+          color='secondary'
+          component='a'
+          href='https://mui.com/components/cards'
+          target='_blank'
+          role='button'
         >
           <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          <span className='mx-4'>Reference</span>
         </Button>
       </div>
-      <Typography className="text-40 my-16 font-700" component="h1">
+      <Typography className='text-40 my-16 font-700' component='h1'>
         Card
       </Typography>
-      <Typography className="description">
+      <Typography className='description'>
         Cards contain content and actions about a single subject.
       </Typography>
 
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Cards are surfaces that display content and actions on a single topic.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         They should be easy to scan for relevant and actionable information. Elements, like text and
         images, should be placed on them in a way that clearly indicates hierarchy.
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Basic card
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Although cards can support multiple actions, UI controls, and an overflow menu, use
         restraint and remember that cards are entry points to more complex and detailed information.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/cards/BasicCard.js')
@@ -56,15 +56,15 @@ function CardsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/cards/BasicCard.js')}
         />
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         Outlined Card
       </Typography>
-      <Typography className="mb-40" component="div">
-        Set <code>variant="outlined"</code> to render an outlined card.
+      <Typography className='mb-40' component='div'>
+        Set <code>variant='outlined'</code> to render an outlined card.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/cards/OutlinedCard.js')
@@ -73,15 +73,15 @@ function CardsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/cards/OutlinedCard.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Complex Interaction
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         On desktop, card content can expand. (Click the downward chevron to view the recipe.)
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/cards/RecipeReviewCard.js')
@@ -90,15 +90,15 @@ function CardsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/cards/RecipeReviewCard.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Media
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Example of a card using an image to reinforce the content.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/cards/MediaCard.js')
@@ -107,15 +107,15 @@ function CardsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/cards/MediaCard.js')}
         />
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         By default, we use the combination of a <code>{`<div>`}</code> element and a{' '}
         <em>background image</em> to display the media. It can be problematic in some situations,
         for example, you might want to display a video or a responsive image. Use the{' '}
         <code>component</code> prop for these use cases:
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/cards/ImgMediaCard.js')
@@ -125,23 +125,23 @@ function CardsDoc(props) {
         />
       </Typography>
       <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ When <code>component="img"</code>, CardMedia relies on <code>object-fit</code> for
+        <Typography className='mb-40' component='div'>
+          ⚠️ When <code>component='img'</code>, CardMedia relies on <code>object-fit</code> for
           centering the image. It&#39;s not supported by IE11.
         </Typography>
       </blockquote>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Primary action
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Often a card allow users to interact with the entirety of its surface to trigger its main
         action, be it an expansion, a link to another screen or some other behavior. The action area
         of the card can be specified by wrapping its contents in a <code>CardActionArea</code>{' '}
         component.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/cards/ActionAreaCard.js')
@@ -150,13 +150,13 @@ function CardsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/cards/ActionAreaCard.js')}
         />
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         A card can also offer supplemental actions which should stand detached from the main action
         area in order to avoid event overlap.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/cards/MultiActionAreaCard.js')
@@ -165,19 +165,19 @@ function CardsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/cards/MultiActionAreaCard.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         UI Controls
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Supplemental actions within the card are explicitly called out using icons, text, and UI
         controls, typically placed at the bottom of the card.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Here&#39;s an example of a media control card.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/cards/MediaControlCard.js')
@@ -186,9 +186,9 @@ function CardsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/cards/MediaControlCard.js')}
         />
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         🎨 If you are looking for inspiration, you can check{' '}
-        <a href="https://mui-treasury.com/components/card">
+        <a href='https://mui-treasury.com/components/card'>
           MUI Treasury&#39;s customization examples
         </a>
         .

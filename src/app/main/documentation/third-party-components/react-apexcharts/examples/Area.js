@@ -21,8 +21,8 @@ function Area()
     })
 
     return (
-        <div className="area">
-            <Chart options={state.options} series={state.series} type="area" width="500"/>
+        <div className='area'>
+            <Chart options={state.options} series={state.series} type='area' width='500'/>
         </div>
     );
 }

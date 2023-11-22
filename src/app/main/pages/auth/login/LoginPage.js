@@ -45,36 +45,36 @@ function LoginPage() {
   }
 
   return (
-    <div className="flex flex-col flex-auto items-center justify-center p-16 sm:p-32">
-      <div className="flex flex-col items-center justify-center w-full">
+    <div className='flex flex-col flex-auto items-center justify-center p-16 sm:p-32'>
+      <div className='flex flex-col items-center justify-center w-full'>
         <motion.div initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }}>
-          <Card className="w-full max-w-384">
-            <CardContent className="flex flex-col items-center justify-center p-16 sm:p-24 md:p-32">
-              <img className="w-128 m-32" src="assets/images/logos/fuse.svg" alt="logo" />
+          <Card className='w-full max-w-384'>
+            <CardContent className='flex flex-col items-center justify-center p-16 sm:p-24 md:p-32'>
+              <img className='w-128 m-32' src='assets/images/logos/fuse.svg' alt='logo' />
 
-              <Typography variant="h6" className="mt-16 mb-24 font-semibold text-18 sm:text-24">
+              <Typography variant='h6' className='mt-16 mb-24 font-semibold text-18 sm:text-24'>
                 Login to your account
               </Typography>
 
               <form
-                name="loginForm"
+                name='loginForm'
                 noValidate
-                className="flex flex-col justify-center w-full"
+                className='flex flex-col justify-center w-full'
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <Controller
-                  name="email"
+                  name='email'
                   control={control}
                   render={({ field }) => (
                     <TextField
                       {...field}
                       className="mb-16"
-                      label="Email"
+                      label='Email'
                       autoFocus
-                      type="email"
+                      type='email'
                       error={!!errors.email}
                       helperText={errors?.email?.message}
-                      variant="outlined"
+                      variant='outlined'
                       required
                       fullWidth
                     />
@@ -82,68 +82,68 @@ function LoginPage() {
                 />
 
                 <Controller
-                  name="password"
+                  name='password'
                   control={control}
                   render={({ field }) => (
                     <TextField
                       {...field}
                       className="mb-16"
-                      label="Password"
-                      type="password"
+                      label='Password'
+                      type='password'
                       error={!!errors.password}
                       helperText={errors?.password?.message}
-                      variant="outlined"
+                      variant='outlined'
                       required
                       fullWidth
                     />
                   )}
                 />
 
-                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between">
+                <div className='flex flex-col sm:flex-row items-center justify-center sm:justify-between'>
                   <Controller
-                    name="remember"
+                    name='remember'
                     control={control}
                     render={({ field }) => (
                       <FormControl>
-                        <FormControlLabel label="Remember Me" control={<Checkbox {...field} />} />
+                        <FormControlLabel label='Remember Me' control={<Checkbox {...field} />} />
                       </FormControl>
                     )}
                   />
 
-                  <Link className="font-normal" to="/pages/auth/forgot-password">
+                  <Link className='font-normal' to='/pages/auth/forgot-password'>
                     Forgot Password?
                   </Link>
                 </div>
 
                 <Button
-                  variant="contained"
-                  color="primary"
-                  className="w-224 mx-auto mt-16"
-                  aria-label="LOG IN"
+                  variant='contained'
+                  color='primary'
+                  className='w-224 mx-auto mt-16'
+                  aria-label='LOG IN'
                   disabled={_.isEmpty(dirtyFields) || !isValid}
-                  type="submit"
+                  type='submit'
                 >
                   Login
                 </Button>
               </form>
 
-              <div className="my-24 flex items-center justify-center">
-                <Divider className="w-32" />
-                <span className="mx-8 font-semibold">OR</span>
-                <Divider className="w-32" />
+              <div className='my-24 flex items-center justify-center'>
+                <Divider className='w-32' />
+                <span className='mx-8 font-semibold'>OR</span>
+                <Divider className='w-32' />
               </div>
 
-              <Button variant="contained" color="secondary" size="small" className="w-192 mb-8">
+              <Button variant='contained' color='secondary' size='small' className='w-192 mb-8'>
                 Log in with Google
               </Button>
 
-              <Button variant="contained" color="primary" size="small" className="w-192">
+              <Button variant='contained' color='primary' size='small' className='w-192'>
                 Log in with Facebook
               </Button>
 
-              <div className="flex flex-col items-center justify-center pt-32 pb-24">
-                <span className="font-normal">Don't have an account?</span>
-                <Link className="font-normal" to="/pages/auth/register">
+              <div className='flex flex-col items-center justify-center pt-32 pb-24'>
+                <span className='font-normal'>Don't have an account?</span>
+                <Link className='font-normal' to='/pages/auth/register'>
                   Create an account
                 </Link>
               </div>

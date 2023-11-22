@@ -50,27 +50,27 @@ function Register2Page() {
   }
 
   return (
-    <div className="flex flex-col flex-auto p-16 sm:p-24 md:flex-row md:p-0 overflow-hidden">
-      <div className="flex flex-col flex-grow-0 items-center  p-16 text-center md:p-128 md:items-start md:flex-shrink-0 md:flex-1 md:text-left">
+    <div className='flex flex-col flex-auto p-16 sm:p-24 md:flex-row md:p-0 overflow-hidden'>
+      <div className='flex flex-col flex-grow-0 items-center  p-16 text-center md:p-128 md:items-start md:flex-shrink-0 md:flex-1 md:text-left'>
         <motion.div
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1, transition: { delay: 0.1 } }}
         >
-          <img className="w-128 mb-32" src="assets/images/logos/fuse.svg" alt="logo" />
+          <img className='w-128 mb-32' src='assets/images/logos/fuse.svg' alt='logo' />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
         >
-          <Typography className="text-32 sm:text-44 font-semibold leading-tight">
+          <Typography className='text-32 sm:text-44 font-semibold leading-tight'>
             Welcome <br />
             to the <br /> FUSE React!
           </Typography>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.3 } }}>
-          <Typography variant="subtitle1" className="mt-32 font-medium">
+          <Typography variant='subtitle1' className='mt-32 font-medium'>
             Powerful and professional admin template for Web Applications, CRM, CMS, Admin Panels
             and more.
           </Typography>
@@ -82,34 +82,34 @@ function Register2Page() {
         initial={{ x: 200 }}
         animate={{ x: 0 }}
         transition={{ bounceDamping: 0 }}
-        className="w-full max-w-400 mx-auto m-16 md:m-0 rounded-20 md:rounded-none"
+        className='w-full max-w-400 mx-auto m-16 md:m-0 rounded-20 md:rounded-none'
         square
         layout
       >
-        <CardContent className="flex flex-col items-center justify-center p-16 sm:p-32 md:p-48 md:pt-128 ">
-          <Typography variant="h6" className="mb-24 font-semibold text-18 sm:text-24">
+        <CardContent className='flex flex-col items-center justify-center p-16 sm:p-32 md:p-48 md:pt-128 '>
+          <Typography variant='h6' className='mb-24 font-semibold text-18 sm:text-24'>
             Create an account
           </Typography>
 
           <form
-            name="registerForm"
+            name='registerForm'
             noValidate
-            className="flex flex-col justify-center w-full"
+            className='flex flex-col justify-center w-full'
             onSubmit={handleSubmit(onSubmit)}
           >
             <Controller
-              name="name"
+              name='name'
               control={control}
               render={({ field }) => (
                 <TextField
                   {...field}
                   className="mb-16"
-                  label="Name"
+                  label='Name'
                   autoFocus
-                  type="name"
+                  type='name'
                   error={!!errors.name}
                   helperText={errors?.name?.message}
-                  variant="outlined"
+                  variant='outlined'
                   required
                   fullWidth
                 />
@@ -117,17 +117,17 @@ function Register2Page() {
             />
 
             <Controller
-              name="email"
+              name='email'
               control={control}
               render={({ field }) => (
                 <TextField
                   {...field}
                   className="mb-16"
-                  label="Email"
-                  type="email"
+                  label='Email'
+                  type='email'
                   error={!!errors.email}
                   helperText={errors?.email?.message}
-                  variant="outlined"
+                  variant='outlined'
                   required
                   fullWidth
                 />
@@ -135,17 +135,17 @@ function Register2Page() {
             />
 
             <Controller
-              name="password"
+              name='password'
               control={control}
               render={({ field }) => (
                 <TextField
                   {...field}
                   className="mb-16"
-                  label="Password"
-                  type="password"
+                  label='Password'
+                  type='password'
                   error={!!errors.password}
                   helperText={errors?.password?.message}
-                  variant="outlined"
+                  variant='outlined'
                   required
                   fullWidth
                 />
@@ -153,17 +153,17 @@ function Register2Page() {
             />
 
             <Controller
-              name="passwordConfirm"
+              name='passwordConfirm'
               control={control}
               render={({ field }) => (
                 <TextField
                   {...field}
                   className="mb-16"
-                  label="Password (Confirm)"
-                  type="password"
+                  label='Password (Confirm)'
+                  type='password'
                   error={!!errors.passwordConfirm}
                   helperText={errors?.passwordConfirm?.message}
-                  variant="outlined"
+                  variant='outlined'
                   required
                   fullWidth
                 />
@@ -171,12 +171,12 @@ function Register2Page() {
             />
 
             <Controller
-              name="acceptTermsConditions"
+              name='acceptTermsConditions'
               control={control}
               render={({ field }) => (
-                <FormControl className="items-center" error={!!errors.acceptTermsConditions}>
+                <FormControl className='items-center' error={!!errors.acceptTermsConditions}>
                   <FormControlLabel
-                    label="I read and accept terms and conditions"
+                    label='I read and accept terms and conditions'
                     control={<Checkbox {...field} />}
                   />
                   <FormHelperText>{errors?.acceptTermsConditions?.message}</FormHelperText>
@@ -185,20 +185,20 @@ function Register2Page() {
             />
 
             <Button
-              variant="contained"
-              color="primary"
-              className="w-full mx-auto mt-16"
-              aria-label="Register"
+              variant='contained'
+              color='primary'
+              className='w-full mx-auto mt-16'
+              aria-label='Register'
               disabled={_.isEmpty(dirtyFields) || !isValid}
-              type="submit"
+              type='submit'
             >
               Create an account
             </Button>
           </form>
 
-          <div className="flex flex-col items-center justify-center pt-32 pb-24">
-            <span className="font-normal">Already have an account?</span>
-            <Link className="font-normal" to="/pages/auth/login-2">
+          <div className='flex flex-col items-center justify-center pt-32 pb-24'>
+            <span className='font-normal'>Already have an account?</span>
+            <Link className='font-normal' to='/pages/auth/login-2'>
               Login
             </Link>
           </div>

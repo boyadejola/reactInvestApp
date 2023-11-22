@@ -11,8 +11,8 @@ function Donut()
 
     });
     return (
-        <div className="donut">
-            <Chart options={state.options} series={state.series} type="donut" width="380"/>
+        <div className='donut'>
+            <Chart options={state.options} series={state.series} type='donut' width='380'/>
         </div>
     );
 }

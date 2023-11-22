@@ -138,10 +138,10 @@ function FuseShortcuts(props) {
   function onMenuClick(e) {
     settingClose();
     if (loggedin) {
-      if (e.id && e.id == Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
-      else if (e.id && e.id == Menus.TWOFASEC) dispatch(setShowTwoFA(true))
-      else if (e.id && e.id == Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
-      else if (e.id && e.id == Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
+      if (e.id && e.id === Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
+      else if (e.id && e.id === Menus.TWOFASEC) dispatch(setShowTwoFA(true))
+      else if (e.id && e.id === Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
+      else if (e.id && e.id === Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
     }
   }
 
@@ -161,7 +161,7 @@ function FuseShortcuts(props) {
       >
         {!loggedin && (
           <div className="logo" style={{ marginLeft: 8 }}>
-            <img
+        <img
               style={{ cursor: 'pointer' }}
               onClick={() => history.push('/venapp/home')}
               width="128"

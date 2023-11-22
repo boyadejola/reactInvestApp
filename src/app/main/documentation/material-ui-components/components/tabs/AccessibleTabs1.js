@@ -14,12 +14,12 @@ export default function AccessibleTabs1() {
       <Tabs
         onChange={handleChange}
         value={value}
-        aria-label="Tabs where selection follows focus"
+        aria-label='Tabs where selection follows focus'
         selectionFollowsFocus
       >
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
+        <Tab label='Item One' />
+        <Tab label='Item Two' />
+        <Tab label='Item Three' />
       </Tabs>
     </Box>
   );

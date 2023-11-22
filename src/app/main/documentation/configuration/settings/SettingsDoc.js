@@ -7,16 +7,16 @@ import Typography from '@mui/material/Typography';
 function SettingsDoc() {
   return (
     <>
-      <Typography variant="h4" className="mb-40 font-700">
+      <Typography variant='h4' className='mb-40 font-700'>
         Default Settings
       </Typography>
 
-      <Typography className="mb-16" component="p">
+      <Typography className='mb-16' component='p'>
         You can set the default layout, theme settings of your app at
         <code>src/app/fuse-configs/settingsConfig.js</code>
       </Typography>
 
-      <FuseHighlight component="pre" className="language-jsx">
+      <FuseHighlight component='pre' className='language-jsx'>
         {require('!raw-loader!app/fuse-configs/settingsConfig.js')}
       </FuseHighlight>
     </>

@@ -7,15 +7,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 
 const icon = (
   <Paper sx={{ m: 1 }} elevation={4}>
-    <Box component="svg" sx={{ width: 100, height: 100 }}>
+    <Box component='svg' sx={{ width: 100, height: 100 }}>
       <Box
-        component="polygon"
+        component='polygon'
         sx={{
           fill: (theme) => theme.palette.common.white,
           stroke: (theme) => theme.palette.divider,
           strokeWidth: 1,
         }}
-        points="0,100 50,00, 100,100"
+        points='0,100 50,00, 100,100'
       />
     </Box>
   </Paper>
@@ -32,7 +32,7 @@ export default function SimpleCollapse() {
     <Box sx={{ height: 300 }}>
       <FormControlLabel
         control={<Switch checked={checked} onChange={handleChange} />}
-        label="Show"
+        label='Show'
       />
       <Box
         sx={{
@@ -52,12 +52,12 @@ export default function SimpleCollapse() {
         </div>
         <div>
           <Box sx={{ width: '50%' }}>
-            <Collapse orientation="horizontal" in={checked}>
+            <Collapse orientation='horizontal' in={checked}>
               {icon}
             </Collapse>
           </Box>
           <Box sx={{ width: '50%' }}>
-            <Collapse orientation="horizontal" in={checked} collapsedSize={40}>
+            <Collapse orientation='horizontal' in={checked} collapsedSize={40}>
               {icon}
             </Collapse>
           </Box>

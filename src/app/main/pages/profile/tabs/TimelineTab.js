@@ -45,43 +45,43 @@ function TimelineTab() {
   };
 
   return (
-    <motion.div variants={container} initial="hidden" animate="show">
-      <div className="md:flex">
-        <div className="flex flex-col flex-1 md:ltr:pr-32 md:rtl:pl-32">
+    <motion.div variants={container} initial='hidden' animate='show'>
+      <div className='md:flex'>
+        <div className='flex flex-col flex-1 md:ltr:pr-32 md:rtl:pl-32'>
           <Card
             component={motion.div}
             variants={item}
-            className="w-full overflow-hidden rounded-16 shadow mb-32"
+            className='w-full overflow-hidden rounded-16 shadow mb-32'
           >
             <Input
-              className="p-16 w-full"
+              className='p-16 w-full'
               classes={{ root: 'text-14' }}
-              placeholder="Write something.."
+              placeholder='Write something..'
               multiline
-              rows="6"
-              margin="none"
+              rows='6'
+              margin='none'
               disableUnderline
             />
             <AppBar
-              className="card-footer flex flex-row border-t-1"
-              position="static"
-              color="default"
+              className='card-footer flex flex-row border-t-1'
+              position='static'
+              color='default'
               elevation={0}
             >
-              <div className="flex-1 items-center">
-                <IconButton aria-label="Add photo" size="large">
+              <div className='flex-1 items-center'>
+                <IconButton aria-label='Add photo' size='large'>
                   <Icon>photo</Icon>
                 </IconButton>
-                <IconButton aria-label="Mention somebody" size="large">
+                <IconButton aria-label='Mention somebody' size='large'>
                   <Icon>person</Icon>
                 </IconButton>
-                <IconButton aria-label="Add location" size="large">
+                <IconButton aria-label='Add location' size='large'>
                   <Icon>location_on</Icon>
                 </IconButton>
               </div>
 
-              <div className="p-8">
-                <Button variant="contained" color="primary" size="small" aria-label="post">
+              <div className='p-8'>
+                <Button variant='contained' color='primary' size='small' aria-label='post'>
                   Post
                 </Button>
               </div>
@@ -93,21 +93,21 @@ function TimelineTab() {
               component={motion.div}
               variants={item}
               key={post.id}
-              className="mb-32 overflow-hidden rounded-16 shadow"
+              className='mb-32 overflow-hidden rounded-16 shadow'
             >
               <CardHeader
-                avatar={<Avatar aria-label="Recipe" src={post.user.avatar} />}
+                avatar={<Avatar aria-label='Recipe' src={post.user.avatar} />}
                 action={
-                  <IconButton aria-label="more" size="large">
+                  <IconButton aria-label='more' size='large'>
                     <Icon>more_vert</Icon>
                   </IconButton>
                 }
                 title={
-                  <span className="flex">
-                    <Typography className="font-normal" color="primary" paragraph={false}>
+                  <span className='flex'>
+                    <Typography className='font-normal' color='primary' paragraph={false}>
                       {post.user.name}
                     </Typography>
-                    <span className="mx-4">
+                    <span className='mx-4'>
                       {post.type === 'post' && 'posted on your timeline'}
                       {post.type === 'something' && 'shared something with you'}
                       {post.type === 'video' && 'shared a video with you'}
@@ -118,59 +118,59 @@ function TimelineTab() {
                 subheader={post.time}
               />
 
-              <CardContent className="py-0">
+              <CardContent className='py-0'>
                 {post.message && (
-                  <Typography component="p" className="mb-16">
+                  <Typography component='p' className="mb-16">
                     {post.message}
                   </Typography>
                 )}
 
-                {post.media && <img src={post.media.preview} alt="post" className="rounded-8" />}
+                {post.media && <img src={post.media.preview} alt='post' className='rounded-8' />}
 
                 {post.article && (
-                  <div className="border-1 rounded-8 overflow-hidden">
+                  <div className='border-1 rounded-8 overflow-hidden'>
                     <img
-                      className="w-full border-b-1"
+                      className='w-full border-b-1'
                       src={post.article.media.preview}
-                      alt="article"
+                      alt='article'
                     />
-                    <div className="p-16">
-                      <Typography variant="subtitle1">{post.article.title}</Typography>
-                      <Typography variant="caption">{post.article.subtitle}</Typography>
-                      <Typography className="mt-16">{post.article.excerpt}</Typography>
+                    <div className='p-16'>
+                      <Typography variant='subtitle1'>{post.article.title}</Typography>
+                      <Typography variant='caption'>{post.article.subtitle}</Typography>
+                      <Typography className='mt-16'>{post.article.excerpt}</Typography>
                     </div>
                   </div>
                 )}
               </CardContent>
 
-              <CardActions disableSpacing className="px-12">
-                <Button size="small" aria-label="Add to favorites">
-                  <Icon className="text-16" color="action">
+              <CardActions disableSpacing className='px-12'>
+                <Button size='small' aria-label='Add to favorites'>
+                  <Icon className='text-16' color='action'>
                     favorite
                   </Icon>
-                  <Typography className="mx-4">Like</Typography>
+                  <Typography className='mx-4'>Like</Typography>
                   <Typography>({post.like})</Typography>
                 </Button>
-                <Button aria-label="Share">
-                  <Icon className="text-16" color="action">
+                <Button aria-label='Share'>
+                  <Icon className='text-16' color='action'>
                     share
                   </Icon>
-                  <Typography className="mx-4">Share</Typography>
+                  <Typography className='mx-4'>Share</Typography>
                   <Typography>({post.share})</Typography>
                 </Button>
               </CardActions>
 
               <AppBar
-                className="card-footer flex flex-column p-16"
-                position="static"
-                color="default"
+                className='card-footer flex flex-column p-16'
+                position='static'
+                color='default'
                 elevation={0}
               >
                 {post.comments && post.comments.length > 0 && (
-                  <div className="">
-                    <div className="flex items-center">
+                  <div className=''>
+                    <div className='flex items-center'>
                       <Typography>{post.comments.length} comments</Typography>
-                      <Icon className="text-16 mx-4" color="action">
+                      <Icon className='text-16 mx-4' color='action'>
                         keyboard_arrow_down
                       </Icon>
                     </div>
@@ -178,24 +178,24 @@ function TimelineTab() {
                     <List>
                       {post.comments.map((comment) => (
                         <div key={comment.id}>
-                          <ListItem className="px-0 -mx-8">
+                          <ListItem className='px-0 -mx-8'>
                             <Avatar
                               alt={comment.user.name}
                               src={comment.user.avatar}
-                              className="mx-8"
+                              className='mx-8'
                             />
                             <ListItemText
-                              className="px-4"
+                              className='px-4'
                               primary={
-                                <div className="flex">
+                                <div className='flex'>
                                   <Typography
-                                    className="font-normal"
-                                    color="initial"
+                                    className='font-normal'
+                                    color='initial'
                                     paragraph={false}
                                   >
                                     {comment.user.name}
                                   </Typography>
-                                  <Typography className="mx-4" variant="caption">
+                                  <Typography className='mx-4' variant='caption'>
                                     {comment.time}
                                   </Typography>
                                 </div>
@@ -203,9 +203,9 @@ function TimelineTab() {
                               secondary={comment.message}
                             />
                           </ListItem>
-                          <div className="flex items-center mx-52 mb-8">
+                          <div className='flex items-center mx-52 mb-8'>
                             <Button>Reply</Button>
-                            <Icon className="text-14 mx-8 cursor-pointer">flag</Icon>
+                            <Icon className='text-14 mx-8 cursor-pointer'>flag</Icon>
                           </div>
                         </div>
                       ))}
@@ -213,21 +213,21 @@ function TimelineTab() {
                   </div>
                 )}
 
-                <div className="flex flex-auto -mx-4">
-                  <Avatar className="mx-4" src="assets/images/avatars/profile.jpg" />
-                  <div className="flex-1 mx-4">
-                    <Paper className="w-full mb-16 shadow-0">
+                <div className='flex flex-auto -mx-4'>
+                  <Avatar className='mx-4' src='assets/images/avatars/profile.jpg' />
+                  <div className='flex-1 mx-4'>
+                    <Paper className='w-full mb-16 shadow-0'>
                       <Input
-                        className="p-8 w-full border-1 rounded-8"
+                        className='p-8 w-full border-1 rounded-8'
                         classes={{ root: 'text-13' }}
-                        placeholder="Add a comment.."
+                        placeholder='Add a comment..'
                         multiline
-                        rows="6"
-                        margin="none"
+                        rows='6'
+                        margin='none'
                         disableUnderline
                       />
                     </Paper>
-                    <Button variant="contained" color="primary" size="small">
+                    <Button variant='contained' color='primary' size='small'>
                       Post Comment
                     </Button>
                   </div>
@@ -237,40 +237,40 @@ function TimelineTab() {
           ))}
         </div>
 
-        <div className="flex flex-col md:w-320">
-          <Card component={motion.div} variants={item} className="w-full rounded-16 shadow mb-32">
-            <AppBar position="static" elevation={0}>
-              <Toolbar className="px-8">
+        <div className='flex flex-col md:w-320'>
+          <Card component={motion.div} variants={item} className='w-full rounded-16 shadow mb-32'>
+            <AppBar position='static' elevation={0}>
+              <Toolbar className='px-8'>
                 <Typography
-                  variant="subtitle1"
-                  color="inherit"
-                  className="flex-1 px-12 font-medium"
+                  variant='subtitle1'
+                  color='inherit'
+                  className='flex-1 px-12 font-medium'
                 >
                   Latest Activity
                 </Typography>
-                <Button color="inherit" size="small" className="font-medium">
+                <Button color='inherit' size='small' className='font-medium'>
                   See All
                 </Button>
               </Toolbar>
             </AppBar>
-            <CardContent className="p-0">
+            <CardContent className='p-0'>
               <List>
                 {data.activities.map((activity) => (
-                  <ListItem key={activity.id} className="px-12">
-                    <Avatar className="mx-4" alt={activity.user.name} src={activity.user.avatar} />
+                  <ListItem key={activity.id} className='px-12'>
+                    <Avatar className='mx-4' alt={activity.user.name} src={activity.user.avatar} />
                     <ListItemText
-                      className="flex-1 mx-4"
+                      className='flex-1 mx-4'
                       primary={
-                        <div className="flex">
+                        <div className='flex'>
                           <Typography
-                            className="font-normal whitespace-nowrap"
-                            color="primary"
+                            className='font-normal whitespace-nowrap'
+                            color='primary'
                             paragraph={false}
                           >
                             {activity.user.name}
                           </Typography>
 
-                          <Typography className="px-4 truncate" paragraph={false}>
+                          <Typography className='px-4 truncate' paragraph={false}>
                             {activity.message}
                           </Typography>
                         </div>

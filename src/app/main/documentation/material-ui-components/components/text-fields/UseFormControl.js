@@ -20,9 +20,9 @@ function MyFormHelperText() {
 
 export default function UseFormControl() {
   return (
-    <Box component="form" noValidate autoComplete="off">
+    <Box component='form' noValidate autoComplete='off'>
       <FormControl sx={{ width: '25ch' }}>
-        <OutlinedInput placeholder="Please enter text" />
+        <OutlinedInput placeholder='Please enter text' />
         <MyFormHelperText />
       </FormControl>
     </Box>

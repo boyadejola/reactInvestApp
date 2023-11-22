@@ -7,8 +7,8 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import FuseNavBadge from '../../FuseNavBadge';
 import { Menus } from 'app/auth/store/constants';
+import FuseNavBadge from '../../FuseNavBadge';
 
 const Root = styled(ListItem)(({ theme, ...props }) => ({
   height: 40,
@@ -57,10 +57,10 @@ function FuseNavVerticalItem(props) {
         button
         component={NavLinkAdapter}
         to={item.url}
-        activeClassName={`${item.id == Menus.CHANGEPASS
-          || item.id == Menus.TWOFASEC
-          || item.id == Menus.DEPOSITNOW
-          || item.id == Menus.WITHDRAWNOE
+        activeClassName={`${item.id === Menus.CHANGEPASS
+          || item.id === Menus.TWOFASEC
+          || item.id === Menus.DEPOSITNOW
+          || item.id === Menus.WITHDRAWNOE
           ? '' : 'active'}`}
         className="fuse-list-item"
         onClick={() => onItemClick && onItemClick(item)}

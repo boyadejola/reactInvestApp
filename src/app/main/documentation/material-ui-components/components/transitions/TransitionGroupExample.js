@@ -22,9 +22,9 @@ function renderItem({ item, handleRemoveFruit }) {
     <ListItem
       secondaryAction={
         <IconButton
-          edge="end"
-          aria-label="delete"
-          title="Delete"
+          edge='end'
+          aria-label='delete'
+          title='Delete'
           onClick={() => handleRemoveFruit(item)}
         >
           <DeleteIcon />
@@ -52,7 +52,7 @@ export default function TransitionGroupExample() {
 
   const addFruitButton = (
     <Button
-      variant="contained"
+      variant='contained'
       disabled={fruitsInBasket.length >= FRUITS.length}
       onClick={handleAddFruit}
     >

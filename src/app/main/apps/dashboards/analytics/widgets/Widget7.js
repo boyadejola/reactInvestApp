@@ -50,16 +50,16 @@ function Widget7(props) {
               {label}
             </Typography>
             <Typography className="text-18 font-semibold py-8">
-              {index == 0 && dashData && dashData.totaldeposit ? dashData.totaldeposit :
-                index == 1 && dashData && dashData.totaltrades ? dashData.totaltrades :
-                  index == 2 && dashData && dashData.interestwallet ? dashData.interestwallet : 0}
+              {index === 0 && dashData && dashData.totaldeposit ? dashData.totaldeposit :
+                index === 1 && dashData && dashData.totaltrades ? dashData.totaltrades :
+                  index === 2 && dashData && dashData.interestwallet ? dashData.interestwallet : 0}
               {/* {data.series[serie][0].data[index]}% */}
             </Typography>
 
             <div className="flex flex-row items-start justify-center">
-              {index == 0 && dashData && dashData.totaldeposit ? <Icon className="text-18 text-green">arrow_upward</Icon> :
-                index == 1 && dashData && dashData.totaltrades ? <Icon className="text-18 text-green">arrow_upward</Icon> :
-                  index == 2 && dashData && dashData.interestwallet ? <Icon className="text-18 text-green">arrow_upward</Icon> : <Icon className="text-18 text-red">arrow_downward</Icon>}
+              {index === 0 && dashData && dashData.totaldeposit ? <Icon className="text-18 text-green">arrow_upward</Icon> :
+                index === 1 && dashData && dashData.totaltrades ? <Icon className="text-18 text-green">arrow_upward</Icon> :
+                  index === 2 && dashData && dashData.interestwallet ? <Icon className="text-18 text-green">arrow_upward</Icon> : <Icon className="text-18 text-red">arrow_downward</Icon>}
               {/* {data.series[serie][0].change[index] < 0 && (
                 <Icon className="text-18 text-red">arrow_downward</Icon>
               )}

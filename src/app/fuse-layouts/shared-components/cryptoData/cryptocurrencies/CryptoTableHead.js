@@ -62,7 +62,7 @@ function CryptoTableHead(props) {
               key={o}
               align={row.align}
               padding={row.disablePadding ? 'none' : 'normal'}
-              style={{ paddingLeft: row.id == 'driver' ? 22 : '' }}
+              style={{ paddingLeft: row.id === 'driver' ? 22 : '' }}
             // sortDirection={props.order.id === row.id ? props.order.direction : false}
             >
               {i18next.t(`navigation:${row.label}`)}

@@ -82,10 +82,10 @@ function NavbarStyle3Content(props) {
     /** if there is no child item do not set/open panel
      */
     if (loggedin) {
-      if (selected && selected.id == Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
-      else if (selected.id && selected.id == Menus.TWOFASEC) dispatch(setShowTwoFA(true))
-      else if (selected.id && selected.id == Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
-      else if (selected.id && selected.id == Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
+      if (selected && selected.id === Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
+      else if (selected.id && selected.id === Menus.TWOFASEC) dispatch(setShowTwoFA(true))
+      else if (selected.id && selected.id === Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
+      else if (selected.id && selected.id === Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
     }
     if (!selected.children) {
       setSelectedNavigation([]);
@@ -109,10 +109,10 @@ function NavbarStyle3Content(props) {
 
   function handleChildItemClick(selected) {
     if (loggedin) {
-      if (selected && selected.id == Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
-      else if (selected.id && selected.id == Menus.TWOFASEC) dispatch(setShowTwoFA(true))
-      else if (selected.id && selected.id == Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
-      else if (selected.id && selected.id == Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
+      if (selected && selected.id === Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
+      else if (selected.id && selected.id === Menus.TWOFASEC) dispatch(setShowTwoFA(true))
+      else if (selected.id && selected.id === Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
+      else if (selected.id && selected.id === Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
     }
     setPanelOpen(false);
     if (mdDown) {

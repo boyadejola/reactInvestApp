@@ -19,10 +19,10 @@ import { setDepositLoader, setJoinPlanLoader } from 'app/auth/store/loadersSlice
 import i18next from 'i18next';
 import { handleResponse, displayPopup } from '../../auth/store/commonMethods';
 import { postJoinPlan } from '../../auth/store/commonServices';
-import { setShowJoinPlan } from '../../auth/store/sharedData';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import { ReqColorCodes, PlansDetails, Wallets, Plans } from 'app/auth/store/constants';
 import { Box, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
+import { setShowJoinPlan } from '../../auth/store/sharedData';
 
 function JoinPlanDialog(props) {
   const { planid } = props;

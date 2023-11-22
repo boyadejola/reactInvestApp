@@ -10,37 +10,37 @@ import Typography from '@mui/material/Typography';
 function ButtonGroupDoc(props) {
   return (
     <>
-      <div className="flex flex-1 flex-grow-0 items-center justify-end">
+      <div className='flex flex-1 flex-grow-0 items-center justify-end'>
         <Button
-          className="normal-case"
-          variant="contained"
-          color="secondary"
-          component="a"
-          href="https://mui.com/components/button-group"
-          target="_blank"
-          role="button"
+          className='normal-case'
+          variant='contained'
+          color='secondary'
+          component='a'
+          href='https://mui.com/components/button-group'
+          target='_blank'
+          role='button'
         >
           <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          <span className='mx-4'>Reference</span>
         </Button>
       </div>
-      <Typography className="text-40 my-16 font-700" component="h1">
+      <Typography className='text-40 my-16 font-700' component='h1'>
         Button group
       </Typography>
-      <Typography className="description">
+      <Typography className='description'>
         The ButtonGroup component can be used to group related buttons.
       </Typography>
 
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Basic button group
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The buttons can be grouped by wrapping them with the <code>ButtonGroup</code> component.
         They need to be immediate children.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/button-group/BasicButtonGroup.js')
@@ -49,15 +49,15 @@ function ButtonGroupDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/BasicButtonGroup.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Button variants
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         All the standard button variants are supported.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/button-group/VariantButtonGroup.js')
@@ -66,16 +66,16 @@ function ButtonGroupDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/VariantButtonGroup.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Sizes and colors
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The <code>size</code> and <code>color</code> props can be used to control the appearance of
         the button group.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/button-group/GroupSizesColors.js')
@@ -84,15 +84,15 @@ function ButtonGroupDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/GroupSizesColors.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Vertical group
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The button group can be displayed vertically using the <code>orientation</code> prop.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/button-group/GroupOrientation.js')
@@ -101,16 +101,16 @@ function ButtonGroupDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/GroupOrientation.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Split button
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <code>ButtonGroup</code> can also be used to create a split button. The dropdown can change
         the button action (as in this example) or be used to immediately trigger a related action.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/button-group/SplitButton.js')
@@ -119,15 +119,15 @@ function ButtonGroupDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/SplitButton.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Disabled elevation
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         You can remove the elevation with the <code>disableElevation</code> prop.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/button-group/DisableElevation.js')

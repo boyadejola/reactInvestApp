@@ -41,7 +41,7 @@ export default function ControlledTreeView() {
         </Button>
       </Box>
       <TreeView
-        aria-label="controlled"
+        aria-label='controlled'
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<ChevronRightIcon />}
         expanded={expanded}
@@ -50,16 +50,16 @@ export default function ControlledTreeView() {
         onNodeSelect={handleSelect}
         multiSelect
       >
-        <TreeItem nodeId="1" label="Applications">
-          <TreeItem nodeId="2" label="Calendar" />
-          <TreeItem nodeId="3" label="Chrome" />
-          <TreeItem nodeId="4" label="Webstorm" />
+        <TreeItem nodeId='1' label='Applications'>
+          <TreeItem nodeId='2' label='Calendar' />
+          <TreeItem nodeId='3' label='Chrome' />
+          <TreeItem nodeId='4' label='Webstorm' />
         </TreeItem>
-        <TreeItem nodeId="5" label="Documents">
-          <TreeItem nodeId="6" label="MUI">
-            <TreeItem nodeId="7" label="src">
-              <TreeItem nodeId="8" label="index.js" />
-              <TreeItem nodeId="9" label="tree-view.js" />
+        <TreeItem nodeId='5' label='Documents'>
+          <TreeItem nodeId='6' label='MUI'>
+            <TreeItem nodeId='7' label='src'>
+              <TreeItem nodeId='8' label='index.js' />
+              <TreeItem nodeId='9' label='tree-view.js' />
             </TreeItem>
           </TreeItem>
         </TreeItem>

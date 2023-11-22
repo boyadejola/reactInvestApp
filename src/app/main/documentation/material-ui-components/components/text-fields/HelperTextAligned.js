@@ -12,14 +12,14 @@ export default function HelperTextAligned() {
       }}
     >
       <TextField
-        helperText="Please enter your name"
-        id="demo-helper-text-aligned"
-        label="Name"
+        helperText='Please enter your name'
+        id='demo-helper-text-aligned'
+        label='Name'
       />
       <TextField
-        helperText=" "
-        id="demo-helper-text-aligned-no-helper"
-        label="Name"
+        helperText=' '
+        id='demo-helper-text-aligned-no-helper'
+        label='Name'
       />
     </Box>
   );

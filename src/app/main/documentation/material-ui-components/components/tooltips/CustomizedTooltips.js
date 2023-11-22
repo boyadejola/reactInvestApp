@@ -41,16 +41,16 @@ const HtmlTooltip = styled(({ className, ...props }) => (
 export default function CustomizedTooltips() {
   return (
     <div>
-      <LightTooltip title="Add">
+      <LightTooltip title='Add'>
         <Button>Light</Button>
       </LightTooltip>
-      <BootstrapTooltip title="Add">
+      <BootstrapTooltip title='Add'>
         <Button>Bootstrap</Button>
       </BootstrapTooltip>
       <HtmlTooltip
         title={
           <React.Fragment>
-            <Typography color="inherit">Tooltip with HTML</Typography>
+            <Typography color='inherit'>Tooltip with HTML</Typography>
             <em>{"And here's"}</em> <b>{'some'}</b> <u>{'amazing content'}</u>.{' '}
             {"It's very engaging. Right?"}
           </React.Fragment>

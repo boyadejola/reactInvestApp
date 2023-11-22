@@ -42,54 +42,54 @@ function ResetPasswordPage() {
   }
 
   return (
-    <div className="flex flex-col flex-auto items-center justify-center p-16 sm:p-32">
-      <div className="flex flex-col items-center justify-center w-full">
+    <div className='flex flex-col flex-auto items-center justify-center p-16 sm:p-32'>
+      <div className='flex flex-col items-center justify-center w-full'>
         <motion.div initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }}>
-          <Card className="w-full max-w-384">
-            <CardContent className="flex flex-col items-center justify-center p-16 sm:p-24 md:p-32">
-              <img className="w-128 m-32" src="assets/images/logos/fuse.svg" alt="logo" />
+          <Card className='w-full max-w-384'>
+            <CardContent className='flex flex-col items-center justify-center p-16 sm:p-24 md:p-32'>
+              <img className='w-128 m-32' src='assets/images/logos/fuse.svg' alt='logo' />
 
-              <Typography variant="h6" className="mt-16 mb-24 font-semibold text-18 sm:text-24">
+              <Typography variant='h6' className='mt-16 mb-24 font-semibold text-18 sm:text-24'>
                 Reset your password
               </Typography>
 
               <form
-                name="resetForm"
+                name='resetForm'
                 noValidate
-                className="flex flex-col justify-center w-full"
+                className='flex flex-col justify-center w-full'
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <Controller
-                  name="email"
+                  name='email'
                   control={control}
                   render={({ field }) => (
                     <TextField
                       {...field}
                       className="mb-16"
-                      label="Email"
+                      label='Email'
                       autoFocus
-                      type="email"
+                      type='email'
                       error={!!errors.email}
                       helperText={errors?.email?.message}
-                      variant="outlined"
+                      variant='outlined'
                       required
                       fullWidth
                     />
                   )}
                 />
                 <Controller
-                  name="password"
+                  name='password'
                   control={control}
                   render={({ field }) => (
                     <TextField
                       {...field}
                       className="mb-16"
-                      label="Password"
-                      type="password"
-                      name="password"
+                      label='Password'
+                      type='password'
+                      name='password'
                       error={!!errors.password}
                       helperText={errors?.password?.message}
-                      variant="outlined"
+                      variant='outlined'
                       required
                       fullWidth
                     />
@@ -97,17 +97,17 @@ function ResetPasswordPage() {
                 />
 
                 <Controller
-                  name="passwordConfirm"
+                  name='passwordConfirm'
                   control={control}
                   render={({ field }) => (
                     <TextField
                       {...field}
                       className="mb-16"
-                      label="Password (Confirm)"
-                      type="password"
+                      label='Password (Confirm)'
+                      type='password'
                       error={!!errors.passwordConfirm}
                       helperText={errors?.passwordConfirm?.message}
-                      variant="outlined"
+                      variant='outlined'
                       required
                       fullWidth
                     />
@@ -115,19 +115,19 @@ function ResetPasswordPage() {
                 />
 
                 <Button
-                  variant="contained"
-                  color="primary"
-                  className="w-224 mx-auto mt-16"
-                  aria-label="Reset"
+                  variant='contained'
+                  color='primary'
+                  className='w-224 mx-auto mt-16'
+                  aria-label='Reset'
                   disabled={_.isEmpty(dirtyFields) || !isValid}
-                  type="submit"
+                  type='submit'
                 >
                   Reset my password
                 </Button>
               </form>
 
-              <div className="flex flex-col items-center justify-center pt-32 pb-24">
-                <Link className="font-normal" to="/pages/auth/login">
+              <div className='flex flex-col items-center justify-center pt-32 pb-24'>
+                <Link className='font-normal' to='/pages/auth/login'>
                   Go back to login
                 </Link>
               </div>

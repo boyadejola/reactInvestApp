@@ -7,10 +7,10 @@ import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Auth0LoginTab from './tabs/Auth0LoginTab';
-import FirebaseLoginTab from './tabs/FirebaseLoginTab';
-import JWTLoginTab from './tabs/JWTLoginTab';
 import i18next from 'i18next';
+import JWTLoginTab from './tabs/JWTLoginTab';
+import FirebaseLoginTab from './tabs/FirebaseLoginTab';
+import Auth0LoginTab from './tabs/Auth0LoginTab';
 
 const Root = styled('div')(({ theme }) => ({
   background: `linear-gradient(to right, ${theme.palette.primary.dark} 0%, ${darken(

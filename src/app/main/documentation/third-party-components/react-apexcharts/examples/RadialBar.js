@@ -18,8 +18,8 @@ function RadialBar()
     });
 
     return (
-        <div className="radialbar">
-            <Chart options={state.options} series={state.series} type="radialBar" height="380"/>
+        <div className='radialbar'>
+            <Chart options={state.options} series={state.series} type='radialBar' height='380'/>
         </div>
     );
 }

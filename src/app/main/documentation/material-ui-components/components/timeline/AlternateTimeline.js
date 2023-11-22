@@ -8,7 +8,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 
 export default function AlternateTimeline() {
   return (
-    <Timeline position="alternate">
+    <Timeline position='alternate'>
       <TimelineItem>
         <TimelineSeparator>
           <TimelineDot />

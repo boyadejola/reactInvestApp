@@ -10,6 +10,7 @@ import QuickPanelToggleButton from 'app/fuse-layouts/shared-components/quickPane
 import UserMenu from 'app/fuse-layouts/shared-components/UserMenu';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { ReqColorCodes } from 'app/auth/store/constants';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToolbarTheme } from 'app/store/fuse/settingsSlice';
@@ -17,7 +18,6 @@ import AdjustFontSize from '../../shared-components/AdjustFontSize';
 import FullScreenToggle from '../../shared-components/FullScreenToggle';
 import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
 import NotificationPanelToggleButton from '../../shared-components/notificationPanel/NotificationPanelToggleButton';
-import { ReqColorCodes } from 'app/auth/store/constants';
 import { Button } from '@mui/material';
 import i18next from 'i18next';
 import history from '@history';

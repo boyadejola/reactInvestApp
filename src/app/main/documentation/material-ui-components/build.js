@@ -15,8 +15,8 @@ const pagesDirectory = path.resolve(rootDirectory, './pages');
 const routesFilePath = path.resolve(rootDirectory, './MaterialUIComponentsRoutes.js');
 const navigationFilePath = path.resolve(rootDirectory, './MaterialUIComponentsNavigation.js');
 
-const demoRegexp = /^"demo": "(.*)"/;
-const componentRegexp = /^"component": "(.*)"/;
+const demoRegexp = /^'demo': '(.*)'/;
+const componentRegexp = /^'component': '(.*)'/;
 const headerRegExp = /---[\r\n]([\s\S]*)[\r\n]---/;
 const titleRegExp = /# (.*)[\r\n]/;
 // const headerKeyValueRegExp = /(.*): (.*)/g;
@@ -44,28 +44,28 @@ marked.setOptions({
 });
 
 /* const BeautifyConfig = {
-    "indent_size": 2,
-    "e4x"        : true,
-    "js"         : {
-        "allowed_file_extensions"  : ["js", "jsx", "json", "eslintrc", "jsbeautifyrc"],
-        "brace_style"              : "collapse-preserve-inline",
-        "break_chained_methods"    : false,
-        "comma_first"              : false,
-        "e4x"                      : true,
-        "end_with_newline"         : false,
-        "indent_char"              : " ",
-        "indent_level"             : 0,
-        "jslint_happy"             : false,
-        "keep_array_indentation"   : false,
-        "keep_function_indentation": false,
-        "max_preserve_newlines"    : 0,
-        "preserve_newlines"        : true,
-        "space_after_anon_function": true,
-        "space_before_conditional" : true,
-        "space_in_empty_paren"     : false,
-        "space_in_paren"           : true,
-        "unescape_strings"         : false,
-        "wrap_line_length"         : 120
+    'indent_size': 2,
+    'e4x'        : true,
+    'js'         : {
+        'allowed_file_extensions'  : ['js', 'jsx', 'json', 'eslintrc', 'jsbeautifyrc'],
+        'brace_style'              : 'collapse-preserve-inline',
+        'break_chained_methods'    : false,
+        'comma_first'              : false,
+        'e4x'                      : true,
+        'end_with_newline'         : false,
+        'indent_char'              : ' ',
+        'indent_level'             : 0,
+        'jslint_happy'             : false,
+        'keep_array_indentation'   : false,
+        'keep_function_indentation': false,
+        'max_preserve_newlines'    : 0,
+        'preserve_newlines'        : true,
+        'space_after_anon_function': true,
+        'space_before_conditional' : true,
+        'space_in_empty_paren'     : false,
+        'space_in_paren'           : true,
+        'unescape_strings'         : false,
+        'wrap_line_length'         : 120
     }
 }; */
 
@@ -85,16 +85,16 @@ renderer.heading = (text, level) => {
       className = 'text-16 mt-16 mb-10';
   }
 
-  return `<Typography className="${className}" component="h${level}">${text}</Typography>\n`;
+  return `<Typography className='${className}' component='h${level}'>${text}</Typography>\n`;
 };
 
 renderer.paragraph = (text) => {
-  return `<Typography className="mb-40" component="div">${text}</Typography>\n`;
+  return `<Typography className='mb-40' component='div'>${text}</Typography>\n`;
 };
 
 renderer.code = (code, lang) => {
   const response = `
-<FuseHighlight component="pre" className="language-${lang}">
+<FuseHighlight component='pre' className='language-${lang}'>
 {%% 
 ${code}
 %%}
@@ -159,10 +159,10 @@ function getHtmlCode(markdownSource) {
         'app/main/documentation/material-ui-components/components/'
       );
       return `\n<FuseExample
-                    className="my-24"
+                    className='my-24'
                     iframe={${iframe}}
-                    component="{require('${importPath}').default}" 
-                    raw="{require('!raw-loader!${importPath}')}"
+                    component='{require('${importPath}').default}' 
+                    raw='{require('!raw-loader!${importPath}')}'
                     />`;
     }
     const muiComponent = content.match(componentRegexp);
@@ -173,8 +173,8 @@ function getHtmlCode(markdownSource) {
     return content;
   });
   const response = marked(contentsArr.join(''))
-    .replace(new RegExp('"{', 'g'), '{')
-    .replace(new RegExp('}"', 'g'), '}')
+    .replace(new RegExp(''{', 'g'), '{')
+    .replace(new RegExp('}'', 'g'), '}')
     .replace(new RegExp('(<\\s*\\/?\\s*)p(\\s*([^>]*)?\\s*>)', 'g'), '$1Typography$2')
     .replace(new RegExp('class=', 'g'), 'className=')
     .replace(new RegExp('<img([^>]+)(\\s*[^\\/])>', 'gm'), '$1/>')
@@ -222,18 +222,18 @@ function writePage(file) {
 
   const contentJSX = `
                 <>
-					<div className="flex flex-1 flex-grow-0 items-center justify-end">
+					<div className='flex flex-1 flex-grow-0 items-center justify-end'>
 					  <Button 
-							className="normal-case"
-							variant="contained"
-                            color="secondary"
-							component="a" 
-							href="https://mui.com/components/${path.basename(file)}" 
-							target="_blank"
-							role="button"
+							className='normal-case'
+							variant='contained'
+                            color='secondary'
+							component='a' 
+							href='https://mui.com/components/${path.basename(file)}' 
+							target='_blank'
+							role='button'
 							>
 							<Icon>link</Icon>
-							<span className="mx-4">Reference</span>
+							<span className='mx-4'>Reference</span>
 						</Button>
 					</div>
                      ${htmlCode}
@@ -267,14 +267,14 @@ function writePage(file) {
 }
 
 function writeRouteFile(pages) {
-  // const importPath = "import %s from 'app/main/documentation/material-ui-components/pages/%s';";
+  // const importPath = 'import %s from 'app/main/documentation/material-ui-components/pages/%s';';
   // const imports = pages.map((page) => {
   //   const componentName = _.upperFirst(_.camelCase(page));
   //   return importPath.replace(/%s/g, componentName, componentName);
   // });
 
   const routeObject =
-    "{ path     : '/documentation/material-ui-components/%s', component: lazy(() => import('app/main/documentation/material-ui-components/pages/%p'))}";
+    '{ path     : '/documentation/material-ui-components/%s', component: lazy(() => import('app/main/documentation/material-ui-components/pages/%p'))}';
   const routes = pages.map((page) => {
     const componentName = _.upperFirst(_.camelCase(page));
 
@@ -299,7 +299,7 @@ function writeRouteFile(pages) {
 
 function writeNavigationFile(pages) {
   const navigationObject =
-    "{ 'id'   : '%id', 'title': '%title', 'type' : 'item', 'url'  : '/documentation/material-ui-components/%url' }";
+    '{ 'id'   : '%id', 'title': '%title', 'type' : 'item', 'url'  : '/documentation/material-ui-components/%url' }';
   const navigation = pages.map((page) => {
     const componentName = _.startCase(page);
     return navigationObject.allReplace({

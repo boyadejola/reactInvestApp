@@ -11,24 +11,24 @@ import Typography from '@mui/material/Typography';
 function PickersDoc(props) {
   return (
     <>
-      <div className="flex flex-1 flex-grow-0 items-center justify-end">
+      <div className='flex flex-1 flex-grow-0 items-center justify-end'>
         <Button
-          className="normal-case"
-          variant="contained"
-          color="secondary"
-          component="a"
-          href="https://mui.com/components/pickers"
-          target="_blank"
-          role="button"
+          className='normal-case'
+          variant='contained'
+          color='secondary'
+          component='a'
+          href='https://mui.com/components/pickers'
+          target='_blank'
+          role='button'
         >
           <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          <span className='mx-4'>Reference</span>
         </Button>
       </div>
-      <Typography className="text-40 my-16 font-700" component="h1">
+      <Typography className='text-40 my-16 font-700' component='h1'>
         Date / Time pickers
       </Typography>
-      <Typography className="description">
+      <Typography className='description'>
         Date pickers and Time pickers allow selecting a single value from a pre-determined set.
       </Typography>
 
@@ -39,12 +39,12 @@ function PickersDoc(props) {
           dropdown buttons.
         </li>
       </ul>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         React components
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/pickers/MaterialUIPickers.js')
@@ -53,35 +53,35 @@ function PickersDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pickers/MaterialUIPickers.js')}
         />
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         Setup
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         You need to provide a date-library that is used by the pickers by setting the{' '}
         <code>dateAdapter</code> to an adapter of your choosing.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         We currently support 4 different date-libraries:
       </Typography>
       <ul>
         <li>
-          <a href="https://date-fns.org/">date-fns</a>
+          <a href='https://date-fns.org/'>date-fns</a>
         </li>
         <li>
-          <a href="https://day.js.org/">Day.js</a>
+          <a href='https://day.js.org/'>Day.js</a>
         </li>
         <li>
-          <a href="https://moment.github.io/luxon/#/">Luxon</a>
+          <a href='https://moment.github.io/luxon/#/'>Luxon</a>
         </li>
         <li>
-          <a href="https://momentjs.com/">Moment.js</a>
+          <a href='https://momentjs.com/'>Moment.js</a>
         </li>
       </ul>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         First you have to install the adapter package for the date-library you want to use:
       </Typography>
 
-      <FuseHighlight component="pre" className="language-sh">
+      <FuseHighlight component='pre' className='language-sh'>
         {` 
 // date-fns
 npm install @date-io/date-fns
@@ -93,12 +93,12 @@ npm install -s @date-io/luxon
 npm install @date-io/moment
 `}
       </FuseHighlight>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Then you have to set the <code>dateAdapter</code> prop of the{' '}
         <code>LocalizationProvider</code> accordingly:
       </Typography>
 
-      <FuseHighlight component="pre" className="language-js">
+      <FuseHighlight component='pre' className='language-js'>
         {` 
 // date-fns
 import DateAdapter from '@mui/lab/AdapterDateFns';
@@ -116,20 +116,20 @@ function App({ children }) {
 }
 `}
       </FuseHighlight>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Native pickers
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         ⚠️ Native input controls support by browsers{' '}
-        <a href="https://caniuse.com/#feat=input-datetime">isn&#39;t perfect</a>.
+        <a href='https://caniuse.com/#feat=input-datetime'>isn&#39;t perfect</a>.
       </Typography>
-      <Typography className="mb-40" component="div">
-        Native date (<code>type="date"</code>), time (<code>type="time"</code>) and date&amp;time (
-        <code>type="datetime-local"</code>) pickers.
+      <Typography className='mb-40' component='div'>
+        Native date (<code>type='date'</code>), time (<code>type='time'</code>) and date&amp;time (
+        <code>type='datetime-local'</code>) pickers.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/pickers/NativePickers.js')

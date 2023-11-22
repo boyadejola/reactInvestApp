@@ -59,11 +59,11 @@ class MuiVirtualizedTable extends React.PureComponent {
     const { columns, classes, rowHeight, onRowClick } = this.props;
     return (
       <TableCell
-        component="div"
+        component='div'
         className={clsx(classes.tableCell, classes.flexContainer, {
           [classes.noClick]: onRowClick == null,
         })}
-        variant="body"
+        variant='body'
         style={{ height: rowHeight }}
         align={
           (columnIndex != null && columns[columnIndex].numeric) || false
@@ -81,9 +81,9 @@ class MuiVirtualizedTable extends React.PureComponent {
 
     return (
       <TableCell
-        component="div"
+        component='div'
         className={clsx(classes.tableCell, classes.flexContainer, classes.noClick)}
-        variant="head"
+        variant='head'
         style={{ height: headerHeight }}
         align={columns[columnIndex].numeric || false ? 'right' : 'left'}
       >

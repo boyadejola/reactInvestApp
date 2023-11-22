@@ -12,11 +12,11 @@ export default function HelperTextMisaligned() {
       }}
     >
       <TextField
-        helperText="Please enter your name"
-        id="demo-helper-text-misaligned"
-        label="Name"
+        helperText='Please enter your name'
+        id='demo-helper-text-misaligned'
+        label='Name'
       />
-      <TextField id="demo-helper-text-misaligned-no-helper" label="Name" />
+      <TextField id='demo-helper-text-misaligned-no-helper' label='Name' />
     </Box>
   );
 }

@@ -11,45 +11,45 @@ import Typography from '@mui/material/Typography';
 function ToggleButtonDoc(props) {
   return (
     <>
-      <div className="flex flex-1 flex-grow-0 items-center justify-end">
+      <div className='flex flex-1 flex-grow-0 items-center justify-end'>
         <Button
-          className="normal-case"
-          variant="contained"
-          color="secondary"
-          component="a"
-          href="https://mui.com/components/toggle-button"
-          target="_blank"
-          role="button"
+          className='normal-case'
+          variant='contained'
+          color='secondary'
+          component='a'
+          href='https://mui.com/components/toggle-button'
+          target='_blank'
+          role='button'
         >
           <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          <span className='mx-4'>Reference</span>
         </Button>
       </div>
-      <Typography className="text-40 my-16 font-700" component="h1">
+      <Typography className='text-40 my-16 font-700' component='h1'>
         Toggle Buttons
       </Typography>
-      <Typography className="description">
+      <Typography className='description'>
         Toggle buttons can be used to group related options.
       </Typography>
 
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         To emphasize groups of related Toggle buttons, a group should share a common container. The{' '}
         <code>ToggleButtonGroup</code> controls the selected state of its child buttons when given
         its own <code>value</code> prop.
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Exclusive selection
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         With exclusive selection, selecting one option deselects any other.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         In this example, text justification toggle buttons present options for left, center, right,
         and fully justified text (disabled), with only one item available for selection at a time.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/toggle-button/ToggleButtons.js')
@@ -58,16 +58,16 @@ function ToggleButtonDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ToggleButtons.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Multiple selection
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Multiple selection allows for logically-grouped options, like bold, italic, and underline,
         to have multiple options selected.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonsMultiple.js')
@@ -76,15 +76,15 @@ function ToggleButtonDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonsMultiple.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Size
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         For larger or smaller buttons, use the <code>size</code> prop.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonSizes.js')
@@ -93,12 +93,12 @@ function ToggleButtonDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonSizes.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Color
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/toggle-button/ColorToggleButton.js')
@@ -107,16 +107,16 @@ function ToggleButtonDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ColorToggleButton.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Vertical buttons
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         The buttons can be stacked vertically with the <code>orientation</code> prop set to
         &quot;vertical&quot;.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/toggle-button/VerticalToggleButtons.js')
@@ -125,15 +125,15 @@ function ToggleButtonDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/VerticalToggleButtons.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Enforce value set
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         If you want to enforce that at least one button must be active, you can adapt your
         handleChange function.
       </Typography>
 
-      <FuseHighlight component="pre" className="language-jsx">
+      <FuseHighlight component='pre' className='language-jsx'>
         {` 
 const handleAlignment = (event, newAlignment) => {
   if (newAlignment !== null) {
@@ -148,9 +148,9 @@ const handleDevices = (event, newDevices) => {
 };
 `}
       </FuseHighlight>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonNotEmpty.js')
@@ -159,12 +159,12 @@ const handleDevices = (event, newDevices) => {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonNotEmpty.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Standalone toggle button
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/toggle-button/StandaloneToggleButton.js')
@@ -173,16 +173,16 @@ const handleDevices = (event, newDevices) => {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/StandaloneToggleButton.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Customization
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href='/customization/how-to-customize/'>overrides documentation page</a>.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/toggle-button/CustomizedDividers.js')
@@ -191,27 +191,27 @@ const handleDevices = (event, newDevices) => {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/CustomizedDividers.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Accessibility
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         ARIA
       </Typography>
       <ul>
         <li>
-          ToggleButtonGroup has <code>role="group"</code>. You should provide an accessible label
-          with <code>aria-label="label"</code>, <code>aria-labelledby="id"</code> or{' '}
+          ToggleButtonGroup has <code>role='group'</code>. You should provide an accessible label
+          with <code>aria-label='label'</code>, <code>aria-labelledby='id'</code> or{' '}
           <code>{`<label>`}</code>.
         </li>
         <li>
-          ToggleButton sets <code>{`aria-pressed="<bool>"`}</code> according to the button state.
+          ToggleButton sets <code>{`aria-pressed='<bool>'`}</code> according to the button state.
           You should label each button with <code>aria-label</code>.
         </li>
       </ul>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         Keyboard
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         At present, toggle buttons are in DOM order. Navigate between them with the tab key. The
         button behavior follows standard keyboard semantics.
       </Typography>

@@ -65,52 +65,52 @@ function JWTLoginTab(props) {
   }
 
   return (
-    <div className="w-full">
-      <form className="flex flex-col justify-center w-full" onSubmit={handleSubmit(onSubmit)}>
+    <div className='w-full'>
+      <form className='flex flex-col justify-center w-full' onSubmit={handleSubmit(onSubmit)}>
         <Controller
-          name="email"
+          name='email'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type="text"
+              type='text'
               error={!!errors.email}
               helperText={errors?.email?.message}
-              label="Email"
+              label='Email'
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <Icon className='text-20' color='action'>
                       user
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant="outlined"
+              variant='outlined'
             />
           )}
         />
 
         <Controller
-          name="password"
+          name='password'
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              label="Password"
-              type="password"
+              label='Password'
+              type='password'
               error={!!errors.password}
               helperText={errors?.password?.message}
-              variant="outlined"
+              variant='outlined'
               InputProps={{
                 className: 'pr-2',
                 type: showPassword ? 'text' : 'password',
                 endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton onClick={() => setShowPassword(!showPassword)} size="large">
-                      <Icon className="text-20" color="action">
+                  <InputAdornment position='end'>
+                    <IconButton onClick={() => setShowPassword(!showPassword)} size='large'>
+                      <Icon className='text-20' color='action'>
                         {showPassword ? 'visibility' : 'visibility_off'}
                       </Icon>
                     </IconButton>
@@ -123,33 +123,33 @@ function JWTLoginTab(props) {
         />
 
         <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          className="w-full mx-auto mt-16"
-          aria-label="LOG IN"
+          type='submit'
+          variant='contained'
+          color='primary'
+          className='w-full mx-auto mt-16'
+          aria-label='LOG IN'
           disabled={_.isEmpty(dirtyFields) || !isValid}
-          value="legacy"
+          value='legacy'
         >
-          {loader ? <CircularProgress /> : "Login"}
+          {loader ? <CircularProgress /> : 'Login'}
         </Button>
       </form>
 
-      {/* <table className="w-full mt-32 text-center">
-        <thead className="mb-4">
+      {/* <table className='w-full mt-32 text-center'>
+        <thead className='mb-4'>
           <tr>
             <th>
-              <Typography className="font-semibold text-11" color="textSecondary">
+              <Typography className='font-semibold text-11' color='textSecondary'>
                 Role
               </Typography>
             </th>
             <th>
-              <Typography className="font-semibold text-11" color="textSecondary">
+              <Typography className='font-semibold text-11' color='textSecondary'>
                 Email
               </Typography>
             </th>
             <th>
-              <Typography className="font-semibold text-11" color="textSecondary">
+              <Typography className='font-semibold text-11' color='textSecondary'>
                 Password
               </Typography>
             </th>
@@ -158,28 +158,28 @@ function JWTLoginTab(props) {
         <tbody>
           <tr>
             <td>
-              <Typography className="font-medium text-11" color="textSecondary">
+              <Typography className='font-medium text-11' color='textSecondary'>
                 Admin
               </Typography>
             </td>
             <td>
-              <Typography className="text-11">admin@fusetheme.com</Typography>
+              <Typography className='text-11'>admin@fusetheme.com</Typography>
             </td>
             <td>
-              <Typography className="text-11">admin</Typography>
+              <Typography className='text-11'>admin</Typography>
             </td>
           </tr>
           <tr>
             <td>
-              <Typography className="font-medium text-11" color="textSecondary">
+              <Typography className='font-medium text-11' color='textSecondary'>
                 Staff
               </Typography>
             </td>
             <td>
-              <Typography className="text-11">staff@fusetheme.com</Typography>
+              <Typography className='text-11'>staff@fusetheme.com</Typography>
             </td>
             <td>
-              <Typography className="text-11">staff</Typography>
+              <Typography className='text-11'>staff</Typography>
             </td>
           </tr>
         </tbody>

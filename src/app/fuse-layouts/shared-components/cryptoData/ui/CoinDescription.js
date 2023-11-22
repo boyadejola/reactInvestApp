@@ -12,13 +12,13 @@ const CoinDescription = (props) => {
     setLoadingStatus(false);
     setError(null);
     try {
-      let url = SingleCoin(props.coinName);
-      let response = await fetch(url);
+      const url = SingleCoin(props.coinName);
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Some thing Went Wrong");
       }
-      let data = await response.json();
-      let mainData = {
+      const data = await response.json();
+      const mainData = {
         image: data.image.large,
         name: data?.name,
         rank: data?.market_cap_rank,

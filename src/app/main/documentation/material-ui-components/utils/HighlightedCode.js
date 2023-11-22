@@ -6,7 +6,7 @@ const HighlightedCode = forwardRef(function HighlightedCode(props, ref) {
   const { code, language, ...other } = props;
 
   return (
-    <FuseHighlight component="pre" className={`language-${language || 'jsx'}`} ref={ref} {...other}>
+    <FuseHighlight component='pre' className={`language-${language || 'jsx'}`} ref={ref} {...other}>
       {code}
     </FuseHighlight>
   );

@@ -1,41 +1,41 @@
-import {useForm, Controller} from "react-hook-form";
+import {useForm, Controller} from 'react-hook-form';
 import Button from '@mui/material/Button';
-import TextField from "@mui/material/TextField";
-import Checkbox from "@mui/material/Checkbox";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import Switch from "@mui/material/Switch";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Radio from "@mui/material/Radio";
-import Typography from "@mui/material/Typography";
+import TextField from '@mui/material/TextField';
+import Checkbox from '@mui/material/Checkbox';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import Switch from '@mui/material/Switch';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import Typography from '@mui/material/Typography';
 import Autocomplete from '@mui/material/Autocomplete';
 
 let renderCount = 0;
 
 const options = [
     {
-        value: "chocolate",
-        label: "Chocolate"
+        value: 'chocolate',
+        label: 'Chocolate'
     },
     {
-        value: "strawberry",
-        label: "Strawberry"
+        value: 'strawberry',
+        label: 'Strawberry'
     },
     {
-        value: "vanilla",
-        label: "Vanilla"
+        value: 'vanilla',
+        label: 'Vanilla'
     }
 ];
 
 const defaultValues = {
-    Native     : "",
-    TextField  : "",
-    Select     : "",
+    Native     : '',
+    TextField  : '',
+    Select     : '',
     Autocomplete: [],
     Checkbox   : false,
     switch     : false,
-    RadioGroup : ""
+    RadioGroup : ''
 };
 
 function SimpleFormExample()
@@ -48,25 +48,25 @@ function SimpleFormExample()
         watch
     } = useForm({
         defaultValues,
-        mode: "onChange"
+        mode: 'onChange'
     });
     renderCount++;
 
     const data = watch();
 
     return (
-        <div className="flex w-full max-w-screen-md justify-start items-start">
-            <form className="w-1/2" onSubmit={handleSubmit(data => console.info(data))}>
-                <div className="mt-48 mb-16">
-                    <Typography className="mb-24 font-medium text-14">Native Input:</Typography>
-                    <input className="border-1 outline-none rounded-8 p-8" {...register('Native')} />
+        <div className='flex w-full max-w-screen-md justify-start items-start'>
+            <form className='w-1/2' onSubmit={handleSubmit(data => console.info(data))}>
+                <div className='mt-48 mb-16'>
+                    <Typography className='mb-24 font-medium text-14'>Native Input:</Typography>
+                    <input className='border-1 outline-none rounded-8 p-8' {...register('Native')} />
                 </div>
 
-                <div className="mt-48 mb-16">
-                    <Typography className="mb-24 font-medium text-14">MUI Checkbox</Typography>
+                <div className='mt-48 mb-16'>
+                    <Typography className='mb-24 font-medium text-14'>MUI Checkbox</Typography>
                     <Controller
-                        name="Checkbox"
-                        type="checkbox"
+                        name='Checkbox'
+                        type='checkbox'
                         control={control}
                         defaultValue={false}
                         render={({ field: {onChange, value} }) => (
@@ -78,53 +78,53 @@ function SimpleFormExample()
                     />
                 </div>
 
-                <div className="mt-48 mb-16">
-                    <Typography className="mb-24 font-medium text-14">Radio Group</Typography>
+                <div className='mt-48 mb-16'>
+                    <Typography className='mb-24 font-medium text-14'>Radio Group</Typography>
                     <Controller
                         render={({ field }) => (
-                            <RadioGroup {...field} aria-label="gender" name="gender1">
+                            <RadioGroup {...field} aria-label='gender' name='gender1'>
                                 <FormControlLabel
-                                    value="female"
+                                    value='female'
                                     control={<Radio/>}
-                                    label="Female"
+                                    label='Female'
                                 />
                                 <FormControlLabel
-                                    value="male"
+                                    value='male'
                                     control={<Radio/>}
-                                    label="Male"
+                                    label='Male'
                                 />
                             </RadioGroup>
                         )}
-                        name="RadioGroup"
+                        name='RadioGroup'
                         control={control}
                     />
                 </div>
 
-                <div className="mt-48 mb-16">
-                    <Typography className="mb-24 font-medium text-14">MUI TextField</Typography>
-                    <Controller render={({ field }) => <TextField { ...field } variant="outlined"/>} name="TextField" control={control}/>
+                <div className='mt-48 mb-16'>
+                    <Typography className='mb-24 font-medium text-14'>MUI TextField</Typography>
+                    <Controller render={({ field }) => <TextField { ...field } variant='outlined'/>} name='TextField' control={control}/>
                 </div>
 
-                <div className="mt-48 mb-16">
-                    <Typography className="mb-24 font-medium text-14">MUI Select</Typography>
+                <div className='mt-48 mb-16'>
+                    <Typography className='mb-24 font-medium text-14'>MUI Select</Typography>
                     <Controller
                         render={({ field }) => (
-                            <Select {...field} variant="outlined">
+                            <Select {...field} variant='outlined'>
                                 <MenuItem value={10}>Ten</MenuItem>
                                 <MenuItem value={20}>Twenty</MenuItem>
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </Select>
                         )}
-                        name="Select"
+                        name='Select'
                         control={control}
                     />
                 </div>
 
-                <div className="mt-48 mb-16">
-                    <Typography className="mb-24 font-medium text-14">MUI Switch</Typography>
+                <div className='mt-48 mb-16'>
+                    <Typography className='mb-24 font-medium text-14'>MUI Switch</Typography>
                     <Controller
-                        name="switch"
-                        type="checkbox"
+                        name='switch'
+                        type='checkbox'
                         control={control}
                         defaultValue={false}
                         render={({ field: {onChange, value} }) => (
@@ -136,15 +136,15 @@ function SimpleFormExample()
                     />
                 </div>
 
-                <div className="mt-48 mb-16">
-                    <Typography className="mb-24 font-medium text-14">Autocomplete</Typography>
+                <div className='mt-48 mb-16'>
+                    <Typography className='mb-24 font-medium text-14'>Autocomplete</Typography>
                     <Controller
-                        name="Autocomplete"
+                        name='Autocomplete'
                         control={control}
                         defaultValue={[]}
                         render={({ field: { onChange, value } }) => (
                             <Autocomplete
-                                className="mt-8 mb-16"
+                                className='mt-8 mb-16'
                                 multiple
                                 freeSolo
                                 options={options}
@@ -155,9 +155,9 @@ function SimpleFormExample()
                                 renderInput={(params) => (
                                     <TextField
                                         {...params}
-                                        placeholder="Select multiple tags"
-                                        label="Tags"
-                                        variant="outlined"
+                                        placeholder='Select multiple tags'
+                                        label='Tags'
+                                        variant='outlined'
                                         InputLabelProps={{
                                             shrink: true,
                                         }}
@@ -167,13 +167,13 @@ function SimpleFormExample()
                     />
                 </div>
 
-                <div className="flex my-48 items-center">
+                <div className='flex my-48 items-center'>
 
-                    <Button className="mx-8" variant="contained" color="secondary" type="submit">Submit</Button>
+                    <Button className='mx-8' variant='contained' color='secondary' type='submit'>Submit</Button>
 
                     <Button
-                        className="mx-8"
-                        type="button"
+                        className='mx-8'
+                        type='button'
                         onClick={() => {
                             reset(defaultValues);
                         }}
@@ -185,13 +185,13 @@ function SimpleFormExample()
 
             </form>
 
-            <div className="w-1/2 my-48 p-24">
+            <div className='w-1/2 my-48 p-24'>
 
-                <pre className="language-js p-24 w-400">
+                <pre className='language-js p-24 w-400'>
                     {JSON.stringify(data, null, 2)}
                 </pre>
 
-                <Typography className="mt-16 font-medium text-12 italic" color="textSecondary">Render Count: {renderCount}</Typography>
+                <Typography className='mt-16 font-medium text-12 italic' color='textSecondary'>Render Count: {renderCount}</Typography>
             </div>
         </div>
     );

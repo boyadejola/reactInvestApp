@@ -21,8 +21,8 @@ export default function AnchorElTooltips() {
 
   return (
     <Tooltip
-      title="Add"
-      placement="top"
+      title='Add'
+      placement='top'
       arrow
       PopperProps={{
         popperRef,

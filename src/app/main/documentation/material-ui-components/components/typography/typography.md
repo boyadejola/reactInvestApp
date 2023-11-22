@@ -7,12 +7,12 @@ materialDesign: https://material.io/design/typography/the-type-system.html
 
 # Typography
 
-<p class="description">Use typography to present your design and content as clearly and efficiently as possible.</p>
+<p class='description'>Use typography to present your design and content as clearly and efficiently as possible.</p>
 
 Too many type sizes and styles at once can spoil any layout.
 A [typographic scale](https://material.io/design/typography/#type-scale) has a limited set of type sizes that work well together along with the layout grid.
 
-{{"component": "modules/components/ComponentLinkHeader.js"}}
+{{'component': 'modules/components/ComponentLinkHeader.js'}}
 
 ## General
 
@@ -27,8 +27,8 @@ Shown below is a sample link markup used to load the Roboto font from a CDN:
 
 ```html
 <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel='stylesheet'
+  href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
 />
 ```
 
@@ -56,14 +56,14 @@ MUI default typography configuration only relies on 300, 400, 500, and 700 font 
 
 The Typography component makes it easy to apply a default set of font weights and sizes in your application.
 
-{{"demo": "pages/components/typography/Types.js"}}
+{{'demo': 'pages/components/typography/Types.js'}}
 
 ## Theme
 
 In some situations you might not be able to use the `Typography` component.
 Hopefully, you might be able to take advantage of the [`typography`](/customization/default-theme/?expand-path=$.typography) keys of the theme.
 
-{{"demo": "pages/components/typography/TypographyTheme.js"}}
+{{'demo': 'pages/components/typography/TypographyTheme.js'}}
 
 ## Changing the semantic element
 
@@ -76,7 +76,7 @@ It's important to realize that the style of a typography component is independen
 {
   /* There is already an h1 in the page, let's not duplicate it. */
 }
-<Typography variant="h1" component="h2">
+<Typography variant='h1' component='h2'>
   h1. Heading
 </Typography>;
 ```

@@ -35,7 +35,7 @@ import {
   setWithdrawData,
 } from 'app/auth/store/sharedData';
 import history from '@history';
-import fs from 'fs';
+// import fs from 'fs';
 import { displayPopup, isString, randomString, sessionExpired } from './commonMethods';
 
 export const logoutServiceProvider = () => async (dispatch) => {
@@ -75,7 +75,7 @@ export const postDeposit = (body) => async (dispatch) => {
         }
         dispatch(displayPopup(res.error, 'warning', 2000));
       }
-      else if (res && res.code && res.code == 200) {
+      else if (res && res.code && res.code === 200) {
         dispatch(displayPopup(res.msg ? res.msg : "Successfully deposited", 'success', 4000));
       }
       else {
@@ -84,8 +84,8 @@ export const postDeposit = (body) => async (dispatch) => {
     })
     .catch(e => {
       dispatch(setDepositLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired());
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired());
       }
       else {
         const msg = e && e.response && e.response.data
@@ -126,7 +126,7 @@ export const getApproveDepositList = (body) => async (dispatch) => {
       dispatch(setDepositApproveData([]));
       dispatch(setApproveDepositLoader(false));
       if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -166,8 +166,8 @@ export const getApproveWithdrawList = (body) => async (dispatch) => {
       dispatch(setWithdrawApproveTotalCount(0));
       dispatch(setWithdrawApproveData([]));
       dispatch(setApproveWithdrawLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -191,7 +191,7 @@ export const getDashboard = (body) => async (dispatch) => {
         }
         dispatch(displayPopup(res.error, 'warning', 2000));
       } else {
-        if (res && res.code == 200) {
+        if (res && res.code === 200) {
           dispatch(setDashboardData(res.data));
         } else {
           dispatch(setDashboardData([]));
@@ -201,8 +201,8 @@ export const getDashboard = (body) => async (dispatch) => {
     .catch(e => {
       dispatch(setDashboardData([]));
       dispatch(setDashboardLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -226,7 +226,7 @@ export const postApproveDeposit = (body, pagination) => async (dispatch) => {
         }
         dispatch(displayPopup(res.error, 'warning', 2000));
       }
-      else if (res && res.code && res.code == 200) {
+      else if (res && res.code && res.code === 200) {
         dispatch(displayPopup(res.msg ? res.msg : "Successfully approved", 'success', 4000));
         const bodys = {
           changeOccur: randomString(),
@@ -241,8 +241,8 @@ export const postApproveDeposit = (body, pagination) => async (dispatch) => {
     })
     .catch(e => {
       dispatch(setApproveDepositLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -266,7 +266,7 @@ export const postJoinPlan = (body, pagination) => async (dispatch) => {
         }
         dispatch(displayPopup(res.error, 'warning', 4000));
       }
-      else if (res && res.code && res.code == 200) {
+      else if (res && res.code && res.code === 200) {
         dispatch(displayPopup(res.msg ? res.msg : "Successfully plan joined", 'success', 4000));
       }
       else {
@@ -275,8 +275,8 @@ export const postJoinPlan = (body, pagination) => async (dispatch) => {
     })
     .catch(e => {
       dispatch(setJoinPlanLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -316,8 +316,8 @@ export const getROIList = (body) => async (dispatch) => {
       dispatch(setROITotalCount(0));
       dispatch(setROIData([]));
       dispatch(setROILoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -357,8 +357,8 @@ export const getTransactionList = (body) => async (dispatch) => {
       dispatch(setTransactionTotalCount(0));
       dispatch(setTransactionData([]));
       dispatch(setTransactionLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -398,8 +398,8 @@ export const getDepositList = (body) => async (dispatch) => {
       dispatch(setDepositTotalCount(0));
       dispatch(setDepositData([]));
       dispatch(setDepositHistoryLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -439,8 +439,8 @@ export const getWithdrawList = (body) => async (dispatch) => {
       dispatch(setWithdrawTotalCount(0));
       dispatch(setWithdrawData([]));
       dispatch(setWithdrawHistoryLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired())
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired())
       }
       else {
         const msg = e && e.response && e.response.data
@@ -464,7 +464,7 @@ export const postWithdraw = (body) => async (dispatch) => {
         }
         dispatch(displayPopup(res.error, 'warning', 2000));
       }
-      else if (res && res.code && res.code == 200) {
+      else if (res && res.code && res.code === 200) {
         dispatch(displayPopup(res.msg ? res.msg : "Successfully submit Withdraw Application", 'success', 4000));
       }
       else {
@@ -473,8 +473,8 @@ export const postWithdraw = (body) => async (dispatch) => {
     })
     .catch(e => {
       dispatch(setWithdrawHistoryLoader(false));
-      if (e && e.response && e.response.status == 401) {
-        if (e.response.data == 'Authentication Invalid') dispatch(sessionExpired());
+      if (e && e.response && e.response.status === 401) {
+        if (e.response.data === 'Authentication Invalid') dispatch(sessionExpired());
       }
       else {
         const msg = e && e.response && e.response.data

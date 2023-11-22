@@ -40,46 +40,46 @@ function ModernInvoicePage() {
   }, []);
 
   return (
-    <Root className="flex-grow flex-shrink-0 p-0 sm:p-64 print:p-0 overflow-auto">
+    <Root className='flex-grow flex-shrink-0 p-0 sm:p-64 print:p-0 overflow-auto'>
       {invoice && (
         <motion.div
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ bounceDamping: 0 }}
         >
-          <Card className="mx-auto w-xl print:w-full print:shadow-none rounded-none sm:rounded-20">
-            <CardContent className="p-88 print:p-0">
-              <div className="flex flex-row justify-between items-start">
-                <div className="flex flex-col">
-                  <div className="flex items-center mb-80 print:mb-0">
+          <Card className='mx-auto w-xl print:w-full print:shadow-none rounded-none sm:rounded-20'>
+            <CardContent className='p-88 print:p-0'>
+              <div className='flex flex-row justify-between items-start'>
+                <div className='flex flex-col'>
+                  <div className='flex items-center mb-80 print:mb-0'>
                     <img
-                      className="w-160 print:w-60"
-                      src="assets/images/logos/fuse.svg"
-                      alt="logo"
+                      className='w-160 print:w-60'
+                      src='assets/images/logos/fuse.svg'
+                      alt='logo'
                     />
 
-                    <div className="ModernInvoicePage-divider mx-48 w-px h-128 print:mx-16" />
+                    <div className='ModernInvoicePage-divider mx-48 w-px h-128 print:mx-16' />
 
-                    <div className="max-w-160">
-                      <Typography color="textSecondary">{invoice.from.title}</Typography>
+                    <div className='max-w-160'>
+                      <Typography color='textSecondary'>{invoice.from.title}</Typography>
 
                       {invoice.from.address && (
-                        <Typography color="textSecondary">{invoice.from.address}</Typography>
+                        <Typography color='textSecondary'>{invoice.from.address}</Typography>
                       )}
                       {invoice.from.phone && (
-                        <Typography color="textSecondary">
+                        <Typography color='textSecondary'>
                           <span>Phone:</span>
                           {invoice.from.phone}
                         </Typography>
                       )}
                       {invoice.from.email && (
-                        <Typography color="textSecondary">
+                        <Typography color='textSecondary'>
                           <span>Email:</span>
                           {invoice.from.email}
                         </Typography>
                       )}
                       {invoice.from.website && (
-                        <Typography color="textSecondary">
+                        <Typography color='textSecondary'>
                           <span>Web:</span>
                           {invoice.from.website}
                         </Typography>
@@ -87,38 +87,38 @@ function ModernInvoicePage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center">
-                    <div className="flex justify-end items-center w-160 print:w-60">
+                  <div className='flex items-center'>
+                    <div className='flex justify-end items-center w-160 print:w-60'>
                       <Typography
-                        variant="h5"
-                        className="font-light print:text-16"
-                        color="textSecondary"
+                        variant='h5'
+                        className='font-light print:text-16'
+                        color='textSecondary'
                       >
                         CLIENT
                       </Typography>
                     </div>
 
-                    <div className="ModernInvoicePage-divider mx-48 w-px h-128 print:mx-16" />
-                    <div className="max-w-160">
-                      <Typography color="textSecondary">{invoice.client.title}</Typography>
+                    <div className='ModernInvoicePage-divider mx-48 w-px h-128 print:mx-16' />
+                    <div className='max-w-160'>
+                      <Typography color='textSecondary'>{invoice.client.title}</Typography>
 
                       {invoice.client.address && (
-                        <Typography color="textSecondary">{invoice.client.address}</Typography>
+                        <Typography color='textSecondary'>{invoice.client.address}</Typography>
                       )}
                       {invoice.client.phone && (
-                        <Typography color="textSecondary">
+                        <Typography color='textSecondary'>
                           <span>Phone:</span>
                           {invoice.client.phone}
                         </Typography>
                       )}
                       {invoice.client.email && (
-                        <Typography color="textSecondary">
+                        <Typography color='textSecondary'>
                           <span>Email:</span>
                           {invoice.client.email}
                         </Typography>
                       )}
                       {invoice.client.website && (
-                        <Typography color="textSecondary">
+                        <Typography color='textSecondary'>
                           <span>Web:</span>
                           {invoice.client.website}
                         </Typography>
@@ -130,41 +130,41 @@ function ModernInvoicePage() {
                 <table>
                   <tbody>
                     <tr>
-                      <td className="pb-32">
-                        <Typography className="font-light" variant="h4" color="textSecondary">
+                      <td className='pb-32'>
+                        <Typography className='font-light' variant='h4' color='textSecondary'>
                           INVOICE
                         </Typography>
                       </td>
-                      <td className="pb-32 px-16">
-                        <Typography className="font-light" variant="h4">
+                      <td className='pb-32 px-16'>
+                        <Typography className='font-light' variant='h4'>
                           {invoice.number}
                         </Typography>
                       </td>
                     </tr>
 
                     <tr>
-                      <td className="text-right">
-                        <Typography color="textSecondary">INVOICE DATE</Typography>
+                      <td className='text-right'>
+                        <Typography color='textSecondary'>INVOICE DATE</Typography>
                       </td>
-                      <td className="px-16">
+                      <td className='px-16'>
                         <Typography>{invoice.date}</Typography>
                       </td>
                     </tr>
 
                     <tr>
-                      <td className="text-right">
-                        <Typography color="textSecondary">DUE DATE</Typography>
+                      <td className='text-right'>
+                        <Typography color='textSecondary'>DUE DATE</Typography>
                       </td>
-                      <td className="px-16">
+                      <td className='px-16'>
                         <Typography>{invoice.dueDate}</Typography>
                       </td>
                     </tr>
 
                     <tr>
-                      <td className="text-right">
-                        <Typography color="textSecondary">TOTAL DUE</Typography>
+                      <td className='text-right'>
+                        <Typography color='textSecondary'>TOTAL DUE</Typography>
                       </td>
-                      <td className="px-16">
+                      <td className='px-16'>
                         <Typography>{formatter.format(invoice.total)}</Typography>
                       </td>
                     </tr>
@@ -172,54 +172,54 @@ function ModernInvoicePage() {
                 </table>
               </div>
 
-              <div className="mt-96 print:mt-0">
-                <Table className="simple">
+              <div className='mt-96 print:mt-0'>
+                <Table className='simple'>
                   <TableHead>
                     <TableRow>
                       <TableCell>SERVICE</TableCell>
                       <TableCell>UNIT</TableCell>
-                      <TableCell align="right">UNIT PRICE</TableCell>
-                      <TableCell align="right">QUANTITY</TableCell>
-                      <TableCell align="right">TOTAL</TableCell>
+                      <TableCell align='right'>UNIT PRICE</TableCell>
+                      <TableCell align='right'>QUANTITY</TableCell>
+                      <TableCell align='right'>TOTAL</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {invoice.services.map((service) => (
                       <TableRow key={service.id}>
                         <TableCell>
-                          <Typography className="mb-8" variant="subtitle1">
+                          <Typography className='mb-8' variant='subtitle1'>
                             {service.title}
                           </Typography>
-                          <Typography variant="caption" color="textSecondary">
+                          <Typography variant='caption' color='textSecondary'>
                             {service.detail}
                           </Typography>
                         </TableCell>
                         <TableCell>{service.unit}</TableCell>
-                        <TableCell align="right">{formatter.format(service.unitPrice)}</TableCell>
-                        <TableCell align="right">{service.quantity}</TableCell>
-                        <TableCell align="right">{formatter.format(service.total)}</TableCell>
+                        <TableCell align='right'>{formatter.format(service.unitPrice)}</TableCell>
+                        <TableCell align='right'>{service.quantity}</TableCell>
+                        <TableCell align='right'>{formatter.format(service.total)}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
 
-                <Table className="simple">
+                <Table className='simple'>
                   <TableBody>
                     <TableRow>
                       <TableCell>
                         <Typography
-                          className="font-normal"
-                          variant="subtitle1"
-                          color="textSecondary"
+                          className='font-normal'
+                          variant='subtitle1'
+                          color='textSecondary'
                         >
                           SUBTOTAL
                         </Typography>
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell align='right'>
                         <Typography
-                          className="font-normal"
-                          variant="subtitle1"
-                          color="textSecondary"
+                          className='font-normal'
+                          variant='subtitle1'
+                          color='textSecondary'
                         >
                           {formatter.format(invoice.subtotal)}
                         </Typography>
@@ -228,18 +228,18 @@ function ModernInvoicePage() {
                     <TableRow>
                       <TableCell>
                         <Typography
-                          className="font-normal"
-                          variant="subtitle1"
-                          color="textSecondary"
+                          className='font-normal'
+                          variant='subtitle1'
+                          color='textSecondary'
                         >
                           TAX
                         </Typography>
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell align='right'>
                         <Typography
-                          className="font-normal"
-                          variant="subtitle1"
-                          color="textSecondary"
+                          className='font-normal'
+                          variant='subtitle1'
+                          color='textSecondary'
                         >
                           {formatter.format(invoice.tax)}
                         </Typography>
@@ -248,18 +248,18 @@ function ModernInvoicePage() {
                     <TableRow>
                       <TableCell>
                         <Typography
-                          className="font-normal"
-                          variant="subtitle1"
-                          color="textSecondary"
+                          className='font-normal'
+                          variant='subtitle1'
+                          color='textSecondary'
                         >
                           DISCOUNT
                         </Typography>
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell align='right'>
                         <Typography
-                          className="font-normal"
-                          variant="subtitle1"
-                          color="textSecondary"
+                          className='font-normal'
+                          variant='subtitle1'
+                          color='textSecondary'
                         >
                           {formatter.format(invoice.discount)}
                         </Typography>
@@ -267,12 +267,12 @@ function ModernInvoicePage() {
                     </TableRow>
                     <TableRow>
                       <TableCell>
-                        <Typography className="font-light" variant="h4" color="textSecondary">
+                        <Typography className='font-light' variant='h4' color='textSecondary'>
                           TOTAL
                         </Typography>
                       </TableCell>
-                      <TableCell align="right">
-                        <Typography className="font-light" variant="h4" color="textSecondary">
+                      <TableCell align='right'>
+                        <Typography className='font-light' variant='h4' color='textSecondary'>
                           {formatter.format(invoice.total)}
                         </Typography>
                       </TableCell>
@@ -281,20 +281,20 @@ function ModernInvoicePage() {
                 </Table>
               </div>
 
-              <div className="mt-96 print:mt-0 print:px-16">
-                <Typography className="mb-24 print:mb-12" variant="body1">
+              <div className='mt-96 print:mt-0 print:px-16'>
+                <Typography className='mb-24 print:mb-12' variant='body1'>
                   Please pay within 15 days. Thank you for your business.
                 </Typography>
 
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <img className="w-32" src="assets/images/logos/fuse.svg" alt="logo" />
+                <div className='flex'>
+                  <div className='flex-shrink-0'>
+                    <img className='w-32' src='assets/images/logos/fuse.svg' alt='logo' />
                   </div>
 
                   <Typography
-                    className="font-normal mb-64 px-24"
-                    variant="caption"
-                    color="textSecondary"
+                    className='font-normal mb-64 px-24'
+                    variant='caption'
+                    color='textSecondary'
                   >
                     In condimentum malesuada efficitur. Mauris volutpat placerat auctor. Ut ac
                     congue dolor. Quisque scelerisque lacus sed feugiat fermentum. Cras aliquet
@@ -323,8 +323,8 @@ export default ModernInvoicePage;
 
  Elements:
  ---------
- <div className="page-break-after"></div>
- <div className="page-break-before"></div>
+ <div className='page-break-after'></div>
+ <div className='page-break-before'></div>
 
 
  Example:
@@ -332,16 +332,16 @@ export default ModernInvoicePage;
 
  Initial page content!
 
- <div className="page-break-after"></div>
- <div className="page-break-before"></div>
+ <div className='page-break-after'></div>
+ <div className='page-break-before'></div>
 
  This is the second page!
 
- <div className="page-break-after"></div>
- <div className="page-break-before"></div>
+ <div className='page-break-after'></div>
+ <div className='page-break-before'></div>
 
  This is the third page!
 
- <div className="page-break-after"></div>
- <div className="page-break-before"></div>
+ <div className='page-break-after'></div>
+ <div className='page-break-before'></div>
  * */

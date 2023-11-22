@@ -36,7 +36,7 @@ export default function RichObjectTreeView() {
 
   return (
     <TreeView
-      aria-label="rich object"
+      aria-label='rich object'
       defaultCollapseIcon={<ExpandMoreIcon />}
       defaultExpanded={['root']}
       defaultExpandIcon={<ChevronRightIcon />}

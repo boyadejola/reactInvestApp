@@ -15,16 +15,16 @@ export default function ToggleButtonSizes() {
   };
 
   const children = [
-    <ToggleButton value="left" key="left">
+    <ToggleButton value='left' key='left'>
       <FormatAlignLeftIcon />
     </ToggleButton>,
-    <ToggleButton value="center" key="center">
+    <ToggleButton value='center' key='center'>
       <FormatAlignCenterIcon />
     </ToggleButton>,
-    <ToggleButton value="right" key="right">
+    <ToggleButton value='right' key='right'>
       <FormatAlignRightIcon />
     </ToggleButton>,
-    <ToggleButton value="justify" key="justify">
+    <ToggleButton value='justify' key='justify'>
       <FormatAlignJustifyIcon />
     </ToggleButton>,
   ];
@@ -45,11 +45,11 @@ export default function ToggleButtonSizes() {
         '& > :not(style) + :not(style)': { mt: 2 },
       }}
     >
-      <ToggleButtonGroup size="small" {...control}>
+      <ToggleButtonGroup size='small' {...control}>
         {children}
       </ToggleButtonGroup>
       <ToggleButtonGroup {...control}>{children}</ToggleButtonGroup>
-      <ToggleButtonGroup size="large" {...control}>
+      <ToggleButtonGroup size='large' {...control}>
         {children}
       </ToggleButtonGroup>
     </Box>

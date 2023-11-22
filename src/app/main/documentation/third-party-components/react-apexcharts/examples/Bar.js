@@ -25,8 +25,8 @@ function Bar()
     });
 
     return (
-        <div className="bar">
-            <Chart options={state.options} series={state.series} type="bar" width="500"/>
+        <div className='bar'>
+            <Chart options={state.options} series={state.series} type='bar' width='500'/>
         </div>
     );
 }

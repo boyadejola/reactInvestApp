@@ -17,9 +17,9 @@ export default function InteractiveStack() {
 
   const jsx = `
 <Stack
-  direction="${direction}"
-  justifyContent="${justifyContent}"
-  alignItems="${alignItems}"
+  direction='${direction}'
+  justifyContent='${justifyContent}'
+  alignItems='${alignItems}'
   spacing={${spacing}}
 >
 `;
@@ -51,38 +51,38 @@ export default function InteractiveStack() {
       <Paper sx={{ p: 2 }}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <FormControl component="fieldset">
-              <FormLabel component="legend">direction</FormLabel>
+            <FormControl component='fieldset'>
+              <FormLabel component='legend'>direction</FormLabel>
               <RadioGroup
                 row
-                name="direction"
-                aria-label="direction"
+                name='direction'
+                aria-label='direction'
                 value={direction}
                 onChange={(event) => {
                   setDirection(event.target.value);
                 }}
               >
-                <FormControlLabel value="row" control={<Radio />} label="row" />
+                <FormControlLabel value='row' control={<Radio />} label='row' />
                 <FormControlLabel
-                  value="row-reverse"
+                  value='row-reverse'
                   control={<Radio />}
-                  label="row-reverse"
+                  label='row-reverse'
                 />
                 <FormControlLabel
-                  value="column"
+                  value='column'
                   control={<Radio />}
-                  label="column"
+                  label='column'
                 />
                 <FormControlLabel
-                  value="column-reverse"
+                  value='column-reverse'
                   control={<Radio />}
-                  label="column-reverse"
+                  label='column-reverse'
                 />
               </RadioGroup>
             </FormControl>
           </Grid>
           <Grid item xs={12}>
-            <FormControl component="fieldset">
+            <FormControl component='fieldset'>
               <FormLabel component="legend">alignItems</FormLabel>
               <RadioGroup
                 row

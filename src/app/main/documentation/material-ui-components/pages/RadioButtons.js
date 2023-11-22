@@ -11,44 +11,44 @@ import Typography from '@mui/material/Typography';
 function RadioButtonsDoc(props) {
   return (
     <>
-      <div className="flex flex-1 flex-grow-0 items-center justify-end">
+      <div className='flex flex-1 flex-grow-0 items-center justify-end'>
         <Button
-          className="normal-case"
-          variant="contained"
-          color="secondary"
-          component="a"
-          href="https://mui.com/components/radio-buttons"
-          target="_blank"
-          role="button"
+          className='normal-case'
+          variant='contained'
+          color='secondary'
+          component='a'
+          href='https://mui.com/components/radio-buttons'
+          target='_blank'
+          role='button'
         >
           <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          <span className='mx-4'>Reference</span>
         </Button>
       </div>
-      <Typography className="text-40 my-16 font-700" component="h1">
+      <Typography className='text-40 my-16 font-700' component='h1'>
         Radio
       </Typography>
-      <Typography className="description">
+      <Typography className='description'>
         Radio buttons allow the user to select one option from a set.
       </Typography>
 
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Use radio buttons when the user needs to see all available options. If available options can
         be collapsed, consider using a dropdown menu because it uses less space.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Radio buttons should have the most commonly used option selected by default.
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Radio group
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <code>RadioGroup</code> is a helpful wrapper used to group <code>Radio</code> components
         that provides an easier API, and proper keyboard accessibility to the group.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/RadioButtonsGroup.js')
@@ -57,15 +57,15 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/RadioButtonsGroup.js')}
         />
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         Direction
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         To lay out the buttons horizontally, set the <code>row</code> prop:
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/RowRadioButtonsGroup.js')
@@ -74,15 +74,15 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/RowRadioButtonsGroup.js')}
         />
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         Controlled
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         You can control the radio with the <code>value</code> and <code>onChange</code> props:
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/ControlledRadioButtonsGroup.js')
@@ -91,15 +91,15 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/ControlledRadioButtonsGroup.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Standalone radio buttons
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <code>Radio</code> can also be used standalone, without the RadioGroup wrapper.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/RadioButtons.js')
@@ -108,16 +108,16 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/RadioButtons.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Size
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Use the <code>size</code> prop or customize the font size of the svg icons to change the
         size of the radios.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/SizeRadioButtons.js')
@@ -126,12 +126,12 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/SizeRadioButtons.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Color
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/ColorRadioButtons.js')
@@ -140,16 +140,16 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/ColorRadioButtons.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Label placement
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         You can change the placement of the label with the <code>FormControlLabel</code>{' '}
         component&#39;s <code>labelPlacement</code> prop:
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/FormControlLabelPlacement.js')
@@ -158,16 +158,16 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/FormControlLabelPlacement.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Show error
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         In general, radio buttons should have a value selected by default. If this is not the case,
         you can display an error if no value is selected when the form is submitted:
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/ErrorRadios.js')
@@ -176,16 +176,16 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/ErrorRadios.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Customization
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href='/customization/how-to-customize/'>overrides documentation page</a>.
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/CustomizedRadios.js')
@@ -194,27 +194,27 @@ function RadioButtonsDoc(props) {
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/CustomizedRadios.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         <code>useRadioGroup</code>
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         For advanced customization use cases, a <code>useRadioGroup()</code> hook is exposed. It
         returns the context value of the parent radio group. The Radio component uses this hook
         internally.
       </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className='text-20 mt-20 mb-10 font-700' component='h3'>
         API
       </Typography>
 
-      <FuseHighlight component="pre" className="language-jsx">
+      <FuseHighlight component='pre' className='language-jsx'>
         {` 
 import { useRadioGroup } from '@mui/material/RadioGroup';
 `}
       </FuseHighlight>
-      <Typography className="text-16 mt-16 mb-10" component="h4">
+      <Typography className='text-16 mt-16 mb-10' component='h4'>
         Returns
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <code>value</code> (<em>object</em>):
       </Typography>
       <ul>
@@ -230,12 +230,12 @@ import { useRadioGroup } from '@mui/material/RadioGroup';
           <code>value.value</code> (<em>any</em> [optional]): Value of the selected radio button.
         </li>
       </ul>
-      <Typography className="text-16 mt-16 mb-10" component="h4">
+      <Typography className='text-16 mt-16 mb-10' component='h4'>
         Example
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         <FuseExample
-          className="my-24"
+          className='my-24'
           iframe={false}
           component={
             require('app/main/documentation/material-ui-components/components/radio-buttons/UseRadioGroup.js')
@@ -244,22 +244,22 @@ import { useRadioGroup } from '@mui/material/RadioGroup';
           raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/UseRadioGroup.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         When to use
       </Typography>
       <ul>
         <li>
-          <a href="https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/">
+          <a href='https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/'>
             Checkboxes vs. Radio Buttons
           </a>
         </li>
       </ul>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      <Typography className='text-32 mt-40 mb-10 font-700' component='h2'>
         Accessibility
       </Typography>
-      <Typography className="mb-40" component="div">
+      <Typography className='mb-40' component='div'>
         (WAI-ARIA:{' '}
-        <a href="https://www.w3.org/TR/wai-aria-practices/#radiobutton">
+        <a href='https://www.w3.org/TR/wai-aria-practices/#radiobutton'>
           https://www.w3.org/TR/wai-aria-practices/#radiobutton
         </a>
         )
@@ -268,7 +268,7 @@ import { useRadioGroup } from '@mui/material/RadioGroup';
         <li>
           All form controls should have labels, and this includes radio buttons, checkboxes, and
           switches. In most cases, this is done by using the <code>{`<label>`}</code> element (
-          <a href="/api/form-control-label/">FormControlLabel</a>).
+          <a href='/api/form-control-label/'>FormControlLabel</a>).
         </li>
         <li>
           When a label can&#39;t be used, it&#39;s necessary to add an attribute directly to the
@@ -278,10 +278,10 @@ import { useRadioGroup } from '@mui/material/RadioGroup';
         </li>
       </ul>
 
-      <FuseHighlight component="pre" className="language-jsx">
+      <FuseHighlight component='pre' className='language-jsx'>
         {` 
 <Radio
-  value="radioA"
+  value='radioA'
   inputProps={{
     'aria-label': 'Radio A',
 

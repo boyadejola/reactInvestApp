@@ -1,7 +1,8 @@
-import { env } from '../../env'
+import { env } from "../../env"
+
 const { REACT_APP_API_ENDPOINT } = env;
 
-// *** baseURL & version control ****
+// *** baseURL & version control **** //
 const serverUri = '';//REACT_APP_API_ENDPOINT;
 const BASE_URL = REACT_APP_API_ENDPOINT;
 
@@ -9,8 +10,8 @@ const BASE_URL = REACT_APP_API_ENDPOINT;
 const lockHeader = {
   'Content-Type': 'application/json',
   // Authorization: `Bearer ${localStorage.getItem('userguid')}`,
-  "Access-Control-Allow-Origin": BASE_URL,
-  "Access-Control-Allow-Credentials": true,
+  'Access-Control-Allow-Origin': BASE_URL,
+  'Access-Control-Allow-Credentials': true,
   // 'Content-Type': 'application/json',
   // // 'x-api-version': `${version}`,
   // Authorization: `Bearer ${localStorage.getItem('userguid')}`,
@@ -70,8 +71,8 @@ function _postCustomWithoutContent(url, data) {
     baseURL: BASE_URL,
     headers: {
       // Authorization: `Bearer ${localStorage.getItem('userguid')}`,
-      "Access-Control-Allow-Origin": BASE_URL,
-      "Access-Control-Allow-Credentials": true,
+      'Access-Control-Allow-Origin': BASE_URL,
+      'Access-Control-Allow-Credentials': true,
     },
   });
   return axiosCustom.post(url, data);
@@ -82,11 +83,11 @@ function _getCustom(url, data, isBuffer) {
     baseURL: BASE_URL,
     headers: {
       'Content-Type': isBuffer ? 'blob' : 'application/json',
-      "Access-Control-Allow-Origin": BASE_URL,
-      "Access-Control-Allow-Credentials": true,
+      'Access-Control-Allow-Origin': BASE_URL,
+      'Access-Control-Allow-Credentials': true,
     },
     withCredentials: true, //IMPORTANT!!!! this is to set httpOnly cookie which contained jwt token for our scenario 
-    responseType: isBuffer ? "arraybuffer" : "json",
+    responseType: isBuffer ? 'arraybuffer' : 'json',
   });
   return axiosCustom.get(url, data);
 }
@@ -171,7 +172,7 @@ function updatePassService(body) {
 
 function withdrawListService(body) {
   return new Promise((resolve, reject) => {
-    const queryString = body ? body : "";
+    const queryString = body ? body : '';
     _getCustom(GATEWAY_WITHDRAW + queryString)
       .then((res) => {
         resolve(res.data);
@@ -184,7 +185,7 @@ function withdrawListService(body) {
 
 function depositListService(body) {
   return new Promise((resolve, reject) => {
-    const queryString = body ? body : "";
+    const queryString = body ? body : '';
     _getCustom(GATEWAY_DEPOSIT + queryString)
       .then((res) => {
         resolve(res.data);
@@ -197,7 +198,7 @@ function depositListService(body) {
 
 function referralListService(body) {
   return new Promise((resolve, reject) => {
-    const queryString = body ? body : "";
+    const queryString = body ? body : '';
     _getCustom(GATEWAY_REFERRAL + queryString)
       .then((res) => {
         resolve(res.data);
@@ -210,7 +211,7 @@ function referralListService(body) {
 
 function transactionListService(body) {
   return new Promise((resolve, reject) => {
-    const queryString = body ? body : "";
+    const queryString = body ? body : '';
     _getCustom(GATEWAY_TRANSACTION + queryString)
       .then((res) => {
         resolve(res.data);
@@ -223,7 +224,7 @@ function transactionListService(body) {
 
 function returnInterestListService(body) {
   return new Promise((resolve, reject) => {
-    const queryString = body ? body : "";
+    const queryString = body ? body : '';
     _getCustom(GATEWAY_RETURNINTEREST + queryString)
       .then((res) => {
         resolve(res.data);
@@ -296,7 +297,7 @@ function postJoinPlanService(body) {
 
 function depositApproveListService(body) {
   return new Promise((resolve, reject) => {
-    const queryString = body ? body : "";
+    const queryString = body ? body : '';
     _getCustom(GATEWAY_TO_APPROVE + queryString)
       .then((res) => {
         resolve(res.data);
@@ -309,7 +310,7 @@ function depositApproveListService(body) {
 
 function withApproveListService(body) {
   return new Promise((resolve, reject) => {
-    const queryString = body ? body : "";
+    const queryString = body ? body : '';
     _getCustom(GATEWAY_WITH_APPROVE + queryString)
       .then((res) => {
         resolve(res.data);
@@ -322,7 +323,7 @@ function withApproveListService(body) {
 
 function dashboardService(body) {
   return new Promise((resolve, reject) => {
-    const queryString = body ? body : "";
+    const queryString = body ? body : '';
     _getCustom(GATEWAY_DASHBOARD + queryString)
       .then((res) => {
         resolve(res.data);

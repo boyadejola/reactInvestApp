@@ -12,24 +12,24 @@ function AdminRoleExample(props) {
   return (
     <FusePageSimple
       header={
-        <div className="flex flex-1 items-center justify-between p-24">
-          <Typography className="h2">Admin: Auth role example page</Typography>
-          <Button variant="contained" onClick={(ev) => dispatch(logoutUser())}>
+        <div className='flex flex-1 items-center justify-between p-24'>
+          <Typography className='h2'>Admin: Auth role example page</Typography>
+          <Button variant='contained' onClick={(ev) => dispatch(logoutUser())}>
             <Icon>exit_to_app</Icon>
-            <span className="mx-4">Logout</span>
+            <span className='mx-4'>Logout</span>
           </Button>
         </div>
       }
       content={
-        <div className="p-24">
-          <Typography className="mb-24">
+        <div className='p-24'>
+          <Typography className='mb-24'>
             You can see this page because you have logged in and have permission. Otherwise you
             should be redirected to login page.
           </Typography>
 
-          <Typography className="mb-24">This is the page's config file:</Typography>
+          <Typography className='mb-24'>This is the page's config file:</Typography>
 
-          <FuseHighlight component="pre" className="language-js">
+          <FuseHighlight component='pre' className='language-js'>
             {`
                             import {authRoles} from 'auth';
                             import AdminRoleExample from 'app/main/auth/admin-role-example/AdminRoleExample';
@@ -51,12 +51,12 @@ function AdminRoleExample(props) {
                             `}
           </FuseHighlight>
 
-          <Typography className="my-24">
+          <Typography className='my-24'>
             You can also hide the navigation item/collapse/group with user roles by giving auth
             property.
           </Typography>
 
-          <FuseHighlight component="pre" className="language-json">
+          <FuseHighlight component='pre' className='language-json'>
             {`
                                 export const fuseNavigationConfig = [
                                    {

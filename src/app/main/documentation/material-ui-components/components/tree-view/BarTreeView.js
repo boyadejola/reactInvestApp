@@ -105,9 +105,9 @@ const CustomContent = React.forwardRef(function CustomContent(props, ref) {
       onMouseDown={handleMouseDown}
       ref={ref}
     >
-      <div className="MuiTreeItem-contentBar" />
+      <div className='MuiTreeItem-contentBar' />
       <div className={classes.iconContainer}>{icon}</div>
-      <Typography component="div" className={classes.label}>
+      <Typography component='div' className={classes.label}>
         {label}
       </Typography>
     </CustomContentRoot>
@@ -152,22 +152,22 @@ const CustomTreeItem = (props) => (
 export default function BarTreeView() {
   return (
     <TreeView
-      aria-label="icon expansion"
+      aria-label='icon expansion'
       defaultCollapseIcon={<ExpandMoreIcon />}
       defaultExpandIcon={<ChevronRightIcon />}
       sx={{ height: 240, flexGrow: 1, maxWidth: 400, position: 'relative' }}
     >
-      <CustomTreeItem nodeId="1" label="Applications">
-        <CustomTreeItem nodeId="2" label="Calendar" />
-        <CustomTreeItem nodeId="3" label="Chrome" />
-        <CustomTreeItem nodeId="4" label="Webstorm" />
+      <CustomTreeItem nodeId='1' label='Applications'>
+        <CustomTreeItem nodeId='2' label='Calendar' />
+        <CustomTreeItem nodeId='3' label='Chrome' />
+        <CustomTreeItem nodeId='4' label='Webstorm' />
       </CustomTreeItem>
-      <CustomTreeItem nodeId="5" label="Documents">
-        <CustomTreeItem nodeId="10" label="OSS" />
-        <CustomTreeItem nodeId="6" label="MUI">
-          <CustomTreeItem nodeId="7" label="src">
-            <CustomTreeItem nodeId="8" label="index.js" />
-            <CustomTreeItem nodeId="9" label="tree-view.js" />
+      <CustomTreeItem nodeId='5' label='Documents'>
+        <CustomTreeItem nodeId='10' label='OSS' />
+        <CustomTreeItem nodeId='6' label='MUI'>
+          <CustomTreeItem nodeId='7' label='src'>
+            <CustomTreeItem nodeId='8' label='index.js' />
+            <CustomTreeItem nodeId='9' label='tree-view.js' />
           </CustomTreeItem>
         </CustomTreeItem>
       </CustomTreeItem>

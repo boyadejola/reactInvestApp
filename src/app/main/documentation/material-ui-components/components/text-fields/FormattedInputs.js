@@ -13,7 +13,7 @@ const TextMaskCustom = React.forwardRef(function TextMaskCustom(props, ref) {
   return (
     <IMaskInput
       {...other}
-      mask="(#00) 000-0000"
+      mask='(#00) 000-0000'
       definitions={{
         '#': /[1-9]/,
       }}
@@ -46,7 +46,7 @@ const NumberFormatCustom = React.forwardRef(function NumberFormatCustom(props, r
       }}
       thousandSeparator
       isNumericString
-      prefix="$"
+      prefix='$'
     />
   );
 });
@@ -77,26 +77,26 @@ export default function FormattedInputs() {
         },
       }}
     >
-      <FormControl variant="standard">
-        <InputLabel htmlFor="formatted-text-mask-input">react-imask</InputLabel>
+      <FormControl variant='standard'>
+        <InputLabel htmlFor='formatted-text-mask-input'>react-imask</InputLabel>
         <Input
           value={values.textmask}
           onChange={handleChange}
-          name="textmask"
-          id="formatted-text-mask-input"
+          name='textmask'
+          id='formatted-text-mask-input'
           inputComponent={TextMaskCustom}
         />
       </FormControl>
       <TextField
-        label="react-number-format"
+        label='react-number-format'
         value={values.numberformat}
         onChange={handleChange}
-        name="numberformat"
-        id="formatted-numberformat-input"
+        name='numberformat'
+        id='formatted-numberformat-input'
         InputProps={{
           inputComponent: NumberFormatCustom,
         }}
-        variant="standard"
+        variant='standard'
       />
     </Box>
   );

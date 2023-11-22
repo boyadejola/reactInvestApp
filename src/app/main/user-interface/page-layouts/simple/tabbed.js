@@ -24,33 +24,33 @@ function SimpleTabbedSample() {
   return (
     <Root
       header={
-        <div className="p-24">
+        <div className='p-24'>
           <h4>Header</h4>
         </div>
       }
       contentToolbar={
-        <div className="w-full px-16 sm:px-24">
+        <div className='w-full px-16 sm:px-24'>
           <Tabs
             value={selectedTab}
             onChange={handleTabChange}
-            indicatorColor="primary"
-            textColor="primary"
-            variant="scrollable"
+            indicatorColor='primary'
+            textColor='primary'
+            variant='scrollable'
             scrollButtons={false}
-            className="w-full h-64 border-b-1"
+            className='w-full h-64 border-b-1'
           >
-            <Tab className="h-64" label="Item One" />
-            <Tab className="h-64" label="Item Two" />
-            <Tab className="h-64" label="Item Three" />
-            <Tab className="h-64" label="Item Four" />
-            <Tab className="h-64" label="Item Five" />
-            <Tab className="h-64" label="Item Six" />
-            <Tab className="h-64" label="Item Seven" />
+            <Tab className='h-64' label='Item One' />
+            <Tab className='h-64' label='Item Two' />
+            <Tab className='h-64' label='Item Three' />
+            <Tab className='h-64' label='Item Four' />
+            <Tab className='h-64' label='Item Five' />
+            <Tab className='h-64' label='Item Six' />
+            <Tab className='h-64' label='Item Seven' />
           </Tabs>
         </div>
       }
       content={
-        <div className="p-24">
+        <div className='p-24'>
           {selectedTab === 0 && (
             <div>
               <h3 className="mb-16">Item One</h3>

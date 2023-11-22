@@ -71,7 +71,7 @@ function BasicSwitch(props) {
   return (
     <BasicSwitchRoot className={clsx(stateClasses)}>
       <BasicSwitchThumb className={clsx(stateClasses)} />
-      <BasicSwitchInput {...getInputProps()} aria-label="Demo switch" />
+      <BasicSwitchInput {...getInputProps()} aria-label='Demo switch' />
     </BasicSwitchRoot>
   );
 }

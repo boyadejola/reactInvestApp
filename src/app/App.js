@@ -1,9 +1,10 @@
 import '@fake-db';
+import { Router } from 'react-router-dom';
 import FuseAuthorization from '@fuse/core/FuseAuthorization';
 import FuseLayout from '@fuse/core/FuseLayout';
 import FuseTheme from '@fuse/core/FuseTheme';
 import history from '@history';
-import { Router } from 'react-router-dom';
+import { ChatwootScript } from "chatwoot-react"
 import { SnackbarProvider } from 'notistack';
 import { useSelector } from 'react-redux';
 import rtlPlugin from 'stylis-plugin-rtl';
@@ -12,7 +13,6 @@ import { CacheProvider } from '@emotion/react';
 import { selectCurrLangDir } from 'app/store/i18nSlice';
 import withAppProviders from './withAppProviders';
 import { Auth } from './auth';
-import { ChatwootScript } from "chatwoot-react"
 
 // import axios from 'axios';
 /**

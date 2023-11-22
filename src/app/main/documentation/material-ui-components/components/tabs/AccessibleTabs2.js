@@ -14,11 +14,11 @@ export default function AccessibleTabs2() {
       <Tabs
         onChange={handleChange}
         value={value}
-        aria-label="Tabs where each tab needs to be selected manually"
+        aria-label='Tabs where each tab needs to be selected manually'
       >
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
+        <Tab label='Item One' />
+        <Tab label='Item Two' />
+        <Tab label='Item Three' />
       </Tabs>
     </Box>
   );
