@@ -1,12 +1,12 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import TimePicker from '@mui/lab/TimePicker';
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import TimePicker from "@mui/lab/TimePicker";
 
 export default function TimeValidationTimePicker() {
-  const [value, setValue] = React.useState(new Date('2020-01-01 12:00'));
+  const [value, setValue] = React.useState(new Date("2020-01-01 12:00"));
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -14,7 +14,7 @@ export default function TimeValidationTimePicker() {
         <TimePicker
           renderInput={(params) => <TextField {...params} />}
           value={value}
-          label='min/max time'
+          label="min/max time"
           onChange={(newValue) => {
             setValue(newValue);
           }}
@@ -23,13 +23,13 @@ export default function TimeValidationTimePicker() {
         />
         <TimePicker
           renderInput={(params) => <TextField {...params} />}
-          label='Disable odd hours'
+          label="Disable odd hours"
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
           }}
           shouldDisableTime={(timeValue, clockType) => {
-            if (clockType === 'hours' && timeValue % 2) {
+            if (clockType === "hours" && timeValue % 2) {
               return true;
             }
 

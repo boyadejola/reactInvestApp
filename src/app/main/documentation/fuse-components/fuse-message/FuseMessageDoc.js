@@ -1,8 +1,8 @@
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { useDispatch } from 'react-redux';
-import { showMessage } from 'app/store/fuse/messageSlice';
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { useDispatch } from "react-redux";
+import { showMessage } from "app/store/fuse/messageSlice";
 
 function FuseMessageDoc(props) {
   const dispatch = useDispatch();
@@ -14,8 +14,8 @@ function FuseMessageDoc(props) {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        <code>FuseMessage</code> is a simple snackbar trigger for easily showing messages via redux
-        action. It should be located in the theme layouts.
+        <code>FuseMessage</code> is a simple snackbar trigger for easily showing
+        messages via redux action. It should be located in the theme layouts.
       </Typography>
 
       <Typography className="text-20 mt-20 mb-10 font-700" variant="h5">
@@ -23,8 +23,9 @@ function FuseMessageDoc(props) {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        You can show messages anywhere with dispatching the action showMessage, it is using
-        Material-UI's snackbar so you can pass the props in the object:
+        You can show messages anywhere with dispatching the action showMessage,
+        it is using Material-UI's snackbar so you can pass the props in the
+        object:
       </Typography>
 
       <FuseHighlight component="pre" className="language-jsx">
@@ -59,10 +60,10 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
+                message: "Hi, how are you?",
                 anchorOrigin: {
-                  vertical: 'top',
-                  horizontal: 'right',
+                  vertical: "top",
+                  horizontal: "right",
                 },
               })
             )
@@ -74,10 +75,10 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
+                message: "Hi, how are you?",
                 anchorOrigin: {
-                  vertical: 'top',
-                  horizontal: 'center',
+                  vertical: "top",
+                  horizontal: "center",
                 },
               })
             )
@@ -89,10 +90,10 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
+                message: "Hi, how are you?",
                 anchorOrigin: {
-                  vertical: 'top',
-                  horizontal: 'left',
+                  vertical: "top",
+                  horizontal: "left",
                 },
               })
             )
@@ -104,10 +105,10 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
+                message: "Hi, how are you?",
                 anchorOrigin: {
-                  vertical: 'bottom',
-                  horizontal: 'right',
+                  vertical: "bottom",
+                  horizontal: "right",
                 },
               })
             )
@@ -119,10 +120,10 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
+                message: "Hi, how are you?",
                 anchorOrigin: {
-                  vertical: 'bottom',
-                  horizontal: 'center',
+                  vertical: "bottom",
+                  horizontal: "center",
                 },
               })
             )
@@ -134,10 +135,10 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
+                message: "Hi, how are you?",
                 anchorOrigin: {
-                  vertical: 'bottom',
-                  horizontal: 'left',
+                  vertical: "bottom",
+                  horizontal: "left",
                 },
               })
             )
@@ -156,7 +157,7 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
+                message: "Hi, how are you?",
               })
             )
           }
@@ -167,8 +168,8 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
-                variant: 'success',
+                message: "Hi, how are you?",
+                variant: "success",
               })
             )
           }
@@ -179,8 +180,8 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
-                variant: 'warning',
+                message: "Hi, how are you?",
+                variant: "warning",
               })
             )
           }
@@ -191,8 +192,8 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
-                variant: 'error',
+                message: "Hi, how are you?",
+                variant: "error",
               })
             )
           }
@@ -203,8 +204,8 @@ function FuseMessageDoc(props) {
           onClick={() =>
             dispatch(
               showMessage({
-                message: 'Hi, how are you?',
-                variant: 'info',
+                message: "Hi, how are you?",
+                variant: "info",
               })
             )
           }

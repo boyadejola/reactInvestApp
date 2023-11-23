@@ -1,26 +1,26 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Controller, useForm } from 'react-hook-form';
-import _ from '@lodash';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import CommentModel from 'app/main/apps/scrumboard/model/CommentModel';
-import * as yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
+import _ from "@lodash";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import CommentModel from "app/main/apps/scrumboard/model/CommentModel";
+import * as yup from "yup";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  message: yup.string().required('You must enter a comment'),
+  message: yup.string().required("You must enter a comment"),
 });
 
 function CardComment(props) {
   const defaultValues = {
-    idMember: '36027j1930450d8bf7b10158',
-    message: '',
+    idMember: "36027j1930450d8bf7b10158",
+    message: "",
   };
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });

@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Portal from '@mui/material/Portal';
-import TrapFocus from '@mui/material/Unstable_TrapFocus';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Portal from "@mui/material/Portal";
+import TrapFocus from "@mui/material/Unstable_TrapFocus";
 
 export default function PortalTrapFocus() {
   const [open, setOpen] = React.useState(false);
@@ -10,28 +10,28 @@ export default function PortalTrapFocus() {
   return (
     <Box
       sx={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
       }}
     >
-      <button type='button' onClick={() => setOpen(true)}>
+      <button type="button" onClick={() => setOpen(true)}>
         Open
       </button>
       {open && (
         <TrapFocus open>
           <Box tabIndex={-1} sx={{ mt: 1, p: 1 }}>
             <label>
-              First name: <input type='text' />
+              First name: <input type="text" />
             </label>
             <br />
             <Portal container={container}>
               <label>
-                Last name: <input type='text' />
+                Last name: <input type="text" />
               </label>
               <br />
             </Portal>
-            <button type='button' onClick={() => setOpen(false)}>
+            <button type="button" onClick={() => setOpen(false)}>
               Close
             </button>
           </Box>

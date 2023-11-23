@@ -1,12 +1,12 @@
-import Checkbox from '@mui/material/Checkbox';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectFolders } from '../store/foldersSlice';
-import { selectLabels } from '../store/labelsSlice';
+import Checkbox from "@mui/material/Checkbox";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFolders } from "../store/foldersSlice";
+import { selectLabels } from "../store/labelsSlice";
 import {
   toggleLabelOnSelectedMails,
   setFolderOnSelectedMails,
@@ -14,11 +14,13 @@ import {
   deselectAllMails,
   selectAllMails,
   selectMails,
-} from '../store/mailsSlice';
+} from "../store/mailsSlice";
 
 function MailToolbar(props) {
   const dispatch = useDispatch();
-  const selectedMailIds = useSelector(({ mailApp }) => mailApp.mails.selectedMailIds);
+  const selectedMailIds = useSelector(
+    ({ mailApp }) => mailApp.mails.selectedMailIds
+  );
   const mails = useSelector(selectMails);
   const labels = useSelector(selectLabels);
   const folders = useSelector(selectFolders);
@@ -44,16 +46,22 @@ function MailToolbar(props) {
   }
 
   function handleCheckChange(event) {
-    return event.target.checked ? dispatch(selectAllMails()) : dispatch(deselectAllMails());
+    return event.target.checked
+      ? dispatch(selectAllMails())
+      : dispatch(deselectAllMails());
   }
 
   return (
     <div className="flex flex-1 items-center sm:px-8">
       <Checkbox
         onChange={handleCheckChange}
-        checked={selectedMailIds.length === Object.keys(mails).length && selectedMailIds.length > 0}
+        checked={
+          selectedMailIds.length === Object.keys(mails).length &&
+          selectedMailIds.length > 0
+        }
         indeterminate={
-          selectedMailIds.length !== Object.keys(mails).length && selectedMailIds.length > 0
+          selectedMailIds.length !== Object.keys(mails).length &&
+          selectedMailIds.length > 0
         }
       />
 
@@ -61,9 +69,9 @@ function MailToolbar(props) {
         className=""
         size="small"
         aria-label="More"
-        aria-owns={menu.select ? 'select-menu' : null}
+        aria-owns={menu.select ? "select-menu" : null}
         aria-haspopup="true"
-        onClick={(ev) => handleMenuOpen(ev, 'select')}
+        onClick={(ev) => handleMenuOpen(ev, "select")}
       >
         <Icon>arrow_drop_down</Icon>
       </IconButton>
@@ -72,12 +80,12 @@ function MailToolbar(props) {
         id="select-menu"
         anchorEl={menu.select}
         open={Boolean(menu.select)}
-        onClose={(ev) => handleMenuClose(ev, 'select')}
+        onClose={(ev) => handleMenuClose(ev, "select")}
       >
         <MenuItem
           onClick={(ev) => {
             dispatch(selectAllMails());
-            handleMenuClose(ev, 'select');
+            handleMenuClose(ev, "select");
           }}
         >
           All
@@ -85,55 +93,55 @@ function MailToolbar(props) {
         <MenuItem
           onClick={(ev) => {
             dispatch(deselectAllMails());
-            handleMenuClose(ev, 'select');
+            handleMenuClose(ev, "select");
           }}
         >
           None
         </MenuItem>
         <MenuItem
           onClick={(ev) => {
-            dispatch(selectMailsByParameter(['read', true]));
-            handleMenuClose(ev, 'select');
+            dispatch(selectMailsByParameter(["read", true]));
+            handleMenuClose(ev, "select");
           }}
         >
           Read
         </MenuItem>
         <MenuItem
           onClick={(ev) => {
-            dispatch(selectMailsByParameter(['read', false]));
-            handleMenuClose(ev, 'select');
+            dispatch(selectMailsByParameter(["read", false]));
+            handleMenuClose(ev, "select");
           }}
         >
           Unread
         </MenuItem>
         <MenuItem
           onClick={(ev) => {
-            dispatch(selectMailsByParameter(['starred', true]));
-            handleMenuClose(ev, 'select');
+            dispatch(selectMailsByParameter(["starred", true]));
+            handleMenuClose(ev, "select");
           }}
         >
           Starred
         </MenuItem>
         <MenuItem
           onClick={(ev) => {
-            dispatch(selectMailsByParameter(['starred', false]));
-            handleMenuClose(ev, 'select');
+            dispatch(selectMailsByParameter(["starred", false]));
+            handleMenuClose(ev, "select");
           }}
         >
           Unstarred
         </MenuItem>
         <MenuItem
           onClick={(ev) => {
-            dispatch(selectMailsByParameter(['important', true]));
-            handleMenuClose(ev, 'select');
+            dispatch(selectMailsByParameter(["important", true]));
+            handleMenuClose(ev, "select");
           }}
         >
           Important
         </MenuItem>
         <MenuItem
           onClick={(ev) => {
-            dispatch(selectMailsByParameter(['important', false]));
-            handleMenuClose(ev, 'select');
+            dispatch(selectMailsByParameter(["important", false]));
+            handleMenuClose(ev, "select");
           }}
         >
           Unimportant
@@ -154,9 +162,9 @@ function MailToolbar(props) {
 
           <IconButton
             aria-label="More"
-            aria-owns={menu.folders ? 'folders-menu' : null}
+            aria-owns={menu.folders ? "folders-menu" : null}
             aria-haspopup="true"
-            onClick={(ev) => handleMenuOpen(ev, 'folders')}
+            onClick={(ev) => handleMenuOpen(ev, "folders")}
             size="large"
           >
             <Icon>folder</Icon>
@@ -166,14 +174,14 @@ function MailToolbar(props) {
             id="folders-menu"
             anchorEl={menu.folders}
             open={Boolean(menu.folders)}
-            onClose={(ev) => handleMenuClose(ev, 'folders')}
+            onClose={(ev) => handleMenuClose(ev, "folders")}
           >
             {folders.length > 0 &&
               folders.map((folder) => (
                 <MenuItem
                   onClick={(ev) => {
                     dispatch(setFolderOnSelectedMails(folder.id));
-                    handleMenuClose(ev, 'folders');
+                    handleMenuClose(ev, "folders");
                   }}
                   key={folder.id}
                 >
@@ -184,9 +192,9 @@ function MailToolbar(props) {
 
           <IconButton
             aria-label="More"
-            aria-owns={menu.labels ? 'labels-menu' : null}
+            aria-owns={menu.labels ? "labels-menu" : null}
             aria-haspopup="true"
-            onClick={(ev) => handleMenuOpen(ev, 'labels')}
+            onClick={(ev) => handleMenuOpen(ev, "labels")}
             size="large"
           >
             <Icon>label</Icon>
@@ -196,14 +204,14 @@ function MailToolbar(props) {
             id="folders-menu"
             anchorEl={menu.labels}
             open={Boolean(menu.labels)}
-            onClose={(ev) => handleMenuClose(ev, 'labels')}
+            onClose={(ev) => handleMenuClose(ev, "labels")}
           >
             {labels.length > 0 &&
               labels.map((label) => (
                 <MenuItem
                   onClick={(ev) => {
                     dispatch(toggleLabelOnSelectedMails(label.id));
-                    handleMenuClose(ev, 'labels');
+                    handleMenuClose(ev, "labels");
                   }}
                   key={label.id}
                 >

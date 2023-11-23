@@ -1,7 +1,7 @@
 ---
 title: App Bar React component
 components: AppBar, Toolbar, Menu
-githubLabel: 'component: AppBar'
+githubLabel: "component: AppBar"
 materialDesign: https://material.io/components/app-bars-top
 ---
 
@@ -72,7 +72,7 @@ function App() {
 3. You can use `theme.mixins.toolbar` CSS:
 
 ```jsx
-const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
+const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 function App() {
   return (
@@ -125,7 +125,7 @@ A floating action buttons appears on scroll to make it easy to get back to the t
 #### Examples
 
 ```jsx
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 function HideOnScroll(props) {
   const trigger = useScrollTrigger();

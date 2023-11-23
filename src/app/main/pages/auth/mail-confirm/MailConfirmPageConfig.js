@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const MailConfirmPageConfig = {
   settings: {
@@ -8,8 +8,8 @@ const MailConfirmPageConfig = {
   },
   routes: [
     {
-      path: '/pages/auth/mail-confirm',
-      component: lazy(() => import('./MailConfirmPage')),
+      path: "/pages/auth/mail-confirm",
+      component: lazy(() => import("./MailConfirmPage")),
     },
   ],
 };

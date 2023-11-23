@@ -1,29 +1,32 @@
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { Controller, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import TextField from '@mui/material/TextField';
-import { Link } from 'react-router-dom';
-import * as yup from 'yup';
-import _ from '@lodash';
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { Controller, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import TextField from "@mui/material/TextField";
+import { Link } from "react-router-dom";
+import * as yup from "yup";
+import _ from "@lodash";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  email: yup.string().email('You must enter a valid email').required('You must enter a email'),
+  email: yup
+    .string()
+    .email("You must enter a valid email")
+    .required("You must enter a email"),
 });
 
 const defaultValues = {
-  email: '',
+  email: "",
 };
 
 function ForgotPasswordPage() {
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -35,55 +38,65 @@ function ForgotPasswordPage() {
   }
 
   return (
-    <div className='flex flex-col flex-auto items-center justify-center p-16 sm:p-32'>
-      <div className='flex flex-col items-center justify-center w-full'>
-        <motion.div initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }}>
-          <Card className='w-full max-w-384'>
-            <CardContent className='flex flex-col items-center justify-center p-16 sm:p-24 md:p-32'>
-              <img className='w-128 m-32' src='assets/images/logos/fuse.svg' alt='logo' />
+    <div className="flex flex-col flex-auto items-center justify-center p-16 sm:p-32">
+      <div className="flex flex-col items-center justify-center w-full">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
+          <Card className="w-full max-w-384">
+            <CardContent className="flex flex-col items-center justify-center p-16 sm:p-24 md:p-32">
+              <img
+                className="w-128 m-32"
+                src="assets/images/logos/fuse.svg"
+                alt="logo"
+              />
 
-              <Typography variant='h6' className='mt-16 mb-24 font-semibold text-18 sm:text-24'>
+              <Typography
+                variant="h6"
+                className="mt-16 mb-24 font-semibold text-18 sm:text-24"
+              >
                 Recover your password
               </Typography>
 
               <form
-                name='recoverForm'
+                name="recoverForm"
                 noValidate
-                className='flex flex-col justify-center w-full'
+                className="flex flex-col justify-center w-full"
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <Controller
-                  name='email'
+                  name="email"
                   control={control}
                   render={({ field }) => (
                     <TextField
                       {...field}
                       className="mb-16"
-                      label='Email'
+                      label="Email"
                       autoFocus
-                      type='email'
+                      type="email"
                       error={!!errors.email}
                       helperText={errors?.email?.message}
-                      variant='outlined'
+                      variant="outlined"
                       fullWidth
                     />
                   )}
                 />
 
                 <Button
-                  variant='contained'
-                  color='primary'
-                  className='w-224 mx-auto mt-16'
-                  aria-label='Reset'
+                  variant="contained"
+                  color="primary"
+                  className="w-224 mx-auto mt-16"
+                  aria-label="Reset"
                   disabled={_.isEmpty(dirtyFields) || !isValid}
-                  type='submit'
+                  type="submit"
                 >
                   Send reset link
                 </Button>
               </form>
 
-              <div className='flex flex-col items-center justify-center pt-32 pb-24'>
-                <Link className='font-normal' to='/pages/auth/login'>
+              <div className="flex flex-col items-center justify-center pt-32 pb-24">
+                <Link className="font-normal" to="/pages/auth/login">
                   Go back to login
                 </Link>
               </div>

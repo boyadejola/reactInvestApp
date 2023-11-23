@@ -1,19 +1,19 @@
-import DemoContent from '@fuse/core/DemoContent';
-import { styled } from '@mui/material/styles';
-import FusePageCarded from '@fuse/core/FusePageCarded';
-import Hidden from '@mui/material/Hidden';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import { useRef, useState } from 'react';
+import DemoContent from "@fuse/core/DemoContent";
+import { styled } from "@mui/material/styles";
+import FusePageCarded from "@fuse/core/FusePageCarded";
+import Hidden from "@mui/material/Hidden";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import { useRef, useState } from "react";
 
 const Root = styled(FusePageCarded)({
-  '& .FusePageCarded-header': {},
-  '& .FusePageCarded-toolbar': {},
-  '& .FusePageCarded-content': {},
-  '& .FusePageCarded-sidebarHeader': {},
-  '& .FusePageCarded-sidebarContent': {},
+  "& .FusePageCarded-header": {},
+  "& .FusePageCarded-toolbar": {},
+  "& .FusePageCarded-content": {},
+  "& .FusePageCarded-sidebarHeader": {},
+  "& .FusePageCarded-sidebarContent": {},
 });
 function CardedRightSidebarTabbedSample() {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -26,18 +26,18 @@ function CardedRightSidebarTabbedSample() {
   return (
     <Root
       header={
-        <div className='flex flex-col flex-1'>
-          <div className='flex items-center py-24'>
+        <div className="flex flex-col flex-1">
+          <div className="flex items-center py-24">
             <Hidden lgUp>
               <IconButton
                 onClick={(ev) => pageLayout.current.toggleRightSidebar()}
-                aria-label='open right sidebar'
-                size='large'
+                aria-label="open right sidebar"
+                size="large"
               >
                 <Icon>menu</Icon>
               </IconButton>
             </Hidden>
-            <div className='flex-1'>
+            <div className="flex-1">
               <h4>Header</h4>
             </div>
           </div>
@@ -47,23 +47,23 @@ function CardedRightSidebarTabbedSample() {
         <Tabs
           value={selectedTab}
           onChange={handleTabChange}
-          indicatorColor='primary'
-          textColor='primary'
-          variant='scrollable'
+          indicatorColor="primary"
+          textColor="primary"
+          variant="scrollable"
           scrollButtons={false}
-          className='w-full h-64'
+          className="w-full h-64"
         >
-          <Tab className='h-64' label='Item One' />
-          <Tab className='h-64' label='Item Two' />
-          <Tab className='h-64' label='Item Three' />
-          <Tab className='h-64' label='Item Four' />
-          <Tab className='h-64' label='Item Five' />
-          <Tab className='h-64' label='Item Six' />
-          <Tab className='h-64' label='Item Seven' />
+          <Tab className="h-64" label="Item One" />
+          <Tab className="h-64" label="Item Two" />
+          <Tab className="h-64" label="Item Three" />
+          <Tab className="h-64" label="Item Four" />
+          <Tab className="h-64" label="Item Five" />
+          <Tab className="h-64" label="Item Six" />
+          <Tab className="h-64" label="Item Seven" />
         </Tabs>
       }
       content={
-        <div className='p-24'>
+        <div className="p-24">
           {selectedTab === 0 && (
             <div>
               <h3 className="mb-16">Item One</h3>

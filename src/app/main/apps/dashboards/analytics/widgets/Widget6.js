@@ -1,7 +1,7 @@
-import Card from '@mui/material/Card';
-import Icon from '@mui/material/Icon';
-import Tooltip from '@mui/material/Tooltip';
-import GoogleMap from 'google-map-react';
+import Card from "@mui/material/Card";
+import Icon from "@mui/material/Icon";
+import Tooltip from "@mui/material/Tooltip";
+import GoogleMap from "google-map-react";
 
 function Marker(props) {
   return (
@@ -25,7 +25,12 @@ function Widget6(props) {
         }}
       >
         {props.data.markers.map((marker) => (
-          <Marker key={marker.label} text={marker.label} lat={marker.lat} lng={marker.lng} />
+          <Marker
+            key={marker.label}
+            text={marker.label}
+            lat={marker.lat}
+            lng={marker.lng}
+          />
         ))}
       </GoogleMap>
     </Card>

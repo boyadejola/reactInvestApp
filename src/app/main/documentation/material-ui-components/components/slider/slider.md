@@ -1,7 +1,7 @@
 ---
 title: React Slider component
 components: Slider, SliderUnstyled
-githubLabel: 'component: Slider'
+githubLabel: "component: Slider"
 materialDesign: https://material.io/components/sliders
 waiAria: https://www.w3.org/TR/wai-aria-practices/#slider
 ---
@@ -141,7 +141,7 @@ The slider also comes with an unstyled version.
 It's ideal for doing heavy customizations and minimizing bundle size.
 
 ```js
-import SliderUnstyled from '@mui/core/SliderUnstyled';
+import SliderUnstyled from "@mui/core/SliderUnstyled";
 ```
 
 {{"demo": "pages/components/slider/UnstyledSlider.js"}}

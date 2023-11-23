@@ -1,12 +1,12 @@
-import * as React from 'react';
-import usePagination from '@mui/material/usePagination';
-import { styled } from '@mui/material/styles';
+import * as React from "react";
+import usePagination from "@mui/material/usePagination";
+import { styled } from "@mui/material/styles";
 
-const List = styled('ul')({
-  listStyle: 'none',
+const List = styled("ul")({
+  listStyle: "none",
   padding: 0,
   margin: 0,
-  display: 'flex',
+  display: "flex",
 });
 
 export default function UsePagination() {
@@ -20,14 +20,14 @@ export default function UsePagination() {
         {items.map(({ page, type, selected, ...item }, index) => {
           let children = null;
 
-          if (type === 'start-ellipsis' || type === 'end-ellipsis') {
-            children = '…';
-          } else if (type === 'page') {
+          if (type === "start-ellipsis" || type === "end-ellipsis") {
+            children = "…";
+          } else if (type === "page") {
             children = (
               <button
                 type="button"
                 style={{
-                  fontWeight: selected ? 'bold' : undefined,
+                  fontWeight: selected ? "bold" : undefined,
                 }}
                 {...item}
               >

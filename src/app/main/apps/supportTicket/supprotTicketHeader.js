@@ -1,29 +1,29 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
-import Input from '@mui/material/Input';
-import Paper from '@mui/material/Paper';
-import { ThemeProvider } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import MobileDatePicker from '@mui/lab/MobileDatePicker';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { motion } from 'framer-motion';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectMainTheme } from 'app/store/fuse/settingsSlice';
-import i18next from 'i18next';
-import { isEmptyObject } from 'app/auth/store/commonMethods';
-import moment from 'moment';
-import Tooltip from '@mui/material/Tooltip';
-import FuseScrollbars from '@fuse/core/FuseScrollbars';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
-import { ReqColorCodes } from 'app/auth/store/constants';
-import history from '@history';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Icon from "@mui/material/Icon";
+import Input from "@mui/material/Input";
+import Paper from "@mui/material/Paper";
+import { ThemeProvider } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import MobileDatePicker from "@mui/lab/MobileDatePicker";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { selectMainTheme } from "app/store/fuse/settingsSlice";
+import i18next from "i18next";
+import { isEmptyObject } from "app/auth/store/commonMethods";
+import moment from "moment";
+import Tooltip from "@mui/material/Tooltip";
+import FuseScrollbars from "@fuse/core/FuseScrollbars";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+import { ReqColorCodes } from "app/auth/store/constants";
+import history from "@history";
 // import { changeItemStatus, changeStoreNbr } from 'app/auth/store/sharedData';
 // import { checkPermission } from 'app/auth/store/loginSlice';
 // import { Permissions } from 'app/auth/store/constants';
@@ -45,9 +45,11 @@ function SupportTicketHeader(props) {
   // const itemName = useSelector(({ auth }) => auth.shared.itemName);
   // const itemID = useSelector(({ auth }) => auth.shared.itemID);
 
-  const mdDown = useMediaQuery(theme.breakpoints.down('lg'));
+  const mdDown = useMediaQuery(theme.breakpoints.down("lg"));
 
-  const [valueFrom, setValueFrom] = React.useState(moment().subtract(6, 'months'));
+  const [valueFrom, setValueFrom] = React.useState(
+    moment().subtract(6, "months")
+  );
   const [valueTo, setValueTo] = React.useState(moment());
   const [getSearchRentee, setSearchRentee] = React.useState("");
   const [getSearchID, setSearchID] = React.useState("");
@@ -344,9 +346,6 @@ function SupportTicketHeader(props) {
 
     //   :
 
-
-
-
     <div className="flex flex-1 w-full items-center justify-between">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <div className="flex items-center">
@@ -558,12 +557,12 @@ function SupportTicketHeader(props) {
         <Button
           className="whitespace-nowrap"
           variant="contained"
-          size='medium'
+          size="medium"
           style={{
             color: ReqColorCodes.btnText,
             backgroundImage: ReqColorCodes.btn,
           }}
-          onClick={() => history.push('/venapp/newsuppticket')}
+          onClick={() => history.push("/venapp/newsuppticket")}
         >
           {i18next.t(`navigation:OPENTICKET`)}
         </Button>

@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const TransactionHistoryLogConfig = {
   settings: {
@@ -26,8 +26,8 @@ const TransactionHistoryLogConfig = {
   auth: authRoles.investUser,
   routes: [
     {
-      path: '/venapp/transhistory',
-      component: lazy(() => import('./transactionHistory')),
+      path: "/venapp/transhistory",
+      component: lazy(() => import("./transactionHistory")),
     },
   ],
 };

@@ -1,20 +1,25 @@
-import FuseScrollbars from '@fuse/core/FuseScrollbars';
-import { styled, ThemeProvider, useTheme } from '@mui/material/styles';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import clsx from 'clsx';
-import { memo, useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import FuseNavigation from '@fuse/core/FuseNavigation/FuseNavigation';
-import { selectNavigation } from 'app/store/fuse/navigationSlice';
-import { navbarCloseMobile } from 'app/store/fuse/navbarSlice';
-import { selectContrastMainTheme } from 'app/store/fuse/settingsSlice';
-import { useLocation } from 'react-router-dom';
-import { Menus } from 'app/auth/store/constants';
-import { changeShowResetPass, setShowDeposit, setShowTwoFA, setShowWithdraw } from 'app/auth/store/sharedData';
-import history from '@history';
+import FuseScrollbars from "@fuse/core/FuseScrollbars";
+import { styled, ThemeProvider, useTheme } from "@mui/material/styles";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import clsx from "clsx";
+import { memo, useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import FuseNavigation from "@fuse/core/FuseNavigation/FuseNavigation";
+import { selectNavigation } from "app/store/fuse/navigationSlice";
+import { navbarCloseMobile } from "app/store/fuse/navbarSlice";
+import { selectContrastMainTheme } from "app/store/fuse/settingsSlice";
+import { useLocation } from "react-router-dom";
+import { Menus } from "app/auth/store/constants";
+import {
+  changeShowResetPass,
+  setShowDeposit,
+  setShowTwoFA,
+  setShowWithdraw,
+} from "app/auth/store/sharedData";
+import history from "@history";
 
-const Root = styled('div')(({ theme }) => ({
+const Root = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   color: theme.palette.primary.contrastText,
 }));
@@ -22,15 +27,15 @@ const Root = styled('div')(({ theme }) => ({
 const StyledPanel = styled(FuseScrollbars)(({ theme, opened }) => ({
   backgroundColor: theme.palette.background.default,
   color: theme.palette.text.primary,
-  transition: theme.transitions.create(['opacity'], {
+  transition: theme.transitions.create(["opacity"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.shortest,
   }),
   opacity: 0,
-  pointerEvents: 'none',
+  pointerEvents: "none",
   ...(opened && {
     opacity: 1,
-    pointerEvents: 'initial',
+    pointerEvents: "initial",
   }),
 }));
 
@@ -65,9 +70,11 @@ function NavbarStyle3Content(props) {
 
   const [panelOpen, setPanelOpen] = useState(false);
   const theme = useTheme();
-  const mdDown = useMediaQuery(theme.breakpoints.down('lg'));
+  const mdDown = useMediaQuery(theme.breakpoints.down("lg"));
   const dispatch = useDispatch();
-  const contrastTheme = useSelector(selectContrastMainTheme(theme.palette.primary.main));
+  const contrastTheme = useSelector(
+    selectContrastMainTheme(theme.palette.primary.main)
+  );
   const location = useLocation();
 
   useEffect(() => {
@@ -82,10 +89,14 @@ function NavbarStyle3Content(props) {
     /** if there is no child item do not set/open panel
      */
     if (loggedin) {
-      if (selected && selected.id === Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
-      else if (selected.id && selected.id === Menus.TWOFASEC) dispatch(setShowTwoFA(true))
-      else if (selected.id && selected.id === Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
-      else if (selected.id && selected.id === Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
+      if (selected && selected.id === Menus.CHANGEPASS)
+        dispatch(changeShowResetPass(true));
+      else if (selected.id && selected.id === Menus.TWOFASEC)
+        dispatch(setShowTwoFA(true));
+      else if (selected.id && selected.id === Menus.DEPOSITNOW)
+        dispatch(setShowDeposit(true));
+      else if (selected.id && selected.id === Menus.WITHDRAWNOE)
+        dispatch(setShowWithdraw(true));
     }
     if (!selected.children) {
       setSelectedNavigation([]);
@@ -109,10 +120,14 @@ function NavbarStyle3Content(props) {
 
   function handleChildItemClick(selected) {
     if (loggedin) {
-      if (selected && selected.id === Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
-      else if (selected.id && selected.id === Menus.TWOFASEC) dispatch(setShowTwoFA(true))
-      else if (selected.id && selected.id === Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
-      else if (selected.id && selected.id === Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
+      if (selected && selected.id === Menus.CHANGEPASS)
+        dispatch(changeShowResetPass(true));
+      else if (selected.id && selected.id === Menus.TWOFASEC)
+        dispatch(setShowTwoFA(true));
+      else if (selected.id && selected.id === Menus.DEPOSITNOW)
+        dispatch(setShowDeposit(true));
+      else if (selected.id && selected.id === Menus.WITHDRAWNOE)
+        dispatch(setShowWithdraw(true));
     }
     setPanelOpen(false);
     if (mdDown) {
@@ -122,12 +137,15 @@ function NavbarStyle3Content(props) {
 
   return (
     <ClickAwayListener onClickAway={() => setPanelOpen(false)}>
-      <Root className={clsx('flex flex-auto flex h-full', props.className)}>
+      <Root className={clsx("flex flex-auto flex h-full", props.className)}>
         <ThemeProvider theme={contrastTheme}>
-          <div id="fuse-navbar-side-panel" className="flex flex-shrink-0 flex-col items-center">
+          <div
+            id="fuse-navbar-side-panel"
+            className="flex flex-shrink-0 flex-col items-center"
+          >
             <img
-              style={{ cursor: 'pointer' }}
-              onClick={() => history.push('/venapp/home')}
+              style={{ cursor: "pointer" }}
+              onClick={() => history.push("/venapp/home")}
               className="w-full my-24"
               src="assets/images/logos/menu.svg"
               alt="logo"
@@ -139,7 +157,7 @@ function NavbarStyle3Content(props) {
               option={{ suppressScrollX: true, wheelPropagation: false }}
             >
               <FuseNavigation
-                className={clsx('navigation')}
+                className={clsx("navigation")}
                 navigation={navigation}
                 layout="vertical-2"
                 onItemClick={handleParentItemClick}
@@ -155,11 +173,11 @@ function NavbarStyle3Content(props) {
           <StyledPanel
             id="fuse-navbar-panel"
             opened={panelOpen}
-            className={clsx('shadow-5 overflow-y-auto overflow-x-hidden')}
+            className={clsx("shadow-5 overflow-y-auto overflow-x-hidden")}
             option={{ suppressScrollX: true, wheelPropagation: false }}
           >
             <FuseNavigation
-              className={clsx('navigation')}
+              className={clsx("navigation")}
               navigation={selectedNavigation}
               layout="vertical"
               onItemClick={handleChildItemClick}

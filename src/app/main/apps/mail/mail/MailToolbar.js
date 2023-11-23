@@ -1,12 +1,12 @@
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import { useTheme } from '@mui/material/styles';
-import { motion } from 'framer-motion';
-import { useDispatch, useSelector } from 'react-redux';
-import { withRouter, useParams } from 'react-router-dom';
-import { updateMail } from '../store/mailSlice';
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import { useTheme } from "@mui/material/styles";
+import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { withRouter, useParams } from "react-router-dom";
+import { updateMail } from "../store/mailSlice";
 
-const pathToRegexp = require('path-to-regexp');
+const pathToRegexp = require("path-to-regexp");
 
 function MailToolbar(props) {
   const dispatch = useDispatch();
@@ -27,16 +27,27 @@ function MailToolbar(props) {
   return (
     <div className="flex flex-1 items-center justify-between overflow-hidden sm:px-16">
       <IconButton onClick={() => props.history.push(deselectUrl)} size="large">
-        <Icon>{theme.direction === 'ltr' ? 'arrow_back' : 'arrow_forward'}</Icon>
+        <Icon>
+          {theme.direction === "ltr" ? "arrow_back" : "arrow_forward"}
+        </Icon>
       </IconButton>
 
       <div className="flex items-center justify-start" aria-label="Toggle star">
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1, transition: { delay: 0.1 } }}>
-          <IconButton onClick={() => dispatch(updateMail({ starred: !mail.starred }))} size="large">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1, transition: { delay: 0.1 } }}
+        >
+          <IconButton
+            onClick={() => dispatch(updateMail({ starred: !mail.starred }))}
+            size="large"
+          >
             {mail.starred ? <Icon>star</Icon> : <Icon>star_border</Icon>}
           </IconButton>
         </motion.div>
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1, transition: { delay: 0.1 } }}>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1, transition: { delay: 0.1 } }}
+        >
           <IconButton
             onClick={() => dispatch(updateMail({ important: !mail.important }))}
             size="large"

@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const FileManagerAppConfig = {
   settings: {
@@ -8,8 +8,8 @@ const FileManagerAppConfig = {
   },
   routes: [
     {
-      path: '/apps/file-manager',
-      component: lazy(() => import('./FileManagerApp')),
+      path: "/apps/file-manager",
+      component: lazy(() => import("./FileManagerApp")),
     },
   ],
 };

@@ -1,18 +1,18 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import SwipeableViews from 'react-swipeable-views';
-import { useTheme } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Zoom from '@mui/material/Zoom';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
-import UpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { green } from '@mui/material/colors';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import PropTypes from "prop-types";
+import SwipeableViews from "react-swipeable-views";
+import { useTheme } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Zoom from "@mui/material/Zoom";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit";
+import UpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { green } from "@mui/material/colors";
+import Box from "@mui/material/Box";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,20 +40,20 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `action-tab-${index}`,
-    'aria-controls': `action-tabpanel-${index}`,
+    "aria-controls": `action-tabpanel-${index}`,
   };
 }
 
 const fabStyle = {
-  position: 'absolute',
+  position: "absolute",
   bottom: 16,
   right: 16,
 };
 
 const fabGreenStyle = {
-  color: 'common.white',
+  color: "common.white",
   bgcolor: green[500],
-  '&:hover': {
+  "&:hover": {
     bgcolor: green[600],
   },
 };
@@ -77,31 +77,31 @@ export default function FloatingActionButtonZoom() {
 
   const fabs = [
     {
-      color: 'primary',
+      color: "primary",
       sx: fabStyle,
       icon: <AddIcon />,
-      label: 'Add',
+      label: "Add",
     },
     {
-      color: 'secondary',
+      color: "secondary",
       sx: fabStyle,
       icon: <EditIcon />,
-      label: 'Edit',
+      label: "Edit",
     },
     {
-      color: 'inherit',
+      color: "inherit",
       sx: { ...fabStyle, ...fabGreenStyle },
       icon: <UpIcon />,
-      label: 'Expand',
+      label: "Expand",
     },
   ];
 
   return (
     <Box
       sx={{
-        bgcolor: 'background.paper',
+        bgcolor: "background.paper",
         width: 500,
-        position: 'relative',
+        position: "relative",
         minHeight: 200,
       }}
     >
@@ -120,7 +120,7 @@ export default function FloatingActionButtonZoom() {
         </Tabs>
       </AppBar>
       <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
         onChangeIndex={handleChangeIndex}
       >
@@ -140,7 +140,9 @@ export default function FloatingActionButtonZoom() {
           in={value === index}
           timeout={transitionDuration}
           style={{
-            transitionDelay: `${value === index ? transitionDuration.exit : 0}ms`,
+            transitionDelay: `${
+              value === index ? transitionDuration.exit : 0
+            }ms`,
           }}
           unmountOnExit
         >

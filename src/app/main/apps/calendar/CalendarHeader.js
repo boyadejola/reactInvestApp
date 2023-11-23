@@ -1,93 +1,93 @@
-import Icon from '@mui/material/Icon';
-import { styled, ThemeProvider } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import { selectMainThemeDark } from 'app/store/fuse/settingsSlice';
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import { useSelector } from 'react-redux';
-import format from 'date-fns/format';
+import Icon from "@mui/material/Icon";
+import { styled, ThemeProvider } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import { selectMainThemeDark } from "app/store/fuse/settingsSlice";
+import clsx from "clsx";
+import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import format from "date-fns/format";
 
-const Root = styled('div')(({ theme }) => ({
+const Root = styled("div")(({ theme }) => ({
   backgroundImage: 'url("../../assets/images/backgrounds/header-bg.png")',
-  backgroundColor: '#FAFAFA',
-  color: '#FFFFFF',
-  backgroundSize: 'cover',
-  backgroundPosition: '0 50%',
-  backgroundRepeat: 'no-repeat',
-  '&:before': {
+  backgroundColor: "#FAFAFA",
+  color: "#FFFFFF",
+  backgroundSize: "cover",
+  backgroundPosition: "0 50%",
+  backgroundRepeat: "no-repeat",
+  "&:before": {
     content: "''",
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     right: 0,
     bottom: 0,
     left: 0,
     zIndex: 1,
-    background: 'rgba(0, 0, 0, 0.45)',
+    background: "rgba(0, 0, 0, 0.45)",
   },
-  '&.Jan': {
+  "&.Jan": {
     backgroundImage: "url('/assets/images/calendar/winter.jpg')",
-    backgroundPosition: '0 85%',
+    backgroundPosition: "0 85%",
   },
-  '&.Feb': {
+  "&.Feb": {
     backgroundImage: "url('/assets/images/calendar/winter.jpg')",
-    backgroundPosition: '0 85%',
+    backgroundPosition: "0 85%",
   },
-  '&.Mar': {
+  "&.Mar": {
     backgroundImage: "url('/assets/images/calendar/spring.jpg')",
-    backgroundPosition: '0 40%',
+    backgroundPosition: "0 40%",
   },
-  '&.Apr': {
+  "&.Apr": {
     backgroundImage: "url('/assets/images/calendar/spring.jpg')",
-    backgroundPosition: '0 40%',
+    backgroundPosition: "0 40%",
   },
-  '&.May': {
+  "&.May": {
     backgroundImage: "url('/assets/images/calendar/spring.jpg')",
-    backgroundPosition: '0 40%',
+    backgroundPosition: "0 40%",
   },
-  '&.Jun': {
+  "&.Jun": {
     backgroundImage: "url('/assets/images/calendar/summer.jpg')",
-    backgroundPosition: '0 80%',
+    backgroundPosition: "0 80%",
   },
-  '&.Jul': {
+  "&.Jul": {
     backgroundImage: "url('/assets/images/calendar/summer.jpg')",
-    backgroundPosition: '0 80%',
+    backgroundPosition: "0 80%",
   },
-  '&.Aug': {
+  "&.Aug": {
     backgroundImage: "url('/assets/images/calendar/summer.jpg')",
-    backgroundPosition: '0 80%',
+    backgroundPosition: "0 80%",
   },
-  '&.Sep': {
+  "&.Sep": {
     backgroundImage: "url('/assets/images/calendar/autumn.jpg')",
-    backgroundPosition: '0 40%',
+    backgroundPosition: "0 40%",
   },
-  '&.Oct': {
+  "&.Oct": {
     backgroundImage: "url('/assets/images/calendar/autumn.jpg')",
-    backgroundPosition: '0 40%',
+    backgroundPosition: "0 40%",
   },
-  '&.Nov': {
+  "&.Nov": {
     backgroundImage: "url('/assets/images/calendar/autumn.jpg')",
-    backgroundPosition: '0 40%',
+    backgroundPosition: "0 40%",
   },
-  '&.Dec': {
+  "&.Dec": {
     backgroundImage: "url('/assets/images/calendar/winter.jpg')",
-    backgroundPosition: '0 85%',
+    backgroundPosition: "0 85%",
   },
 }));
 
 const viewNamesObj = {
   dayGridMonth: {
-    title: 'Month',
-    icon: 'view_module',
+    title: "Month",
+    icon: "view_module",
   },
   timeGridWeek: {
-    title: 'Week',
-    icon: 'view_week',
+    title: "Week",
+    icon: "view_week",
   },
   timeGridDay: {
-    title: 'Day',
-    icon: 'view_agenda',
+    title: "Day",
+    icon: "view_agenda",
   },
 };
 
@@ -100,8 +100,8 @@ function CalendarHeader(props) {
     <ThemeProvider theme={mainThemeDark}>
       <Root
         className={clsx(
-          'flex h-200 min-h-200 relative',
-          format(new Date(currentDate?.start || null), 'MMM')
+          "flex h-200 min-h-200 relative",
+          format(new Date(currentDate?.start || null), "MMM")
         )}
       >
         <div className="flex flex-1 flex-col p-12 justify-between z-10 container">
@@ -169,14 +169,30 @@ function CalendarHeader(props) {
             animate={{ opacity: 1, transition: { delay: 0.3 } }}
           >
             <Tooltip title="Previous">
-              <IconButton aria-label="Previous" onClick={() => calendarApi().prev()} size="large">
-                <Icon>{mainThemeDark.direction === 'ltr' ? 'chevron_left' : 'chevron_right'}</Icon>
+              <IconButton
+                aria-label="Previous"
+                onClick={() => calendarApi().prev()}
+                size="large"
+              >
+                <Icon>
+                  {mainThemeDark.direction === "ltr"
+                    ? "chevron_left"
+                    : "chevron_right"}
+                </Icon>
               </IconButton>
             </Tooltip>
             <Typography variant="h6">{currentDate?.view.title}</Typography>
             <Tooltip title="Next">
-              <IconButton aria-label="Next" onClick={() => calendarApi().next()} size="large">
-                <Icon>{mainThemeDark.direction === 'ltr' ? 'chevron_right' : 'chevron_left'}</Icon>
+              <IconButton
+                aria-label="Next"
+                onClick={() => calendarApi().next()}
+                size="large"
+              >
+                <Icon>
+                  {mainThemeDark.direction === "ltr"
+                    ? "chevron_right"
+                    : "chevron_left"}
+                </Icon>
               </IconButton>
             </Tooltip>
           </motion.div>

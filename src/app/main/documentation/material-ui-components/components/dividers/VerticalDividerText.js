@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import MuiGrid from '@mui/material/Grid';
-import Divider from '@mui/material/Divider';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import MuiGrid from "@mui/material/Grid";
+import Divider from "@mui/material/Divider";
 
 const Grid = styled(MuiGrid)(({ theme }) => ({
-  width: '100%',
+  width: "100%",
   ...theme.typography.body2,
   '& [role="separator"]': {
     margin: theme.spacing(0, 2),

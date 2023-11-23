@@ -1,8 +1,8 @@
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Typography from '@mui/material/Typography';
-import clsx from 'clsx';
-import { useLocation, Link } from 'react-router-dom';
-import DocumentationNavigation from './DocumentationNavigation';
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Typography from "@mui/material/Typography";
+import clsx from "clsx";
+import { useLocation, Link } from "react-router-dom";
+import DocumentationNavigation from "./DocumentationNavigation";
 
 const getPathTree = (departmentTree, url) => {
   function findPath(node, _url) {
@@ -34,7 +34,7 @@ function DocumentationPageBreadcrumb({ className }) {
   const pathArr = getPathTree(DocumentationNavigation, pathname);
 
   return (
-    <div className={clsx('', className)}>
+    <div className={clsx("", className)}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link
           className="font-semibold hover:underline"

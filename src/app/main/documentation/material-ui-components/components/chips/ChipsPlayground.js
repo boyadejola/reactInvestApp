@@ -1,24 +1,24 @@
-import * as React from 'react';
-import HighlightedCode from 'app/main/documentation/material-ui-components/utils/HighlightedCode';
-import Grid from '@mui/material/Grid';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import RadioGroup from '@mui/material/RadioGroup';
-import Radio from '@mui/material/Radio';
-import Avatar from '@mui/material/Avatar';
-import Chip from '@mui/material/Chip';
-import FaceIcon from '@mui/icons-material/Face';
-import DoneIcon from '@mui/icons-material/Done';
+import * as React from "react";
+import HighlightedCode from "app/main/documentation/material-ui-components/utils/HighlightedCode";
+import Grid from "@mui/material/Grid";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import RadioGroup from "@mui/material/RadioGroup";
+import Radio from "@mui/material/Radio";
+import Avatar from "@mui/material/Avatar";
+import Chip from "@mui/material/Chip";
+import FaceIcon from "@mui/icons-material/Face";
+import DoneIcon from "@mui/icons-material/Done";
 
 function ChipsPlayground() {
   const [state, setState] = React.useState({
-    color: 'default',
-    onDelete: 'none',
-    avatar: 'none',
-    icon: 'none',
-    variant: 'filled',
-    size: 'medium',
+    color: "default",
+    onDelete: "none",
+    avatar: "none",
+    icon: "none",
+    variant: "filled",
+    size: "medium",
   });
   const { color, onDelete, avatar, icon, variant, size } = state;
 
@@ -30,34 +30,34 @@ function ChipsPlayground() {
   };
 
   const handleDeleteExample = () => {
-    console.info('You clicked the delete icon.');
+    console.info("You clicked the delete icon.");
   };
 
-  const colorToCode = color !== 'default' ? `color="${color}" ` : '';
-  const sizeToCode = size === 'small' ? `size="small" ` : '';
-  const variantToCode = variant !== 'filled' ? `variant="${variant}" ` : '';
+  const colorToCode = color !== "default" ? `color="${color}" ` : "";
+  const sizeToCode = size === "small" ? `size="small" ` : "";
+  const variantToCode = variant !== "filled" ? `variant="${variant}" ` : "";
 
   let onDeleteToCode;
   switch (onDelete) {
-    case 'none':
-      onDeleteToCode = '';
+    case "none":
+      onDeleteToCode = "";
       break;
-    case 'custom':
-      onDeleteToCode = 'deleteIcon={<DoneIcon />} onDelete={handleDelete} ';
+    case "custom":
+      onDeleteToCode = "deleteIcon={<DoneIcon />} onDelete={handleDelete} ";
       break;
     default:
-      onDeleteToCode = 'onDelete={handleDelete} ';
+      onDeleteToCode = "onDelete={handleDelete} ";
       break;
   }
 
   let iconToCode;
   let iconToPlayground;
   switch (icon) {
-    case 'none':
-      iconToCode = '';
+    case "none":
+      iconToCode = "";
       break;
     default:
-      iconToCode = 'icon={<FaceIcon />} ';
+      iconToCode = "icon={<FaceIcon />} ";
       iconToPlayground = <FaceIcon />;
       break;
   }
@@ -65,23 +65,26 @@ function ChipsPlayground() {
   let avatarToCode;
   let avatarToPlayground;
   switch (avatar) {
-    case 'none':
-      avatarToCode = '';
+    case "none":
+      avatarToCode = "";
       break;
-    case 'img':
-      avatarToCode = 'avatar={<Avatar src="/material-ui-static/images/avatar/1.jpg" />} ';
-      avatarToPlayground = <Avatar src="/material-ui-static/images/avatar/1.jpg" />;
+    case "img":
+      avatarToCode =
+        'avatar={<Avatar src="/material-ui-static/images/avatar/1.jpg" />} ';
+      avatarToPlayground = (
+        <Avatar src="/material-ui-static/images/avatar/1.jpg" />
+      );
       break;
-    case 'letter':
-      avatarToCode = 'avatar={<Avatar>F</Avatar>} ';
+    case "letter":
+      avatarToCode = "avatar={<Avatar>F</Avatar>} ";
       avatarToPlayground = <Avatar>F</Avatar>;
       break;
     default:
       break;
   }
 
-  if (avatar !== 'none') {
-    iconToCode = '';
+  if (avatar !== "none") {
+    iconToCode = "";
     iconToPlayground = null;
   }
 
@@ -97,8 +100,8 @@ function ChipsPlayground() {
             <Chip
               label="Chip Component"
               color={color}
-              deleteIcon={onDelete === 'custom' ? <DoneIcon /> : undefined}
-              onDelete={onDelete !== 'none' ? handleDeleteExample : undefined}
+              deleteIcon={onDelete === "custom" ? <DoneIcon /> : undefined}
+              onDelete={onDelete !== "none" ? handleDeleteExample : undefined}
               avatar={avatarToPlayground}
               icon={iconToPlayground}
               variant={variant}
@@ -157,8 +160,16 @@ function ChipsPlayground() {
                   control={<Radio />}
                   label="secondary"
                 />
-                <FormControlLabel value="error" control={<Radio />} label="error" />
-                <FormControlLabel value="info" control={<Radio />} label="info" />
+                <FormControlLabel
+                  value="error"
+                  control={<Radio />}
+                  label="error"
+                />
+                <FormControlLabel
+                  value="info"
+                  control={<Radio />}
+                  label="info"
+                />
                 <FormControlLabel
                   value="success"
                   control={<Radio />}
@@ -187,7 +198,11 @@ function ChipsPlayground() {
                   control={<Radio />}
                   label="medium"
                 />
-                <FormControlLabel value="small" control={<Radio />} label="small" />
+                <FormControlLabel
+                  value="small"
+                  control={<Radio />}
+                  label="small"
+                />
               </RadioGroup>
             </FormControl>
           </Grid>
@@ -201,8 +216,16 @@ function ChipsPlayground() {
                 value={icon}
                 onChange={handleChange}
               >
-                <FormControlLabel value="none" control={<Radio />} label="none" />
-                <FormControlLabel value="icon" control={<Radio />} label="icon" />
+                <FormControlLabel
+                  value="none"
+                  control={<Radio />}
+                  label="none"
+                />
+                <FormControlLabel
+                  value="icon"
+                  control={<Radio />}
+                  label="icon"
+                />
               </RadioGroup>
             </FormControl>
           </Grid>
@@ -216,7 +239,11 @@ function ChipsPlayground() {
                 value={avatar}
                 onChange={handleChange}
               >
-                <FormControlLabel value="none" control={<Radio />} label="none" />
+                <FormControlLabel
+                  value="none"
+                  control={<Radio />}
+                  label="none"
+                />
                 <FormControlLabel
                   value="letter"
                   control={<Radio />}
@@ -236,7 +263,11 @@ function ChipsPlayground() {
                 value={onDelete}
                 onChange={handleChange}
               >
-                <FormControlLabel value="none" control={<Radio />} label="none" />
+                <FormControlLabel
+                  value="none"
+                  control={<Radio />}
+                  label="none"
+                />
                 <FormControlLabel
                   value="default"
                   control={<Radio />}

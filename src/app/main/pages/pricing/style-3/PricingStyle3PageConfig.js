@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const PricingStyle3PageConfig = {
   settings: {
@@ -19,12 +19,13 @@ const PricingStyle3PageConfig = {
         rightSidePanel: {
           display: true,
         },
-      },    },
+      },
+    },
   },
   routes: [
     {
-      path: '/pages/pricing/style-3',
-      component: lazy(() => import('./PricingStyle3Page')),
+      path: "/pages/pricing/style-3",
+      component: lazy(() => import("./PricingStyle3Page")),
     },
   ],
 };

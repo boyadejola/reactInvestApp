@@ -1,18 +1,18 @@
-import * as React from 'react';
-import Autocomplete from '@mui/material/Autocomplete';
+import * as React from "react";
+import Autocomplete from "@mui/material/Autocomplete";
 
-const options = ['Option 1', 'Option 2'];
+const options = ["Option 1", "Option 2"];
 
 export default function CustomInputAutocomplete() {
   return (
     <label>
-      Value:{' '}
+      Value:{" "}
       <Autocomplete
         sx={{
-          display: 'inline-block',
-          '& input': {
+          display: "inline-block",
+          "& input": {
             width: 200,
-            bgcolor: 'background.paper',
+            bgcolor: "background.paper",
             color: (theme) =>
               theme.palette.getContrastText(theme.palette.background.paper),
           },

@@ -1,4 +1,4 @@
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 
 function GitRepositoryDoc() {
   return (
@@ -8,9 +8,14 @@ function GitRepositoryDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        You can also check out Fuse React from the Github repository. Fuse React's Github repository
-        is private, you can get an invitation by filling the{' '}
-        <a href="http://support.withinpixels.com/github" target="_blank" rel="noreferrer noopener">
+        You can also check out Fuse React from the Github repository. Fuse
+        React's Github repository is private, you can get an invitation by
+        filling the{" "}
+        <a
+          href="http://support.withinpixels.com/github"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           invitation form
         </a>
         .

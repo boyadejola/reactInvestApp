@@ -1,6 +1,6 @@
-import Icon from '@mui/material/Icon';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
+import Icon from "@mui/material/Icon";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
 
 function MainSidebarHeader() {
   return (

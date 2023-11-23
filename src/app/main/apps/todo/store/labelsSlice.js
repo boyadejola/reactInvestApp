@@ -1,12 +1,19 @@
-import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
-import axios from 'axios';
+import {
+  createSlice,
+  createAsyncThunk,
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const getLabels = createAsyncThunk('todoApp/labels/getLabels', async () => {
-  const response = await axios.get('/api/todo-app/labels');
-  const data = await response.data;
+export const getLabels = createAsyncThunk(
+  "todoApp/labels/getLabels",
+  async () => {
+    const response = await axios.get("/api/todo-app/labels");
+    const data = await response.data;
 
-  return data;
-});
+    return data;
+  }
+);
 
 const labelsAdapter = createEntityAdapter({});
 
@@ -17,7 +24,7 @@ export const {
 } = labelsAdapter.getSelectors((state) => state.todoApp.labels);
 
 const labelsSlice = createSlice({
-  name: 'todoApp/labels',
+  name: "todoApp/labels",
   initialState: labelsAdapter.getInitialState(null),
   reducers: {},
   extraReducers: {

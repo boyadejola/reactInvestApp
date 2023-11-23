@@ -1,24 +1,24 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
 
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import Paper from '@mui/material/Paper';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as yup from 'yup';
-import _ from '@lodash';
-import { renameBoard } from '../store/boardSlice';
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Paper from "@mui/material/Paper";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
+import _ from "@lodash";
+import { renameBoard } from "../store/boardSlice";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  title: yup.string().required('You must enter a title'),
+  title: yup.string().required("You must enter a title"),
 });
 
 function BoardTitle(props) {
@@ -28,7 +28,7 @@ function BoardTitle(props) {
   const [formOpen, setFormOpen] = useState(false);
 
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues: {
       title: board.name,
     },
@@ -96,7 +96,9 @@ function BoardTitle(props) {
         </ClickAwayListener>
       ) : (
         <div className="flex items-center justify-center">
-          {board.settings.subscribed && <Icon className="text-16">remove_red_eye</Icon>}
+          {board.settings.subscribed && (
+            <Icon className="text-16">remove_red_eye</Icon>
+          )}
           <Typography
             className="text-14 sm:text-18 font-medium cursor-pointer mx-8"
             onClick={handleOpenForm}

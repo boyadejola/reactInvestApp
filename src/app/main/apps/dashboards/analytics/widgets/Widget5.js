@@ -1,13 +1,13 @@
-import _ from '@lodash';
-import Card from '@mui/material/Card';
-import { useTheme } from '@mui/material/styles';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
-import { memo, useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import Box from '@mui/material/Box';
-import i18next from 'i18next';
+import _ from "@lodash";
+import Card from "@mui/material/Card";
+import { useTheme } from "@mui/material/styles";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import { memo, useState } from "react";
+import ReactApexChart from "react-apexcharts";
+import Box from "@mui/material/Box";
+import i18next from "i18next";
 
 function Widget5(props) {
   const theme = useTheme();
@@ -15,7 +15,10 @@ function Widget5(props) {
   const data = _.merge({}, props.data);
   const series = data.series[Object.keys(data.series)[tabValue]];
 
-  _.setWith(data, 'options.colors', [theme.palette.secondary.main, theme.palette.primary.main]);
+  _.setWith(data, "options.colors", [
+    theme.palette.secondary.main,
+    theme.palette.primary.main,
+  ]);
 
   return (
     <Card className="w-full rounded-20 shadow">
@@ -35,11 +38,13 @@ function Widget5(props) {
             variant="scrollable"
             scrollButtons={false}
             className="w-full px-24 -mx-4 min-h-40"
-            classes={{ indicator: 'flex justify-center bg-transparent w-full h-full' }}
+            classes={{
+              indicator: "flex justify-center bg-transparent w-full h-full",
+            }}
             TabIndicatorProps={{
               children: (
                 <Box
-                  sx={{ bgcolor: 'text.disabled' }}
+                  sx={{ bgcolor: "text.disabled" }}
                   className="w-full h-full rounded-full opacity-20"
                 />
               ),

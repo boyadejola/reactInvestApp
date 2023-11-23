@@ -1,4 +1,4 @@
-import Popover from '@mui/material/Popover';
+import Popover from "@mui/material/Popover";
 
 function ToolbarMenu(props) {
   return (
@@ -7,12 +7,12 @@ function ToolbarMenu(props) {
       anchorEl={props.state}
       onClose={props.onClose}
       anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'center',
+        vertical: "bottom",
+        horizontal: "center",
       }}
       transformOrigin={{
-        vertical: 'top',
-        horizontal: 'center',
+        vertical: "top",
+        horizontal: "center",
       }}
     >
       <>{props.children}</>

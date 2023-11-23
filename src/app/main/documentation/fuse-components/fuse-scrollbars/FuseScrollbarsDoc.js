@@ -1,5 +1,5 @@
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import Typography from '@mui/material/Typography';
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import Typography from "@mui/material/Typography";
 
 function FuseScrollbarsDoc() {
   return (
@@ -9,14 +9,14 @@ function FuseScrollbarsDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        <code>FuseScrollbars</code> is a simple{' '}
+        <code>FuseScrollbars</code> is a simple{" "}
         <a
           href="http://utatti.github.io/perfect-scrollbar/"
           target="_blank"
           rel="noreferrer noopener"
         >
           perfect-scrollbar
-        </a>{' '}
+        </a>{" "}
         component for react.
       </Typography>
 

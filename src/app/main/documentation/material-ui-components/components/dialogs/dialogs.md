@@ -1,7 +1,7 @@
 ---
 title: React Dialog component
 components: Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Slide
-githubLabel: 'component: Dialog'
+githubLabel: "component: Dialog"
 materialDesign: https://material.io/components/dialogs
 waiAria: https://www.w3.org/TR/wai-aria-practices/#dialog_modal
 ---
@@ -86,11 +86,11 @@ When the `fullWidth` prop is true, the dialog will adapt based on the `maxWidth`
 You may make a dialog responsively full screen using [`useMediaQuery`](/components/use-media-query/#usemediaquery).
 
 ```jsx
-import useMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function MyComponent() {
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return <Dialog fullScreen={fullScreen} />;
 }

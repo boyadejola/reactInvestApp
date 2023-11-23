@@ -1,20 +1,20 @@
-import Icon from '@mui/material/Icon';
-import MenuItem from '@mui/material/MenuItem';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import Icon from "@mui/material/Icon";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const accounts = {
-  creapond: 'johndoe@creapond.com',
-  withinpixels: 'johndoe@withinpixels.com',
+  creapond: "johndoe@creapond.com",
+  withinpixels: "johndoe@withinpixels.com",
 };
 
 function MailAppSidebarHeader(props) {
-  const [selectedAccount, setSelectedCount] = useState('creapond');
-  const { t } = useTranslation('mailApp');
+  const [selectedAccount, setSelectedCount] = useState("creapond");
+  const { t } = useTranslation("mailApp");
 
   function handleAccountChange(ev) {
     setSelectedCount(ev.target.value);
@@ -38,7 +38,7 @@ function MailAppSidebarHeader(props) {
           delay={300}
           className="text-16 md:text-24 mx-12 font-semibold"
         >
-          {t('APP_TITLE')}
+          {t("APP_TITLE")}
         </Typography>
       </div>
 

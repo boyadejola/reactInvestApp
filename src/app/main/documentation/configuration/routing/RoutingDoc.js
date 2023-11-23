@@ -1,5 +1,5 @@
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import Typography from '@mui/material/Typography';
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import Typography from "@mui/material/Typography";
 
 function RoutingDoc() {
   return (
@@ -9,11 +9,15 @@ function RoutingDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        Fuse React routing system based on{' '}
-        <a href="https://reacttraining.com/react-router/" target="_blank" rel="noopener noreferrer">
+        Fuse React routing system based on{" "}
+        <a
+          href="https://reacttraining.com/react-router/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           react-router
-        </a>{' '}
-        and its package{' '}
+        </a>{" "}
+        and its package{" "}
         <a
           href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config"
           target="_blank"
@@ -25,14 +29,14 @@ function RoutingDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        For the modular approach and route based Fuse settings, we are using config files and
-        generate routes from those files.
+        For the modular approach and route based Fuse settings, we are using
+        config files and generate routes from those files.
       </Typography>
 
       <Typography className="mb-16" component="p">
         For example, have a look at the code below
-        <code>MailAppConfig.js</code>. You can override all settings for a particular route as{' '}
-        <code>/apps/mail</code> for this example.
+        <code>MailAppConfig.js</code>. You can override all settings for a
+        particular route as <code>/apps/mail</code> for this example.
       </Typography>
 
       <FuseHighlight component="pre" className="language-jsx mb-32">
@@ -95,7 +99,8 @@ function RoutingDoc() {
       </FuseHighlight>
 
       <Typography className="mb-16" component="p">
-        Then we import and generate routes from that file in <code>fuse-configs/routesConfig</code>
+        Then we import and generate routes from that file in{" "}
+        <code>fuse-configs/routesConfig</code>
       </Typography>
 
       <FuseHighlight component="pre" className="language-jsx mb-32">

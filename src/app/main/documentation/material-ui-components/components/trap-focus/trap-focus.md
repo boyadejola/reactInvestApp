@@ -1,7 +1,7 @@
 ---
 title: Trap Focus React component
 components: Unstable_TrapFocus
-githubLabel: 'component: TrapFocus'
+githubLabel: "component: TrapFocus"
 ---
 
 # Trap Focus
@@ -28,7 +28,7 @@ When `open={true}` the trap is enabled, and pressing <kbd class='key'>Tab</kbd> 
 As the component does not have any styles, it also comes with the unstyled package.
 
 ```js
-import TrapFocus from '@mui/core/Unstable_TrapFocus';
+import TrapFocus from "@mui/core/Unstable_TrapFocus";
 ```
 
 ## Disable enforce focus

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Fade from '@mui/material/Fade';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
 
 export default function FadeMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -20,7 +20,7 @@ export default function FadeMenu() {
         id="fade-button"
         aria-controls="fade-menu"
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
         Dashboard
@@ -28,7 +28,7 @@ export default function FadeMenu() {
       <Menu
         id="fade-menu"
         MenuListProps={{
-          'aria-labelledby': 'fade-button',
+          "aria-labelledby": "fade-button",
         }}
         anchorEl={anchorEl}
         open={open}

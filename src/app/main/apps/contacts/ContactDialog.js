@@ -1,22 +1,22 @@
-import FuseUtils from '@fuse/utils/FuseUtils';
-import { yupResolver } from '@hookform/resolvers/yup';
-import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import TextField from '@mui/material/TextField';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { useCallback, useEffect } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import FuseUtils from "@fuse/utils/FuseUtils";
+import { yupResolver } from "@hookform/resolvers/yup";
+import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import TextField from "@mui/material/TextField";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { useCallback, useEffect } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 
-import _ from '@lodash';
-import * as yup from 'yup';
+import _ from "@lodash";
+import * as yup from "yup";
 
 import {
   removeContact,
@@ -24,45 +24,49 @@ import {
   addContact,
   closeNewContactDialog,
   closeEditContactDialog,
-} from './store/contactsSlice';
+} from "./store/contactsSlice";
 
 const defaultValues = {
-  id: '',
-  name: '',
-  lastName: '',
-  avatar: 'assets/images/avatars/profile.jpg',
-  nickname: '',
-  company: '',
-  jobTitle: '',
-  email: '',
-  phone: '',
-  address: '',
-  birthday: '',
-  notes: '',
+  id: "",
+  name: "",
+  lastName: "",
+  avatar: "assets/images/avatars/profile.jpg",
+  nickname: "",
+  company: "",
+  jobTitle: "",
+  email: "",
+  phone: "",
+  address: "",
+  birthday: "",
+  notes: "",
 };
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  name: yup.string().required('You must enter a name'),
+  name: yup.string().required("You must enter a name"),
 });
 
 function ContactDialog(props) {
   const dispatch = useDispatch();
-  const contactDialog = useSelector(({ contactsApp }) => contactsApp.contacts.contactDialog);
+  const contactDialog = useSelector(
+    ({ contactsApp }) => contactsApp.contacts.contactDialog
+  );
 
-  const { control, watch, reset, handleSubmit, formState, getValues } = useForm({
-    mode: 'onChange',
-    defaultValues,
-    resolver: yupResolver(schema),
-  });
+  const { control, watch, reset, handleSubmit, formState, getValues } = useForm(
+    {
+      mode: "onChange",
+      defaultValues,
+      resolver: yupResolver(schema),
+    }
+  );
 
   const { isValid, dirtyFields, errors } = formState;
 
-  const id = watch('id');
-  const name = watch('name');
-  const avatar = watch('avatar');
+  const id = watch("id");
+  const name = watch("name");
+  const avatar = watch("avatar");
 
   /**
    * Initialize Dialog with Data
@@ -71,14 +75,14 @@ function ContactDialog(props) {
     /**
      * Dialog type: 'edit'
      */
-    if (contactDialog.type === 'edit' && contactDialog.data) {
+    if (contactDialog.type === "edit" && contactDialog.data) {
       reset({ ...contactDialog.data });
     }
 
     /**
      * Dialog type: 'new'
      */
-    if (contactDialog.type === 'new') {
+    if (contactDialog.type === "new") {
       reset({
         ...defaultValues,
         ...contactDialog.data,
@@ -100,7 +104,7 @@ function ContactDialog(props) {
    * Close Dialog
    */
   function closeComposeDialog() {
-    return contactDialog.type === 'edit'
+    return contactDialog.type === "edit"
       ? dispatch(closeEditContactDialog())
       : dispatch(closeNewContactDialog());
   }
@@ -109,7 +113,7 @@ function ContactDialog(props) {
    * Form Submit
    */
   function onSubmit(data) {
-    if (contactDialog.type === 'new') {
+    if (contactDialog.type === "new") {
       dispatch(addContact(data));
     } else {
       dispatch(updateContact({ ...contactDialog.data, ...data }));
@@ -128,7 +132,7 @@ function ContactDialog(props) {
   return (
     <Dialog
       classes={{
-        paper: 'm-24',
+        paper: "m-24",
       }}
       {...contactDialog.props}
       onClose={closeComposeDialog}
@@ -138,12 +142,12 @@ function ContactDialog(props) {
       <AppBar position="static" elevation={0}>
         <Toolbar className="flex w-full">
           <Typography variant="subtitle1" color="inherit">
-            {contactDialog.type === 'new' ? 'New Contact' : 'Edit Contact'}
+            {contactDialog.type === "new" ? "New Contact" : "Edit Contact"}
           </Typography>
         </Toolbar>
         <div className="flex flex-col items-center justify-center pb-24">
           <Avatar className="w-96 h-96" alt="contact avatar" src={avatar} />
-          {contactDialog.type === 'edit' && (
+          {contactDialog.type === "edit" && (
             <Typography variant="h6" color="inherit" className="pt-8">
               {name}
             </Typography>
@@ -155,7 +159,7 @@ function ContactDialog(props) {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col md:overflow-hidden"
       >
-        <DialogContent classes={{ root: 'p-24' }}>
+        <DialogContent classes={{ root: "p-24" }}>
           <div className="flex">
             <div className="min-w-48 pt-20">
               <Icon color="action">account_circle</Icon>
@@ -366,7 +370,7 @@ function ContactDialog(props) {
           </div>
         </DialogContent>
 
-        {contactDialog.type === 'new' ? (
+        {contactDialog.type === "new" ? (
           <DialogActions className="justify-between p-4 pb-16">
             <div className="px-16">
               <Button

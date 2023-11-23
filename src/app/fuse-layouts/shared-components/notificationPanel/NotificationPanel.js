@@ -1,29 +1,32 @@
-import FuseScrollbars from '@fuse/core/FuseScrollbars';
-import { styled } from '@mui/material/styles';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Typography from '@mui/material/Typography';
-import withReducer from 'app/store/withReducer';
-import { useSnackbar } from 'notistack';
-import { useEffect, memo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import NotificationModel from './model/NotificationModel';
-import NotificationCard from './NotificationCard';
-import NotificationTemplate from './NotificationTemplate';
+import FuseScrollbars from "@fuse/core/FuseScrollbars";
+import { styled } from "@mui/material/styles";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Typography from "@mui/material/Typography";
+import withReducer from "app/store/withReducer";
+import { useSnackbar } from "notistack";
+import { useEffect, memo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import NotificationModel from "./model/NotificationModel";
+import NotificationCard from "./NotificationCard";
+import NotificationTemplate from "./NotificationTemplate";
 import {
   getNotifications,
   addNotification,
   dismissAll,
   dismissItem,
   selectNotifications,
-} from './store/dataSlice';
-import reducer from './store';
-import { closeNotificationPanel, toggleNotificationPanel } from './store/stateSlice';
+} from "./store/dataSlice";
+import reducer from "./store";
+import {
+  closeNotificationPanel,
+  toggleNotificationPanel,
+} from "./store/stateSlice";
 
 const StyledSwipeableDrawer = styled(SwipeableDrawer)(({ theme }) => ({
-  '& .MuiDrawer-paper': {
+  "& .MuiDrawer-paper": {
     backgroundColor: theme.palette.background.default,
     width: 320,
   },
@@ -140,7 +143,7 @@ function NotificationPanel(props) {
       dispatch(closeNotificationPanel());
     }
     // eslint-disable-next-line
-	}, [location, dispatch]);
+  }, [location, dispatch]);
 
   function handleClose() {
     dispatch(closeNotificationPanel());
@@ -161,14 +164,20 @@ function NotificationPanel(props) {
       onClose={(ev) => dispatch(toggleNotificationPanel())}
       disableSwipeToOpen
     >
-      <IconButton className="m-4 absolute top-0 right-0 z-999" onClick={handleClose} size="large">
+      <IconButton
+        className="m-4 absolute top-0 right-0 z-999"
+        onClick={handleClose}
+        size="large"
+      >
         <Icon color="action">close</Icon>
       </IconButton>
       {notifications.length > 0 ? (
         <FuseScrollbars className="p-16">
           <div className="flex flex-col">
             <div className="flex justify-between items-end pt-136 mb-36">
-              <Typography className="text-28 font-semibold leading-none">Notifications</Typography>
+              <Typography className="text-28 font-semibold leading-none">
+                Notifications
+              </Typography>
               <Typography
                 className="text-12 underline cursor-pointer"
                 color="secondary"
@@ -198,4 +207,7 @@ function NotificationPanel(props) {
   );
 }
 
-export default withReducer('notificationPanel', reducer)(memo(NotificationPanel));
+export default withReducer(
+  "notificationPanel",
+  reducer
+)(memo(NotificationPanel));

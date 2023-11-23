@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const WithdrawApproveConfig = {
   settings: {
@@ -26,8 +26,8 @@ const WithdrawApproveConfig = {
   auth: authRoles.investAdmin,
   routes: [
     {
-      path: '/venapp/approvewithdraw',
-      component: lazy(() => import('./withdrawApprove')),
+      path: "/venapp/approvewithdraw",
+      component: lazy(() => import("./withdrawApprove")),
     },
   ],
 };

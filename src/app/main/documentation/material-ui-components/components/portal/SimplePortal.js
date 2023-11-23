@@ -1,6 +1,6 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Portal from '@mui/material/Portal';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Portal from "@mui/material/Portal";
 
 export default function SimplePortal() {
   const [show, setShow] = React.useState(false);
@@ -13,9 +13,9 @@ export default function SimplePortal() {
   return (
     <div>
       <button type="button" onClick={handleClick}>
-        {show ? 'Unmount children' : 'Mount children'}
+        {show ? "Unmount children" : "Mount children"}
       </button>
-      <Box sx={{ p: 1, my: 1, border: '1px solid' }}>
+      <Box sx={{ p: 1, my: 1, border: "1px solid" }}>
         It looks like I will render here.
         {show ? (
           <Portal container={container.current}>
@@ -23,7 +23,7 @@ export default function SimplePortal() {
           </Portal>
         ) : null}
       </Box>
-      <Box sx={{ p: 1, my: 1, border: '1px solid' }} ref={container} />
+      <Box sx={{ p: 1, my: 1, border: "1px solid" }} ref={container} />
     </div>
   );
 }

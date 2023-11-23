@@ -1,22 +1,32 @@
-import * as React from 'react';
-import { motion } from 'framer-motion';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Icon from '@mui/material/Icon';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import { useDispatch, useSelector } from 'react-redux';
-import Typography from '@mui/material/Typography';
-import Dialog from '@mui/material/Dialog';
-import { useHistory } from 'react-router-dom';
-import _ from '@lodash';
-import { setDepositLoader, setTwoFALoader } from 'app/auth/store/loadersSlice';
-import i18next from 'i18next';
-import { handleResponse } from '../../auth/store/commonMethods';
-import { setShowDeposit, setShowTwoFA, setTwoFAEnable } from '../../auth/store/sharedData';
-import { showMessage } from 'app/store/fuse/messageSlice';
-import { ReqColorCodes } from 'app/auth/store/constants';
-import { Box, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
+import * as React from "react";
+import { motion } from "framer-motion";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Icon from "@mui/material/Icon";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import { useDispatch, useSelector } from "react-redux";
+import Typography from "@mui/material/Typography";
+import Dialog from "@mui/material/Dialog";
+import { useHistory } from "react-router-dom";
+import _ from "@lodash";
+import { setDepositLoader, setTwoFALoader } from "app/auth/store/loadersSlice";
+import i18next from "i18next";
+import { handleResponse } from "../../auth/store/commonMethods";
+import {
+  setShowDeposit,
+  setShowTwoFA,
+  setTwoFAEnable,
+} from "../../auth/store/sharedData";
+import { showMessage } from "app/store/fuse/messageSlice";
+import { ReqColorCodes } from "app/auth/store/constants";
+import {
+  Box,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from "@mui/material";
 
 function DepositNowDialog(props) {
   const dispatch = useDispatch();
@@ -63,12 +73,12 @@ function DepositNowDialog(props) {
   return (
     <Dialog
       open={openReset}
-    // onClose={handleCloseReset}
+      // onClose={handleCloseReset}
     >
       <IconButton color="default" className="fixed" onClick={handleCloseReset}>
         <Icon>cancel</Icon>
       </IconButton>
-      <DialogTitle className='my-16 text-center'>
+      <DialogTitle className="my-16 text-center">
         {i18next.t(`navigation:PAYBTC`)}
       </DialogTitle>
       <DialogContent>
@@ -86,38 +96,53 @@ function DepositNowDialog(props) {
               square
             >
               <CardContent className="flex flex-col items-center justify-center p-4 sm:p-8 md:p-12 md:pt-20 ">
-                {isConfirm ?
+                {isConfirm ? (
                   <div>
-                    <Typography variant="h6" className="mb-16 font-semibold text-18 sm:text-24 text-center">
+                    <Typography
+                      variant="h6"
+                      className="mb-16 font-semibold text-18 sm:text-24 text-center"
+                    >
                       {i18next.t(`navigation:PAYPREV`)}
                     </Typography>
-                    <Typography variant="subtitle2" className="text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:AMOUNT`)}:
                       <span>
                         <strong>{` ${getAmount}`}</strong> USD
                       </span>
                     </Typography>
-                    <Typography variant="subtitle2" className="text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:CHARGE`)}:
                       <span>
                         <strong>{` 0.00`}</strong> USD
                       </span>
                     </Typography>
-                    <Typography variant="subtitle2" className="text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:PAYABLE`)}:
                       <span>
                         <strong>{` ${getAmount}`}</strong> USD
                       </span>
                     </Typography>
-                    <Typography variant="subtitle2" className="text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:INDOLLAR`)}:
                       <span>
                         <strong>{` ${getAmount}`}</strong> USD
                       </span>
                     </Typography>
-                    <Typography className='text-center mt-12'>
+                    <Typography className="text-center mt-12">
                       <Button
-                        variant='contained'
+                        variant="contained"
                         style={{
                           color: ReqColorCodes.btnText,
                           backgroundImage: ReqColorCodes.btn,
@@ -130,30 +155,44 @@ function DepositNowDialog(props) {
                         {i18next.t(`navigation:PAYNOW`)}
                       </Button>
                     </Typography>
-                  </div> :
+                  </div>
+                ) : (
                   <div>
-                    <Typography variant="h6" className="mb-16 font-semibold text-18 sm:text-24 text-center">
+                    <Typography
+                      variant="h6"
+                      className="mb-16 font-semibold text-18 sm:text-24 text-center"
+                    >
                       {i18next.t(`navigation:DEPPAY`)}
                     </Typography>
-                    <Typography variant="subtitle2" className="text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:DEPLIMIT`)}
                     </Typography>
-                    <Typography variant="subtitle2" className="mb-12 text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="mb-12 text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:DEPCHARGE`)}
                     </Typography>
-                    <Typography variant="subtitle2" className="mb-4 text-12 sm:text-14 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="mb-4 text-12 sm:text-14 text-center"
+                    >
                       {i18next.t(`navigation:ENTERAMOUNT`)}
                     </Typography>
                     <Box
-                      style={{ width: '97%' }}
+                      style={{ width: "97%" }}
                       component="form"
                       sx={{
-                        '& .MuiTextField-root': { m: 1, width: '100%', },
-                        alignContent: 'center',
+                        "& .MuiTextField-root": { m: 1, width: "100%" },
+                        alignContent: "center",
                         // marginTop: 3
                       }}
                       noValidate
-                      autoComplete="off">
+                      autoComplete="off"
+                    >
                       <TextField
                         type="number"
                         id="outlined-multiline-static"
@@ -161,12 +200,12 @@ function DepositNowDialog(props) {
                         value={getAmount}
                         onChange={(e) => setAmount(e.target.value)}
 
-                      // dir='rtl'
+                        // dir='rtl'
                       />
                     </Box>
-                    <Typography className='text-center mt-4'>
+                    <Typography className="text-center mt-4">
                       <Button
-                        variant='contained'
+                        variant="contained"
                         style={{
                           color: ReqColorCodes.btnText,
                           backgroundImage: ReqColorCodes.btn,
@@ -175,7 +214,9 @@ function DepositNowDialog(props) {
                           if (getAmount && getAmount > 0) {
                             setConfirm(true);
                           } else {
-                            dispatch(handleResponse(false, false, true, 'PROVAMOUNT'));
+                            dispatch(
+                              handleResponse(false, false, true, "PROVAMOUNT")
+                            );
                           }
                         }}
                       >
@@ -183,14 +224,16 @@ function DepositNowDialog(props) {
                       </Button>
                     </Typography>
                   </div>
-                }
+                )}
               </CardContent>
             </Card>
           </motion.div>
         </div>
       </DialogContent>
       <DialogActions>
-        <Button variant='contained' color='primary' onClick={handleCloseReset}>{i18next.t(`navigation:CAN`)}</Button>
+        <Button variant="contained" color="primary" onClick={handleCloseReset}>
+          {i18next.t(`navigation:CAN`)}
+        </Button>
       </DialogActions>
     </Dialog>
   );

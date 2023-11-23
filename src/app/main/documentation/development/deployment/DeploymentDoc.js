@@ -1,4 +1,4 @@
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 
 function DeploymentDoc() {
   return (
@@ -8,12 +8,13 @@ function DeploymentDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        You may have issues when refreshing the app URL. If so, you need to configure server
-        settings.
+        You may have issues when refreshing the app URL. If so, you need to
+        configure server settings.
       </Typography>
 
       <Typography className="mb-16" component="p">
-        Checkout deployment settings at Facebook's create-react-app documentation:
+        Checkout deployment settings at Facebook's create-react-app
+        documentation:
         <a
           href="https://facebook.github.io/create-react-app/docs/deployment"
           target="_blank"

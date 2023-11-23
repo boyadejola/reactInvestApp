@@ -1,31 +1,31 @@
-import { useDebounce } from '@fuse/hooks';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Controller, useForm } from 'react-hook-form';
-import _ from '@lodash';
-import TextField from '@mui/material/TextField';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import InputAdornment from '@mui/material/InputAdornment';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Typography from '@mui/material/Typography';
-import LabelModel from 'app/main/apps/notes/model/LabelModel';
-import clsx from 'clsx';
-import { useEffect, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as yup from 'yup';
-import { updateLabels } from '../../store/labelsSlice';
+import { useDebounce } from "@fuse/hooks";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
+import _ from "@lodash";
+import TextField from "@mui/material/TextField";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import InputAdornment from "@mui/material/InputAdornment";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Typography from "@mui/material/Typography";
+import LabelModel from "app/main/apps/notes/model/LabelModel";
+import clsx from "clsx";
+import { useEffect, useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
+import { updateLabels } from "../../store/labelsSlice";
 
 const defaultValues = {
-  name: '',
+  name: "",
 };
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  name: yup.string().required('You must enter a label title'),
+  name: yup.string().required("You must enter a label title"),
 });
 
 function LabelsForm(props) {
@@ -35,7 +35,7 @@ function LabelsForm(props) {
   const [labelsForm, setLabels] = useState(labels);
 
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -64,7 +64,9 @@ function LabelsForm(props) {
 
   return (
     <>
-      <Typography className="text-16 mb-8 font-semibold">Edit Labels</Typography>
+      <Typography className="text-16 mb-8 font-semibold">
+        Edit Labels
+      </Typography>
       <List dense>
         <form onSubmit={handleSubmit(onSubmit)}>
           <ListItem className="p-0 mb-16" dense>
@@ -74,7 +76,7 @@ function LabelsForm(props) {
               render={({ field }) => (
                 <TextField
                   {...field}
-                  className={clsx('flex flex-1')}
+                  className={clsx("flex flex-1")}
                   error={!!errors.name}
                   helperText={errors?.name?.message}
                   placeholder="Create new label"
@@ -112,7 +114,9 @@ function LabelsForm(props) {
           }
 
           function handleLabelChange(event, label) {
-            const updatedLabel = LabelModel(_.setIn(label, event.target.name, event.target.value));
+            const updatedLabel = LabelModel(
+              _.setIn(label, event.target.name, event.target.value)
+            );
             setLabels(_.setIn(labelsForm, updatedLabel.id, updatedLabel));
           }
 
@@ -122,7 +126,7 @@ function LabelsForm(props) {
                 label
               </Icon>
               <Input
-                className={clsx('flex flex-1 mx-8')}
+                className={clsx("flex flex-1 mx-8")}
                 name="name"
                 value={label.name}
                 onChange={(event) => handleLabelChange(event, label)}

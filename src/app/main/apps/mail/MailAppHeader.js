@@ -1,19 +1,19 @@
-import Hidden from '@mui/material/Hidden';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import Paper from '@mui/material/Paper';
-import { ThemeProvider } from '@mui/material/styles';
-import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectMainTheme } from 'app/store/fuse/settingsSlice';
-import { setMailsSearchText } from './store/mailsSlice';
+import Hidden from "@mui/material/Hidden";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import Paper from "@mui/material/Paper";
+import { ThemeProvider } from "@mui/material/styles";
+import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { selectMainTheme } from "app/store/fuse/settingsSlice";
+import { setMailsSearchText } from "./store/mailsSlice";
 
 function MailAppHeader(props) {
   const dispatch = useDispatch();
   const searchText = useSelector(({ mailApp }) => mailApp.mails.searchText);
   const mainTheme = useSelector(selectMainTheme);
-  const { t } = useTranslation('mailApp');
+  const { t } = useTranslation("mailApp");
 
   return (
     <ThemeProvider theme={mainTheme}>
@@ -32,13 +32,13 @@ function MailAppHeader(props) {
           <Icon color="action">search</Icon>
 
           <Input
-            placeholder={t('SEARCH_PLACEHOLDER')}
+            placeholder={t("SEARCH_PLACEHOLDER")}
             className="px-16"
             disableUnderline
             fullWidth
             value={searchText}
             inputProps={{
-              'aria-label': 'Search',
+              "aria-label": "Search",
             }}
             onChange={(ev) => dispatch(setMailsSearchText(ev))}
           />

@@ -1,37 +1,44 @@
-import { amber } from '@mui/material/colors';
-import Divider from '@mui/material/Divider';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import { selectFlatNavigation } from 'app/store/fuse/navigationSlice';
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import { memo, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { updateUserShortcuts } from 'app/auth/store/userSlice';
-import { Menus, InvestRoles } from 'app/auth/store/constants';
-import i18next from 'i18next';
-import Popover from '@mui/material/Popover';
-import { changeShowResetPass, setShowDeposit, setShowTwoFA, setShowWithdraw } from 'app/auth/store/sharedData';
-import history from '@history';
+import { amber } from "@mui/material/colors";
+import Divider from "@mui/material/Divider";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import { selectFlatNavigation } from "app/store/fuse/navigationSlice";
+import clsx from "clsx";
+import { motion } from "framer-motion";
+import { memo, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { updateUserShortcuts } from "app/auth/store/userSlice";
+import { Menus, InvestRoles } from "app/auth/store/constants";
+import i18next from "i18next";
+import Popover from "@mui/material/Popover";
+import {
+  changeShowResetPass,
+  setShowDeposit,
+  setShowTwoFA,
+  setShowWithdraw,
+} from "app/auth/store/sharedData";
+import history from "@history";
 
 function FuseShortcuts(props) {
   const dispatch = useDispatch();
   const shortcuts = useSelector(({ auth }) => auth.user.data.shortcuts) || [];
   const navigation = useSelector(selectFlatNavigation);
   const loggedin = useSelector(({ auth }) => auth.sharedData.loggedin);
-  const role = useSelector(({ auth }) => auth.user.roleid ? auth.user.roleid : 0);
+  const role = useSelector(({ auth }) =>
+    auth.user.roleid ? auth.user.roleid : 0
+  );
 
   const searchInputRef = useRef(null);
   const [addMenu, setAddMenu] = useState(null);
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [settings, setSettings] = useState(null);
   const [earn, setEarn] = useState(null);
   const [onSet, setOnSet] = useState(null);
@@ -39,8 +46,7 @@ function FuseShortcuts(props) {
   // const shortcutItems = shortcuts
   //   ? shortcuts.map((id) => navigation.find((item) => item.id === id))
   //   : [];
-  const shortcutItems = navigation && navigation.length > 0 ?
-    navigation : [];
+  const shortcutItems = navigation && navigation.length > 0 ? navigation : [];
 
   function addMenuClick(event) {
     setAddMenu(event.currentTarget);
@@ -57,7 +63,9 @@ function FuseShortcuts(props) {
 
     if (newSearchText.length !== 0 && navigation) {
       setSearchResults(
-        navigation.filter((item) => item.title.toLowerCase().includes(newSearchText.toLowerCase()))
+        navigation.filter((item) =>
+          item.title.toLowerCase().includes(newSearchText.toLowerCase())
+        )
       );
       return;
     }
@@ -80,8 +88,10 @@ function FuseShortcuts(props) {
             {item.icon ? (
               <Icon>{item.icon}</Icon>
             ) : (
-                <span className="text-20 font-semibold uppercase text-center">{item.title[0]}</span>
-              )}
+              <span className="text-20 font-semibold uppercase text-center">
+                {item.title[0]}
+              </span>
+            )}
           </ListItemIcon>
           <ListItemText primary={item.title} />
           <IconButton
@@ -92,7 +102,9 @@ function FuseShortcuts(props) {
             }}
             size="large"
           >
-            <Icon color="action">{shortcuts.includes(item.id) ? 'star' : 'star_border'}</Icon>
+            <Icon color="action">
+              {shortcuts.includes(item.id) ? "star" : "star_border"}
+            </Icon>
           </IconButton>
         </MenuItem>
       </Link>
@@ -138,18 +150,21 @@ function FuseShortcuts(props) {
   function onMenuClick(e) {
     settingClose();
     if (loggedin) {
-      if (e.id && e.id === Menus.CHANGEPASS) dispatch(changeShowResetPass(true))
-      else if (e.id && e.id === Menus.TWOFASEC) dispatch(setShowTwoFA(true))
-      else if (e.id && e.id === Menus.DEPOSITNOW) dispatch(setShowDeposit(true))
-      else if (e.id && e.id === Menus.WITHDRAWNOE) dispatch(setShowWithdraw(true));
+      if (e.id && e.id === Menus.CHANGEPASS)
+        dispatch(changeShowResetPass(true));
+      else if (e.id && e.id === Menus.TWOFASEC) dispatch(setShowTwoFA(true));
+      else if (e.id && e.id === Menus.DEPOSITNOW)
+        dispatch(setShowDeposit(true));
+      else if (e.id && e.id === Menus.WITHDRAWNOE)
+        dispatch(setShowWithdraw(true));
     }
   }
 
   return (
     <div
       className={clsx(
-        'flex flex-1',
-        props.variant === 'vertical' && 'flex-col flex-grow-0 flex-shrink',
+        "flex flex-1",
+        props.variant === "vertical" && "flex-col flex-grow-0 flex-shrink",
         props.className
       )}
     >
@@ -157,13 +172,16 @@ function FuseShortcuts(props) {
         variants={container}
         initial="hidden"
         animate="show"
-        className={clsx('flex flex-1', props.variant === 'vertical' && 'flex-col')}
+        className={clsx(
+          "flex flex-1",
+          props.variant === "vertical" && "flex-col"
+        )}
       >
         {!loggedin && (
           <div className="logo" style={{ marginLeft: 8 }}>
-        <img
-              style={{ cursor: 'pointer' }}
-              onClick={() => history.push('/venapp/home')}
+            <img
+              style={{ cursor: "pointer" }}
+              onClick={() => history.push("/venapp/home")}
               width="128"
               src="assets/images/logos/fuse.svg"
               alt="logo"
@@ -172,19 +190,33 @@ function FuseShortcuts(props) {
         )}
         {loggedin && (
           <>
-            {shortcutItems.filter(a => !a.isChildren &&
-              a.id != Menus.WITHDRAWAPPROVE &&
-              a.id != Menus.DEPOSITAPPROVE).map(
+            {shortcutItems
+              .filter(
+                (a) =>
+                  !a.isChildren &&
+                  a.id != Menus.WITHDRAWAPPROVE &&
+                  a.id != Menus.DEPOSITAPPROVE
+              )
+              .map(
                 (_item) =>
                   _item && (
-                    <Link to={_item.id == Menus.CHANGEPASS
-                      || _item.id == Menus.TWOFASEC
-                      || _item.id == Menus.DEPOSITNOW
-                      || _item.id == Menus.WITHDRAWNOE
-                      ? '#' : _item.url} key={_item.id} role="button">
+                    <Link
+                      to={
+                        _item.id == Menus.CHANGEPASS ||
+                        _item.id == Menus.TWOFASEC ||
+                        _item.id == Menus.DEPOSITNOW ||
+                        _item.id == Menus.WITHDRAWNOE
+                          ? "#"
+                          : _item.url
+                      }
+                      key={_item.id}
+                      role="button"
+                    >
                       <Tooltip
                         title={_item.title}
-                        placement={props.variant === 'horizontal' ? 'bottom' : 'left'}
+                        placement={
+                          props.variant === "horizontal" ? "bottom" : "left"
+                        }
                       >
                         <IconButton
                           className="w-40 h-40 p-0"
@@ -196,8 +228,10 @@ function FuseShortcuts(props) {
                           {_item.icon ? (
                             <Icon>{_item.icon}</Icon>
                           ) : (
-                              <span className="text-20 font-semibold uppercase">{_item.title[0]}</span>
-                            )}
+                            <span className="text-20 font-semibold uppercase">
+                              {_item.title[0]}
+                            </span>
+                          )}
                         </IconButton>
                       </Tooltip>
                     </Link>
@@ -205,11 +239,14 @@ function FuseShortcuts(props) {
               )}
 
             {/* dropdown icons logs */}
-            {shortcutItems && shortcutItems.length > 0 &&
-              shortcutItems.filter(b => b.id == Menus.TRANSHISTORY || b.id == Menus.RETINTLOG).length > 0 && (
+            {shortcutItems &&
+              shortcutItems.length > 0 &&
+              shortcutItems.filter(
+                (b) => b.id == Menus.TRANSHISTORY || b.id == Menus.RETINTLOG
+              ).length > 0 && (
                 <Tooltip
                   title={i18next.t(`navigation:LOGS`)}
-                  placement={props.variant === 'horizontal' ? 'bottom' : 'left'}
+                  placement={props.variant === "horizontal" ? "bottom" : "left"}
                 >
                   <IconButton
                     component={motion.div}
@@ -230,57 +267,105 @@ function FuseShortcuts(props) {
               anchorEl={settings}
               onClose={settingClose}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'center',
+                vertical: "bottom",
+                horizontal: "center",
               }}
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
+                vertical: "top",
+                horizontal: "center",
               }}
               classes={{
-                paper: 'py-8',
+                paper: "py-8",
               }}
             >
               <>
-                {shortcutItems.filter(rr => rr.id == Menus.RETINTLOG).length > 0 && (
+                {shortcutItems.filter((rr) => rr.id == Menus.RETINTLOG).length >
+                  0 && (
                   <MenuItem
-                    onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.RETINTLOG)[0])}
+                    onClick={() =>
+                      onMenuClick(
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.RETINTLOG
+                        )[0]
+                      )
+                    }
                     component={Link}
-                    to={shortcutItems.filter(rr => rr.id == Menus.RETINTLOG)[0].url}
+                    to={
+                      shortcutItems.filter((rr) => rr.id == Menus.RETINTLOG)[0]
+                        .url
+                    }
                     role="button"
                   >
                     <ListItemIcon className="min-w-40">
-                      <Icon>{shortcutItems.filter(rr => rr.id == Menus.RETINTLOG)[0].icon}</Icon>
+                      <Icon>
+                        {
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.RETINTLOG
+                          )[0].icon
+                        }
+                      </Icon>
                     </ListItemIcon>
-                    <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.RETINTLOG)[0].title} />
+                    <ListItemText
+                      primary={
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.RETINTLOG
+                        )[0].title
+                      }
+                    />
                   </MenuItem>
                 )}
-                {shortcutItems.filter(rr => rr.id == Menus.TRANSHISTORY).length > 0 && (
+                {shortcutItems.filter((rr) => rr.id == Menus.TRANSHISTORY)
+                  .length > 0 && (
                   <MenuItem
-                    onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.TRANSHISTORY)[0])}
+                    onClick={() =>
+                      onMenuClick(
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.TRANSHISTORY
+                        )[0]
+                      )
+                    }
                     component={Link}
-                    to={shortcutItems.filter(rr => rr.id == Menus.TRANSHISTORY)[0].url}
+                    to={
+                      shortcutItems.filter(
+                        (rr) => rr.id == Menus.TRANSHISTORY
+                      )[0].url
+                    }
                     role="button"
                   >
                     <ListItemIcon className="min-w-40">
-                      <Icon>{shortcutItems.filter(rr => rr.id == Menus.TRANSHISTORY)[0].icon}</Icon>
+                      <Icon>
+                        {
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.TRANSHISTORY
+                          )[0].icon
+                        }
+                      </Icon>
                     </ListItemIcon>
-                    <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.TRANSHISTORY)[0].title} />
+                    <ListItemText
+                      primary={
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.TRANSHISTORY
+                        )[0].title
+                      }
+                    />
                   </MenuItem>
                 )}
               </>
             </Popover>
 
             {/* dropdown icons earn */}
-            {shortcutItems && shortcutItems.length > 0 &&
-              shortcutItems.filter(b => b.id == Menus.DEPOSITNOW
-                || b.id == Menus.WITHDRAWNOE
-                || b.id == Menus.DEPHISTORY
-                || b.id == Menus.WITHHISTORY
+            {shortcutItems &&
+              shortcutItems.length > 0 &&
+              shortcutItems.filter(
+                (b) =>
+                  b.id == Menus.DEPOSITNOW ||
+                  b.id == Menus.WITHDRAWNOE ||
+                  b.id == Menus.DEPHISTORY ||
+                  b.id == Menus.WITHHISTORY
               ).length > 0 && (
                 <Tooltip
                   title={i18next.t(`navigation:EARN`)}
-                  placement={props.variant === 'horizontal' ? 'bottom' : 'left'}
+                  placement={props.variant === "horizontal" ? "bottom" : "left"}
                 >
                   <IconButton
                     component={motion.div}
@@ -301,81 +386,172 @@ function FuseShortcuts(props) {
               anchorEl={earn}
               onClose={earnClose}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'center',
+                vertical: "bottom",
+                horizontal: "center",
               }}
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
+                vertical: "top",
+                horizontal: "center",
               }}
               classes={{
-                paper: 'py-8',
+                paper: "py-8",
               }}
             >
               <>
-                {shortcutItems.filter(rr => rr.id == Menus.DEPOSITNOW).length > 0 && (
+                {shortcutItems.filter((rr) => rr.id == Menus.DEPOSITNOW)
+                  .length > 0 && (
                   <MenuItem
-                    onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.DEPOSITNOW)[0])}
+                    onClick={() =>
+                      onMenuClick(
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.DEPOSITNOW
+                        )[0]
+                      )
+                    }
                     component={Link}
-                    to={shortcutItems.filter(rr => rr.id == Menus.DEPOSITNOW)[0].url}
+                    to={
+                      shortcutItems.filter((rr) => rr.id == Menus.DEPOSITNOW)[0]
+                        .url
+                    }
                     role="button"
                   >
                     <ListItemIcon className="min-w-40">
-                      <Icon>{shortcutItems.filter(rr => rr.id == Menus.DEPOSITNOW)[0].icon}</Icon>
+                      <Icon>
+                        {
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.DEPOSITNOW
+                          )[0].icon
+                        }
+                      </Icon>
                     </ListItemIcon>
-                    <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.DEPOSITNOW)[0].title} />
+                    <ListItemText
+                      primary={
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.DEPOSITNOW
+                        )[0].title
+                      }
+                    />
                   </MenuItem>
                 )}
-                {shortcutItems.filter(rr => rr.id == Menus.WITHDRAWNOE).length > 0 && (
+                {shortcutItems.filter((rr) => rr.id == Menus.WITHDRAWNOE)
+                  .length > 0 && (
                   <MenuItem
-                    onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.WITHDRAWNOE)[0])}
+                    onClick={() =>
+                      onMenuClick(
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.WITHDRAWNOE
+                        )[0]
+                      )
+                    }
                     component={Link}
-                    to={shortcutItems.filter(rr => rr.id == Menus.WITHDRAWNOE)[0].url}
+                    to={
+                      shortcutItems.filter(
+                        (rr) => rr.id == Menus.WITHDRAWNOE
+                      )[0].url
+                    }
                     role="button"
                   >
                     <ListItemIcon className="min-w-40">
-                      <Icon>{shortcutItems.filter(rr => rr.id == Menus.WITHDRAWNOE)[0].icon}</Icon>
+                      <Icon>
+                        {
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.WITHDRAWNOE
+                          )[0].icon
+                        }
+                      </Icon>
                     </ListItemIcon>
-                    <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.WITHDRAWNOE)[0].title} />
+                    <ListItemText
+                      primary={
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.WITHDRAWNOE
+                        )[0].title
+                      }
+                    />
                   </MenuItem>
                 )}
-                {shortcutItems.filter(rr => rr.id == Menus.DEPHISTORY).length > 0 && (
+                {shortcutItems.filter((rr) => rr.id == Menus.DEPHISTORY)
+                  .length > 0 && (
                   <MenuItem
-                    onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.DEPHISTORY)[0])}
+                    onClick={() =>
+                      onMenuClick(
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.DEPHISTORY
+                        )[0]
+                      )
+                    }
                     component={Link}
-                    to={shortcutItems.filter(rr => rr.id == Menus.DEPHISTORY)[0].url}
+                    to={
+                      shortcutItems.filter((rr) => rr.id == Menus.DEPHISTORY)[0]
+                        .url
+                    }
                     role="button"
                   >
                     <ListItemIcon className="min-w-40">
-                      <Icon>{shortcutItems.filter(rr => rr.id == Menus.DEPHISTORY)[0].icon}</Icon>
+                      <Icon>
+                        {
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.DEPHISTORY
+                          )[0].icon
+                        }
+                      </Icon>
                     </ListItemIcon>
-                    <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.DEPHISTORY)[0].title} />
+                    <ListItemText
+                      primary={
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.DEPHISTORY
+                        )[0].title
+                      }
+                    />
                   </MenuItem>
                 )}
-                {shortcutItems.filter(rr => rr.id == Menus.WITHHISTORY).length > 0 && (
+                {shortcutItems.filter((rr) => rr.id == Menus.WITHHISTORY)
+                  .length > 0 && (
                   <MenuItem
-                    onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.WITHHISTORY)[0])}
+                    onClick={() =>
+                      onMenuClick(
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.WITHHISTORY
+                        )[0]
+                      )
+                    }
                     component={Link}
-                    to={shortcutItems.filter(rr => rr.id == Menus.WITHHISTORY)[0].url}
+                    to={
+                      shortcutItems.filter(
+                        (rr) => rr.id == Menus.WITHHISTORY
+                      )[0].url
+                    }
                     role="button"
                   >
                     <ListItemIcon className="min-w-40">
-                      <Icon>{shortcutItems.filter(rr => rr.id == Menus.WITHHISTORY)[0].icon}</Icon>
+                      <Icon>
+                        {
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.WITHHISTORY
+                          )[0].icon
+                        }
+                      </Icon>
                     </ListItemIcon>
-                    <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.WITHHISTORY)[0].title} />
+                    <ListItemText
+                      primary={
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.WITHHISTORY
+                        )[0].title
+                      }
+                    />
                   </MenuItem>
                 )}
               </>
             </Popover>
 
             {/* dropdown icons setting */}
-            {shortcutItems && shortcutItems.length > 0 &&
-              shortcutItems.filter(b => b.id == Menus.CHANGEPASS
-                || b.id == Menus.TWOFASEC
+            {shortcutItems &&
+              shortcutItems.length > 0 &&
+              shortcutItems.filter(
+                (b) => b.id == Menus.CHANGEPASS || b.id == Menus.TWOFASEC
               ).length > 0 && (
                 <Tooltip
                   title={i18next.t(`navigation:SETT`)}
-                  placement={props.variant === 'horizontal' ? 'bottom' : 'left'}
+                  placement={props.variant === "horizontal" ? "bottom" : "left"}
                 >
                   <IconButton
                     component={motion.div}
@@ -396,72 +572,161 @@ function FuseShortcuts(props) {
               anchorEl={onSet}
               onClose={onSetClose}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'center',
+                vertical: "bottom",
+                horizontal: "center",
               }}
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
+                vertical: "top",
+                horizontal: "center",
               }}
               classes={{
-                paper: 'py-8',
+                paper: "py-8",
               }}
             >
               <>
-                {(role == InvestRoles.admin || role == InvestRoles.superadmin) && (
+                {(role == InvestRoles.admin ||
+                  role == InvestRoles.superadmin) && (
                   <>
-                    {shortcutItems.filter(rr => rr.id == Menus.DEPOSITAPPROVE).length > 0 && (
+                    {shortcutItems.filter((rr) => rr.id == Menus.DEPOSITAPPROVE)
+                      .length > 0 && (
                       <MenuItem
-                        onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.DEPOSITAPPROVE)[0])}
+                        onClick={() =>
+                          onMenuClick(
+                            shortcutItems.filter(
+                              (rr) => rr.id == Menus.DEPOSITAPPROVE
+                            )[0]
+                          )
+                        }
                         component={Link}
-                        to={shortcutItems.filter(rr => rr.id == Menus.DEPOSITAPPROVE)[0].url}
+                        to={
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.DEPOSITAPPROVE
+                          )[0].url
+                        }
                         role="button"
                       >
                         <ListItemIcon className="min-w-40">
-                          <Icon>{shortcutItems.filter(rr => rr.id == Menus.DEPOSITAPPROVE)[0].icon}</Icon>
+                          <Icon>
+                            {
+                              shortcutItems.filter(
+                                (rr) => rr.id == Menus.DEPOSITAPPROVE
+                              )[0].icon
+                            }
+                          </Icon>
                         </ListItemIcon>
-                        <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.DEPOSITAPPROVE)[0].title} />
+                        <ListItemText
+                          primary={
+                            shortcutItems.filter(
+                              (rr) => rr.id == Menus.DEPOSITAPPROVE
+                            )[0].title
+                          }
+                        />
                       </MenuItem>
                     )}
-                    {shortcutItems.filter(rr => rr.id == Menus.WITHDRAWAPPROVE).length > 0 && (
+                    {shortcutItems.filter(
+                      (rr) => rr.id == Menus.WITHDRAWAPPROVE
+                    ).length > 0 && (
                       <MenuItem
-                        onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.WITHDRAWAPPROVE)[0])}
+                        onClick={() =>
+                          onMenuClick(
+                            shortcutItems.filter(
+                              (rr) => rr.id == Menus.WITHDRAWAPPROVE
+                            )[0]
+                          )
+                        }
                         component={Link}
-                        to={shortcutItems.filter(rr => rr.id == Menus.WITHDRAWAPPROVE)[0].url}
+                        to={
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.WITHDRAWAPPROVE
+                          )[0].url
+                        }
                         role="button"
                       >
                         <ListItemIcon className="min-w-40">
-                          <Icon>{shortcutItems.filter(rr => rr.id == Menus.WITHDRAWAPPROVE)[0].icon}</Icon>
+                          <Icon>
+                            {
+                              shortcutItems.filter(
+                                (rr) => rr.id == Menus.WITHDRAWAPPROVE
+                              )[0].icon
+                            }
+                          </Icon>
                         </ListItemIcon>
-                        <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.WITHDRAWAPPROVE)[0].title} />
+                        <ListItemText
+                          primary={
+                            shortcutItems.filter(
+                              (rr) => rr.id == Menus.WITHDRAWAPPROVE
+                            )[0].title
+                          }
+                        />
                       </MenuItem>
                     )}
                   </>
                 )}
-                {shortcutItems.filter(rr => rr.id == Menus.CHANGEPASS).length > 0 && (
+                {shortcutItems.filter((rr) => rr.id == Menus.CHANGEPASS)
+                  .length > 0 && (
                   <MenuItem
-                    onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.CHANGEPASS)[0])}
+                    onClick={() =>
+                      onMenuClick(
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.CHANGEPASS
+                        )[0]
+                      )
+                    }
                     // component={Link}
-                    to={shortcutItems.filter(rr => rr.id == Menus.CHANGEPASS)[0].url}
+                    to={
+                      shortcutItems.filter((rr) => rr.id == Menus.CHANGEPASS)[0]
+                        .url
+                    }
                     role="button"
                   >
                     <ListItemIcon className="min-w-40">
-                      <Icon>{shortcutItems.filter(rr => rr.id == Menus.CHANGEPASS)[0].icon}</Icon>
+                      <Icon>
+                        {
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.CHANGEPASS
+                          )[0].icon
+                        }
+                      </Icon>
                     </ListItemIcon>
-                    <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.CHANGEPASS)[0].title} />
+                    <ListItemText
+                      primary={
+                        shortcutItems.filter(
+                          (rr) => rr.id == Menus.CHANGEPASS
+                        )[0].title
+                      }
+                    />
                   </MenuItem>
                 )}
-                {shortcutItems.filter(rr => rr.id == Menus.TWOFASEC).length > 0 && (
+                {shortcutItems.filter((rr) => rr.id == Menus.TWOFASEC).length >
+                  0 && (
                   <MenuItem
-                    onClick={() => onMenuClick(shortcutItems.filter(rr => rr.id == Menus.TWOFASEC)[0])}
+                    onClick={() =>
+                      onMenuClick(
+                        shortcutItems.filter((rr) => rr.id == Menus.TWOFASEC)[0]
+                      )
+                    }
                     // component={Link}
-                    to={shortcutItems.filter(rr => rr.id == Menus.TWOFASEC)[0].url}
+                    to={
+                      shortcutItems.filter((rr) => rr.id == Menus.TWOFASEC)[0]
+                        .url
+                    }
                     role="button"
                   >
                     <ListItemIcon className="min-w-40">
-                      <Icon>{shortcutItems.filter(rr => rr.id == Menus.TWOFASEC)[0].icon}</Icon>
+                      <Icon>
+                        {
+                          shortcutItems.filter(
+                            (rr) => rr.id == Menus.TWOFASEC
+                          )[0].icon
+                        }
+                      </Icon>
                     </ListItemIcon>
-                    <ListItemText primary={shortcutItems.filter(rr => rr.id == Menus.TWOFASEC)[0].title} />
+                    <ListItemText
+                      primary={
+                        shortcutItems.filter((rr) => rr.id == Menus.TWOFASEC)[0]
+                          .title
+                      }
+                    />
                   </MenuItem>
                 )}
               </>
@@ -469,8 +734,8 @@ function FuseShortcuts(props) {
 
             <div className="logo" style={{ marginLeft: "25%" }}>
               <img
-                style={{ cursor: 'pointer' }}
-                onClick={() => history.push('/venapp/home')}
+                style={{ cursor: "pointer" }}
+                onClick={() => history.push("/venapp/home")}
                 width="128"
                 src="assets/images/logos/fuse.svg"
                 alt="logo"
@@ -547,7 +812,7 @@ function FuseShortcuts(props) {
 
 FuseShortcuts.propTypes = {};
 FuseShortcuts.defaultProps = {
-  variant: 'horizontal',
+  variant: "horizontal",
 };
 
 export default memo(FuseShortcuts);

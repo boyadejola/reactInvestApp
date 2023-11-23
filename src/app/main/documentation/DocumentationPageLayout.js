@@ -1,40 +1,40 @@
-import Hidden from '@mui/material/Hidden';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import clsx from 'clsx';
-import { useRef } from 'react';
-import FuseNavigation from '@fuse/core/FuseNavigation/FuseNavigation';
-import FusePageSimple from '@fuse/core/FusePageSimple/FusePageSimple';
-import FuseSuspense from '@fuse/core/FuseSuspense';
-import { renderRoutes } from 'react-router-config';
-import { Link } from 'react-router-dom';
-import { styled } from '@mui/material/styles';
-import DocumentationNavigation from './DocumentationNavigation';
-import DocumentationPageBreadcrumb from './DocumentationPageBreadcrumb';
+import Hidden from "@mui/material/Hidden";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import clsx from "clsx";
+import { useRef } from "react";
+import FuseNavigation from "@fuse/core/FuseNavigation/FuseNavigation";
+import FusePageSimple from "@fuse/core/FusePageSimple/FusePageSimple";
+import FuseSuspense from "@fuse/core/FuseSuspense";
+import { renderRoutes } from "react-router-config";
+import { Link } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+import DocumentationNavigation from "./DocumentationNavigation";
+import DocumentationPageBreadcrumb from "./DocumentationPageBreadcrumb";
 
 const Root = styled(FusePageSimple)(({ theme }) => ({
-  height: '100%',
-  '& .FusePageSimple-header': {
+  height: "100%",
+  "& .FusePageSimple-header": {
     minHeight: 64,
     height: 64,
   },
-  '& .FusePageSimple-wrapper': {
+  "& .FusePageSimple-wrapper": {
     minHeight: 0,
   },
-  '& .FusePageSimple-content': {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
+  "& .FusePageSimple-content": {
+    display: "flex",
+    flexDirection: "column",
+    height: "100%",
     padding: 16,
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       padding: 24,
     },
   },
-  '& .FusePageSimple-sidebar': {
+  "& .FusePageSimple-sidebar": {
     width: 288,
     paddingTop: 8,
   },
-  '& .description': {
+  "& .description": {
     fontSize: 20,
     marginBottom: 40,
   },
@@ -63,7 +63,8 @@ function DocumentationPageLayout({ content, route }) {
               className="text-14 md:text-18 font-medium flex items-center"
               role="button"
             >
-              <Icon className="mr-8">import_contacts</Icon> <span>Fuse React - Documentation</span>
+              <Icon className="mr-8">import_contacts</Icon>{" "}
+              <span>Fuse React - Documentation</span>
             </Link>
           </div>
         </div>
@@ -78,7 +79,7 @@ function DocumentationPageLayout({ content, route }) {
       }
       leftSidebarContent={
         <FuseNavigation
-          className={clsx('navigation')}
+          className={clsx("navigation")}
           navigation={DocumentationNavigation.children}
         />
       }

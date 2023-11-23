@@ -1,12 +1,12 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
 
 export default function PositionedSnackbar() {
   const [state, setState] = React.useState({
     open: false,
-    vertical: 'top',
-    horizontal: 'center',
+    vertical: "top",
+    horizontal: "center",
   });
 
   const { vertical, horizontal, open } = state;
@@ -23,48 +23,48 @@ export default function PositionedSnackbar() {
     <React.Fragment>
       <Button
         onClick={handleClick({
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: "top",
+          horizontal: "center",
         })}
       >
         Top-Center
       </Button>
       <Button
         onClick={handleClick({
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         })}
       >
         Top-Right
       </Button>
       <Button
         onClick={handleClick({
-          vertical: 'bottom',
-          horizontal: 'right',
+          vertical: "bottom",
+          horizontal: "right",
         })}
       >
         Bottom-Right
       </Button>
       <Button
         onClick={handleClick({
-          vertical: 'bottom',
-          horizontal: 'center',
+          vertical: "bottom",
+          horizontal: "center",
         })}
       >
         Bottom-Center
       </Button>
       <Button
         onClick={handleClick({
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: "bottom",
+          horizontal: "left",
         })}
       >
         Bottom-Left
       </Button>
       <Button
         onClick={handleClick({
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: "top",
+          horizontal: "left",
         })}
       >
         Top-Left

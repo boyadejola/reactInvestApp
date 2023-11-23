@@ -1,6 +1,6 @@
-import Typography from '@mui/material/Typography';
-import ChangelogCard from './ChangelogCard';
-import changelogData from './ChangelogData';
+import Typography from "@mui/material/Typography";
+import ChangelogCard from "./ChangelogCard";
+import changelogData from "./ChangelogData";
 
 function ChangelogDoc() {
   return (

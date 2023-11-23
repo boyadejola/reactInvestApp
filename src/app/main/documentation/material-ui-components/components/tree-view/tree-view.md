@@ -1,9 +1,9 @@
 ---
 title: Tree View React component
 components: TreeView, TreeItem
-githubLabel: 'component: TreeView'
+githubLabel: "component: TreeView"
 waiAria: https://www.w3.org/TR/wai-aria-practices/#TreeView
-packageName: '@mui/lab'
+packageName: "@mui/lab"
 ---
 
 # Tree View
@@ -38,12 +38,12 @@ Let's consider a data variable with the following shape, recursion can be used t
 
 ```js
 const data = {
-  id: 'root',
-  name: 'Parent',
+  id: "root",
+  name: "Parent",
   children: [
     {
-      id: '1',
-      name: 'Child - 1',
+      id: "1",
+      name: "Child - 1",
     },
     // …
   ],

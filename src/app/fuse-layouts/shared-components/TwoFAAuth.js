@@ -1,21 +1,21 @@
-import { motion } from 'framer-motion';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Icon from '@mui/material/Icon';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import { useDispatch, useSelector } from 'react-redux';
-import Typography from '@mui/material/Typography';
-import Dialog from '@mui/material/Dialog';
-import { useHistory } from 'react-router-dom';
-import _ from '@lodash';
-import { setTwoFALoader } from 'app/auth/store/loadersSlice';
-import i18next from 'i18next';
-import { handleResponse } from '../../auth/store/commonMethods';
-import { setShowTwoFA, setTwoFAEnable } from '../../auth/store/sharedData';
-import { showMessage } from 'app/store/fuse/messageSlice';
-import { ReqColorCodes } from 'app/auth/store/constants';
-import { DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import { motion } from "framer-motion";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Icon from "@mui/material/Icon";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import { useDispatch, useSelector } from "react-redux";
+import Typography from "@mui/material/Typography";
+import Dialog from "@mui/material/Dialog";
+import { useHistory } from "react-router-dom";
+import _ from "@lodash";
+import { setTwoFALoader } from "app/auth/store/loadersSlice";
+import i18next from "i18next";
+import { handleResponse } from "../../auth/store/commonMethods";
+import { setShowTwoFA, setTwoFAEnable } from "../../auth/store/sharedData";
+import { showMessage } from "app/store/fuse/messageSlice";
+import { ReqColorCodes } from "app/auth/store/constants";
+import { DialogActions, DialogContent, DialogTitle } from "@mui/material";
 
 function TwoFAAuth(props) {
   const dispatch = useDispatch();
@@ -60,12 +60,12 @@ function TwoFAAuth(props) {
   return (
     <Dialog
       open={openReset}
-    // onClose={handleCloseReset}
+      // onClose={handleCloseReset}
     >
       <IconButton color="default" className="fixed" onClick={handleCloseReset}>
         <Icon>cancel</Icon>
       </IconButton>
-      <DialogTitle className='my-16 text-center'>
+      <DialogTitle className="my-16 text-center">
         {i18next.t(`navigation:TWOFAUTHHEAD`)}
       </DialogTitle>
       <DialogContent>
@@ -83,23 +83,29 @@ function TwoFAAuth(props) {
               square
             >
               <CardContent className="flex flex-col items-center justify-center p-4 sm:p-8 md:p-12 md:pt-20 ">
-                {!isEnable ?
+                {!isEnable ? (
                   <div>
-                    <Typography variant="h6" className="mb-16 font-semibold text-18 sm:text-24 text-center">
+                    <Typography
+                      variant="h6"
+                      className="mb-16 font-semibold text-18 sm:text-24 text-center"
+                    >
                       {i18next.t(`navigation:APPAUTH`)}
                     </Typography>
-                    <Typography variant="subtitle2" className="mb-24 text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="mb-24 text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:SECUREWITHTWO`)}
                     </Typography>
-                    <Typography className='text-center'>
+                    <Typography className="text-center">
                       <Button
-                        variant='contained'
+                        variant="contained"
                         style={{
                           color: ReqColorCodes.btnText,
                           backgroundImage: ReqColorCodes.btn,
                         }}
                         onClick={() => {
-                          history.push('/venapp/twofasecure');
+                          history.push("/venapp/twofasecure");
                           handleCloseReset();
                         }}
                       >
@@ -107,23 +113,35 @@ function TwoFAAuth(props) {
                       </Button>
                     </Typography>
                   </div>
-                  :
+                ) : (
                   <div>
-                    <Typography variant="h6" className="mb-16 font-semibold text-18 sm:text-24 text-center">
+                    <Typography
+                      variant="h6"
+                      className="mb-16 font-semibold text-18 sm:text-24 text-center"
+                    >
                       {i18next.t(`navigation:APPAUTH`)}
                     </Typography>
-                    <Typography variant="subtitle2" className="mb-24 text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="mb-24 text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:SECUREWITHTWO`)}
                     </Typography>
-                    <Typography variant="h6" className="mb-16 font-semibold text-18 sm:text-24 text-center">
+                    <Typography
+                      variant="h6"
+                      className="mb-16 font-semibold text-18 sm:text-24 text-center"
+                    >
                       {i18next.t(`navigation:ENABLEDTWOFA`)}
                     </Typography>
-                    <Typography variant="subtitle2" className="mb-24 text-14 sm:text-16 text-center">
+                    <Typography
+                      variant="subtitle2"
+                      className="mb-24 text-14 sm:text-16 text-center"
+                    >
                       {i18next.t(`navigation:WANTTODISABLE`)}
                     </Typography>
-                    <Typography className='text-center'>
+                    <Typography className="text-center">
                       <Button
-                        variant='contained'
+                        variant="contained"
                         style={{
                           color: ReqColorCodes.btnText,
                           backgroundImage: ReqColorCodes.btn,
@@ -136,14 +154,16 @@ function TwoFAAuth(props) {
                       </Button>
                     </Typography>
                   </div>
-                }
+                )}
               </CardContent>
             </Card>
           </motion.div>
         </div>
       </DialogContent>
       <DialogActions>
-        <Button variant='contained' color='primary' onClick={handleCloseReset}>{i18next.t(`navigation:CAN`)}</Button>
+        <Button variant="contained" color="primary" onClick={handleCloseReset}>
+          {i18next.t(`navigation:CAN`)}
+        </Button>
       </DialogActions>
     </Dialog>
   );

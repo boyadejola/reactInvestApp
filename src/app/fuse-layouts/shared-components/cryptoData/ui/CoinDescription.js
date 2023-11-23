@@ -50,8 +50,9 @@ const CoinDescription = (props) => {
 
   return (
     <div
-      className={`w-[95%] max-w-[900px] rounded-2xl fixed top-2/4 left-2/4 -translate-x-2/4 -translate-y-1/2 h-[88%] max-h-[700px] z-10 flex flex-col md:flex-row overflow-auto ${props.theme === true ? "bg-white" : "bg-[#0a1929] text-white"
-        }`}
+      className={`w-[95%] max-w-[900px] rounded-2xl fixed top-2/4 left-2/4 -translate-x-2/4 -translate-y-1/2 h-[88%] max-h-[700px] z-10 flex flex-col md:flex-row overflow-auto ${
+        props.theme === true ? "bg-white" : "bg-[#0a1929] text-white"
+      }`}
     >
       {!error && (
         <CurrDesc coinDeatiledData={coinData} loadedStatus={isLoaded} />

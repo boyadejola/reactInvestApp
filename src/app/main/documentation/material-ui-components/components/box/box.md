@@ -1,6 +1,6 @@
 ---
 title: React Box component
-githubLabel: 'component: Box'
+githubLabel: "component: Box"
 ---
 
 # Box
@@ -57,7 +57,7 @@ For non-MUI components, use the `component` prop.
 ## API
 
 ```jsx
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 ```
 
 | Name                                     | Type                                                                                                        | Default                                 | Description                                                                                |

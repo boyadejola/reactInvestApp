@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loginLoader: false,
@@ -26,7 +26,7 @@ const initialState = {
 };
 
 const invitesSlice = createSlice({
-  name: 'auth/loaders',
+  name: "auth/loaders",
   initialState,
   reducers: {
     setLoginLoader: (state, action) => {

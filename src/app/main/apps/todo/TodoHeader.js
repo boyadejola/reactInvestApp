@@ -1,12 +1,12 @@
-import Hidden from '@mui/material/Hidden';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import Paper from '@mui/material/Paper';
-import { ThemeProvider } from '@mui/material/styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectMainTheme } from 'app/store/fuse/settingsSlice';
-import { setTodosSearchText } from './store/todosSlice';
+import Hidden from "@mui/material/Hidden";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import Paper from "@mui/material/Paper";
+import { ThemeProvider } from "@mui/material/styles";
+import { useDispatch, useSelector } from "react-redux";
+import { selectMainTheme } from "app/store/fuse/settingsSlice";
+import { setTodosSearchText } from "./store/todosSlice";
 
 function TodoHeader(props) {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ function TodoHeader(props) {
             fullWidth
             value={searchText}
             inputProps={{
-              'aria-label': 'Search',
+              "aria-label": "Search",
             }}
             onChange={(ev) => dispatch(setTodosSearchText(ev))}
           />

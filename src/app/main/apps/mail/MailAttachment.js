@@ -1,22 +1,22 @@
-import Icon from '@mui/material/Icon';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import Icon from "@mui/material/Icon";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
 
-const Root = styled('div')({
+const Root = styled("div")({
   fontSize: 13,
-  backgroundColor: 'rgba(0, 0, 0, 0.08)',
-  border: '1px solid rgba(0, 0, 0, 0.16)',
+  backgroundColor: "rgba(0, 0, 0, 0.08)",
+  border: "1px solid rgba(0, 0, 0, 0.16)",
   paddingLeft: 16,
   marginBottom: 8,
   borderRadius: 2,
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  '& .filename': {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  "& .filename": {
     fontWeight: 600,
   },
-  '& .size': {
+  "& .size": {
     marginLeft: 8,
     fontWeight: 300,
   },

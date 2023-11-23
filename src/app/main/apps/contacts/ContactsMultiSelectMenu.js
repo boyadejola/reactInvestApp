@@ -1,13 +1,17 @@
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setContactsUnstarred, setContactsStarred, removeContacts } from './store/contactsSlice';
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  setContactsUnstarred,
+  setContactsStarred,
+  removeContacts,
+} from "./store/contactsSlice";
 
 function ContactsMultiSelectMenu(props) {
   const dispatch = useDispatch();
@@ -27,7 +31,7 @@ function ContactsMultiSelectMenu(props) {
     <>
       <IconButton
         className="p-0"
-        aria-owns={anchorEl ? 'selectedContactsMenu' : null}
+        aria-owns={anchorEl ? "selectedContactsMenu" : null}
         aria-haspopup="true"
         onClick={openSelectedContactMenu}
         size="large"

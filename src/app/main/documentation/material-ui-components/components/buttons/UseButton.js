@@ -1,11 +1,11 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import Stack from '@mui/material/Stack';
-import { useButton } from '@mui/core/ButtonUnstyled';
-import { styled } from '@mui/system';
+import * as React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import Stack from "@mui/material/Stack";
+import { useButton } from "@mui/core/ButtonUnstyled";
+import { styled } from "@mui/system";
 
-const CustomButtonRoot = styled('button')(`
+const CustomButtonRoot = styled("button")(`
   background-color: #007fff;
   padding: 15px 20px;
   border-radius: 10px;
@@ -66,7 +66,7 @@ CustomButton.propTypes = {
 export default function UseButton() {
   return (
     <Stack spacing={2} direction="row">
-      <CustomButton onClick={() => console.log('click!')}>Button</CustomButton>
+      <CustomButton onClick={() => console.log("click!")}>Button</CustomButton>
       <CustomButton disabled>Disabled</CustomButton>
     </Stack>
   );

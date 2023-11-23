@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Portal from '@mui/material/Portal';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Portal from "@mui/material/Portal";
 
 export default function PortalClickAway() {
   const [open, setOpen] = React.useState(false);
@@ -15,14 +15,14 @@ export default function PortalClickAway() {
   };
 
   const styles = {
-    position: 'fixed',
+    position: "fixed",
     width: 200,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    border: '1px solid',
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    border: "1px solid",
     p: 1,
-    bgcolor: 'background.paper',
+    bgcolor: "background.paper",
   };
 
   return (

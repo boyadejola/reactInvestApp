@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const stateSlice = createSlice({
-  name: 'chatPanel/state',
+  name: "chatPanel/state",
   initialState: false,
   reducers: {
     toggleChatPanel: (state, action) => !state,
@@ -11,6 +11,7 @@ const stateSlice = createSlice({
   extraReducers: {},
 });
 
-export const { toggleChatPanel, openChatPanel, closeChatPanel } = stateSlice.actions;
+export const { toggleChatPanel, openChatPanel, closeChatPanel } =
+  stateSlice.actions;
 
 export default stateSlice.reducer;

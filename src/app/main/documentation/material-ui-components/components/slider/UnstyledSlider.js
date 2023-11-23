@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { styled, alpha, Box } from '@mui/system';
-import SliderUnstyled from '@mui/core/SliderUnstyled';
+import * as React from "react";
+import { styled, alpha, Box } from "@mui/system";
+import SliderUnstyled from "@mui/core/SliderUnstyled";
 
 const StyledSlider = styled(SliderUnstyled)(
   ({ theme }) => `
-  color: ${theme.palette.mode === 'light' ? '#1976d2' : '#90caf9'};
+  color: ${theme.palette.mode === "light" ? "#1976d2" : "#90caf9"};
   height: 4px;
   width: 100%;
   padding: 13px 0;
@@ -51,19 +51,19 @@ const StyledSlider = styled(SliderUnstyled)(
     :hover,
     &.Mui-focusVisible {
       box-shadow: 0 0 0 0.25rem ${alpha(
-        theme.palette.mode === 'light' ? '#1976d2' : '#90caf9',
-        0.15,
+        theme.palette.mode === "light" ? "#1976d2" : "#90caf9",
+        0.15
       )};
     }
 
     &.Mui-active {
       box-shadow: 0 0 0 0.25rem ${alpha(
-        theme.palette.mode === 'light' ? '#1976d2' : '#90caf9',
-        0.3,
+        theme.palette.mode === "light" ? "#1976d2" : "#90caf9",
+        0.3
       )};
     }
   }
-`,
+`
 );
 
 export default function UnstyledSlider() {

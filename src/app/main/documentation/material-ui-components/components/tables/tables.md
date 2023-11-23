@@ -1,7 +1,7 @@
 ---
 title: React Table component
 components: Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow, TableSortLabel
-githubLabel: 'component: Table'
+githubLabel: "component: Table"
 waiAria: https://www.w3.org/TR/wai-aria-practices/#table
 materialDesign: https://material.io/components/data-tables
 ---
@@ -69,7 +69,7 @@ You should either provide an array of:
 - **objects**, the `value` and `label` keys will be used respectively for the value and label of the option (useful for language strings such as 'All').
 
   ```jsx
-  <TablePagination rowsPerPageOptions={[10, 50, { value: -1, label: 'All' }]} />
+  <TablePagination rowsPerPageOptions={[10, 50, { value: -1, label: "All" }]} />
   ```
 
 ### Custom pagination actions

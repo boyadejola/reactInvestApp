@@ -1,9 +1,9 @@
-import FuseUtils from '@fuse/utils';
-import AppContext from 'app/AppContext';
-import { Component } from 'react';
-import { connect } from 'react-redux';
-import { matchRoutes } from 'react-router-config';
-import { withRouter } from 'react-router-dom';
+import FuseUtils from "@fuse/utils";
+import AppContext from "app/AppContext";
+import { Component } from "react";
+import { connect } from "react-redux";
+import { matchRoutes } from "react-router-config";
+import { withRouter } from "react-router-dom";
 
 class FuseAuthorization extends Component {
   constructor(props, context) {
@@ -38,24 +38,33 @@ class FuseAuthorization extends Component {
     const matched = matchRoutes(state.routes, pathname)[0];
 
     return {
-      accessGranted: matched ? FuseUtils.hasPermission(matched.route.auth, userRole) : true,
+      accessGranted: matched
+        ? FuseUtils.hasPermission(matched.route.auth, userRole)
+        : true,
     };
   }
 
   redirectRoute() {
     const { location, userRole, history } = this.props;
     const { pathname, state } = location;
-    const redirectUrl = state && state.redirectUrl ? state.redirectUrl : '/';
+    const redirectUrl = state && state.redirectUrl ? state.redirectUrl : "/";
 
     /*
         User is guest
         Redirect to Login Page
         */
-    const data = localStorage.getItem('ghuid') ? JSON.parse(localStorage.getItem('ghuid')) : false;
-    const role = userRole && userRole.length > 0 ? userRole : data && data.role && data.role.length > 0 ? data.role : false;
+    const data = localStorage.getItem("ghuid")
+      ? JSON.parse(localStorage.getItem("ghuid"))
+      : false;
+    const role =
+      userRole && userRole.length > 0
+        ? userRole
+        : data && data.role && data.role.length > 0
+        ? data.role
+        : false;
     if (!role || role.length === 0) {
       history.push({
-        pathname: '/venapp/home',
+        pathname: "/venapp/home",
         state: { redirectUrl: pathname },
       });
     } else {

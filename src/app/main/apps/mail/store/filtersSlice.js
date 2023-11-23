@@ -1,12 +1,19 @@
-import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
-import axios from 'axios';
+import {
+  createSlice,
+  createAsyncThunk,
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const getFilters = createAsyncThunk('mailApp/filters/getFilters', async () => {
-  const response = await axios.get('/api/mail-app/filters');
-  const data = await response.data;
+export const getFilters = createAsyncThunk(
+  "mailApp/filters/getFilters",
+  async () => {
+    const response = await axios.get("/api/mail-app/filters");
+    const data = await response.data;
 
-  return data;
-});
+    return data;
+  }
+);
 
 const filtersAdapter = createEntityAdapter({});
 
@@ -14,7 +21,7 @@ export const { selectAll: selectFilters, selectById: selectFilterById } =
   filtersAdapter.getSelectors((state) => state.mailApp.filters);
 
 const filtersSlice = createSlice({
-  name: 'mailApp/filters',
+  name: "mailApp/filters",
   initialState: filtersAdapter.getInitialState({}),
   reducers: {},
   extraReducers: {

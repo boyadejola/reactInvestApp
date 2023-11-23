@@ -1,5 +1,5 @@
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
 
 function NoteFormUploadImage(props) {
   function handleChange(e) {
@@ -18,7 +18,7 @@ function NoteFormUploadImage(props) {
     };
 
     reader.onerror = () => {
-      console.log('error on load image');
+      console.log("error on load image");
     };
   }
 
@@ -32,7 +32,11 @@ function NoteFormUploadImage(props) {
           type="file"
           onChange={handleChange}
         />
-        <IconButton className="w-32 h-32 mx-4 p-0" component="span" size="large">
+        <IconButton
+          className="w-32 h-32 mx-4 p-0"
+          component="span"
+          size="large"
+        >
           <Icon fontSize="small">image</Icon>
         </IconButton>
       </label>

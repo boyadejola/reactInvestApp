@@ -1,16 +1,18 @@
-import Icon from '@mui/material/Icon';
-import Input from '@mui/material/Input';
-import Paper from '@mui/material/Paper';
-import { ThemeProvider } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectMainTheme } from 'app/store/fuse/settingsSlice';
-import { setOrdersSearchText } from '../store/ordersSlice';
+import Icon from "@mui/material/Icon";
+import Input from "@mui/material/Input";
+import Paper from "@mui/material/Paper";
+import { ThemeProvider } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { selectMainTheme } from "app/store/fuse/settingsSlice";
+import { setOrdersSearchText } from "../store/ordersSlice";
 
 function OrdersHeader(props) {
   const dispatch = useDispatch();
-  const searchText = useSelector(({ eCommerceApp }) => eCommerceApp.orders.searchText);
+  const searchText = useSelector(
+    ({ eCommerceApp }) => eCommerceApp.orders.searchText
+  );
   const mainTheme = useSelector(selectMainTheme);
 
   return (
@@ -52,7 +54,7 @@ function OrdersHeader(props) {
               fullWidth
               value={searchText}
               inputProps={{
-                'aria-label': 'Search',
+                "aria-label": "Search",
               }}
               onChange={(ev) => dispatch(setOrdersSearchText(ev))}
             />

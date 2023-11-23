@@ -1,11 +1,11 @@
-import Paper from '@mui/material/Paper';
-import Select from '@mui/material/Select';
-import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import _ from '@lodash';
-import { useEffect, memo, useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import MenuItem from '@mui/material/MenuItem';
+import Paper from "@mui/material/Paper";
+import Select from "@mui/material/Select";
+import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import _ from "@lodash";
+import { useEffect, memo, useState } from "react";
+import ReactApexChart from "react-apexcharts";
+import MenuItem from "@mui/material/MenuItem";
 
 function Widget6(props) {
   const [currentRange, setCurrentRange] = useState(props.widget.currentRange);
@@ -18,7 +18,11 @@ function Widget6(props) {
     setCurrentRange(ev.target.value);
   }
 
-  _.setWith(widget, 'mainChart.options.theme.monochrome.color', theme.palette.secondary.main);
+  _.setWith(
+    widget,
+    "mainChart.options.theme.monochrome.color",
+    theme.palette.secondary.main
+  );
 
   useEffect(() => {
     setAwaitRender(false);
@@ -37,9 +41,9 @@ function Widget6(props) {
           value={currentRange}
           onChange={handleChangeRange}
           inputProps={{
-            name: 'currentRange',
+            name: "currentRange",
           }}
-          classes={{ select: 'py-8' }}
+          classes={{ select: "py-8" }}
           variant="filled"
         >
           {Object.entries(widget.ranges).map(([key, n]) => {

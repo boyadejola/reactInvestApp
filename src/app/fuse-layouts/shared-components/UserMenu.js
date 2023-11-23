@@ -1,17 +1,17 @@
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
-import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { logoutUser } from 'app/auth/store/userSlice';
-import ResetPasswordDialog from './ResetPasswordDialog';
-import { setLoggedIn } from 'app/auth/store/sharedData';
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Icon from "@mui/material/Icon";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import MenuItem from "@mui/material/MenuItem";
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { logoutUser } from "app/auth/store/userSlice";
+import ResetPasswordDialog from "./ResetPasswordDialog";
+import { setLoggedIn } from "app/auth/store/sharedData";
 
 function UserMenu(props) {
   const dispatch = useDispatch();
@@ -38,7 +38,10 @@ function UserMenu(props) {
           <Typography component="span" className="font-semibold flex">
             {user.data.displayName}
           </Typography>
-          <Typography className="text-11 font-medium capitalize" color="textSecondary">
+          <Typography
+            className="text-11 font-medium capitalize"
+            color="textSecondary"
+          >
             {user.roleName ? user.roleName : "Guest"}
           </Typography>
         </div>
@@ -46,14 +49,14 @@ function UserMenu(props) {
         {user.data.photoURL ? (
           // <Avatar className="md:mx-4" alt="user photo" src={user.data.photoURL} />
           <Avatar className="md:mx-4" alt="user photo">
-            <Icon className='text-32'>account_circle</Icon>
+            <Icon className="text-32">account_circle</Icon>
           </Avatar>
         ) : (
-            <Avatar className="md:mx-4" alt="user photo">
-              <Icon className='text-32'>account_circle</Icon>
-            </Avatar>
-            // <Avatar className="md:mx-4">{user.data.displayName[0]}</Avatar>
-          )}
+          <Avatar className="md:mx-4" alt="user photo">
+            <Icon className="text-32">account_circle</Icon>
+          </Avatar>
+          // <Avatar className="md:mx-4">{user.data.displayName[0]}</Avatar>
+        )}
       </Button>
 
       <Popover
@@ -61,15 +64,15 @@ function UserMenu(props) {
         anchorEl={userMenu}
         onClose={userMenuClose}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
+          vertical: "bottom",
+          horizontal: "center",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: "top",
+          horizontal: "center",
         }}
         classes={{
-          paper: 'py-8',
+          paper: "py-8",
         }}
       >
         {!user.role || user.role.length === 0 ? (
@@ -88,34 +91,39 @@ function UserMenu(props) {
             </MenuItem>
           </>
         ) : (
-            <>
-              <MenuItem component={Link} to="/venapp/profile" onClick={userMenuClose} role="button">
-                <ListItemIcon className="min-w-40">
-                  <Icon>account_circle</Icon>
-                </ListItemIcon>
-                <ListItemText primary="My Profile" />
-              </MenuItem>
-              {/* <MenuItem component={Link} to="/apps/mail" onClick={userMenuClose} role="button">
+          <>
+            <MenuItem
+              component={Link}
+              to="/venapp/profile"
+              onClick={userMenuClose}
+              role="button"
+            >
+              <ListItemIcon className="min-w-40">
+                <Icon>account_circle</Icon>
+              </ListItemIcon>
+              <ListItemText primary="My Profile" />
+            </MenuItem>
+            {/* <MenuItem component={Link} to="/apps/mail" onClick={userMenuClose} role="button">
               <ListItemIcon className="min-w-40">
                 <Icon>mail</Icon>
               </ListItemIcon>
               <ListItemText primary="Inbox" />
             </MenuItem> */}
-              <MenuItem
-                onClick={() => {
-                  localStorage.removeItem('cred');
-                  dispatch(setLoggedIn(false));
-                  dispatch(logoutUser());
-                  userMenuClose();
-                }}
-              >
-                <ListItemIcon className="min-w-40">
-                  <Icon>exit_to_app</Icon>
-                </ListItemIcon>
-                <ListItemText primary="Logout" />
-              </MenuItem>
-            </>
-          )}
+            <MenuItem
+              onClick={() => {
+                localStorage.removeItem("cred");
+                dispatch(setLoggedIn(false));
+                dispatch(logoutUser());
+                userMenuClose();
+              }}
+            >
+              <ListItemIcon className="min-w-40">
+                <Icon>exit_to_app</Icon>
+              </ListItemIcon>
+              <ListItemText primary="Logout" />
+            </MenuItem>
+          </>
+        )}
       </Popover>
     </>
   );

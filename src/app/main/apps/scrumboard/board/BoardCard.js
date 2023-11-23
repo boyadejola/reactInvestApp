@@ -1,20 +1,20 @@
-import _ from '@lodash';
-import { styled } from '@mui/material/styles';
-import Avatar from '@mui/material/Avatar';
-import Card from '@mui/material/Card';
-import Icon from '@mui/material/Icon';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import clsx from 'clsx';
-import format from 'date-fns/format';
-import fromUnixTime from 'date-fns/fromUnixTime';
-import getUnixTime from 'date-fns/getUnixTime';
-import { Draggable } from 'react-beautiful-dnd';
-import { useDispatch, useSelector } from 'react-redux';
-import { openCardDialog } from '../store/cardSlice';
+import _ from "@lodash";
+import { styled } from "@mui/material/styles";
+import Avatar from "@mui/material/Avatar";
+import Card from "@mui/material/Card";
+import Icon from "@mui/material/Icon";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import clsx from "clsx";
+import format from "date-fns/format";
+import fromUnixTime from "date-fns/fromUnixTime";
+import getUnixTime from "date-fns/getUnixTime";
+import { Draggable } from "react-beautiful-dnd";
+import { useDispatch, useSelector } from "react-redux";
+import { openCardDialog } from "../store/cardSlice";
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  transitionProperty: 'box-shadow',
+  transitionProperty: "box-shadow",
   transitionDuration: theme.transitions.duration.short,
   transitionTimingFunction: theme.transitions.easing.easeInOut,
 }));
@@ -36,7 +36,9 @@ function BoardCard(props) {
 
   function getCheckItemsChecked(_card) {
     return _.sum(
-      _card.checklists.map((list) => _.sum(list.checkItems.map((x) => (x.checked ? 1 : 0))))
+      _card.checklists.map((list) =>
+        _.sum(list.checkItems.map((x) => (x.checked ? 1 : 0)))
+      )
     );
   }
 
@@ -45,27 +47,34 @@ function BoardCard(props) {
   }
 
   function getCommentsCount(_card) {
-    return _.sum(_card.activities.map((x) => (x.type === 'comment' ? 1 : 0)));
+    return _.sum(_card.activities.map((x) => (x.type === "comment" ? 1 : 0)));
   }
 
   return (
     <Draggable draggableId={cardId} index={index} type="card">
       {(provided, snapshot) => (
-        <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+        <div
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
           <StyledCard
             className={clsx(
-              snapshot.isDragging ? 'shadow-lg' : 'shadow-0',
-              'w-full mb-16 rounded-16 cursor-pointer border-1'
+              snapshot.isDragging ? "shadow-lg" : "shadow-0",
+              "w-full mb-16 rounded-16 cursor-pointer border-1"
             )}
             onClick={(ev) => handleCardClick(ev, card)}
           >
-            {board.settings.cardCoverImages && card.idAttachmentCover !== '' && (
-              <img
-                className="block"
-                src={_.find(card.attachments, { id: card.idAttachmentCover }).src}
-                alt="card cover"
-              />
-            )}
+            {board.settings.cardCoverImages &&
+              card.idAttachmentCover !== "" && (
+                <img
+                  className="block"
+                  src={
+                    _.find(card.attachments, { id: card.idAttachmentCover }).src
+                  }
+                  alt="card cover"
+                />
+              )}
 
             <div className="p-16 pb-0">
               {card.idLabels.length > 0 && (
@@ -74,7 +83,12 @@ function BoardCard(props) {
                     const label = _.find(board.labels, { id });
                     return (
                       <Tooltip title={label.name} key={id}>
-                        <div className={clsx(label.class, 'w-32  h-6 rounded-6 mx-4 mb-6')} />
+                        <div
+                          className={clsx(
+                            label.class,
+                            "w-32  h-6 rounded-6 mx-4 mb-6"
+                          )}
+                        />
                       </Tooltip>
                     );
                   })}
@@ -88,24 +102,26 @@ function BoardCard(props) {
                   {card.due && (
                     <div
                       className={clsx(
-                        'flex items-center px-8 py-4 mx-4 rounded-16',
+                        "flex items-center px-8 py-4 mx-4 rounded-16",
                         getUnixTime(new Date()) > card.due
-                          ? 'bg-red text-white'
-                          : 'bg-green text-white'
+                          ? "bg-red text-white"
+                          : "bg-green text-white"
                       )}
                     >
                       <Icon className="text-16">access_time</Icon>
-                      <span className="mx-4">{format(fromUnixTime(card.due), 'MMM do yy')}</span>
+                      <span className="mx-4">
+                        {format(fromUnixTime(card.due), "MMM do yy")}
+                      </span>
                     </div>
                   )}
 
                   {checkItems > 0 && (
                     <div
                       className={clsx(
-                        'flex items-center px-8 py-4 mx-4 rounded-16',
+                        "flex items-center px-8 py-4 mx-4 rounded-16",
                         checkItemsChecked === checkItems
-                          ? 'bg-green text-white'
-                          : 'bg-grey-700 text-white'
+                          ? "bg-green text-white"
+                          : "bg-grey-700 text-white"
                       )}
                     >
                       <Icon className="text-16">check_circle</Icon>
@@ -121,7 +137,10 @@ function BoardCard(props) {
                     const member = _.find(board.members, { id });
                     return (
                       <Tooltip title={member.name} key={id}>
-                        <Avatar className="mx-4 w-32 h-32" src={member.avatar} />
+                        <Avatar
+                          className="mx-4 w-32 h-32"
+                          src={member.avatar}
+                        />
                       </Tooltip>
                     );
                   })}
@@ -138,7 +157,7 @@ function BoardCard(props) {
                   </Icon>
                 )}
 
-                {card.description !== '' && (
+                {card.description !== "" && (
                   <Icon className="text-18 mx-6" color="action">
                     description
                   </Icon>

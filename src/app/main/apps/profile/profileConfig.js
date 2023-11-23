@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const ProfileConfig = {
   settings: {
@@ -26,8 +26,8 @@ const ProfileConfig = {
   auth: authRoles.investUser,
   routes: [
     {
-      path: '/venapp/profile',
-      component: lazy(() => import('./profile')),
+      path: "/venapp/profile",
+      component: lazy(() => import("./profile")),
     },
   ],
 };

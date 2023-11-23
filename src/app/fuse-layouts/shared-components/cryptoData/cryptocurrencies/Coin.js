@@ -69,14 +69,16 @@ const Coin = (props) => {
     //   <td className="pr-2 text-right py-6 font-medium text-sm">${marktCap}</td>
     // </tr>
 
-
     <TableRow
-      className={`border-b-[1px] ${props.themeStatus === true
-        ? "border-grey-200 hover:bg-grey-100"
-        : "hover:bg-[#001e3c] border-blue-grey-600"
-        }`}
+      className={`border-b-[1px] ${
+        props.themeStatus === true
+          ? "border-grey-200 hover:bg-grey-100"
+          : "hover:bg-[#001e3c] border-blue-grey-600"
+      }`}
     >
-      <TableCell className="pl-2 py-6 font-medium text-sm">{props.num}</TableCell>
+      <TableCell className="pl-2 py-6 font-medium text-sm">
+        {props.num}
+      </TableCell>
       <TableCell>
         <div className="flex items-center">
           <img
@@ -87,27 +89,34 @@ const Coin = (props) => {
           />
           <span
             className="ml-3 font-medium text-base hover:underline cursor-pointer first-letter:uppercase"
-          // onClick={coinDetailHandler}
+            // onClick={coinDetailHandler}
           >
             {props.eachData?.id}
           </span>
           <span
             className="ml-4 font-medium text-xs text-grey-500 cursor-pointer"
-          // onClick={coinDetailHandler}
+            // onClick={coinDetailHandler}
           >
             {symbol}
           </span>
         </div>
       </TableCell>
-      <TableCell className="p-4 md:p-16" component="th" scope="row">${price}</TableCell>
+      <TableCell className="p-4 md:p-16" component="th" scope="row">
+        ${price}
+      </TableCell>
       <TableCell
-        className={`tp-4 md:p-16 ${priceChangePercentage > 0 ? "text-green-400" : "text-red-500"
-          }`}
+        className={`tp-4 md:p-16 ${
+          priceChangePercentage > 0 ? "text-green-400" : "text-red-500"
+        }`}
       >
         {priceChangePercentage}%
       </TableCell>
-      <TableCell className="p-4 md:p-16" component="th" scope="row">${totalVol}</TableCell>
-      <TableCell className="p-4 md:p-16" component="th" scope="row">${marktCap}</TableCell>
+      <TableCell className="p-4 md:p-16" component="th" scope="row">
+        ${totalVol}
+      </TableCell>
+      <TableCell className="p-4 md:p-16" component="th" scope="row">
+        ${marktCap}
+      </TableCell>
     </TableRow>
   );
 };

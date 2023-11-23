@@ -1,25 +1,25 @@
-import FuseScrollbars from '@fuse/core/FuseScrollbars';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Controller, useForm } from 'react-hook-form';
-import _ from '@lodash';
-import Button from '@mui/material/Button';
-import Fab from '@mui/material/Fab';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import NoteModel from 'app/main/apps/notes/model/NoteModel';
-import NoteLabel from 'app/main/apps/notes/NoteLabel';
-import NoteReminderLabel from 'app/main/apps/notes/NoteReminderLabel';
-import { useState, useEffect } from 'react';
-import { withRouter, useParams } from 'react-router-dom';
-import * as yup from 'yup';
-import format from 'date-fns/format';
-import NoteFormList from './checklist/NoteFormList';
-import NoteFormLabelMenu from './NoteFormLabelMenu';
-import NoteFormReminder from './NoteFormReminder';
-import NoteFormUploadImage from './NoteFormUploadImage';
+import FuseScrollbars from "@fuse/core/FuseScrollbars";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
+import _ from "@lodash";
+import Button from "@mui/material/Button";
+import Fab from "@mui/material/Fab";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import NoteModel from "app/main/apps/notes/model/NoteModel";
+import NoteLabel from "app/main/apps/notes/NoteLabel";
+import NoteReminderLabel from "app/main/apps/notes/NoteReminderLabel";
+import { useState, useEffect } from "react";
+import { withRouter, useParams } from "react-router-dom";
+import * as yup from "yup";
+import format from "date-fns/format";
+import NoteFormList from "./checklist/NoteFormList";
+import NoteFormLabelMenu from "./NoteFormLabelMenu";
+import NoteFormReminder from "./NoteFormReminder";
+import NoteFormUploadImage from "./NoteFormUploadImage";
 
 /**
  * Form Validation Schema
@@ -29,11 +29,13 @@ const schema = yup.object().shape({
   description: yup.string(),
   image: yup.string(),
   checklist: yup.array(),
-  oneOfThemRequired: yup.bool().when(['title', 'description', 'image', 'checklist'], {
-    is: (a, b, c, d) => (!a && !b && !c && !d) || (!!a && !!b && !!c && !!d),
-    then: yup.bool().required(''),
-    otherwise: yup.bool(),
-  }),
+  oneOfThemRequired: yup
+    .bool()
+    .when(["title", "description", "image", "checklist"], {
+      is: (a, b, c, d) => (!a && !b && !c && !d) || (!!a && !!b && !!c && !!d),
+      then: yup.bool().required(""),
+      otherwise: yup.bool(),
+    }),
 });
 
 function NoteForm(props) {
@@ -44,10 +46,18 @@ function NoteForm(props) {
     NoteModel(),
     props.note,
     routeParams.labelId ? { labels: [routeParams.labelId] } : null,
-    routeParams.id === 'archive' ? { archive: true } : null
+    routeParams.id === "archive" ? { archive: true } : null
   );
-  const { formState, handleSubmit, getValues, reset, watch, setValue, control } = useForm({
-    mode: 'onChange',
+  const {
+    formState,
+    handleSubmit,
+    getValues,
+    reset,
+    watch,
+    setValue,
+    control,
+  } = useForm({
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -60,7 +70,7 @@ function NoteForm(props) {
    * Update Note
    */
   useEffect(() => {
-    if (!props.note || props.variant === 'new' || !props.onChange) {
+    if (!props.note || props.variant === "new" || !props.onChange) {
       return;
     }
     if (!_.isEqual(props.note, noteForm)) {
@@ -94,7 +104,7 @@ function NoteForm(props) {
             control={control}
             defaultValue=""
             render={({ field: { onChange, value } }) => {
-              if (value === '') {
+              if (value === "") {
                 return null;
               }
               return (
@@ -107,7 +117,7 @@ function NoteForm(props) {
                     color="secondary"
                     aria-label="Delete Image"
                     type="button"
-                    onClick={() => onChange('')}
+                    onClick={() => onChange("")}
                   >
                     <Icon fontSize="small">delete</Icon>
                   </Fab>
@@ -159,7 +169,10 @@ function NoteForm(props) {
               }
               return (
                 <div className="px-16">
-                  <NoteFormList checklist={value} onCheckListChange={(val) => onChange(val)} />
+                  <NoteFormList
+                    checklist={value}
+                    onCheckListChange={(val) => onChange(val)}
+                  />
                 </div>
               );
             }}
@@ -172,7 +185,7 @@ function NoteForm(props) {
                   className="mt-4 mx-4"
                   date={noteForm.reminder}
                   onDelete={() => {
-                    setValue('reminder', null);
+                    setValue("reminder", null);
                   }}
                 />
               )}
@@ -190,7 +203,9 @@ function NoteForm(props) {
                       id={id}
                       key={id}
                       className="mt-4 mx-4"
-                      onDelete={() => onChange(value.filter((_id) => _id !== id))}
+                      onDelete={() =>
+                        onChange(value.filter((_id) => _id !== id))
+                      }
                     />
                   ));
                 }}
@@ -198,7 +213,7 @@ function NoteForm(props) {
 
               {noteForm.time && (
                 <Typography color="textSecondary" className="text-12 mt-8 mx-4">
-                  Edited: {format(new Date(noteForm.time), 'MMM dd yy, h:mm')}
+                  Edited: {format(new Date(noteForm.time), "MMM dd yy, h:mm")}
                 </Typography>
               )}
             </div>
@@ -215,7 +230,10 @@ function NoteForm(props) {
                 control={control}
                 defaultValue={[]}
                 render={({ field: { onChange, value } }) => (
-                  <NoteFormReminder reminder={value} onChange={(val) => onChange(val)} />
+                  <NoteFormReminder
+                    reminder={value}
+                    onChange={(val) => onChange(val)}
+                  />
                 )}
               />
             </div>
@@ -225,7 +243,10 @@ function NoteForm(props) {
             <div>
               <NoteFormUploadImage
                 onChange={(val) =>
-                  setValue('image', val, { shouldDirty: true, shouldValidate: true })
+                  setValue("image", val, {
+                    shouldDirty: true,
+                    shouldValidate: true,
+                  })
                 }
               />
             </div>
@@ -245,7 +266,7 @@ function NoteForm(props) {
             <div>
               <NoteFormLabelMenu
                 note={noteForm}
-                onChange={(labels) => setValue('labels', labels)}
+                onChange={(labels) => setValue("labels", labels)}
               />
             </div>
           </Tooltip>
@@ -255,7 +276,10 @@ function NoteForm(props) {
             control={control}
             defaultValue={false}
             render={({ field: { onChange, value } }) => (
-              <Tooltip title={value ? 'Unarchive' : 'Archive'} placement="bottom">
+              <Tooltip
+                title={value ? "Unarchive" : "Archive"}
+                placement="bottom"
+              >
                 <div>
                   <IconButton
                     className="w-32 h-32 mx-4 p-0"
@@ -263,13 +287,15 @@ function NoteForm(props) {
                     onClick={() => {
                       onChange(!value);
 
-                      if (props.variant === 'new') {
+                      if (props.variant === "new") {
                         setTimeout(() => onCreate(getValues()));
                       }
                     }}
                     size="large"
                   >
-                    <Icon fontSize="small">{value ? 'unarchive' : 'archive'}</Icon>
+                    <Icon fontSize="small">
+                      {value ? "unarchive" : "archive"}
+                    </Icon>
                   </IconButton>
                 </div>
               </Tooltip>
@@ -278,7 +304,7 @@ function NoteForm(props) {
         </div>
 
         <div className="flex items-center">
-          {props.variant === 'new' ? (
+          {props.variant === "new" ? (
             <Button
               className="m-4"
               type="submit"
@@ -293,11 +319,20 @@ function NoteForm(props) {
           ) : (
             <>
               <Tooltip title="Delete Note" placement="bottom">
-                <IconButton className="w-32 h-32 mx-4 p-0" onClick={props.onRemove} size="large">
+                <IconButton
+                  className="w-32 h-32 mx-4 p-0"
+                  onClick={props.onRemove}
+                  size="large"
+                >
                   <Icon fontSize="small">delete</Icon>
                 </IconButton>
               </Tooltip>
-              <Button className="m-4" onClick={props.onClose} variant="outlined" size="small">
+              <Button
+                className="m-4"
+                onClick={props.onClose}
+                variant="outlined"
+                size="small"
+              >
                 Close
               </Button>
             </>
@@ -310,7 +345,7 @@ function NoteForm(props) {
 
 NoteForm.propTypes = {};
 NoteForm.defaultProps = {
-  variant: 'edit',
+  variant: "edit",
   note: null,
 };
 

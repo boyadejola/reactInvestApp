@@ -1,6 +1,6 @@
-import Typography from '@mui/material/Typography';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import Typography from "@mui/material/Typography";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function ProductsTab() {
   const order = useSelector(({ eCommerceApp }) => eCommerceApp.order);
@@ -32,7 +32,11 @@ function ProductsTab() {
             <tr key={product.id}>
               <td className="w-64">{product.id}</td>
               <td className="w-80">
-                <img className="product-image" src={product.image} alt="product" />
+                <img
+                  className="product-image"
+                  src={product.image}
+                  alt="product"
+                />
               </td>
               <td>
                 <Typography
@@ -40,8 +44,8 @@ function ProductsTab() {
                   to={`/apps/e-commerce/products/${product.id}`}
                   className="truncate"
                   style={{
-                    color: 'inherit',
-                    textDecoration: 'underline',
+                    color: "inherit",
+                    textDecoration: "underline",
                   }}
                 >
                   {product.name}

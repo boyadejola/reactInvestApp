@@ -1,30 +1,32 @@
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import Tooltip from '@mui/material/Tooltip';
-import clsx from 'clsx';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Box } from '@mui/system';
-import { resetNotesSearchText, setNotesSearchText } from './store/notesSlice';
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import Tooltip from "@mui/material/Tooltip";
+import clsx from "clsx";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Box } from "@mui/system";
+import { resetNotesSearchText, setNotesSearchText } from "./store/notesSlice";
 
 function NotesSearch(props) {
   const dispatch = useDispatch();
-  const searchText = useSelector(({ notesApp }) => notesApp.notes.notesSearchText);
+  const searchText = useSelector(
+    ({ notesApp }) => notesApp.notes.notesSearchText
+  );
 
   const [search, setSearch] = useState(false);
 
   function showSearch(ev) {
     ev.stopPropagation();
     setSearch(true);
-    document.addEventListener('keydown', escFunction, false);
+    document.addEventListener("keydown", escFunction, false);
   }
 
   function hideSearch() {
     setSearch(false);
     dispatch(resetNotesSearchText());
-    document.removeEventListener('keydown', escFunction, false);
+    document.removeEventListener("keydown", escFunction, false);
   }
 
   function escFunction(event) {
@@ -38,9 +40,14 @@ function NotesSearch(props) {
   }
 
   return (
-    <div className={clsx('flex', props.className)}>
+    <div className={clsx("flex", props.className)}>
       <Tooltip title="Click to search" placement="bottom">
-        <div onClick={showSearch} onKeyDown={showSearch} role="button" tabIndex={0}>
+        <div
+          onClick={showSearch}
+          onKeyDown={showSearch}
+          role="button"
+          tabIndex={0}
+        >
           {props.trigger}
         </div>
       </Tooltip>
@@ -61,7 +68,7 @@ function NotesSearch(props) {
                 fullWidth
                 value={searchText}
                 inputProps={{
-                  'aria-label': 'Search',
+                  "aria-label": "Search",
                 }}
                 onChange={(ev) => dispatch(setNotesSearchText(ev))}
                 autoFocus

@@ -1,11 +1,15 @@
-import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
-import axios from 'axios';
+import {
+  createSlice,
+  createAsyncThunk,
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
+import axios from "axios";
 
 export const getMails = createAsyncThunk(
-  'mailApp/mails/getMails',
+  "mailApp/mails/getMails",
   async (routeParams, { getState }) => {
     routeParams = routeParams || getState().mailApp.mails.routeParams;
-    const response = await axios.get('/api/mail-app/mails', {
+    const response = await axios.get("/api/mail-app/mails", {
       params: routeParams,
     });
     const data = await response.data;
@@ -15,11 +19,11 @@ export const getMails = createAsyncThunk(
 );
 
 export const setFolderOnSelectedMails = createAsyncThunk(
-  'mailApp/mails/setFolderOnSelectedMails',
+  "mailApp/mails/setFolderOnSelectedMails",
   async (id, { dispatch, getState }) => {
     const { selectedMailIds } = getState().mailApp.mails;
 
-    const response = await axios.post('/api/mail-app/set-folder', {
+    const response = await axios.post("/api/mail-app/set-folder", {
       selectedMailIds,
       folderId: id,
     });
@@ -32,11 +36,11 @@ export const setFolderOnSelectedMails = createAsyncThunk(
 );
 
 export const toggleLabelOnSelectedMails = createAsyncThunk(
-  'mailApp/mails/toggleLabelOnSelectedMails',
+  "mailApp/mails/toggleLabelOnSelectedMails",
   async (id, { dispatch, getState }) => {
     const { selectedMailIds } = getState().mailApp.mails;
 
-    const response = await axios.post('/api/mail-app/toggle-label', {
+    const response = await axios.post("/api/mail-app/toggle-label", {
       selectedMailIds,
       labelId: id,
     });
@@ -50,14 +54,13 @@ export const toggleLabelOnSelectedMails = createAsyncThunk(
 
 const mailsAdapter = createEntityAdapter({});
 
-export const { selectAll: selectMails, selectById: selectMailById } = mailsAdapter.getSelectors(
-  (state) => state.mailApp.mails
-);
+export const { selectAll: selectMails, selectById: selectMailById } =
+  mailsAdapter.getSelectors((state) => state.mailApp.mails);
 
 const mailsSlice = createSlice({
-  name: 'mailApp/mails',
+  name: "mailApp/mails",
   initialState: mailsAdapter.getInitialState({
-    searchText: '',
+    searchText: "",
     routeParams: {},
     selectedMailIds: [],
   }),
@@ -66,7 +69,7 @@ const mailsSlice = createSlice({
       reducer: (state, action) => {
         state.searchText = action.payload;
       },
-      prepare: (event) => ({ payload: event.target.value || '' }),
+      prepare: (event) => ({ payload: event.target.value || "" }),
     },
     selectAllMails: (state, action) => {
       state.selectedMailIds = state.ids;
@@ -76,7 +79,9 @@ const mailsSlice = createSlice({
     },
     selectMailsByParameter: (state, action) => {
       const [parameter, value] = action.payload;
-      state.selectedMailIds = state.ids.filter((id) => state.entities[id][parameter] === value);
+      state.selectedMailIds = state.ids.filter(
+        (id) => state.entities[id][parameter] === value
+      );
     },
     toggleInSelectedMails: (state, action) => {
       const mailId = action.payload;

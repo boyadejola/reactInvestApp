@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { useInput } from '@mui/core';
-import { styled } from '@mui/system';
+import * as React from "react";
+import { useInput } from "@mui/core";
+import { styled } from "@mui/system";
 
-const StyledInputElement = styled('input')(`
+const StyledInputElement = styled("input")(`
   width: 200px;
   font-size: 1rem;
   font-family: IBM Plex Sans, sans-serif;
@@ -38,5 +38,7 @@ const CustomInput = React.forwardRef(function CustomInput(props, ref) {
 });
 
 export default function UseInput() {
-  return <CustomInput aria-label='Demo input' placeholder='Type something...' />;
+  return (
+    <CustomInput aria-label="Demo input" placeholder="Type something..." />
+  );
 }

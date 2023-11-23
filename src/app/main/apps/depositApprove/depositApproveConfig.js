@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const DepositApproveConfig = {
   settings: {
@@ -26,8 +26,8 @@ const DepositApproveConfig = {
   auth: authRoles.investAdmin,
   routes: [
     {
-      path: '/venapp/approvedeposit',
-      component: lazy(() => import('./depositApprove')),
+      path: "/venapp/approvedeposit",
+      component: lazy(() => import("./depositApprove")),
     },
   ],
 };

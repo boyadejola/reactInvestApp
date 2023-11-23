@@ -1,6 +1,6 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tooltip from '@mui/material/Tooltip';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Tooltip from "@mui/material/Tooltip";
 
 export default function AnchorElTooltips() {
   const positionRef = React.useRef({
@@ -21,8 +21,8 @@ export default function AnchorElTooltips() {
 
   return (
     <Tooltip
-      title='Add'
-      placement='top'
+      title="Add"
+      placement="top"
       arrow
       PopperProps={{
         popperRef,
@@ -32,7 +32,7 @@ export default function AnchorElTooltips() {
               positionRef.current.x,
               areaRef.current.getBoundingClientRect().y,
               0,
-              0,
+              0
             );
           },
         },
@@ -42,8 +42,8 @@ export default function AnchorElTooltips() {
         ref={areaRef}
         onMouseMove={handleMouseMove}
         sx={{
-          bgcolor: 'primary.main',
-          color: 'primary.contrastText',
+          bgcolor: "primary.main",
+          color: "primary.contrastText",
           p: 2,
         }}
       >

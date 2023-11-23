@@ -1,15 +1,17 @@
-import FormControl from '@mui/material/FormControl';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleOrderDescending, changeOrder } from './store/todosSlice';
+import FormControl from "@mui/material/FormControl";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleOrderDescending, changeOrder } from "./store/todosSlice";
 
 function TodoToolbar(props) {
   const dispatch = useDispatch();
   const orderBy = useSelector(({ todoApp }) => todoApp.todos.orderBy);
-  const orderDescending = useSelector(({ todoApp }) => todoApp.todos.orderDescending);
+  const orderDescending = useSelector(
+    ({ todoApp }) => todoApp.todos.orderDescending
+  );
 
   function handleOrderChange(ev) {
     dispatch(changeOrder(ev.target.value));
@@ -25,7 +27,7 @@ function TodoToolbar(props) {
             onChange={handleOrderChange}
             displayEmpty
             name="filter"
-            classes={{ select: 'py-8' }}
+            classes={{ select: "py-8" }}
           >
             <MenuItem value="">
               <em>Order by</em>
@@ -35,8 +37,15 @@ function TodoToolbar(props) {
             <MenuItem value="title">Title</MenuItem>
           </Select>
         </FormControl>
-        <IconButton onClick={(ev) => dispatch(toggleOrderDescending())} size="large">
-          <Icon style={{ transform: orderDescending ? 'scaleY(-1)' : 'scaleY(1)' }}>sort</Icon>
+        <IconButton
+          onClick={(ev) => dispatch(toggleOrderDescending())}
+          size="large"
+        >
+          <Icon
+            style={{ transform: orderDescending ? "scaleY(-1)" : "scaleY(1)" }}
+          >
+            sort
+          </Icon>
         </IconButton>
       </div>
     </div>

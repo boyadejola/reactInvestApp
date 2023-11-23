@@ -1,6 +1,6 @@
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 function Auth0AuthDoc() {
   return (
@@ -21,8 +21,8 @@ function Auth0AuthDoc() {
           You can <Link to="/login">log in</Link>.
         </li>
         <li className="mb-12">
-          Also saves user data (user shortcuts, layout, and theme settings) as user_metadata to
-          Auth0 Database.
+          Also saves user data (user shortcuts, layout, and theme settings) as
+          user_metadata to Auth0 Database.
         </li>
       </ul>
 
@@ -31,8 +31,10 @@ function Auth0AuthDoc() {
       </Typography>
 
       <Typography className="my-24 italic" component="p" color="textSecondary">
-        Note: Make sure {`<Router>`} component wrapped with {`<Auth>`} component in
-        <code>src/app/App.js</code>. The service initializes in the Auth component.
+        Note: Make sure {`<Router>`} component wrapped with {`<Auth>`} component
+        in
+        <code>src/app/App.js</code>. The service initializes in the Auth
+        component.
       </Typography>
 
       <Typography className="text-20 mt-20 mb-10 font-700" variant="h5">

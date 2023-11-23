@@ -1,30 +1,30 @@
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm } from "react-hook-form";
 
-import { darken } from '@mui/material/styles';
+import { darken } from "@mui/material/styles";
 
-import { yupResolver } from '@hookform/resolvers/yup';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as yup from 'yup';
-import _ from '@lodash';
-import { newList } from '../store/boardSlice';
+import { yupResolver } from "@hookform/resolvers/yup";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import TextField from "@mui/material/TextField";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
+import _ from "@lodash";
+import { newList } from "../store/boardSlice";
 
 const defaultValues = {
-  title: '',
+  title: "",
 };
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  title: yup.string().required('You must enter a title'),
+  title: yup.string().required("You must enter a title"),
 });
 
 function BoardAddList(props) {
@@ -33,7 +33,7 @@ function BoardAddList(props) {
 
   const [formOpen, setFormOpen] = useState(false);
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -67,7 +67,10 @@ function BoardAddList(props) {
         square
         sx={{
           backgroundColor: (theme) =>
-            darken(theme.palette.background.paper, theme.palette.mode === 'light' ? 0.02 : 0.25),
+            darken(
+              theme.palette.background.paper,
+              theme.palette.mode === "light" ? 0.02 : 0.25
+            ),
         }}
       >
         {formOpen ? (
@@ -114,7 +117,7 @@ function BoardAddList(props) {
           <Button
             onClick={handleOpenForm}
             classes={{
-              root: 'font-medium w-full rounded-none h-64 px-16 justify-start',
+              root: "font-medium w-full rounded-none h-64 px-16 justify-start",
             }}
           >
             <Icon className="text-32 text-red">add_circle</Icon>

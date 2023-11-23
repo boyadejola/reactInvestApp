@@ -1,12 +1,19 @@
-import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
-import axios from 'axios';
+import {
+  createSlice,
+  createAsyncThunk,
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const getFiles = createAsyncThunk('fileManagerApp/files/getFiles', async () => {
-  const response = await axios.get('/api/file-manager-app/files');
-  const data = await response.data;
+export const getFiles = createAsyncThunk(
+  "fileManagerApp/files/getFiles",
+  async () => {
+    const response = await axios.get("/api/file-manager-app/files");
+    const data = await response.data;
 
-  return data;
-});
+    return data;
+  }
+);
 
 const filesAdapter = createEntityAdapter({});
 
@@ -17,9 +24,9 @@ export const {
 } = filesAdapter.getSelectors((state) => state.fileManagerApp.files);
 
 const filesSlice = createSlice({
-  name: 'fileManagerApp/files',
+  name: "fileManagerApp/files",
   initialState: filesAdapter.getInitialState({
-    selectedItemId: '1',
+    selectedItemId: "1",
   }),
   reducers: {
     setSelectedItem: (state, action) => {

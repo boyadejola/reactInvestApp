@@ -1,21 +1,21 @@
-import _ from '@lodash';
-import { styled } from '@mui/material/styles';
-import { amber, red } from '@mui/material/colors';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import ListItem from '@mui/material/ListItem';
-import Typography from '@mui/material/Typography';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectLabelsEntities } from './store/labelsSlice';
-import { updateTodo, openEditTodoDialog } from './store/todosSlice';
+import _ from "@lodash";
+import { styled } from "@mui/material/styles";
+import { amber, red } from "@mui/material/colors";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import ListItem from "@mui/material/ListItem";
+import Typography from "@mui/material/Typography";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLabelsEntities } from "./store/labelsSlice";
+import { updateTodo, openEditTodoDialog } from "./store/todosSlice";
 
-import TodoChip from './TodoChip';
+import TodoChip from "./TodoChip";
 
 const StyledListItem = styled(ListItem)(({ theme, completed }) => ({
   ...(completed && {
-    background: 'rgba(0,0,0,0.03)',
-    '& .todo-title, & .todo-notes': {
-      textDecoration: 'line-through',
+    background: "rgba(0,0,0,0.03)",
+    "& .todo-title, & .todo-notes": {
+      textDecoration: "line-through",
     },
   }),
 }));
@@ -59,13 +59,15 @@ function TodoListItem(props) {
       <div className="flex flex-1 flex-col relative overflow-hidden px-8">
         <Typography
           className="todo-title truncate text-14 font-medium"
-          color={props.todo.completed ? 'textSecondary' : 'inherit'}
+          color={props.todo.completed ? "textSecondary" : "inherit"}
         >
           {props.todo.title}
         </Typography>
 
         <Typography color="textSecondary" className="todo-notes truncate">
-          {_.truncate(props.todo.notes.replace(/<(?:.|\n)*?>/gm, ''), { length: 180 })}
+          {_.truncate(props.todo.notes.replace(/<(?:.|\n)*?>/gm, ""), {
+            length: 180,
+          })}
         </Typography>
 
         <div className="flex -mx-2 mt-8">

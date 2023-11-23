@@ -1,9 +1,11 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import NoSsr from '@mui/material/NoSsr';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import NoSsr from "@mui/material/NoSsr";
 
 function LargeTree() {
-  return Array.from(new Array(5000)).map((_, index) => <span key={index}>.</span>);
+  return Array.from(new Array(5000)).map((_, index) => (
+    <span key={index}>.</span>
+  ));
 }
 
 export default function FrameDeferring() {
@@ -39,7 +41,7 @@ export default function FrameDeferring() {
       </button>
       <br />
       <br />
-      <Box sx={{ width: 300, display: 'flex', flexWrap: 'wrap' }}>
+      <Box sx={{ width: 300, display: "flex", flexWrap: "wrap" }}>
         {state.open ? (
           <React.Fragment>
             <div>Outside NoSsr</div>

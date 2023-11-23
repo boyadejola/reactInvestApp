@@ -1,9 +1,9 @@
-import * as React from 'react';
-import clsx from 'clsx';
-import { styled } from '@mui/system';
-import { useSwitch } from '@mui/core/SwitchUnstyled';
+import * as React from "react";
+import clsx from "clsx";
+import { styled } from "@mui/system";
+import { useSwitch } from "@mui/core/SwitchUnstyled";
 
-const BasicSwitchRoot = styled('span')(`
+const BasicSwitchRoot = styled("span")(`
   font-size: 0;
   position: relative;
   display: inline-block;
@@ -24,7 +24,7 @@ const BasicSwitchRoot = styled('span')(`
   }
 `);
 
-const BasicSwitchInput = styled('input')(`
+const BasicSwitchInput = styled("input")(`
   cursor: inherit;
   position: absolute;
   width: 100%;
@@ -36,7 +36,7 @@ const BasicSwitchInput = styled('input')(`
   margin: 0;
 `);
 
-const BasicSwitchThumb = styled('span')(`
+const BasicSwitchThumb = styled("span")(`
   display: block;
   width: 14px;
   height: 14px;
@@ -63,15 +63,15 @@ function BasicSwitch(props) {
   const { getInputProps, checked, disabled, focusVisible } = useSwitch(props);
 
   const stateClasses = {
-    'Switch-checked': checked,
-    'Switch-disabled': disabled,
-    'Switch-focusVisible': focusVisible,
+    "Switch-checked": checked,
+    "Switch-disabled": disabled,
+    "Switch-focusVisible": focusVisible,
   };
 
   return (
     <BasicSwitchRoot className={clsx(stateClasses)}>
       <BasicSwitchThumb className={clsx(stateClasses)} />
-      <BasicSwitchInput {...getInputProps()} aria-label='Demo switch' />
+      <BasicSwitchInput {...getInputProps()} aria-label="Demo switch" />
     </BasicSwitchRoot>
   );
 }

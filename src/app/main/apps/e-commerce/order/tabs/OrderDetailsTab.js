@@ -1,15 +1,15 @@
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import Avatar from '@mui/material/Avatar';
-import Icon from '@mui/material/Icon';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import GoogleMap from 'google-map-react';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import OrdersStatus from '../OrdersStatus';
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Avatar from "@mui/material/Avatar";
+import Icon from "@mui/material/Icon";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import GoogleMap from "google-map-react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import OrdersStatus from "../OrdersStatus";
 
 function Marker(props) {
   return (
@@ -21,7 +21,7 @@ function Marker(props) {
 
 function OrderDetailsTab() {
   const order = useSelector(({ eCommerceApp }) => eCommerceApp.order);
-  const [map, setMap] = useState('shipping');
+  const [map, setMap] = useState("shipping");
 
   return (
     <div>
@@ -63,10 +63,14 @@ function OrderDetailsTab() {
                     </div>
                   </td>
                   <td>
-                    <Typography className="truncate">{order.customer.email}</Typography>
+                    <Typography className="truncate">
+                      {order.customer.email}
+                    </Typography>
                   </td>
                   <td>
-                    <Typography className="truncate">{order.customer.phone}</Typography>
+                    <Typography className="truncate">
+                      {order.customer.phone}
+                    </Typography>
                   </td>
                   <td>
                     <span className="truncate">{order.customer.company}</span>
@@ -78,14 +82,16 @@ function OrderDetailsTab() {
 
           <Accordion
             className="border-0 shadow-0 overflow-hidden"
-            expanded={map === 'shipping'}
-            onChange={() => setMap(map !== 'shipping' ? 'shipping' : false)}
+            expanded={map === "shipping"}
+            onChange={() => setMap(map !== "shipping" ? "shipping" : false)}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
-              classes={{ root: 'border border-solid rounded-16 mb-16' }}
+              classes={{ root: "border border-solid rounded-16 mb-16" }}
             >
-              <Typography className="font-semibold">Shipping Address</Typography>
+              <Typography className="font-semibold">
+                Shipping Address
+              </Typography>
             </AccordionSummary>
             <AccordionDetails className="flex flex-col md:flex-row -mx-8">
               <Typography className="w-full md:max-w-256 mb-16 md:mb-0 mx-8 text-16">
@@ -114,12 +120,12 @@ function OrderDetailsTab() {
 
           <Accordion
             className="shadow-0 border-0 overflow-hidden"
-            expanded={map === 'invoice'}
-            onChange={() => setMap(map !== 'invoice' ? 'invoice' : false)}
+            expanded={map === "invoice"}
+            onChange={() => setMap(map !== "invoice" ? "invoice" : false)}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
-              classes={{ root: 'border border-solid rounded-16 mb-16' }}
+              classes={{ root: "border border-solid rounded-16 mb-16" }}
             >
               <Typography className="font-semibold">Invoice Address</Typography>
             </AccordionSummary>
@@ -197,10 +203,14 @@ function OrderDetailsTab() {
             <thead>
               <tr>
                 <th>
-                  <Typography className="font-semibold">TransactionID</Typography>
+                  <Typography className="font-semibold">
+                    TransactionID
+                  </Typography>
                 </th>
                 <th>
-                  <Typography className="font-semibold">Payment Method</Typography>
+                  <Typography className="font-semibold">
+                    Payment Method
+                  </Typography>
                 </th>
                 <th>
                   <Typography className="font-semibold">Amount</Typography>
@@ -213,7 +223,9 @@ function OrderDetailsTab() {
             <tbody>
               <tr>
                 <td>
-                  <span className="truncate">{order.payment.transactionId}</span>
+                  <span className="truncate">
+                    {order.payment.transactionId}
+                  </span>
                 </td>
                 <td>
                   <span className="truncate">{order.payment.method}</span>
@@ -243,7 +255,9 @@ function OrderDetailsTab() {
             <thead>
               <tr>
                 <th>
-                  <Typography className="font-semibold">Tracking Code</Typography>
+                  <Typography className="font-semibold">
+                    Tracking Code
+                  </Typography>
                 </th>
                 <th>
                   <Typography className="font-semibold">Carrier</Typography>

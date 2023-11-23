@@ -1,9 +1,9 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import Stack from '@mui/material/Stack';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import TimePicker from '@mui/lab/TimePicker';
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import Stack from "@mui/material/Stack";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import TimePicker from "@mui/lab/TimePicker";
 
 export default function FormPropsTimePickers() {
   const [value, setValue] = React.useState(null);
@@ -12,7 +12,7 @@ export default function FormPropsTimePickers() {
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Stack spacing={3}>
         <TimePicker
-          label='disabled'
+          label="disabled"
           disabled
           value={value}
           onChange={(newValue) => {
@@ -21,7 +21,7 @@ export default function FormPropsTimePickers() {
           renderInput={(params) => <TextField {...params} />}
         />
         <TimePicker
-          label='read-only'
+          label="read-only"
           readOnly
           value={value}
           onChange={(newValue) => {

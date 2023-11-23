@@ -1,50 +1,59 @@
-import { useDebounce } from '@fuse/hooks';
-import _ from '@lodash';
-import { DateTimePicker } from '@mui/lab';
-import clsx from 'clsx';
-import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
-import Chip from '@mui/material/Chip';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import List from '@mui/material/List';
-import TextField from '@mui/material/TextField';
-import Toolbar from '@mui/material/Toolbar';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import Autocomplete from '@mui/material/Autocomplete';
-import fromUnixTime from 'date-fns/fromUnixTime';
-import getUnixTime from 'date-fns/getUnixTime';
-import format from 'date-fns/format';
-import { Controller, useForm } from 'react-hook-form';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { closeCardDialog, removeCard, updateCard } from '../../../store/cardSlice';
-import CardActivity from './activity/CardActivity';
-import CardAttachment from './attachment/CardAttachment';
-import CardChecklist from './checklist/CardChecklist';
-import CardComment from './comment/CardComment';
-import CheckListMenu from './toolbar/CheckListMenu';
-import DueMenu from './toolbar/DueMenu';
-import LabelsMenu from './toolbar/LabelsMenu';
-import MembersMenu from './toolbar/MembersMenu';
-import OptionsMenu from './toolbar/OptionsMenu';
+import { useDebounce } from "@fuse/hooks";
+import _ from "@lodash";
+import { DateTimePicker } from "@mui/lab";
+import clsx from "clsx";
+import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
+import Chip from "@mui/material/Chip";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import List from "@mui/material/List";
+import TextField from "@mui/material/TextField";
+import Toolbar from "@mui/material/Toolbar";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import Autocomplete from "@mui/material/Autocomplete";
+import fromUnixTime from "date-fns/fromUnixTime";
+import getUnixTime from "date-fns/getUnixTime";
+import format from "date-fns/format";
+import { Controller, useForm } from "react-hook-form";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  closeCardDialog,
+  removeCard,
+  updateCard,
+} from "../../../store/cardSlice";
+import CardActivity from "./activity/CardActivity";
+import CardAttachment from "./attachment/CardAttachment";
+import CardChecklist from "./checklist/CardChecklist";
+import CardComment from "./comment/CardComment";
+import CheckListMenu from "./toolbar/CheckListMenu";
+import DueMenu from "./toolbar/DueMenu";
+import LabelsMenu from "./toolbar/LabelsMenu";
+import MembersMenu from "./toolbar/MembersMenu";
+import OptionsMenu from "./toolbar/OptionsMenu";
 
 function BoardCardForm(props) {
   const dispatch = useDispatch();
   const card = useSelector(({ scrumboardApp }) => scrumboardApp.card.data);
   const board = useSelector(({ scrumboardApp }) => scrumboardApp.board);
-  const { register, watch, control, setValue } = useForm({ mode: 'onChange', defaultValues: card });
+  const { register, watch, control, setValue } = useForm({
+    mode: "onChange",
+    defaultValues: card,
+  });
   const cardForm = watch();
 
   const updateCardData = useDebounce((boardId, newCard) => {
     dispatch(updateCard({ boardId, card: { ...newCard } }));
   }, 600);
 
-  const list = card ? _.find(board.lists, (_list) => _list.idCards.includes(card.id)) : null;
+  const list = card
+    ? _.find(board.lists, (_list) => _list.idCards.includes(card.id))
+    : null;
 
   useEffect(() => {
     if (!card) {
@@ -56,7 +65,7 @@ function BoardCardForm(props) {
   }, [board.id, card, cardForm, updateCardData]);
 
   useEffect(() => {
-    register('idAttachmentCover');
+    register("idAttachmentCover");
   }, [register]);
 
   if (!card) {
@@ -74,7 +83,11 @@ function BoardCardForm(props) {
                 control={control}
                 defaultValue={null}
                 render={({ field: { onChange, value } }) => (
-                  <DueMenu onDueChange={onChange} onRemoveDue={() => onChange(null)} due={value} />
+                  <DueMenu
+                    onDueChange={onChange}
+                    onRemoveDue={() => onChange(null)}
+                    due={value}
+                  />
                 )}
               />
 
@@ -84,7 +97,9 @@ function BoardCardForm(props) {
                 defaultValue={[]}
                 render={({ field: { onChange, value } }) => (
                   <LabelsMenu
-                    onToggleLabel={(labelId) => onChange(_.xor(value, [labelId]))}
+                    onToggleLabel={(labelId) =>
+                      onChange(_.xor(value, [labelId]))
+                    }
                     labels={board.labels}
                     idLabels={value}
                   />
@@ -97,7 +112,9 @@ function BoardCardForm(props) {
                 defaultValue={[]}
                 render={({ field: { onChange, value } }) => (
                   <MembersMenu
-                    onToggleMember={(memberId) => onChange(_.xor(value, [memberId]))}
+                    onToggleMember={(memberId) =>
+                      onChange(_.xor(value, [memberId]))
+                    }
                     members={board.members}
                     idMembers={value}
                   />
@@ -121,18 +138,26 @@ function BoardCardForm(props) {
                 defaultValue={[]}
                 render={({ field: { onChange, value } }) => (
                   <CheckListMenu
-                    onAddCheckList={(newList) => onChange([...cardForm.checklists, newList])}
+                    onAddCheckList={(newList) =>
+                      onChange([...cardForm.checklists, newList])
+                    }
                   />
                 )}
               />
 
               <OptionsMenu
                 onRemoveCard={() =>
-                  dispatch(removeCard({ boardId: board.id, cardId: cardForm.id }))
+                  dispatch(
+                    removeCard({ boardId: board.id, cardId: cardForm.id })
+                  )
                 }
               />
             </div>
-            <IconButton color="inherit" onClick={(ev) => dispatch(closeCardDialog())} size="large">
+            <IconButton
+              color="inherit"
+              onClick={(ev) => dispatch(closeCardDialog())}
+              size="large"
+            >
               <Icon>close</Icon>
             </IconButton>
           </Toolbar>
@@ -152,9 +177,9 @@ function BoardCardForm(props) {
           </div>
           {cardForm.due && (
             <DateTimePicker
-              value={format(fromUnixTime(cardForm.due), 'Pp')}
+              value={format(fromUnixTime(cardForm.due), "Pp")}
               inputFormat="Pp"
-              onChange={(val) => setValue('due', getUnixTime(val))}
+              onChange={(val) => setValue("due", getUnixTime(val))}
               renderInput={(_props) => (
                 <TextField
                   label="Due date"
@@ -219,7 +244,9 @@ function BoardCardForm(props) {
                 <Icon className="text-20" color="inherit">
                   label
                 </Icon>
-                <Typography className="font-semibold text-16 mx-8">Labels</Typography>
+                <Typography className="font-semibold text-16 mx-8">
+                  Labels
+                </Typography>
               </div>
               <Autocomplete
                 className="mt-8 mb-16"
@@ -229,10 +256,12 @@ function BoardCardForm(props) {
                 getOptionLabel={(label) => {
                   return label.name;
                 }}
-                value={cardForm.idLabels.map((id) => _.find(board.labels, { id }))}
+                value={cardForm.idLabels.map((id) =>
+                  _.find(board.labels, { id })
+                )}
                 onChange={(event, newValue) => {
                   setValue(
-                    'idLabels',
+                    "idLabels",
                     newValue.map((item) => item.id)
                   );
                 }}
@@ -242,7 +271,7 @@ function BoardCardForm(props) {
                       <Chip
                         label={option.name}
                         {...getTagProps({ index })}
-                        className={clsx('m-3', option.class)}
+                        className={clsx("m-3", option.class)}
                       />
                     );
                   })
@@ -268,7 +297,9 @@ function BoardCardForm(props) {
                 <Icon className="text-20" color="inherit">
                   supervisor_account
                 </Icon>
-                <Typography className="font-semibold text-16 mx-8">Members</Typography>
+                <Typography className="font-semibold text-16 mx-8">
+                  Members
+                </Typography>
               </div>
               <Autocomplete
                 className="mt-8 mb-16"
@@ -278,10 +309,12 @@ function BoardCardForm(props) {
                 getOptionLabel={(member) => {
                   return member.name;
                 }}
-                value={cardForm.idMembers.map((id) => _.find(board.members, { id }))}
+                value={cardForm.idMembers.map((id) =>
+                  _.find(board.members, { id })
+                )}
                 onChange={(event, newValue) => {
                   setValue(
-                    'idMembers',
+                    "idMembers",
                     newValue.map((item) => item.id)
                   );
                 }}
@@ -291,7 +324,7 @@ function BoardCardForm(props) {
                       <Chip
                         label={option.name}
                         {...getTagProps({ index })}
-                        className={clsx('m-3', option.class)}
+                        className={clsx("m-3", option.class)}
                         avatar={
                           <Tooltip title={option.name}>
                             <Avatar src={option.avatar} />
@@ -323,7 +356,9 @@ function BoardCardForm(props) {
               <Icon className="text-20" color="inherit">
                 attachment
               </Icon>
-              <Typography className="font-semibold text-16 mx-8">Attachments</Typography>
+              <Typography className="font-semibold text-16 mx-8">
+                Attachments
+              </Typography>
             </div>
             <div className="flex flex-col sm:flex-row flex-wrap -mx-16">
               {cardForm.attachments.map((item) => (
@@ -347,10 +382,16 @@ function BoardCardForm(props) {
               checklist={checklist}
               index={index}
               onCheckListChange={(item, itemIndex) => {
-                setValue('checklists', _.setIn(cardForm.checklists, `[${itemIndex}]`, item));
+                setValue(
+                  "checklists",
+                  _.setIn(cardForm.checklists, `[${itemIndex}]`, item)
+                );
               }}
               onRemoveCheckList={() => {
-                setValue('checklists', _.reject(cardForm.checklists, { id: checklist.id }));
+                setValue(
+                  "checklists",
+                  _.reject(cardForm.checklists, { id: checklist.id })
+                );
               }}
             />
           ))}
@@ -360,12 +401,16 @@ function BoardCardForm(props) {
             <Icon className="text-20" color="inherit">
               comment
             </Icon>
-            <Typography className="font-semibold text-16 mx-8">Comment</Typography>
+            <Typography className="font-semibold text-16 mx-8">
+              Comment
+            </Typography>
           </div>
           <div>
             <CardComment
               members={board.members}
-              onCommentAdd={(comment) => setValue('activities', [comment, ...cardForm.activities])}
+              onCommentAdd={(comment) =>
+                setValue("activities", [comment, ...cardForm.activities])
+              }
             />
           </div>
         </div>
@@ -382,11 +427,17 @@ function BoardCardForm(props) {
                     <Icon className="text-20" color="inherit">
                       list
                     </Icon>
-                    <Typography className="font-semibold text-16 mx-8">Activity</Typography>
+                    <Typography className="font-semibold text-16 mx-8">
+                      Activity
+                    </Typography>
                   </div>
                   <List className="">
                     {value.map((item) => (
-                      <CardActivity item={item} key={item.id} members={board.members} />
+                      <CardActivity
+                        item={item}
+                        key={item.id}
+                        members={board.members}
+                      />
                     ))}
                   </List>
                 </div>

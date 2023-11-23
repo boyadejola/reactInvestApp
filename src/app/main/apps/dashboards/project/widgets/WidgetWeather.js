@@ -1,9 +1,9 @@
-import Divider from '@mui/material/Divider';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import { memo } from 'react';
+import Divider from "@mui/material/Divider";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import { memo } from "react";
 
 function WidgetWeather(props) {
   return (
@@ -11,7 +11,10 @@ function WidgetWeather(props) {
       <div className="flex items-center justify-between px-4 pt-8">
         <div className="flex items-center px-16">
           <Icon color="action">location_on</Icon>
-          <Typography className="text-16 mx-8 font-medium" color="textSecondary">
+          <Typography
+            className="text-16 mx-8 font-medium"
+            color="textSecondary"
+          >
             {props.widget.locations[props.widget.currentLocation].name}
           </Typography>
         </div>
@@ -23,8 +26,15 @@ function WidgetWeather(props) {
         <Icon className="meteocons text-40 ltr:mr-8 rtl:ml-8" color="action">
           {props.widget.locations[props.widget.currentLocation].icon}
         </Icon>
-        <Typography className="text-44 mx-8 font-medium tracking-tighter" color="textSecondary">
-          {props.widget.locations[props.widget.currentLocation].temp[props.widget.tempUnit]}
+        <Typography
+          className="text-44 mx-8 font-medium tracking-tighter"
+          color="textSecondary"
+        >
+          {
+            props.widget.locations[props.widget.currentLocation].temp[
+              props.widget.tempUnit
+            ]
+          }
         </Typography>
         <Typography className="text-48" color="textSecondary">
           °
@@ -40,9 +50,15 @@ function WidgetWeather(props) {
             windy
           </Icon>
           <Typography className="mx-4 font-semibold">
-            {props.widget.locations[props.widget.currentLocation].windSpeed[props.widget.speedUnit]}
+            {
+              props.widget.locations[props.widget.currentLocation].windSpeed[
+                props.widget.speedUnit
+              ]
+            }
           </Typography>
-          <Typography color="textSecondary">{props.widget.speedUnit}</Typography>
+          <Typography color="textSecondary">
+            {props.widget.speedUnit}
+          </Typography>
         </div>
 
         <div className="flex items-center">
@@ -59,31 +75,44 @@ function WidgetWeather(props) {
             rainy
           </Icon>
           <Typography className="mx-4 font-semibold">
-            {props.widget.locations[props.widget.currentLocation].rainProbability}
+            {
+              props.widget.locations[props.widget.currentLocation]
+                .rainProbability
+            }
           </Typography>
         </div>
       </div>
       <Divider />
       <div className="w-full py-16">
-        {props.widget.locations[props.widget.currentLocation].next5Days.map((day) => (
-          <div className="flex items-center justify-between w-full py-16 px-24" key={day.name}>
-            <Typography className="text-15 font-medium">{day.name}</Typography>
-            <div className="flex items-center">
-              <Icon className="meteocons text-24 ltr:mr-16 rtl:ml-16" color="action">
-                {day.icon}
-              </Icon>
-              <Typography className="text-20 font-medium tracking-tighter">
-                {day.temp[props.widget.tempUnit]}
+        {props.widget.locations[props.widget.currentLocation].next5Days.map(
+          (day) => (
+            <div
+              className="flex items-center justify-between w-full py-16 px-24"
+              key={day.name}
+            >
+              <Typography className="text-15 font-medium">
+                {day.name}
               </Typography>
-              <Typography className="text-20" color="textSecondary">
-                &deg;
-              </Typography>
-              <Typography className="text-20" color="textSecondary">
-                {props.widget.tempUnit}
-              </Typography>
+              <div className="flex items-center">
+                <Icon
+                  className="meteocons text-24 ltr:mr-16 rtl:ml-16"
+                  color="action"
+                >
+                  {day.icon}
+                </Icon>
+                <Typography className="text-20 font-medium tracking-tighter">
+                  {day.temp[props.widget.tempUnit]}
+                </Typography>
+                <Typography className="text-20" color="textSecondary">
+                  &deg;
+                </Typography>
+                <Typography className="text-20" color="textSecondary">
+                  {props.widget.tempUnit}
+                </Typography>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </Paper>
   );

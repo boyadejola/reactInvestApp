@@ -1,23 +1,23 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import Link from '@mui/material/Link';
-import ListItem from '@mui/material/ListItem';
-import Collapse from '@mui/material/Collapse';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import { Link as RouterLink, Route, MemoryRouter } from 'react-router-dom';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import Link from "@mui/material/Link";
+import ListItem from "@mui/material/ListItem";
+import Collapse from "@mui/material/Collapse";
+import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import { Link as RouterLink, Route, MemoryRouter } from "react-router-dom";
 
 const breadcrumbNameMap = {
-  '/inbox': 'Inbox',
-  '/inbox/important': 'Important',
-  '/trash': 'Trash',
-  '/spam': 'Spam',
-  '/drafts': 'Drafts',
+  "/inbox": "Inbox",
+  "/inbox/important": "Important",
+  "/trash": "Trash",
+  "/spam": "Spam",
+  "/drafts": "Drafts",
 };
 
 function ListItemLink(props) {
@@ -54,11 +54,11 @@ export default function RouterBreadcrumbs() {
   };
 
   return (
-    <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', width: 360 }}>
+    <MemoryRouter initialEntries={["/inbox"]} initialIndex={0}>
+      <Box sx={{ display: "flex", flexDirection: "column", width: 360 }}>
         <Route>
           {({ location }) => {
-            const pathnames = location.pathname.split('/').filter((x) => x);
+            const pathnames = location.pathname.split("/").filter((x) => x);
 
             return (
               <Breadcrumbs aria-label="breadcrumb">
@@ -67,14 +67,19 @@ export default function RouterBreadcrumbs() {
                 </LinkRouter>
                 {pathnames.map((value, index) => {
                   const last = index === pathnames.length - 1;
-                  const to = `/${pathnames.slice(0, index + 1).join('/')}`;
+                  const to = `/${pathnames.slice(0, index + 1).join("/")}`;
 
                   return last ? (
                     <Typography color="text.primary" key={to}>
                       {breadcrumbNameMap[to]}
                     </Typography>
                   ) : (
-                    <LinkRouter underline="hover" color="inherit" to={to} key={to}>
+                    <LinkRouter
+                      underline="hover"
+                      color="inherit"
+                      to={to}
+                      key={to}
+                    >
                       {breadcrumbNameMap[to]}
                     </LinkRouter>
                   );
@@ -85,7 +90,7 @@ export default function RouterBreadcrumbs() {
         </Route>
         <Box
           sx={{
-            bgcolor: 'background.paper',
+            bgcolor: "background.paper",
             mt: 1,
           }}
           component="nav"

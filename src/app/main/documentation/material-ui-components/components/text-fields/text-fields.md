@@ -1,7 +1,7 @@
 ---
 title: Text Field React component
 components: FilledInput, FormControl, FormControlUnstyled, FormHelperText, Input, InputAdornment, InputBase, InputLabel, OutlinedInput, TextField, InputUnstyled
-githubLabel: 'component: TextField'
+githubLabel: "component: TextField"
 materialDesign: https://material.io/components/text-fields
 ---
 
@@ -145,7 +145,7 @@ This hook returns the context value of the parent `FormControl` component.
 **API**
 
 ```jsx
-import { useFormControl } from '@mui/material/FormControl';
+import { useFormControl } from "@mui/material/FormControl";
 ```
 
 **Returns**
@@ -213,7 +213,7 @@ and more - see [this article](https://technology.blog.gov.uk/2020/02/24/why-the-
 For number validation, one viable alternative is to use the default input type='text' with the _pattern_ attribute, for example:
 
 ```jsx
-<TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} />
+<TextField inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }} />
 ```
 
 In the future, we might provide a [number input component](https://github.com/mui-org/material-ui/issues/19154).
@@ -278,10 +278,10 @@ const MyInputComponent = React.forwardRef((props, ref) => {
 In order for the text field to be accessible, **the input should be linked to the label and the helper text**. The underlying DOM nodes should have this structure:
 
 ```jsx
-<div class='form-control'>
-  <label for='my-input'>Email address</label>
-  <input id='my-input' aria-describedby='my-helper-text' />
-  <span id='my-helper-text'>We'll never share your email.</span>
+<div class="form-control">
+  <label for="my-input">Email address</label>
+  <input id="my-input" aria-describedby="my-helper-text" />
+  <span id="my-helper-text">We'll never share your email.</span>
 </div>
 ```
 
@@ -290,9 +290,11 @@ In order for the text field to be accessible, **the input should be linked to th
 
 ```jsx
 <FormControl>
-  <InputLabel htmlFor='my-input'>Email address</InputLabel>
-  <Input id='my-input' aria-describedby='my-helper-text' />
-  <FormHelperText id='my-helper-text'>We'll never share your email.</FormHelperText>
+  <InputLabel htmlFor="my-input">Email address</InputLabel>
+  <Input id="my-input" aria-describedby="my-helper-text" />
+  <FormHelperText id="my-helper-text">
+    We'll never share your email.
+  </FormHelperText>
 </FormControl>
 ```
 

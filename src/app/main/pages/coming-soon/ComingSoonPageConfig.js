@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const ComingSoonPageConfig = {
   settings: {
@@ -8,8 +8,8 @@ const ComingSoonPageConfig = {
   },
   routes: [
     {
-      path: '/pages/coming-soon',
-      component: lazy(() => import('./ComingSoonPage')),
+      path: "/pages/coming-soon",
+      component: lazy(() => import("./ComingSoonPage")),
     },
   ],
 };

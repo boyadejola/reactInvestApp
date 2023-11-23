@@ -1,31 +1,29 @@
-import Card from '@mui/material/Card';
-import { styled, darken } from '@mui/material/styles';
-import CardContent from '@mui/material/CardContent';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import i18next from 'i18next';
-import JWTLoginTab from './tabs/JWTLoginTab';
-import FirebaseLoginTab from './tabs/FirebaseLoginTab';
-import Auth0LoginTab from './tabs/Auth0LoginTab';
+import Card from "@mui/material/Card";
+import { styled, darken } from "@mui/material/styles";
+import CardContent from "@mui/material/CardContent";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import i18next from "i18next";
+import JWTLoginTab from "./tabs/JWTLoginTab";
+import FirebaseLoginTab from "./tabs/FirebaseLoginTab";
+import Auth0LoginTab from "./tabs/Auth0LoginTab";
 
-const Root = styled('div')(({ theme }) => ({
-  background: `linear-gradient(to right, ${theme.palette.primary.dark} 0%, ${darken(
-    theme.palette.primary.dark,
-    0.5
-  )} 100%)`,
+const Root = styled("div")(({ theme }) => ({
+  background: `linear-gradient(to right, ${
+    theme.palette.primary.dark
+  } 0%, ${darken(theme.palette.primary.dark, 0.5)} 100%)`,
   color: theme.palette.primary.contrastText,
 
-  '& .Login-leftSection': {},
+  "& .Login-leftSection": {},
 
-  '& .Login-rightSection': {
-    background: `linear-gradient(to right, ${theme.palette.primary.dark} 0%, ${darken(
-      theme.palette.primary.dark,
-      0.5
-    )} 100%)`,
+  "& .Login-rightSection": {
+    background: `linear-gradient(to right, ${
+      theme.palette.primary.dark
+    } 0%, ${darken(theme.palette.primary.dark, 0.5)} 100%)`,
     color: theme.palette.primary.contrastText,
   },
 }));
@@ -54,7 +52,11 @@ function Login() {
               animate={{ opacity: 1, transition: { delay: 0.2 } }}
             >
               <div className="flex items-center mb-48">
-                <img className="logo-icon w-full" src="assets/images/logos/fuse.svg" alt="logo" />
+                <img
+                  className="logo-icon w-full"
+                  src="assets/images/logos/fuse.svg"
+                  alt="logo"
+                />
                 {/* <div className="border-l-1 mr-4 w-1 h-40" />
                 <div>
                   <Typography className="text-24 font-semibold logo-text" color="inherit">
@@ -127,9 +129,14 @@ function Login() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
             >
-              <Typography variant="h3" color="inherit" className="font-semibold leading-tight">
+              <Typography
+                variant="h3"
+                color="inherit"
+                className="font-semibold leading-tight"
+              >
                 {i18next.t(`navigation:WEL`)} <br />
-                {i18next.t(`navigation:TOTHE`)} <br /> {i18next.t(`navigation:VENAX`)}
+                {i18next.t(`navigation:TOTHE`)} <br />{" "}
+                {i18next.t(`navigation:VENAX`)}
               </Typography>
             </motion.div>
 

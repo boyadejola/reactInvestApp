@@ -1,14 +1,14 @@
-import FuseUtils from '@fuse/utils';
-import _ from '@lodash';
+import FuseUtils from "@fuse/utils";
+import _ from "@lodash";
 
 function CardModel(data) {
   data = data || {};
 
   return _.defaults(data, {
     id: FuseUtils.generateGUID(),
-    name: '',
-    description: '',
-    idAttachmentCover: '',
+    name: "",
+    description: "",
+    idAttachmentCover: "",
     idMembers: [],
     idLabels: [],
     attachments: [],
@@ -18,7 +18,7 @@ function CardModel(data) {
     checkItemsChecked: 0,
     comments: [],
     activities: [],
-    due: '',
+    due: "",
   });
 }
 export default CardModel;

@@ -1,18 +1,18 @@
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
-const Root = styled('div')(({ theme, color }) => ({
-  display: 'flex',
-  alignItems: 'center',
+const Root = styled("div")(({ theme, color }) => ({
+  display: "flex",
+  alignItems: "center",
   height: 20,
   borderRadius: 10,
-  padding: '0 6px',
+  padding: "0 6px",
   fontSize: 10,
-  backgroundColor: 'rgba(0,0,0,.08);',
-  '& > span': {
+  backgroundColor: "rgba(0,0,0,.08);",
+  "& > span": {
     width: 8,
     height: 8,
     marginRight: 4,
-    borderRadius: '50%',
+    borderRadius: "50%",
     backgroundColor: color,
   },
 }));

@@ -1,14 +1,14 @@
-import * as React from 'react';
-import frLocale from 'date-fns/locale/fr';
-import ruLocale from 'date-fns/locale/ru';
-import arSaLocale from 'date-fns/locale/ar-SA';
-import enLocale from 'date-fns/locale/en-US';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import TimePicker from '@mui/lab/TimePicker';
+import * as React from "react";
+import frLocale from "date-fns/locale/fr";
+import ruLocale from "date-fns/locale/ru";
+import arSaLocale from "date-fns/locale/ar-SA";
+import enLocale from "date-fns/locale/en-US";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import TimePicker from "@mui/lab/TimePicker";
 
 const localeMap = {
   en: enLocale,
@@ -18,7 +18,7 @@ const localeMap = {
 };
 
 export default function LocalizedTimePicker() {
-  const [locale, setLocale] = React.useState('ru');
+  const [locale, setLocale] = React.useState("ru");
   const [value, setValue] = React.useState(new Date());
 
   const selectLocale = (newLocale) => {
@@ -26,9 +26,16 @@ export default function LocalizedTimePicker() {
   };
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns} locale={localeMap[locale]}>
+    <LocalizationProvider
+      dateAdapter={AdapterDateFns}
+      locale={localeMap[locale]}
+    >
       <div>
-        <ToggleButtonGroup value={locale} exclusive sx={{ mb: 2, display: 'block' }}>
+        <ToggleButtonGroup
+          value={locale}
+          exclusive
+          sx={{ mb: 2, display: "block" }}
+        >
           {Object.keys(localeMap).map((localeItem) => (
             <ToggleButton
               key={localeItem}

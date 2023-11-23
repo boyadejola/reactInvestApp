@@ -1,18 +1,20 @@
-import FuseUtils from '@fuse/utils';
-import _ from '@lodash';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { selectTodos } from './store/todosSlice';
-import TodoListItem from './TodoListItem';
+import FuseUtils from "@fuse/utils";
+import _ from "@lodash";
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { selectTodos } from "./store/todosSlice";
+import TodoListItem from "./TodoListItem";
 
 function TodoList(props) {
   const todos = useSelector(selectTodos);
   const searchText = useSelector(({ todoApp }) => todoApp.todos.searchText);
   const orderBy = useSelector(({ todoApp }) => todoApp.todos.orderBy);
-  const orderDescending = useSelector(({ todoApp }) => todoApp.todos.orderDescending);
+  const orderDescending = useSelector(
+    ({ todoApp }) => todoApp.todos.orderDescending
+  );
   const [filteredData, setFilteredData] = useState(null);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ function TodoList(props) {
         _.orderBy(
           getFilteredArray(todos, searchText),
           [orderBy],
-          [orderDescending ? 'desc' : 'asc']
+          [orderDescending ? "desc" : "asc"]
         )
       );
     }

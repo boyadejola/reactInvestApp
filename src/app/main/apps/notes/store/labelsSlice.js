@@ -1,21 +1,31 @@
-import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
-import axios from 'axios';
+import {
+  createSlice,
+  createAsyncThunk,
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const getLabels = createAsyncThunk('notesApp/labels/getLabels', async () => {
-  const response = await axios.get('/api/notes-app/labels');
-  const data = await response.data;
+export const getLabels = createAsyncThunk(
+  "notesApp/labels/getLabels",
+  async () => {
+    const response = await axios.get("/api/notes-app/labels");
+    const data = await response.data;
 
-  return data;
-});
+    return data;
+  }
+);
 
-export const updateLabels = createAsyncThunk('notesApp/labels/updateLabels', async (labels) => {
-  const response = await axios.post('/api/notes-app/update-labels', {
-    labels: Object.values(labels),
-  });
-  const data = await response.data;
+export const updateLabels = createAsyncThunk(
+  "notesApp/labels/updateLabels",
+  async (labels) => {
+    const response = await axios.post("/api/notes-app/update-labels", {
+      labels: Object.values(labels),
+    });
+    const data = await response.data;
 
-  return data;
-});
+    return data;
+  }
+);
 
 const labelsAdapter = createEntityAdapter({});
 
@@ -26,7 +36,7 @@ export const {
 } = labelsAdapter.getSelectors((state) => state.notesApp.labels);
 
 const labelsSlice = createSlice({
-  name: 'notesApp/labels',
+  name: "notesApp/labels",
   initialState: labelsAdapter.getInitialState({ labelsDialogOpen: false }),
   reducers: {
     openLabelsDialog: (state, action) => {

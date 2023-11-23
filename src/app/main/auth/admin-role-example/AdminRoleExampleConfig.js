@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import AdminRoleExample from './AdminRoleExample';
+import { authRoles } from "app/auth";
+import AdminRoleExample from "./AdminRoleExample";
 
 const AdminRoleExampleConfig = {
   settings: {
@@ -10,7 +10,7 @@ const AdminRoleExampleConfig = {
   auth: authRoles.admin, // ['admin']
   routes: [
     {
-      path: '/auth/admin-role-example',
+      path: "/auth/admin-role-example",
       component: AdminRoleExample,
     },
   ],

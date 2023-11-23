@@ -1,4 +1,4 @@
-import _ from '@lodash';
+import _ from "@lodash";
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {

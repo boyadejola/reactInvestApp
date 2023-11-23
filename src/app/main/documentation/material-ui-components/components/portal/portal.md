@@ -1,7 +1,7 @@
 ---
 title: React Portal component
 components: Portal
-githubLabel: 'component: Portal'
+githubLabel: "component: Portal"
 ---
 
 # Portal
@@ -29,5 +29,5 @@ You have to wait for the client-side hydration to see the children.
 As the component does not have any styles, it also comes with the unstyled package.
 
 ```js
-import Portal from '@mui/core/Portal';
+import Portal from "@mui/core/Portal";
 ```

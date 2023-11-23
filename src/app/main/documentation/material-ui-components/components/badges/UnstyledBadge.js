@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { styled, Box } from '@mui/system';
-import BadgeUnstyled from '@mui/core/BadgeUnstyled';
+import * as React from "react";
+import { styled, Box } from "@mui/system";
+import BadgeUnstyled from "@mui/core/BadgeUnstyled";
 
 const StyledBadge = styled(BadgeUnstyled)`
   box-sizing: border-box;
@@ -10,10 +10,10 @@ const StyledBadge = styled(BadgeUnstyled)`
   font-size: 14px;
   font-variant: tabular-nums;
   list-style: none;
-  font-feature-settings: 'tnum';
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  font-feature-settings: "tnum";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   position: relative;
   display: inline-block;
   line-height: 1;
@@ -61,10 +61,10 @@ function BadgeContent() {
       sx={{
         width: 42,
         height: 42,
-        borderRadius: '2px',
-        background: '#eee',
-        display: 'inline-block',
-        verticalAlign: 'middle',
+        borderRadius: "2px",
+        background: "#eee",
+        display: "inline-block",
+        verticalAlign: "middle",
       }}
     />
   );
@@ -72,7 +72,7 @@ function BadgeContent() {
 
 export default function UnstyledBadge() {
   return (
-    <Box sx={{ '& > :not(style) + :not(style)': { ml: 4 } }}>
+    <Box sx={{ "& > :not(style) + :not(style)": { ml: 4 } }}>
       <StyledBadge badgeContent={5} overlap="circular">
         <BadgeContent />
       </StyledBadge>

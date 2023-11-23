@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import GuestRoleExample from './GuestRoleExample';
+import { authRoles } from "app/auth";
+import GuestRoleExample from "./GuestRoleExample";
 
 const GuestRoleExampleConfig = {
   settings: {
@@ -10,7 +10,7 @@ const GuestRoleExampleConfig = {
   auth: authRoles.onlyGuest, // ['guest']
   routes: [
     {
-      path: '/auth/guest-role-example',
+      path: "/auth/guest-role-example",
       component: GuestRoleExample,
     },
   ],

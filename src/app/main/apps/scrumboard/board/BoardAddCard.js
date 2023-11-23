@@ -1,26 +1,26 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Controller, useForm } from 'react-hook-form';
-import Button from '@mui/material/Button';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as yup from 'yup';
-import _ from '@lodash';
-import { newCard } from '../store/boardSlice';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
+import Button from "@mui/material/Button";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import TextField from "@mui/material/TextField";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
+import _ from "@lodash";
+import { newCard } from "../store/boardSlice";
 
 const defaultValues = {
-  title: '',
+  title: "",
 };
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  title: yup.string().required('You must enter a title'),
+  title: yup.string().required("You must enter a title"),
 });
 
 function BoardAddCard(props) {
@@ -29,7 +29,7 @@ function BoardAddCard(props) {
 
   const [formOpen, setFormOpen] = useState(false);
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -52,11 +52,15 @@ function BoardAddCard(props) {
   }
 
   function onSubmit(data) {
-    dispatch(newCard({ boardId: board.id, listId: props.listId, cardTitle: data.title })).then(
-      () => {
-        props.onCardAdded();
-      }
-    );
+    dispatch(
+      newCard({
+        boardId: board.id,
+        listId: props.listId,
+        cardTitle: data.title,
+      })
+    ).then(() => {
+      props.onCardAdded();
+    });
     handleCloseForm();
   }
 
@@ -106,7 +110,7 @@ function BoardAddCard(props) {
         <Button
           onClick={handleOpenForm}
           classes={{
-            root: 'font-medium w-full px-16 rounded-none h-48 justify-start',
+            root: "font-medium w-full px-16 rounded-none h-48 justify-start",
           }}
         >
           <Icon className="text-20">add</Icon>

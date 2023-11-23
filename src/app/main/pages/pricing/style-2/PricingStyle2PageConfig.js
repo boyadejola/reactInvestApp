@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const PricingStyle2PageConfig = {
   settings: {
@@ -26,8 +26,8 @@ const PricingStyle2PageConfig = {
   auth: authRoles.investUser,
   routes: [
     {
-      path: '/venapp/asd',
-      component: lazy(() => import('./PricingStyle2Page')),
+      path: "/venapp/asd",
+      component: lazy(() => import("./PricingStyle2Page")),
     },
   ],
 };

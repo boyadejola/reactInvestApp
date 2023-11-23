@@ -1,6 +1,6 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
-import { Redirect } from 'react-router-dom';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
+import { Redirect } from "react-router-dom";
 
 const AcademyAppConfig = {
   settings: {
@@ -14,7 +14,7 @@ const AcademyAppConfig = {
         },
         footer: {
           display: true,
-          style: 'static',
+          style: "static",
         },
         leftSidePanel: {
           display: false,
@@ -25,15 +25,15 @@ const AcademyAppConfig = {
       },
     },
   },
-	// auth: authRoles.onlyGuest,
+  // auth: authRoles.onlyGuest,
   routes: [
     {
-      path: '/apps/academy/courses/:courseId/:courseHandle?',
-      component: lazy(() => import('./course/Course')),
+      path: "/apps/academy/courses/:courseId/:courseHandle?",
+      component: lazy(() => import("./course/Course")),
     },
     {
-      path: '/venapp/home',
-      component: lazy(() => import('./courses/Courses')),
+      path: "/venapp/home",
+      component: lazy(() => import("./courses/Courses")),
     },
     // {
     //   path: '/apps/academy',

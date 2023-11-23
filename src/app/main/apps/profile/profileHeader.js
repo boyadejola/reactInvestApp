@@ -1,15 +1,15 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import Icon from '@mui/material/Icon';
-import FuseUtils from '@fuse/utils';
-import { useDispatch, useSelector } from 'react-redux';
-import i18next from 'i18next';
-import { DEFAULTUSERPIC, ReqColorCodes } from 'app/auth/store/constants';
-import history from '@history';
-import { Controller, useFormContext } from 'react-hook-form';
-import { setUserImage } from 'app/auth/store/sharedData';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import Icon from "@mui/material/Icon";
+import FuseUtils from "@fuse/utils";
+import { useDispatch, useSelector } from "react-redux";
+import i18next from "i18next";
+import { DEFAULTUSERPIC, ReqColorCodes } from "app/auth/store/constants";
+import history from "@history";
+import { Controller, useFormContext } from "react-hook-form";
+import { setUserImage } from "app/auth/store/sharedData";
 // import { setAssignLoader } from 'app/auth/store/loadersSlice';
 // import { selectMainTheme } from 'app/store/fuse/settingsSlice';
 
@@ -17,9 +17,21 @@ function ProfileHeader(props) {
   // const methods = useFormContext();
   // const { control, watch, setValue } = methods;
   const dispatch = useDispatch();
-  const firstName = useSelector(({ auth }) => auth.sharedData && auth.sharedData.userFirstName ? auth.sharedData.userFirstName : "");
-  const lastName = useSelector(({ auth }) => auth.sharedData && auth.sharedData.userLastName ? auth.sharedData.userLastName : "");
-  const getImage = useSelector(({ auth }) => auth.sharedData && auth.sharedData.userImage ? auth.sharedData.userImage : "");
+  const firstName = useSelector(({ auth }) =>
+    auth.sharedData && auth.sharedData.userFirstName
+      ? auth.sharedData.userFirstName
+      : ""
+  );
+  const lastName = useSelector(({ auth }) =>
+    auth.sharedData && auth.sharedData.userLastName
+      ? auth.sharedData.userLastName
+      : ""
+  );
+  const getImage = useSelector(({ auth }) =>
+    auth.sharedData && auth.sharedData.userImage
+      ? auth.sharedData.userImage
+      : ""
+  );
 
   return (
     <div className="flex flex-1 w-full items-center justify-between">
@@ -71,7 +83,10 @@ function ProfileHeader(props) {
             )}
           </motion.div>
           <div className="flex flex-col min-w-0 mx-8 sm:mc-16 ml-24">
-            <motion.div initial={{ x: -20 }} animate={{ x: 0, transition: { delay: 0.3 } }}>
+            <motion.div
+              initial={{ x: -20 }}
+              animate={{ x: 0, transition: { delay: 0.3 } }}
+            >
               <label htmlFor="button-file">
                 <input
                   accept="image/*"
@@ -90,8 +105,10 @@ function ProfileHeader(props) {
                         reader.onload = () => {
                           resolve({
                             id: FuseUtils.generateGUID(),
-                            url: `data:${file.type};base64,${btoa(reader.result)}`,
-                            type: 'image',
+                            url: `data:${file.type};base64,${btoa(
+                              reader.result
+                            )}`,
+                            type: "image",
                           });
                         };
 
@@ -109,10 +126,10 @@ function ProfileHeader(props) {
                   }}
                 />
                 <Icon
-                  className='text-32'
+                  className="text-32"
                   fontSize="large"
                   style={{
-                    cursor: 'pointer',
+                    cursor: "pointer",
                     // color: ReqColorCodes.btnText,
                     color: ReqColorCodes.btn,
                   }}
@@ -120,7 +137,6 @@ function ProfileHeader(props) {
                   cloud_upload
                 </Icon>
               </label>
-
             </motion.div>
           </div>
         </div>

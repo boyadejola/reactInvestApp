@@ -1,8 +1,8 @@
-import Icon from '@mui/material/Icon';
-import Typography from '@mui/material/Typography';
+import Icon from "@mui/material/Icon";
+import Typography from "@mui/material/Typography";
 
 function Breadcrumb({ className, selected }) {
-  const arr = selected.location.split('>');
+  const arr = selected.location.split(">");
 
   return (
     <Typography className={className}>

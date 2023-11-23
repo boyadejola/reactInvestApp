@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import { FixedSizeList } from 'react-window';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { FixedSizeList } from "react-window";
 
 function renderRow(props) {
   const { index, style } = props;
@@ -20,7 +20,12 @@ function renderRow(props) {
 export default function VirtualizedList() {
   return (
     <Box
-      sx={{ width: '100%', height: 400, maxWidth: 360, bgcolor: 'background.paper' }}
+      sx={{
+        width: "100%",
+        height: 400,
+        maxWidth: 360,
+        bgcolor: "background.paper",
+      }}
     >
       <FixedSizeList
         height={400}

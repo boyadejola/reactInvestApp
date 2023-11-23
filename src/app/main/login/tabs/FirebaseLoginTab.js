@@ -1,35 +1,46 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import { useEffect, useRef, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { yupResolver } from "@hookform/resolvers/yup";
+import Button from "@mui/material/Button";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import { useEffect, useRef, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 // import { submitLoginWithFireBase } from 'app/auth/store/loginSlice';
-import * as yup from 'yup';
-import TextField from '@mui/material/TextField';
-import _ from '@lodash';
+import * as yup from "yup";
+import TextField from "@mui/material/TextField";
+import _ from "@lodash";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  email: yup.string().email('You must enter a valid email').required('You must enter a email'),
-  password: yup.string().required('Please enter your password.'),
+  email: yup
+    .string()
+    .email("You must enter a valid email")
+    .required("You must enter a email"),
+  password: yup.string().required("Please enter your password."),
 });
 
 const defaultValues = {
-  email: '',
-  password: '',
+  email: "",
+  password: "",
 };
 
 function FirebaseLoginTab(props) {
   const dispatch = useDispatch();
   const login = useSelector(({ auth }) => auth.login);
 
-  const { control, setValue, formState, handleSubmit, reset, trigger, setError } = useForm({
-    mode: 'onChange',
+  const {
+    control,
+    setValue,
+    formState,
+    handleSubmit,
+    reset,
+    trigger,
+    setError,
+  } = useForm({
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -43,7 +54,7 @@ function FirebaseLoginTab(props) {
   useEffect(() => {
     login.errors.forEach((error) => {
       setError(error.type, {
-        type: 'manual',
+        type: "manual",
         message: error.message,
       });
     });
@@ -55,7 +66,10 @@ function FirebaseLoginTab(props) {
 
   return (
     <div className="w-full">
-      <form className="flex flex-col justify-center w-full" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="flex flex-col justify-center w-full"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <Controller
           name="email"
           control={control}
@@ -94,13 +108,16 @@ function FirebaseLoginTab(props) {
               error={!!errors.password}
               helperText={errors?.password?.message}
               InputProps={{
-                className: 'pr-2',
-                type: showPassword ? 'text' : 'password',
+                className: "pr-2",
+                type: showPassword ? "text" : "password",
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton onClick={() => setShowPassword(!showPassword)} size="large">
+                    <IconButton
+                      onClick={() => setShowPassword(!showPassword)}
+                      size="large"
+                    >
                       <Icon className="text-20" color="action">
-                        {showPassword ? 'visibility' : 'visibility_off'}
+                        {showPassword ? "visibility" : "visibility_off"}
                       </Icon>
                     </IconButton>
                   </InputAdornment>

@@ -2,7 +2,7 @@
 title: React Button component
 components: Button, IconButton, ButtonBase, LoadingButton, ButtonUnstyled
 materialDesign: https://material.io/components/buttons
-githubLabel: 'component: Button'
+githubLabel: "component: Button"
 waiAria: https://www.w3.org/TR/wai-aria-practices/#button
 ---
 
@@ -62,7 +62,7 @@ All components accept an `onClick` handler that is applied to the root DOM eleme
 ```jsx
 <Button
   onClick={() => {
-    alert('clicked');
+    alert("clicked");
   }}
 >
   Click me
@@ -171,7 +171,7 @@ However:
 2. **DOM change**. You can wrap the button:
 
 ```jsx
-<span style={{ cursor: 'not-allowed' }}>
+<span style={{ cursor: "not-allowed" }}>
   <Button component={Link} disabled>
     disabled
   </Button>
@@ -187,7 +187,7 @@ The button also comes with an unstyled version. It's ideal for doing heavy custo
 ### Unstyled component
 
 ```js
-import ButtonUnstyled from '@mui/core/ButtonUnstyled';
+import ButtonUnstyled from "@mui/core/ButtonUnstyled";
 ```
 
 {{"demo": "pages/components/buttons/UnstyledButtonsSimple.js"}}
@@ -212,7 +212,7 @@ SVG elements, even with complex structure, are equally acceptable.
 ### useButton hook
 
 ```js
-import { useButton } from '@mui/core/ButtonUnstyled';
+import { useButton } from "@mui/core/ButtonUnstyled";
 ```
 
 If you need to use Button's functionality in another component, you can use the `useButton` hook.

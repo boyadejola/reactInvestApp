@@ -1,15 +1,15 @@
-import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
-import Switch from '@mui/material/Switch';
-import WifiIcon from '@mui/icons-material/Wifi';
-import BluetoothIcon from '@mui/icons-material/Bluetooth';
+import * as React from "react";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import ListSubheader from "@mui/material/ListSubheader";
+import Switch from "@mui/material/Switch";
+import WifiIcon from "@mui/icons-material/Wifi";
+import BluetoothIcon from "@mui/icons-material/Bluetooth";
 
 export default function SwitchListSecondary() {
-  const [checked, setChecked] = React.useState(['wifi']);
+  const [checked, setChecked] = React.useState(["wifi"]);
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -26,7 +26,7 @@ export default function SwitchListSecondary() {
 
   return (
     <List
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+      sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
       subheader={<ListSubheader>Settings</ListSubheader>}
     >
       <ListItem>
@@ -36,10 +36,10 @@ export default function SwitchListSecondary() {
         <ListItemText id="switch-list-label-wifi" primary="Wi-Fi" />
         <Switch
           edge="end"
-          onChange={handleToggle('wifi')}
-          checked={checked.indexOf('wifi') !== -1}
+          onChange={handleToggle("wifi")}
+          checked={checked.indexOf("wifi") !== -1}
           inputProps={{
-            'aria-labelledby': 'switch-list-label-wifi',
+            "aria-labelledby": "switch-list-label-wifi",
           }}
         />
       </ListItem>
@@ -50,10 +50,10 @@ export default function SwitchListSecondary() {
         <ListItemText id="switch-list-label-bluetooth" primary="Bluetooth" />
         <Switch
           edge="end"
-          onChange={handleToggle('bluetooth')}
-          checked={checked.indexOf('bluetooth') !== -1}
+          onChange={handleToggle("bluetooth")}
+          checked={checked.indexOf("bluetooth") !== -1}
           inputProps={{
-            'aria-labelledby': 'switch-list-label-bluetooth',
+            "aria-labelledby": "switch-list-label-bluetooth",
           }}
         />
       </ListItem>

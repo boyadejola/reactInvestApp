@@ -1,5 +1,5 @@
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import Typography from '@mui/material/Typography';
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import Typography from "@mui/material/Typography";
 
 function ChangingDefaultFontDoc() {
   return (
@@ -25,7 +25,8 @@ function ChangingDefaultFontDoc() {
         </li>
         <li>
           <Typography className="mb-24">
-            You can install typeface font package and import like we do at src/index.js
+            You can install typeface font package and import like we do at
+            src/index.js
           </Typography>
           <FuseHighlight component="pre" className="language-jsx mb-24">
             {`
@@ -36,8 +37,8 @@ function ChangingDefaultFontDoc() {
       </ul>
 
       <Typography className="mt-16 mb-8" component="p">
-        You need to add <code>typography.fontFamily</code> values into the desired theme config at{' '}
-        <code>src/app/fuse-configs/themesConfig</code>
+        You need to add <code>typography.fontFamily</code> values into the
+        desired theme config at <code>src/app/fuse-configs/themesConfig</code>
       </Typography>
       <FuseHighlight component="pre" className="language-jsx mb-24">
         {`
@@ -53,7 +54,8 @@ function ChangingDefaultFontDoc() {
       </FuseHighlight>
 
       <Typography className="mt-16 mb-8" component="p">
-        There is also font-family assignment at <code>src/styles/index.css</code>
+        There is also font-family assignment at{" "}
+        <code>src/styles/index.css</code>
       </Typography>
 
       <FuseHighlight component="pre" className="language-css mb-24">

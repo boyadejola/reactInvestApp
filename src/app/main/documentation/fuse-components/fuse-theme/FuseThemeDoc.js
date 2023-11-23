@@ -1,6 +1,6 @@
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -13,8 +13,9 @@ function FuseThemeDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        <code>FuseTheme</code> is the theming component of the Fuse React. It allows us to change
-        predefined Material UI themes. It should wrap the <code>FuseLayout</code> component.
+        <code>FuseTheme</code> is the theming component of the Fuse React. It
+        allows us to change predefined Material UI themes. It should wrap the{" "}
+        <code>FuseLayout</code> component.
       </Typography>
 
       <Typography className="mb-16" component="p">
@@ -22,7 +23,7 @@ function FuseThemeDoc() {
       </Typography>
 
       <FuseHighlight component="pre" className="language-jsx">
-        {require('!raw-loader!app/App.js')}
+        {require("!raw-loader!app/App.js")}
       </FuseHighlight>
 
       <Typography className="text-20 mt-20 mb-10 font-700" variant="h5">
@@ -31,7 +32,10 @@ function FuseThemeDoc() {
 
       <Typography className="mb-16" component="p">
         Please checkout
-        <Link className="font-normal mx-4" to="/documentation/theming/theme-schemes">
+        <Link
+          className="font-normal mx-4"
+          to="/documentation/theming/theme-schemes"
+        >
           theming
         </Link>
         at documentation.

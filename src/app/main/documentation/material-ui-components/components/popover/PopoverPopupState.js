@@ -1,8 +1,8 @@
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Popover from '@mui/material/Popover';
-import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import * as React from "react";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Popover from "@mui/material/Popover";
+import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 
 export default function PopoverPopupState() {
   return (
@@ -15,12 +15,12 @@ export default function PopoverPopupState() {
           <Popover
             {...bindPopover(popupState)}
             anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'center',
+              vertical: "bottom",
+              horizontal: "center",
             }}
             transformOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
+              vertical: "top",
+              horizontal: "center",
             }}
           >
             <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>

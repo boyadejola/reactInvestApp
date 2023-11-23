@@ -1,15 +1,19 @@
-import Paper from '@mui/material/Paper';
-import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import { memo } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import _ from '@lodash';
+import Paper from "@mui/material/Paper";
+import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import { memo } from "react";
+import ReactApexChart from "react-apexcharts";
+import _ from "@lodash";
 
 function Widget8(props) {
   const widget = _.merge({}, props.widget);
   const theme = useTheme();
 
-  _.setWith(widget, 'mainChart.options.theme.monochrome.color', theme.palette.primary.main);
+  _.setWith(
+    widget,
+    "mainChart.options.theme.monochrome.color",
+    theme.palette.primary.main
+  );
 
   return (
     <Paper className="w-full rounded-20 shadow">

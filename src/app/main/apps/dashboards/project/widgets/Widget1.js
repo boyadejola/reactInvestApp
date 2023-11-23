@@ -1,10 +1,10 @@
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Paper from '@mui/material/Paper';
-import Select from '@mui/material/Select';
-import Typography from '@mui/material/Typography';
-import { memo, useState } from 'react';
-import MenuItem from '@mui/material/MenuItem';
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+import Select from "@mui/material/Select";
+import Typography from "@mui/material/Typography";
+import { memo, useState } from "react";
+import MenuItem from "@mui/material/MenuItem";
 
 function Widget1(props) {
   const [currentRange, setCurrentRange] = useState(props.widget.currentRange);
@@ -18,11 +18,11 @@ function Widget1(props) {
       <div className="flex items-center justify-between px-4 pt-8">
         <Select
           className="mx-16"
-          classes={{ select: 'py-8 ' }}
+          classes={{ select: "py-8 " }}
           value={currentRange}
           onChange={handleChangeRange}
           inputProps={{
-            name: 'currentRange',
+            name: "currentRange",
           }}
           variant="filled"
         >

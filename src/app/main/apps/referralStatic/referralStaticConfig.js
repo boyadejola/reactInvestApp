@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const ReferralStaticConfig = {
   settings: {
@@ -26,8 +26,8 @@ const ReferralStaticConfig = {
   auth: authRoles.investUser,
   routes: [
     {
-      path: '/venapp/referralstats',
-      component: lazy(() => import('./referralStatic')),
+      path: "/venapp/referralstats",
+      component: lazy(() => import("./referralStatic")),
     },
   ],
 };

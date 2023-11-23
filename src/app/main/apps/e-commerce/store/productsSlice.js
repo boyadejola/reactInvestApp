@@ -1,17 +1,24 @@
-import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
-import axios from 'axios';
+import {
+  createSlice,
+  createAsyncThunk,
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const getProducts = createAsyncThunk('eCommerceApp/products/getProducts', async () => {
-  const response = await axios.get('/api/e-commerce-app/products');
-  const data = await response.data;
+export const getProducts = createAsyncThunk(
+  "eCommerceApp/products/getProducts",
+  async () => {
+    const response = await axios.get("/api/e-commerce-app/products");
+    const data = await response.data;
 
-  return data;
-});
+    return data;
+  }
+);
 
 export const removeProducts = createAsyncThunk(
-  'eCommerceApp/products/removeProducts',
+  "eCommerceApp/products/removeProducts",
   async (productIds, { dispatch, getState }) => {
-    await axios.post('/api/e-commerce-app/remove-products', { productIds });
+    await axios.post("/api/e-commerce-app/remove-products", { productIds });
 
     return productIds;
   }
@@ -23,16 +30,16 @@ export const { selectAll: selectProducts, selectById: selectProductById } =
   productsAdapter.getSelectors((state) => state.eCommerceApp.products);
 
 const productsSlice = createSlice({
-  name: 'eCommerceApp/products',
+  name: "eCommerceApp/products",
   initialState: productsAdapter.getInitialState({
-    searchText: '',
+    searchText: "",
   }),
   reducers: {
     setProductsSearchText: {
       reducer: (state, action) => {
         state.searchText = action.payload;
       },
-      prepare: (event) => ({ payload: event.target.value || '' }),
+      prepare: (event) => ({ payload: event.target.value || "" }),
     },
   },
   extraReducers: {

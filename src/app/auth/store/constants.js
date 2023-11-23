@@ -1,7 +1,7 @@
 export const Roles = {
-  superadmin: 'superadmin',
-  admin: 'admin',
-  user: 'user',
+  superadmin: "superadmin",
+  admin: "admin",
+  user: "user",
 };
 
 export const InvestRoles = {
@@ -20,27 +20,27 @@ export const Permissions = {
   DELETEREGISTER: "DELETEREGISTER",
   CHANGESTATUS: "CHANGESTATUS",
   SEEREGISTERUSERS: "SEEREGISTERUSERS",
-}
+};
 
 export const Menus = {
-  DASHBOARDS: 'dashboard',
-  INVESTPLANS: 'investplans',
-  LOGS: 'logs',
-  EARN: 'earn',
-  RETINTLOG: 'retinvlog',
-  DEPOSITNOW: 'depositnow',
-  WITHDRAWNOE: 'withdrawnow',
-  DEPHISTORY: 'deposithist',
-  WITHHISTORY: 'withdeahist',
-  TRANSHISTORY: 'transhist',
-  REFERRALSTATS: 'refstats',
-  PROFILE: 'profile',
-  CHANGEPASS: 'changepass',
-  SUPPTICKET: 'suppticket',
-  TWOFASEC: 'twofa',
-  SETTING: 'Settings',
-  DEPOSITAPPROVE: 'DepositApprove',
-  WITHDRAWAPPROVE: 'WithdrawApprove',
+  DASHBOARDS: "dashboard",
+  INVESTPLANS: "investplans",
+  LOGS: "logs",
+  EARN: "earn",
+  RETINTLOG: "retinvlog",
+  DEPOSITNOW: "depositnow",
+  WITHDRAWNOE: "withdrawnow",
+  DEPHISTORY: "deposithist",
+  WITHHISTORY: "withdeahist",
+  TRANSHISTORY: "transhist",
+  REFERRALSTATS: "refstats",
+  PROFILE: "profile",
+  CHANGEPASS: "changepass",
+  SUPPTICKET: "suppticket",
+  TWOFASEC: "twofa",
+  SETTING: "Settings",
+  DEPOSITAPPROVE: "DepositApprove",
+  WITHDRAWAPPROVE: "WithdrawApprove",
 };
 
 export const RoleMenus = [
@@ -119,7 +119,7 @@ export const RoleMenus = [
       Menus.LOGS,
       Menus.ADD,
       Menus.CHANGEPASS,
-      Menus.DASH
+      Menus.DASH,
     ],
     permissions: [
       Permissions.ADDITEM,
@@ -136,20 +136,20 @@ export const DefFilters = {
   PENDING: 17,
   DONE: 18,
   OTHER: -1,
-  ALL: 0
-}
+  ALL: 0,
+};
 
 export const ReqColorCodes = {
-  btn: '-webkit-linear-gradient(left, #31f316, #bef310, #ecaf0e)',
-  btnText: 'black',
-}
+  btn: "-webkit-linear-gradient(left, #31f316, #bef310, #ecaf0e)",
+  btnText: "black",
+};
 
-export const DEFAULTUSERPIC = 'assets/images/avataruser.png';
+export const DEFAULTUSERPIC = "assets/images/avataruser.png";
 
-export const DateTimeFormat = 'DD/MM/YYYY hh:mm a';
-export const DateFormat = 'DD/MM/YYYY';
-export const DateTimeFormatNew = 'lll';
-export const GoogleMapUri = 'https://www.google.com/maps/search/?api=1&query=';
+export const DateTimeFormat = "DD/MM/YYYY hh:mm a";
+export const DateFormat = "DD/MM/YYYY";
+export const DateTimeFormatNew = "lll";
+export const GoogleMapUri = "https://www.google.com/maps/search/?api=1&query=";
 
 export const Gateways = {
   btc: 1,
@@ -158,25 +158,25 @@ export const Gateways = {
 
 export const Wallets = [
   {
-    name: 'Deposit Wallet',
+    name: "Deposit Wallet",
     id: 1,
   },
   {
-    name: 'Interest Wallet',
+    name: "Interest Wallet",
     id: 2,
   },
   {
-    name: 'Active Wallet',
+    name: "Active Wallet",
     id: 3,
-  }
-]
+  },
+];
 
 export const Plans = {
   plan1: 1,
   plan2: 2,
   plan3: 3,
   plan4: 4,
-}
+};
 
 export const PlansDetails = [
   {
@@ -199,4 +199,4 @@ export const PlansDetails = [
     name: "Pro Plan",
     min: 100000,
   },
-]
+];

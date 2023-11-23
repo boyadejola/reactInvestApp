@@ -1,17 +1,17 @@
-import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import RadioGroup from '@mui/material/RadioGroup';
-import Radio from '@mui/material/Radio';
-import Paper from '@mui/material/Paper';
-import HighlightedCode from 'app/main/documentation/material-ui-components/utils/HighlightedCode';
+import * as React from "react";
+import Grid from "@mui/material/Grid";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import RadioGroup from "@mui/material/RadioGroup";
+import Radio from "@mui/material/Radio";
+import Paper from "@mui/material/Paper";
+import HighlightedCode from "app/main/documentation/material-ui-components/utils/HighlightedCode";
 
 export default function InteractiveGrid() {
-  const [direction, setDirection] = React.useState('row');
-  const [justifyContent, setJustifyContent] = React.useState('center');
-  const [alignItems, setAlignItems] = React.useState('center');
+  const [direction, setDirection] = React.useState("row");
+  const [justifyContent, setJustifyContent] = React.useState("center");
+  const [alignItems, setAlignItems] = React.useState("center");
 
   const jsx = `
 <Grid
@@ -38,8 +38,8 @@ export default function InteractiveGrid() {
               <Paper
                 sx={{
                   p: 2,
-                  height: '100%',
-                  color: 'text.secondary',
+                  height: "100%",
+                  color: "text.secondary",
                   pt: `${(value + 1) * 10}px`,
                   pb: `${(value + 1) * 10}px`,
                 }}
@@ -65,7 +65,11 @@ export default function InteractiveGrid() {
                     setDirection(event.target.value);
                   }}
                 >
-                  <FormControlLabel value="row" control={<Radio />} label="row" />
+                  <FormControlLabel
+                    value="row"
+                    control={<Radio />}
+                    label="row"
+                  />
                   <FormControlLabel
                     value="row-reverse"
                     control={<Radio />}

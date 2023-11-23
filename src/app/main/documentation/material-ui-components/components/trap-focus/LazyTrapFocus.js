@@ -1,6 +1,6 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import TrapFocus from '@mui/material/Unstable_TrapFocus';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TrapFocus from "@mui/material/Unstable_TrapFocus";
 
 export default function LazyTrapFocus() {
   const [open, setOpen] = React.useState(false);
@@ -8,22 +8,22 @@ export default function LazyTrapFocus() {
   return (
     <Box
       sx={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
       }}
     >
-      <button type='button' onClick={() => setOpen(true)}>
+      <button type="button" onClick={() => setOpen(true)}>
         Open
       </button>
       {open && (
         <TrapFocus open disableAutoFocus>
           <Box tabIndex={-1} sx={{ mt: 1, p: 1 }}>
             <label>
-              First name: <input type='text' />
+              First name: <input type="text" />
             </label>
             <br />
-            <button type='button' onClick={() => setOpen(false)}>
+            <button type="button" onClick={() => setOpen(false)}>
               Close
             </button>
           </Box>

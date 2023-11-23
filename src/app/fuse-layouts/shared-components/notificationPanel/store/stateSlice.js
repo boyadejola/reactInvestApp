@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const stateSlice = createSlice({
-  name: 'notificationPanel/state',
+  name: "notificationPanel/state",
   initialState: false,
   reducers: {
     toggleNotificationPanel: (state, action) => !state,
@@ -10,7 +10,10 @@ const stateSlice = createSlice({
   },
 });
 
-export const { toggleNotificationPanel, openNotificationPanel, closeNotificationPanel } =
-  stateSlice.actions;
+export const {
+  toggleNotificationPanel,
+  openNotificationPanel,
+  closeNotificationPanel,
+} = stateSlice.actions;
 
 export default stateSlice.reducer;

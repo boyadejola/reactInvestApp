@@ -2,7 +2,7 @@
     "name": "fuse-react-app",
     "version": "7.0.2",
     "private": true,
-    "proxy": "http://localhost:5000",
+    "proxy": "https://test-legend-app.zecrey.com/api/v1/",
     "dependencies": {
         "@date-io/date-fns-jalali": "2.11.0",
         "@emotion/cache": "11.5.0",
@@ -30,7 +30,7 @@
         "apexcharts": "3.29.0",
         "auth0-lock": "^12.3.1",
         "autosuggest-highlight": "3.2.0",
-        "axios": "^1.6.2",
+        "axios": "^1.1.1",
         "axios-mock-adapter": "1.20.0",
         "browserify-zlib": "^0.2.0",
         "buffer": "^6.0.3",

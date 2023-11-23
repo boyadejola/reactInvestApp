@@ -1,13 +1,13 @@
-import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
+import * as React from "react";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
 
 const style = {
-  width: '100%',
+  width: "100%",
   maxWidth: 360,
-  bgcolor: 'background.paper',
+  bgcolor: "background.paper",
 };
 
 export default function ListDividers() {

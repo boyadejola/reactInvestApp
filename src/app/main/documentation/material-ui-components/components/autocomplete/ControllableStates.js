@@ -1,16 +1,16 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 
-const options = ['Option 1', 'Option 2'];
+const options = ["Option 1", "Option 2"];
 
 export default function ControllableStates() {
   const [value, setValue] = React.useState(options[0]);
-  const [inputValue, setInputValue] = React.useState('');
+  const [inputValue, setInputValue] = React.useState("");
 
   return (
     <div>
-      <div>{`value: ${value !== null ? `'${value}'` : 'null'}`}</div>
+      <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
       <div>{`inputValue: '${inputValue}'`}</div>
       <br />
       <Autocomplete

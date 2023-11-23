@@ -1,12 +1,12 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { useDispatch, useSelector } from 'react-redux';
-import i18next from 'i18next';
-import { ReqColorCodes } from 'app/auth/store/constants';
-import history from '@history';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Icon from "@mui/material/Icon";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import i18next from "i18next";
+import { ReqColorCodes } from "app/auth/store/constants";
+import history from "@history";
 // import { setAssignLoader } from 'app/auth/store/loadersSlice';
 // import { selectMainTheme } from 'app/store/fuse/settingsSlice';
 
@@ -45,12 +45,12 @@ function NewSupportHeader(props) {
         <Button
           className="whitespace-nowrap"
           variant="contained"
-          size='medium'
+          size="medium"
           style={{
             color: ReqColorCodes.btnText,
             backgroundImage: ReqColorCodes.btn,
           }}
-          onClick={() => history.push('/venapp/suppticket')}
+          onClick={() => history.push("/venapp/suppticket")}
         >
           {i18next.t(`navigation:MYSUPPTICKET`)}
         </Button>

@@ -1,28 +1,28 @@
-import FusePageCarded from '@fuse/core/FusePageCarded';
-import withReducer from 'app/store/withReducer';
-import { useEffect, useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { useDeepCompareEffect } from '@fuse/hooks';
-import { styled } from '@mui/material/styles';
-import reducer from './store';
-import { getLabels } from './store/labelsSlice';
-import { getFilters } from './store/filtersSlice';
-import { getFolders } from './store/foldersSlice';
-import { getTodos } from './store/todosSlice';
-import TodoDialog from './TodoDialog';
-import TodoHeader from './TodoHeader';
-import TodoList from './TodoList';
-import TodoSidebarContent from './TodoSidebarContent';
-import TodoSidebarHeader from './TodoSidebarHeader';
-import TodoToolbar from './TodoToolbar';
+import FusePageCarded from "@fuse/core/FusePageCarded";
+import withReducer from "app/store/withReducer";
+import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useDeepCompareEffect } from "@fuse/hooks";
+import { styled } from "@mui/material/styles";
+import reducer from "./store";
+import { getLabels } from "./store/labelsSlice";
+import { getFilters } from "./store/filtersSlice";
+import { getFolders } from "./store/foldersSlice";
+import { getTodos } from "./store/todosSlice";
+import TodoDialog from "./TodoDialog";
+import TodoHeader from "./TodoHeader";
+import TodoList from "./TodoList";
+import TodoSidebarContent from "./TodoSidebarContent";
+import TodoSidebarHeader from "./TodoSidebarHeader";
+import TodoToolbar from "./TodoToolbar";
 
 const Root = styled(FusePageCarded)(({ theme }) => ({
-  '& .FusePageCarded-header': {
+  "& .FusePageCarded-header": {
     minHeight: 72,
     height: 72,
-    alignItems: 'center',
-    [theme.breakpoints.up('sm')]: {
+    alignItems: "center",
+    [theme.breakpoints.up("sm")]: {
       minHeight: 136,
       height: 136,
     },
@@ -61,4 +61,4 @@ function TodoApp(props) {
   );
 }
 
-export default withReducer('todoApp', reducer)(TodoApp);
+export default withReducer("todoApp", reducer)(TodoApp);

@@ -1,7 +1,9 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/core/ButtonUnstyled';
-import { styled } from '@mui/system';
+import * as React from "react";
+import PropTypes from "prop-types";
+import ButtonUnstyled, {
+  buttonUnstyledClasses,
+} from "@mui/core/ButtonUnstyled";
+import { styled } from "@mui/system";
 
 const ButtonRoot = React.forwardRef(function ButtonRoot(props, ref) {
   const { children, ...other } = props;
@@ -26,17 +28,17 @@ const CustomButtonRoot = styled(ButtonRoot)(
   overflow: visible;
   cursor: pointer;
   --main-color: ${
-    theme.palette.mode === 'light' ? 'rgb(25,118,210)' : 'rgb(144,202,249)'
+    theme.palette.mode === "light" ? "rgb(25,118,210)" : "rgb(144,202,249)"
   };
   --hover-color: ${
-    theme.palette.mode === 'light'
-      ? 'rgba(25,118,210,0.04)'
-      : 'rgba(144,202,249,0.08)'
+    theme.palette.mode === "light"
+      ? "rgba(25,118,210,0.04)"
+      : "rgba(144,202,249,0.08)"
   };
   --active-color: ${
-    theme.palette.mode === 'light'
-      ? 'rgba(25,118,210,0.12)'
-      : 'rgba(144,202,249,0.24)'
+    theme.palette.mode === "light"
+      ? "rgba(25,118,210,0.12)"
+      : "rgba(144,202,249,0.24)"
   };
 
   & polygon {
@@ -101,7 +103,7 @@ const CustomButtonRoot = styled(ButtonRoot)(
     & svg {
       margin: 0 5px;
     }
-  }`,
+  }`
 );
 
 const SvgButton = React.forwardRef(function SvgButton(props, ref) {

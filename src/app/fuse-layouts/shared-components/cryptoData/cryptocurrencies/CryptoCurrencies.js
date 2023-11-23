@@ -66,7 +66,11 @@ const CryptoCurrencies = (props) => {
       <Fragment>
         <div className="overflow-x-auto mb-8">
           <FuseScrollbars className="flex-grow overflow-x-auto">
-            <Table stickyHeader className="min-w-xl" aria-labelledby="tableTitle">
+            <Table
+              stickyHeader
+              className="min-w-xl"
+              aria-labelledby="tableTitle"
+            >
               <CryptoTableHead />
               {!isLoading && (
                 <TableBody>
@@ -79,16 +83,14 @@ const CryptoCurrencies = (props) => {
                           key={each.id}
                           num={index + 1 + (page - 1) * 20}
                           eachData={each}
-                        // onSetOpenModal={props.onCloseModalHandler}
+                          // onSetOpenModal={props.onCloseModalHandler}
                         />
                       );
                     })}
                 </TableBody>
               )}
-
             </Table>
           </FuseScrollbars>
-
 
           {/* <table className="min-w-[700px] mx-auto mt-8">
             <CoinsTableHead />
@@ -111,13 +113,12 @@ const CryptoCurrencies = (props) => {
             )}
           </table> */}
 
-
           {isLoading && (
             <div className="z-0">
               <CircularProgress
                 style={{
-                  marginTop: '5%',
-                  marginLeft: '48%',
+                  marginTop: "5%",
+                  marginLeft: "48%",
                   width: 48,
                   height: 48,
                   marginBottom: 80,

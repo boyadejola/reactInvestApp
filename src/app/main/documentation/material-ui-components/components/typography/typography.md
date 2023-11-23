@@ -1,7 +1,7 @@
 ---
 title: React Typography component
 components: Typography
-githubLabel: 'component: Typography'
+githubLabel: "component: Typography"
 materialDesign: https://material.io/design/typography/the-type-system.html
 ---
 
@@ -27,8 +27,8 @@ Shown below is a sample link markup used to load the Roboto font from a CDN:
 
 ```html
 <link
-  rel='stylesheet'
-  href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 />
 ```
 
@@ -41,10 +41,10 @@ You can [install it](https://www.npmjs.com/package/@fontsource/roboto) by typing
 Then, you can import it in your entry-point.
 
 ```js
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 ```
 
 For more info check out [Fontsource](https://github.com/fontsource/fontsource).
@@ -76,7 +76,7 @@ It's important to realize that the style of a typography component is independen
 {
   /* There is already an h1 in the page, let's not duplicate it. */
 }
-<Typography variant='h1' component='h2'>
+<Typography variant="h1" component="h2">
   h1. Heading
 </Typography>;
 ```
@@ -89,16 +89,16 @@ const theme = createTheme({
     MuiTypography: {
       defaultProps: {
         variantMapping: {
-          h1: 'h2',
-          h2: 'h2',
-          h3: 'h2',
-          h4: 'h2',
-          h5: 'h2',
-          h6: 'h2',
-          subtitle1: 'h2',
-          subtitle2: 'h2',
-          body1: 'span',
-          body2: 'span',
+          h1: "h2",
+          h2: "h2",
+          h3: "h2",
+          h4: "h2",
+          h5: "h2",
+          h6: "h2",
+          subtitle1: "h2",
+          subtitle2: "h2",
+          body1: "span",
+          body2: "span",
         },
       },
     },

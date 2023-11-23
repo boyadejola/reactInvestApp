@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const NotesAppConfig = {
   settings: {
@@ -8,8 +8,8 @@ const NotesAppConfig = {
   },
   routes: [
     {
-      path: '/apps/notes/:id?/:labelHandle?/:labelId?',
-      component: lazy(() => import('./NotesApp')),
+      path: "/apps/notes/:id?/:labelHandle?/:labelId?",
+      component: lazy(() => import("./NotesApp")),
     },
   ],
 };

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function ConsecutiveSnackbars() {
   const [snackPack, setSnackPack] = React.useState([]);
@@ -26,7 +26,7 @@ export default function ConsecutiveSnackbars() {
   };
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
     setOpen(false);
@@ -38,8 +38,8 @@ export default function ConsecutiveSnackbars() {
 
   return (
     <div>
-      <Button onClick={handleClick('Message A')}>Show message A</Button>
-      <Button onClick={handleClick('Message B')}>Show message B</Button>
+      <Button onClick={handleClick("Message A")}>Show message A</Button>
+      <Button onClick={handleClick("Message B")}>Show message B</Button>
       <Snackbar
         key={messageInfo ? messageInfo.key : undefined}
         open={open}

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import StaticTimePicker from '@mui/lab/StaticTimePicker';
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import StaticTimePicker from "@mui/lab/StaticTimePicker";
 
 export default function StaticTimePickerLandscape() {
   const [value, setValue] = React.useState(new Date());
@@ -11,8 +11,8 @@ export default function StaticTimePickerLandscape() {
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <StaticTimePicker
         ampm
-        orientation='landscape'
-        openTo='minutes'
+        orientation="landscape"
+        openTo="minutes"
         value={value}
         onChange={(newValue) => {
           setValue(newValue);

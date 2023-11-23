@@ -1,55 +1,55 @@
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 const demos = [
   {
-    title: 'Full Width',
-    url: '/ui/page-layouts/carded/full-width',
+    title: "Full Width",
+    url: "/ui/page-layouts/carded/full-width",
   },
   {
-    title: 'Full Width Tabbed',
-    url: '/ui/page-layouts/carded/full-width-tabbed',
+    title: "Full Width Tabbed",
+    url: "/ui/page-layouts/carded/full-width-tabbed",
   },
   {
-    title: 'Full Width 2',
-    url: '/ui/page-layouts/carded/full-width-2',
+    title: "Full Width 2",
+    url: "/ui/page-layouts/carded/full-width-2",
   },
   {
-    title: 'Full Width 2 Tabbed',
-    url: '/ui/page-layouts/carded/full-width-2-tabbed',
+    title: "Full Width 2 Tabbed",
+    url: "/ui/page-layouts/carded/full-width-2-tabbed",
   },
   {
-    title: 'Left Sidebar',
-    url: '/ui/page-layouts/carded/left-sidebar',
+    title: "Left Sidebar",
+    url: "/ui/page-layouts/carded/left-sidebar",
   },
   {
-    title: 'Left Sidebar Tabbed',
-    url: '/ui/page-layouts/carded/left-sidebar-tabbed',
+    title: "Left Sidebar Tabbed",
+    url: "/ui/page-layouts/carded/left-sidebar-tabbed",
   },
   {
-    title: 'Left Sidebar 2',
-    url: '/ui/page-layouts/carded/left-sidebar-2',
+    title: "Left Sidebar 2",
+    url: "/ui/page-layouts/carded/left-sidebar-2",
   },
   {
-    title: 'Left Sidebar 2 Tabbed',
-    url: '/ui/page-layouts/carded/left-sidebar-2-tabbed',
+    title: "Left Sidebar 2 Tabbed",
+    url: "/ui/page-layouts/carded/left-sidebar-2-tabbed",
   },
   {
-    title: 'Right Sidebar',
-    url: '/ui/page-layouts/carded/right-sidebar',
+    title: "Right Sidebar",
+    url: "/ui/page-layouts/carded/right-sidebar",
   },
   {
-    title: 'Right Sidebar Tabbed',
-    url: '/ui/page-layouts/carded/right-sidebar-tabbed',
+    title: "Right Sidebar Tabbed",
+    url: "/ui/page-layouts/carded/right-sidebar-tabbed",
   },
   {
-    title: 'Right Sidebar 2',
-    url: '/ui/page-layouts/carded/right-sidebar-2',
+    title: "Right Sidebar 2",
+    url: "/ui/page-layouts/carded/right-sidebar-2",
   },
   {
-    title: 'Right Sidebar 2 Tabbed',
-    url: '/ui/page-layouts/carded/right-sidebar-2-tabbed',
+    title: "Right Sidebar 2 Tabbed",
+    url: "/ui/page-layouts/carded/right-sidebar-2-tabbed",
   },
 ];
 
@@ -61,7 +61,8 @@ function FusePageCardedDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        <code>FusePageCarded</code> is the carded page layout component of the Fuse React.
+        <code>FusePageCarded</code> is the carded page layout component of the
+        Fuse React.
       </Typography>
       <Typography className="mb-24" component="p">
         The component has layout areas to easily enter the contents of the app.

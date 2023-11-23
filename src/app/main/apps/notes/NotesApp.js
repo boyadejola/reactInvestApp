@@ -1,35 +1,35 @@
-import FusePageSimple from '@fuse/core/FusePageSimple';
-import withReducer from 'app/store/withReducer';
-import { useEffect, useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { styled } from '@mui/material/styles';
-import LabelsDialog from './dialogs/labels/LabelsDialog';
-import NoteDialog from './dialogs/note/NoteDialog';
-import NewNote from './NewNote';
-import NoteList from './NoteList';
-import NotesHeader from './NotesHeader';
-import NotesSidebarContent from './NotesSidebarContent';
-import reducer from './store';
-import { getLabels } from './store/labelsSlice';
-import { getNotes } from './store/notesSlice';
+import FusePageSimple from "@fuse/core/FusePageSimple";
+import withReducer from "app/store/withReducer";
+import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { styled } from "@mui/material/styles";
+import LabelsDialog from "./dialogs/labels/LabelsDialog";
+import NoteDialog from "./dialogs/note/NoteDialog";
+import NewNote from "./NewNote";
+import NoteList from "./NoteList";
+import NotesHeader from "./NotesHeader";
+import NotesSidebarContent from "./NotesSidebarContent";
+import reducer from "./store";
+import { getLabels } from "./store/labelsSlice";
+import { getNotes } from "./store/notesSlice";
 
 const Root = styled(FusePageSimple)(({ theme }) => ({
-  '& .FusePageSimple-header': {
+  "& .FusePageSimple-header": {
     minHeight: 72,
     height: 72,
   },
-  '& .FusePageSimple-contentWrapper': {
+  "& .FusePageSimple-contentWrapper": {
     padding: 16,
     paddingBottom: 80,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       padding: 24,
     },
   },
-  '& .FusePageSimple-content': {
-    display: 'flex',
-    minHeight: '100%',
+  "& .FusePageSimple-content": {
+    display: "flex",
+    minHeight: "100%",
   },
-  '& .FusePageSimple-sidebar': {
+  "& .FusePageSimple-sidebar": {
     width: 256,
     border: 0,
   },
@@ -65,4 +65,4 @@ function NotesApp(props) {
   );
 }
 
-export default withReducer('notesApp', reducer)(NotesApp);
+export default withReducer("notesApp", reducer)(NotesApp);

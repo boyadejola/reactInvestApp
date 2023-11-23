@@ -3,9 +3,7 @@ const TrendCoin = (props) => {
     <div
       onClick={props.onClick}
       className={`h-fit p-8 rounded-lg cursor-pointer ${
-        props.theme === true
-          ? "hover:bg-blue-grey-50"
-          : "hover:bg-[#001e3c]"
+        props.theme === true ? "hover:bg-blue-grey-50" : "hover:bg-[#001e3c]"
       }`}
     >
       <img

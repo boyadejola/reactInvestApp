@@ -1,42 +1,53 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import Typography from '@mui/material/Typography';
-import { CircularProgress } from '@mui/material';
-import { useEffect, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { submitLogin } from 'app/auth/store/loginSlice';
-import * as yup from 'yup';
-import _ from '@lodash';
-import { setLoggedIn } from 'app/auth/store/sharedData';
-import { setLoginLoader } from 'app/auth/store/loadersSlice';
+import { yupResolver } from "@hookform/resolvers/yup";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Typography from "@mui/material/Typography";
+import { CircularProgress } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { submitLogin } from "app/auth/store/loginSlice";
+import * as yup from "yup";
+import _ from "@lodash";
+import { setLoggedIn } from "app/auth/store/sharedData";
+import { setLoginLoader } from "app/auth/store/loadersSlice";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  email: yup.string().email('You must enter a valid email').required('You must enter a email'),
+  email: yup
+    .string()
+    .email("You must enter a valid email")
+    .required("You must enter a email"),
   password: yup
     .string()
-    .required('Please enter your password.')
-    .min(4, 'Password is too short - should be 4 chars minimum.'),
+    .required("Please enter your password.")
+    .min(4, "Password is too short - should be 4 chars minimum."),
 });
 
 const defaultValues = {
-  email: '',
-  password: '',
+  email: "",
+  password: "",
 };
 
 function JWTLoginTab(props) {
   const dispatch = useDispatch();
   const login = useSelector(({ auth }) => auth.login);
   const loader = useSelector(({ auth }) => auth.loaders.loginLoader);
-  const { control, setValue, formState, handleSubmit, reset, trigger, setError } = useForm({
-    mode: 'onChange',
+  const {
+    control,
+    setValue,
+    formState,
+    handleSubmit,
+    reset,
+    trigger,
+    setError,
+  } = useForm({
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -53,7 +64,7 @@ function JWTLoginTab(props) {
   useEffect(() => {
     login.errors.forEach((error) => {
       setError(error.type, {
-        type: 'manual',
+        type: "manual",
         message: error.message,
       });
     });
@@ -65,53 +76,59 @@ function JWTLoginTab(props) {
   }
 
   return (
-    <div className='w-full'>
-      <form className='flex flex-col justify-center w-full' onSubmit={handleSubmit(onSubmit)}>
+    <div className="w-full">
+      <form
+        className="flex flex-col justify-center w-full"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <Controller
-          name='email'
+          name="email"
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              type='text'
+              type="text"
               error={!!errors.email}
               helperText={errors?.email?.message}
-              label='Email'
+              label="Email"
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position='end'>
-                    <Icon className='text-20' color='action'>
+                  <InputAdornment position="end">
+                    <Icon className="text-20" color="action">
                       user
                     </Icon>
                   </InputAdornment>
                 ),
               }}
-              variant='outlined'
+              variant="outlined"
             />
           )}
         />
 
         <Controller
-          name='password'
+          name="password"
           control={control}
           render={({ field }) => (
             <TextField
               {...field}
               className="mb-16"
-              label='Password'
-              type='password'
+              label="Password"
+              type="password"
               error={!!errors.password}
               helperText={errors?.password?.message}
-              variant='outlined'
+              variant="outlined"
               InputProps={{
-                className: 'pr-2',
-                type: showPassword ? 'text' : 'password',
+                className: "pr-2",
+                type: showPassword ? "text" : "password",
                 endAdornment: (
-                  <InputAdornment position='end'>
-                    <IconButton onClick={() => setShowPassword(!showPassword)} size='large'>
-                      <Icon className='text-20' color='action'>
-                        {showPassword ? 'visibility' : 'visibility_off'}
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={() => setShowPassword(!showPassword)}
+                      size="large"
+                    >
+                      <Icon className="text-20" color="action">
+                        {showPassword ? "visibility" : "visibility_off"}
                       </Icon>
                     </IconButton>
                   </InputAdornment>
@@ -123,15 +140,15 @@ function JWTLoginTab(props) {
         />
 
         <Button
-          type='submit'
-          variant='contained'
-          color='primary'
-          className='w-full mx-auto mt-16'
-          aria-label='LOG IN'
+          type="submit"
+          variant="contained"
+          color="primary"
+          className="w-full mx-auto mt-16"
+          aria-label="LOG IN"
           disabled={_.isEmpty(dirtyFields) || !isValid}
-          value='legacy'
+          value="legacy"
         >
-          {loader ? <CircularProgress /> : 'Login'}
+          {loader ? <CircularProgress /> : "Login"}
         </Button>
       </form>
 

@@ -1,12 +1,12 @@
-import * as React from 'react';
-import Badge from '@mui/material/Badge';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import PickersDay from '@mui/lab/PickersDay';
-import DatePicker from '@mui/lab/DatePicker';
-import CalendarPickerSkeleton from '@mui/lab/CalendarPickerSkeleton';
-import getDaysInMonth from 'date-fns/getDaysInMonth';
+import * as React from "react";
+import Badge from "@mui/material/Badge";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import PickersDay from "@mui/lab/PickersDay";
+import DatePicker from "@mui/lab/DatePicker";
+import CalendarPickerSkeleton from "@mui/lab/CalendarPickerSkeleton";
+import getDaysInMonth from "date-fns/getDaysInMonth";
 
 function getRandomNumber(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -20,14 +20,16 @@ function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
       const daysInMonth = getDaysInMonth(date);
-      const daysToHighlight = [1, 2, 3].map(() => getRandomNumber(1, daysInMonth));
+      const daysToHighlight = [1, 2, 3].map(() =>
+        getRandomNumber(1, daysInMonth)
+      );
 
       resolve({ daysToHighlight });
     }, 500);
 
     signal.onabort = () => {
       clearTimeout(timeout);
-      reject(new DOMException('aborted', 'AbortError'));
+      reject(new DOMException("aborted", "AbortError"));
     };
   });
 }
@@ -51,7 +53,7 @@ export default function ServerRequestDatePicker() {
       })
       .catch((error) => {
         // ignore the error if it's caused by `controller.abort`
-        if (error.name !== 'AbortError') {
+        if (error.name !== "AbortError") {
           throw error;
         }
       });
@@ -97,7 +99,7 @@ export default function ServerRequestDatePicker() {
             <Badge
               key={day.toString()}
               overlap="circular"
-              badgeContent={isSelected ? '🌚' : undefined}
+              badgeContent={isSelected ? "🌚" : undefined}
             >
               <PickersDay {...DayComponentProps} />
             </Badge>

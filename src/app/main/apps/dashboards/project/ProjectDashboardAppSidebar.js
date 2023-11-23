@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
-import { useSelector } from 'react-redux';
-import { selectWidgets } from './store/widgetsSlice';
-import WidgetNow from './widgets/WidgetNow';
-import WidgetWeather from './widgets/WidgetWeather';
+import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { selectWidgets } from "./store/widgetsSlice";
+import WidgetNow from "./widgets/WidgetNow";
+import WidgetWeather from "./widgets/WidgetWeather";
 
 function ProjectDashboardAppSidebar() {
   const widgets = useSelector(selectWidgets);
@@ -23,7 +23,12 @@ function ProjectDashboardAppSidebar() {
   };
 
   return (
-    <motion.div className="w-full" variants={container} initial="hidden" animate="show">
+    <motion.div
+      className="w-full"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
       <motion.div variants={item} className="widget flex w-full p-12">
         <WidgetNow />
       </motion.div>

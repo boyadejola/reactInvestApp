@@ -1,69 +1,69 @@
-import Checkbox from '@mui/material/Checkbox';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
-import TableCell from '@mui/material/TableCell';
-import TableRow from '@mui/material/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel';
-import Tooltip from '@mui/material/Tooltip';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Box } from '@mui/system';
-import TableHead from '@mui/material/TableHead';
-import { removeOrders } from '../store/ordersSlice';
+import Checkbox from "@mui/material/Checkbox";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import TableSortLabel from "@mui/material/TableSortLabel";
+import Tooltip from "@mui/material/Tooltip";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Box } from "@mui/system";
+import TableHead from "@mui/material/TableHead";
+import { removeOrders } from "../store/ordersSlice";
 
 const rows = [
   {
-    id: 'id',
-    align: 'left',
+    id: "id",
+    align: "left",
     disablePadding: false,
-    label: 'ID',
+    label: "ID",
     sort: true,
   },
   {
-    id: 'reference',
-    align: 'left',
+    id: "reference",
+    align: "left",
     disablePadding: false,
-    label: 'Reference',
+    label: "Reference",
     sort: true,
   },
   {
-    id: 'customer',
-    align: 'left',
+    id: "customer",
+    align: "left",
     disablePadding: false,
-    label: 'Customer',
+    label: "Customer",
     sort: true,
   },
   {
-    id: 'total',
-    align: 'right',
+    id: "total",
+    align: "right",
     disablePadding: false,
-    label: 'Total',
+    label: "Total",
     sort: true,
   },
   {
-    id: 'payment',
-    align: 'left',
+    id: "payment",
+    align: "left",
     disablePadding: false,
-    label: 'Payment',
+    label: "Payment",
     sort: true,
   },
   {
-    id: 'status',
-    align: 'left',
+    id: "status",
+    align: "left",
     disablePadding: false,
-    label: 'Status',
+    label: "Status",
     sort: true,
   },
   {
-    id: 'date',
-    align: 'left',
+    id: "date",
+    align: "left",
     disablePadding: false,
-    label: 'Date',
+    label: "Date",
     sort: true,
   },
 ];
@@ -107,7 +107,7 @@ function OrdersTableHead(props) {
               }}
             >
               <IconButton
-                aria-owns={selectedOrdersMenu ? 'selectedOrdersMenu' : null}
+                aria-owns={selectedOrdersMenu ? "selectedOrdersMenu" : null}
                 aria-haspopup="true"
                 onClick={openSelectedOrdersMenu}
                 size="large"
@@ -144,13 +144,17 @@ function OrdersTableHead(props) {
               className="p-4 md:p-16"
               key={row.id}
               align={row.align}
-              padding={row.disablePadding ? 'none' : 'normal'}
-              sortDirection={props.order.id === row.id ? props.order.direction : false}
+              padding={row.disablePadding ? "none" : "normal"}
+              sortDirection={
+                props.order.id === row.id ? props.order.direction : false
+              }
             >
               {row.sort && (
                 <Tooltip
                   title="Sort"
-                  placement={row.align === 'right' ? 'bottom-end' : 'bottom-start'}
+                  placement={
+                    row.align === "right" ? "bottom-end" : "bottom-start"
+                  }
                   enterDelay={300}
                 >
                   <TableSortLabel

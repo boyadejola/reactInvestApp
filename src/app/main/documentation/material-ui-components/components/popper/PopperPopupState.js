@@ -1,10 +1,10 @@
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Popper from '@mui/material/Popper';
-import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
-import Fade from '@mui/material/Fade';
-import Paper from '@mui/material/Paper';
+import * as React from "react";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Popper from "@mui/material/Popper";
+import PopupState, { bindToggle, bindPopper } from "material-ui-popup-state";
+import Fade from "@mui/material/Fade";
+import Paper from "@mui/material/Paper";
 
 export default function PopperPopupState() {
   return (
@@ -18,7 +18,9 @@ export default function PopperPopupState() {
             {({ TransitionProps }) => (
               <Fade {...TransitionProps} timeout={350}>
                 <Paper>
-                  <Typography sx={{ p: 2 }}>The content of the Popper.</Typography>
+                  <Typography sx={{ p: 2 }}>
+                    The content of the Popper.
+                  </Typography>
                 </Paper>
               </Fade>
             )}

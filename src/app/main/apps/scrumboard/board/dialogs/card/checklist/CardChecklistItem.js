@@ -1,15 +1,15 @@
-import { Controller, useForm } from 'react-hook-form';
-import { useEffect } from 'react';
-import Checkbox from '@mui/material/Checkbox';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import ListItem from '@mui/material/ListItem';
-import TextField from '@mui/material/TextField';
-import _ from '@lodash';
+import { Controller, useForm } from "react-hook-form";
+import { useEffect } from "react";
+import Checkbox from "@mui/material/Checkbox";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import ListItem from "@mui/material/ListItem";
+import TextField from "@mui/material/TextField";
+import _ from "@lodash";
 
 function CardChecklistItem(props) {
   const { item, onListItemChange, index } = props;
-  const { control, watch } = useForm({ mode: 'onChange', defaultValues: item });
+  const { control, watch } = useForm({ mode: "onChange", defaultValues: item });
   const form = watch();
 
   useEffect(() => {
@@ -38,11 +38,19 @@ function CardChecklistItem(props) {
         name="name"
         control={control}
         render={({ field }) => (
-          <TextField {...field} className="flex flex-1 mx-8" variant="outlined" />
+          <TextField
+            {...field}
+            className="flex flex-1 mx-8"
+            variant="outlined"
+          />
         )}
       />
 
-      <IconButton aria-label="Delete" onClick={props.onListItemRemove} size="large">
+      <IconButton
+        aria-label="Delete"
+        onClick={props.onListItemRemove}
+        size="large"
+      >
         <Icon>delete</Icon>
       </IconButton>
     </ListItem>

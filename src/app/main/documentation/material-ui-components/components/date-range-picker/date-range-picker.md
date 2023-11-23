@@ -1,8 +1,8 @@
 ---
 title: React Date Range Picker component
 components: DateRangePicker, DateRangePickerDay, DesktopDateRangePicker, MobileDateRangePicker, StaticDateRangePicker
-githubLabel: 'component: DateRangePicker'
-packageName: '@mui/lab'
+githubLabel: "component: DateRangePicker"
+packageName: "@mui/lab"
 materialDesign: https://material.io/components/date-pickers
 ---
 
@@ -28,12 +28,14 @@ Please install any of these libraries and set up the right date engine by wrappi
 
 ```jsx
 // or @mui/lab/dateAdapter/{dayjs,luxon,moment} or any valid date-io adapter
-import DateFnsAdapter from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import DateFnsAdapter from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
 
 function App() {
   return (
-    <LocalizationProvider dateAdapter={DateFnsAdapter}>...</LocalizationProvider>
+    <LocalizationProvider dateAdapter={DateFnsAdapter}>
+      ...
+    </LocalizationProvider>
   );
 }
 ```

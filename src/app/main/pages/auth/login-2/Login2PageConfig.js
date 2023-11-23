@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const Login2PageConfig = {
   settings: {
@@ -8,8 +8,8 @@ const Login2PageConfig = {
   },
   routes: [
     {
-      path: '/pages/auth/login-2',
-      component: lazy(() => import('./Login2Page')),
+      path: "/pages/auth/login-2",
+      component: lazy(() => import("./Login2Page")),
     },
   ],
 };

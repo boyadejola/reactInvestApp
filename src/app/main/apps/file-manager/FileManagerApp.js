@@ -1,39 +1,39 @@
-import FusePageSimple from '@fuse/core/FusePageSimple';
-import Fab from '@mui/material/Fab';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import withReducer from 'app/store/withReducer';
-import { motion } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { styled } from '@mui/material/styles';
-import Breadcrumb from './Breadcrumb';
-import DetailSidebarContent from './DetailSidebarContent';
-import DetailSidebarHeader from './DetailSidebarHeader';
-import FileList from './FileList';
-import MainSidebarContent from './MainSidebarContent';
-import MainSidebarHeader from './MainSidebarHeader';
-import reducer from './store';
-import { selectFileById, getFiles } from './store/filesSlice';
+import FusePageSimple from "@fuse/core/FusePageSimple";
+import Fab from "@mui/material/Fab";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import withReducer from "app/store/withReducer";
+import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { styled } from "@mui/material/styles";
+import Breadcrumb from "./Breadcrumb";
+import DetailSidebarContent from "./DetailSidebarContent";
+import DetailSidebarHeader from "./DetailSidebarHeader";
+import FileList from "./FileList";
+import MainSidebarContent from "./MainSidebarContent";
+import MainSidebarHeader from "./MainSidebarHeader";
+import reducer from "./store";
+import { selectFileById, getFiles } from "./store/filesSlice";
 
 const Root = styled(FusePageSimple)(({ theme }) => ({
-  '& .FusePageSimple-header': {
+  "& .FusePageSimple-header": {
     minHeight: 96,
     height: 96,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       minHeight: 160,
       height: 160,
     },
   },
-  '& .FusePageSimple-sidebarHeader': {
+  "& .FusePageSimple-sidebarHeader": {
     minHeight: 96,
     height: 96,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       minHeight: 160,
       height: 160,
     },
   },
-  '& .FusePageSimple-rightSidebar': {
+  "& .FusePageSimple-rightSidebar": {
     width: 320,
   },
 }));
@@ -64,7 +64,10 @@ function FileManagerApp() {
             >
               <Icon>menu</Icon>
             </IconButton>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1, transition: { delay: 0.2 } }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1, transition: { delay: 0.2 } }}
+            >
               <IconButton aria-label="search" size="large">
                 <Icon>search</Icon>
               </IconButton>
@@ -107,4 +110,4 @@ function FileManagerApp() {
   );
 }
 
-export default withReducer('fileManagerApp', reducer)(FileManagerApp);
+export default withReducer("fileManagerApp", reducer)(FileManagerApp);

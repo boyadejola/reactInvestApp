@@ -1,10 +1,10 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Slider, { SliderThumb } from '@mui/material/Slider';
-import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Slider, { SliderThumb } from "@mui/material/Slider";
+import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import Tooltip from "@mui/material/Tooltip";
+import Box from "@mui/material/Box";
 
 function ValueLabelComponent(props) {
   const { children, value } = props;
@@ -22,7 +22,7 @@ ValueLabelComponent.propTypes = {
 };
 
 const iOSBoxShadow =
-  '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
+  "0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)";
 
 const marks = [
   {
@@ -40,120 +40,120 @@ const marks = [
 ];
 
 const IOSSlider = styled(Slider)(({ theme }) => ({
-  color: theme.palette.mode === 'dark' ? '#3880ff' : '#3880ff',
+  color: theme.palette.mode === "dark" ? "#3880ff" : "#3880ff",
   height: 2,
-  padding: '15px 0',
-  '& .MuiSlider-thumb': {
+  padding: "15px 0",
+  "& .MuiSlider-thumb": {
     height: 28,
     width: 28,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     boxShadow: iOSBoxShadow,
-    '&:focus, &:hover, &.Mui-active': {
+    "&:focus, &:hover, &.Mui-active": {
       boxShadow:
-        '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02)',
+        "0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02)",
       // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
+      "@media (hover: none)": {
         boxShadow: iOSBoxShadow,
       },
     },
   },
-  '& .MuiSlider-valueLabel': {
+  "& .MuiSlider-valueLabel": {
     fontSize: 12,
-    fontWeight: 'normal',
+    fontWeight: "normal",
     top: -6,
-    backgroundColor: 'unset',
+    backgroundColor: "unset",
     color: theme.palette.text.primary,
-    '&:before': {
-      display: 'none',
+    "&:before": {
+      display: "none",
     },
-    '& *': {
-      background: 'transparent',
-      color: theme.palette.mode === 'dark' ? '#fff' : '#000',
+    "& *": {
+      background: "transparent",
+      color: theme.palette.mode === "dark" ? "#fff" : "#000",
     },
   },
-  '& .MuiSlider-track': {
-    border: 'none',
+  "& .MuiSlider-track": {
+    border: "none",
   },
-  '& .MuiSlider-rail': {
+  "& .MuiSlider-rail": {
     opacity: 0.5,
-    backgroundColor: '#bfbfbf',
+    backgroundColor: "#bfbfbf",
   },
-  '& .MuiSlider-mark': {
-    backgroundColor: '#bfbfbf',
+  "& .MuiSlider-mark": {
+    backgroundColor: "#bfbfbf",
     height: 8,
     width: 1,
-    '&.MuiSlider-markActive': {
+    "&.MuiSlider-markActive": {
       opacity: 1,
-      backgroundColor: 'currentColor',
+      backgroundColor: "currentColor",
     },
   },
 }));
 
 const PrettoSlider = styled(Slider)({
-  color: '#52af77',
+  color: "#52af77",
   height: 8,
-  '& .MuiSlider-track': {
-    border: 'none',
+  "& .MuiSlider-track": {
+    border: "none",
   },
-  '& .MuiSlider-thumb': {
+  "& .MuiSlider-thumb": {
     height: 24,
     width: 24,
-    backgroundColor: '#fff',
-    border: '2px solid currentColor',
-    '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
-      boxShadow: 'inherit',
+    backgroundColor: "#fff",
+    border: "2px solid currentColor",
+    "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
+      boxShadow: "inherit",
     },
-    '&:before': {
-      display: 'none',
+    "&:before": {
+      display: "none",
     },
   },
-  '& .MuiSlider-valueLabel': {
+  "& .MuiSlider-valueLabel": {
     lineHeight: 1.2,
     fontSize: 12,
-    background: 'unset',
+    background: "unset",
     padding: 0,
     width: 32,
     height: 32,
-    borderRadius: '50% 50% 50% 0',
-    backgroundColor: '#52af77',
-    transformOrigin: 'bottom left',
-    transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
-    '&:before': { display: 'none' },
-    '&.MuiSlider-valueLabelOpen': {
-      transform: 'translate(50%, -100%) rotate(-45deg) scale(1)',
+    borderRadius: "50% 50% 50% 0",
+    backgroundColor: "#52af77",
+    transformOrigin: "bottom left",
+    transform: "translate(50%, -100%) rotate(-45deg) scale(0)",
+    "&:before": { display: "none" },
+    "&.MuiSlider-valueLabelOpen": {
+      transform: "translate(50%, -100%) rotate(-45deg) scale(1)",
     },
-    '& > *': {
-      transform: 'rotate(45deg)',
+    "& > *": {
+      transform: "rotate(45deg)",
     },
   },
 });
 
 const AirbnbSlider = styled(Slider)(({ theme }) => ({
-  color: '#3a8589',
+  color: "#3a8589",
   height: 3,
-  padding: '13px 0',
-  '& .MuiSlider-thumb': {
+  padding: "13px 0",
+  "& .MuiSlider-thumb": {
     height: 27,
     width: 27,
-    backgroundColor: '#fff',
-    border: '1px solid currentColor',
-    '&:hover': {
-      boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
+    backgroundColor: "#fff",
+    border: "1px solid currentColor",
+    "&:hover": {
+      boxShadow: "0 0 0 8px rgba(58, 133, 137, 0.16)",
     },
-    '& .airbnb-bar': {
+    "& .airbnb-bar": {
       height: 9,
       width: 1,
-      backgroundColor: 'currentColor',
+      backgroundColor: "currentColor",
       marginLeft: 1,
       marginRight: 1,
     },
   },
-  '& .MuiSlider-track': {
+  "& .MuiSlider-track": {
     height: 3,
   },
-  '& .MuiSlider-rail': {
-    color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#d8d8d8',
-    opacity: theme.palette.mode === 'dark' ? undefined : 1,
+  "& .MuiSlider-rail": {
+    color: theme.palette.mode === "dark" ? "#bfbfbf" : "#d8d8d8",
+    opacity: theme.palette.mode === "dark" ? undefined : 1,
     height: 3,
   },
 }));
@@ -205,7 +205,9 @@ export default function CustomizedSlider() {
       <Typography gutterBottom>Airbnb</Typography>
       <AirbnbSlider
         components={{ Thumb: AirbnbThumbComponent }}
-        getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
+        getAriaLabel={(index) =>
+          index === 0 ? "Minimum price" : "Maximum price"
+        }
         defaultValue={[20, 40]}
       />
     </Box>

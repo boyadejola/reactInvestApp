@@ -1,6 +1,6 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
 
 export default function LeadingClickAway() {
   const [open, setOpen] = React.useState(false);
@@ -14,14 +14,14 @@ export default function LeadingClickAway() {
   };
 
   const styles = {
-    position: 'absolute',
+    position: "absolute",
     top: 28,
     right: 0,
     left: 0,
     zIndex: 1,
-    border: '1px solid',
+    border: "1px solid",
     p: 1,
-    bgcolor: 'background.paper',
+    bgcolor: "background.paper",
   };
 
   return (
@@ -30,7 +30,7 @@ export default function LeadingClickAway() {
       touchEvent="onTouchStart"
       onClickAway={handleClickAway}
     >
-      <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: "relative" }}>
         <button type="button" onClick={handleClick}>
           Open menu dropdown
         </button>

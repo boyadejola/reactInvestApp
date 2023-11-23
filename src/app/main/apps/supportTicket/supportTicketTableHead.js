@@ -1,36 +1,36 @@
-import TableCell from '@mui/material/TableCell';
-import TableRow from '@mui/material/TableRow';
-import { useDispatch } from 'react-redux';
-import TableHead from '@mui/material/TableHead';
-import i18next from 'i18next';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import { useDispatch } from "react-redux";
+import TableHead from "@mui/material/TableHead";
+import i18next from "i18next";
 
 const rows = [
   {
-    id: 'driver',
-    align: 'center',
+    id: "driver",
+    align: "center",
     disablePadding: false,
-    label: 'SUBJECT',
+    label: "SUBJECT",
     sort: false,
   },
   {
-    id: 'vehisscle',
-    align: 'center',
+    id: "vehisscle",
+    align: "center",
     disablePadding: false,
-    label: 'STATUS',
+    label: "STATUS",
     sort: false,
   },
   {
-    id: 'vehicle',
-    align: 'center',
+    id: "vehicle",
+    align: "center",
     disablePadding: false,
-    label: 'LASTREPLY',
+    label: "LASTREPLY",
     sort: false,
   },
   {
-    id: 'emirates',
-    align: 'left',
+    id: "emirates",
+    align: "left",
     disablePadding: false,
-    label: 'ACTION',
+    label: "ACTION",
     sort: false,
   },
 ];
@@ -47,9 +47,9 @@ function SupportTicket(props) {
               className="p-4 md:p-16"
               key={o}
               align={row.align}
-              padding={row.disablePadding ? 'none' : 'normal'}
-              style={{ paddingLeft: row.id == 'driver' ? 22 : '' }}
-            // sortDirection={props.order.id === row.id ? props.order.direction : false}
+              padding={row.disablePadding ? "none" : "normal"}
+              style={{ paddingLeft: row.id == "driver" ? 22 : "" }}
+              // sortDirection={props.order.id === row.id ? props.order.direction : false}
             >
               {i18next.t(`navigation:${row.label}`)}
             </TableCell>

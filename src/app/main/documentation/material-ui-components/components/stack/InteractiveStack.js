@@ -1,18 +1,18 @@
-import * as React from 'react';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Grid from '@mui/material/Grid';
-import HighlightedCode from 'app/main/documentation/material-ui-components/utils/HighlightedCode';
-import Paper from '@mui/material/Paper';
-import RadioGroup from '@mui/material/RadioGroup';
-import Radio from '@mui/material/Radio';
-import Stack from '@mui/material/Stack';
+import * as React from "react";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Grid from "@mui/material/Grid";
+import HighlightedCode from "app/main/documentation/material-ui-components/utils/HighlightedCode";
+import Paper from "@mui/material/Paper";
+import RadioGroup from "@mui/material/RadioGroup";
+import Radio from "@mui/material/Radio";
+import Stack from "@mui/material/Stack";
 
 export default function InteractiveStack() {
-  const [direction, setDirection] = React.useState('row');
-  const [justifyContent, setJustifyContent] = React.useState('center');
-  const [alignItems, setAlignItems] = React.useState('center');
+  const [direction, setDirection] = React.useState("row");
+  const [justifyContent, setJustifyContent] = React.useState("center");
+  const [alignItems, setAlignItems] = React.useState("center");
   const [spacing, setSpacing] = React.useState(2);
 
   const jsx = `
@@ -40,8 +40,8 @@ export default function InteractiveStack() {
               p: 2,
               pt: value + 1,
               pb: value + 1,
-              color: 'text.secondary',
-              typography: 'body2',
+              color: "text.secondary",
+              typography: "body2",
             }}
           >
             {`Item ${value + 1}`}
@@ -51,38 +51,38 @@ export default function InteractiveStack() {
       <Paper sx={{ p: 2 }}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <FormControl component='fieldset'>
-              <FormLabel component='legend'>direction</FormLabel>
+            <FormControl component="fieldset">
+              <FormLabel component="legend">direction</FormLabel>
               <RadioGroup
                 row
-                name='direction'
-                aria-label='direction'
+                name="direction"
+                aria-label="direction"
                 value={direction}
                 onChange={(event) => {
                   setDirection(event.target.value);
                 }}
               >
-                <FormControlLabel value='row' control={<Radio />} label='row' />
+                <FormControlLabel value="row" control={<Radio />} label="row" />
                 <FormControlLabel
-                  value='row-reverse'
+                  value="row-reverse"
                   control={<Radio />}
-                  label='row-reverse'
+                  label="row-reverse"
                 />
                 <FormControlLabel
-                  value='column'
+                  value="column"
                   control={<Radio />}
-                  label='column'
+                  label="column"
                 />
                 <FormControlLabel
-                  value='column-reverse'
+                  value="column-reverse"
                   control={<Radio />}
-                  label='column-reverse'
+                  label="column-reverse"
                 />
               </RadioGroup>
             </FormControl>
           </Grid>
           <Grid item xs={12}>
-            <FormControl component='fieldset'>
+            <FormControl component="fieldset">
               <FormLabel component="legend">alignItems</FormLabel>
               <RadioGroup
                 row

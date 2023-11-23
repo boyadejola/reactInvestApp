@@ -1,12 +1,12 @@
-import Paper from '@mui/material/Paper';
-import { useTheme } from '@mui/material/styles';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
-import _ from '@lodash';
-import { memo, useState, useEffect } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import Box from '@mui/material/Box';
+import Paper from "@mui/material/Paper";
+import { useTheme } from "@mui/material/styles";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import _ from "@lodash";
+import { memo, useState, useEffect } from "react";
+import ReactApexChart from "react-apexcharts";
+import Box from "@mui/material/Box";
 
 function Widget5(props) {
   const theme = useTheme();
@@ -15,7 +15,7 @@ function Widget5(props) {
   const widget = _.merge({}, props.widget);
   const currentRange = Object.keys(widget.ranges)[tabValue];
 
-  _.setWith(widget, 'mainChart.options.colors', [
+  _.setWith(widget, "mainChart.options.colors", [
     theme.palette.primary.main,
     theme.palette.secondary.main,
   ]);
@@ -39,11 +39,13 @@ function Widget5(props) {
           variant="scrollable"
           scrollButtons={false}
           className="-mx-4 min-h-40"
-          classes={{ indicator: 'flex justify-center bg-transparent w-full h-full' }}
+          classes={{
+            indicator: "flex justify-center bg-transparent w-full h-full",
+          }}
           TabIndicatorProps={{
             children: (
               <Box
-                sx={{ bgcolor: 'text.disabled' }}
+                sx={{ bgcolor: "text.disabled" }}
                 className="w-full h-full rounded-full opacity-20"
               />
             ),
@@ -83,7 +85,10 @@ function Widget5(props) {
                 </Typography>
                 <div className="h-64 w-full overflow-hidden">
                   <ReactApexChart
-                    options={{ ...item.chart.options, colors: [theme.palette.secondary.main] }}
+                    options={{
+                      ...item.chart.options,
+                      colors: [theme.palette.secondary.main],
+                    }}
                     series={item.chart[currentRange].series}
                     type={item.chart.options.chart.type}
                     height={item.chart.options.chart.height}

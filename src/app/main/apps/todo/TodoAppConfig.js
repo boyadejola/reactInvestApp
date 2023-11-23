@@ -1,5 +1,5 @@
-import { lazy } from 'react';
-import { Redirect } from 'react-router-dom';
+import { lazy } from "react";
+import { Redirect } from "react-router-dom";
 
 const TodoAppConfig = {
   settings: {
@@ -8,14 +8,14 @@ const TodoAppConfig = {
   routes: [
     {
       path: [
-        '/apps/todo/label/:labelHandle/:todoId?',
-        '/apps/todo/filter/:filterHandle/:todoId?',
-        '/apps/todo/:folderHandle/:todoId?',
+        "/apps/todo/label/:labelHandle/:todoId?",
+        "/apps/todo/filter/:filterHandle/:todoId?",
+        "/apps/todo/:folderHandle/:todoId?",
       ],
-      component: lazy(() => import('./TodoApp')),
+      component: lazy(() => import("./TodoApp")),
     },
     {
-      path: '/apps/todo',
+      path: "/apps/todo",
       component: () => <Redirect to="/apps/todo/all" />,
     },
   ],

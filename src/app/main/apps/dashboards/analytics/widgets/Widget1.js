@@ -1,34 +1,44 @@
-import _ from '@lodash';
-import { styled, ThemeProvider, useTheme, alpha } from '@mui/material/styles';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { memo, useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import { useSelector } from 'react-redux';
-import { selectContrastMainTheme } from 'app/store/fuse/settingsSlice';
-import Box from '@mui/material/Box';
-import i18next from 'i18next';
+import _ from "@lodash";
+import { styled, ThemeProvider, useTheme, alpha } from "@mui/material/styles";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { memo, useState } from "react";
+import ReactApexChart from "react-apexcharts";
+import { useSelector } from "react-redux";
+import { selectContrastMainTheme } from "app/store/fuse/settingsSlice";
+import Box from "@mui/material/Box";
+import i18next from "i18next";
 
-const Root = styled('div')(({ theme }) => ({
+const Root = styled("div")(({ theme }) => ({
   background: `linear-gradient(to right, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 100%)`,
   color: theme.palette.primary.contrastText,
 }));
 
 function Widget1(props) {
   const theme = useTheme();
-  const contrastTheme = useSelector(selectContrastMainTheme(theme.palette.primary.main));
+  const contrastTheme = useSelector(
+    selectContrastMainTheme(theme.palette.primary.main)
+  );
   const data = _.merge({}, props.data);
 
   const [tabValue, setTabValue] = useState(2);
   const series = data.series[Object.keys(data.series)[tabValue]];
 
-  _.setWith(data, 'options.fill.colors', [theme.palette.secondary.main]);
-  _.setWith(data, 'options.markers.colors', [theme.palette.secondary.main]);
-  _.setWith(data, 'options.stroke.colors', [theme.palette.primary.contrastText]);
-  _.setWith(data, 'options.markers.strokeColors', [theme.palette.primary.contrastText]);
-  _.setWith(data, 'options.grid.borderColor', alpha(theme.palette.primary.contrastText, 0.3));
+  _.setWith(data, "options.fill.colors", [theme.palette.secondary.main]);
+  _.setWith(data, "options.markers.colors", [theme.palette.secondary.main]);
+  _.setWith(data, "options.stroke.colors", [
+    theme.palette.primary.contrastText,
+  ]);
+  _.setWith(data, "options.markers.strokeColors", [
+    theme.palette.primary.contrastText,
+  ]);
+  _.setWith(
+    data,
+    "options.grid.borderColor",
+    alpha(theme.palette.primary.contrastText, 0.3)
+  );
 
   return (
     <ThemeProvider theme={contrastTheme}>
@@ -54,11 +64,13 @@ function Widget1(props) {
               variant="scrollable"
               scrollButtons={false}
               className="w-full -mx-4 min-h-40"
-              classes={{ indicator: 'flex justify-center bg-transparent w-full h-full' }}
+              classes={{
+                indicator: "flex justify-center bg-transparent w-full h-full",
+              }}
               TabIndicatorProps={{
                 children: (
                   <Box
-                    sx={{ bgcolor: 'text.disabled' }}
+                    sx={{ bgcolor: "text.disabled" }}
                     className="w-full h-full rounded-full opacity-20"
                   />
                 ),

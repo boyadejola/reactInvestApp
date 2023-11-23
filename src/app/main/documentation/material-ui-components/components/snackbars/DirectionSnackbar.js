@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
-import Slide from '@mui/material/Slide';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import Slide from "@mui/material/Slide";
 
 function TransitionLeft(props) {
   return <Slide {...props} direction="left" />;
@@ -43,7 +43,7 @@ export default function DirectionSnackbar() {
         onClose={handleClose}
         TransitionComponent={transition}
         message="I love snacks"
-        key={transition ? transition.name : ''}
+        key={transition ? transition.name : ""}
       />
     </div>
   );

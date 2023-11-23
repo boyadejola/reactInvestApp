@@ -1,9 +1,9 @@
-import Card from '@mui/material/Card';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import clsx from 'clsx';
-import NotificationIcon from './NotificationIcon';
+import Card from "@mui/material/Card";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import clsx from "clsx";
+import NotificationIcon from "./NotificationIcon";
 
 function NotificationCard(props) {
   const { item, className } = props;
@@ -18,11 +18,11 @@ function NotificationCard(props) {
   return (
     <Card
       className={clsx(
-        'flex items-center relative w-full rounded-16 p-20 min-h-64 shadow',
-        variant === 'success' && 'bg-green-600 text-white',
-        variant === 'info' && 'bg-blue-700 text-white',
-        variant === 'error' && 'bg-red-600 text-white',
-        variant === 'warning' && 'bg-orange-600 text-white',
+        "flex items-center relative w-full rounded-16 p-20 min-h-64 shadow",
+        variant === "success" && "bg-green-600 text-white",
+        variant === "info" && "bg-blue-700 text-white",
+        variant === "error" && "bg-red-600 text-white",
+        variant === "warning" && "bg-orange-600 text-white",
         className
       )}
       elevation={0}

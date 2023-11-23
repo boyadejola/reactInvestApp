@@ -1,7 +1,7 @@
 ---
 title: React Tooltip component
 components: Tooltip
-githubLabel: 'component: Tooltip'
+githubLabel: "component: Tooltip"
 materialDesign: https://material.io/components/tooltips
 waiAria: https://www.w3.org/TR/wai-aria-practices/#tooltip
 ---
@@ -141,7 +141,7 @@ This is notably different from `title` which can either label **or** describe it
 For example, in:
 
 ```html
-<button title='some more information'>A button</button>
+<button title="some more information">A button</button>
 ```
 
 the `title` acts as an accessible description.

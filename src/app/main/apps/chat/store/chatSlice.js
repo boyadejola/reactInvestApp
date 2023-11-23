@@ -1,15 +1,15 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { setSelectedContactId } from './contactsSlice';
-import { closeMobileChatsSidebar } from './sidebarsSlice';
-import { updateUserChatList } from './userSlice';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { setSelectedContactId } from "./contactsSlice";
+import { closeMobileChatsSidebar } from "./sidebarsSlice";
+import { updateUserChatList } from "./userSlice";
 
 export const getChat = createAsyncThunk(
-  'chatApp/chat/getChat',
+  "chatApp/chat/getChat",
   async ({ contactId, isMobile }, { dispatch, getState }) => {
     const { id: userId } = getState().chatApp.user;
 
-    const response = await axios.get('/api/chat/get-chat', {
+    const response = await axios.get("/api/chat/get-chat", {
       params: {
         contactId,
         userId,
@@ -29,9 +29,13 @@ export const getChat = createAsyncThunk(
 );
 
 export const sendMessage = createAsyncThunk(
-  'chatApp/chat/sendMessage',
+  "chatApp/chat/sendMessage",
   async ({ messageText, chatId, contactId }, { dispatch, getState }) => {
-    const response = await axios.post('/api/chat/send-message', { chatId, messageText, contactId });
+    const response = await axios.post("/api/chat/send-message", {
+      chatId,
+      messageText,
+      contactId,
+    });
 
     const { message, userChatList } = await response.data;
 
@@ -42,7 +46,7 @@ export const sendMessage = createAsyncThunk(
 );
 
 const chatSlice = createSlice({
-  name: 'chatApp/chat',
+  name: "chatApp/chat",
   initialState: null,
   reducers: {
     removeChat: (state, action) => action.payload,

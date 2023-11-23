@@ -1,27 +1,27 @@
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm } from "react-hook-form";
 
-import { yupResolver } from '@hookform/resolvers/yup';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as yup from 'yup';
-import _ from '@lodash';
-import { removeList, renameList } from '../store/boardSlice';
+import { yupResolver } from "@hookform/resolvers/yup";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
+import _ from "@lodash";
+import { removeList, renameList } from "../store/boardSlice";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  title: yup.string().required('You must enter a title'),
+  title: yup.string().required("You must enter a title"),
 });
 
 function BoardListHeader(props) {
@@ -32,7 +32,7 @@ function BoardListHeader(props) {
   const [formOpen, setFormOpen] = useState(false);
 
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues: {
       title: props.list.name,
     },
@@ -73,7 +73,13 @@ function BoardListHeader(props) {
   }
 
   function onSubmit(data) {
-    dispatch(renameList({ boardId: board.id, listId: props.list.id, listTitle: data.title }));
+    dispatch(
+      renameList({
+        boardId: board.id,
+        listId: props.list.id,
+        listTitle: data.title,
+      })
+    );
     handleCloseForm();
   }
 
@@ -112,14 +118,17 @@ function BoardListHeader(props) {
               </form>
             </ClickAwayListener>
           ) : (
-            <Typography className="text-16 font-medium cursor-pointer" onClick={handleOpenForm}>
+            <Typography
+              className="text-16 font-medium cursor-pointer"
+              onClick={handleOpenForm}
+            >
               {props.list.name}
             </Typography>
           )}
         </div>
         <div className="">
           <IconButton
-            aria-owns={anchorEl ? 'actions-menu' : null}
+            aria-owns={anchorEl ? "actions-menu" : null}
             aria-haspopup="true"
             onClick={handleMenuClick}
             variant="outlined"
@@ -135,7 +144,9 @@ function BoardListHeader(props) {
           >
             <MenuItem
               onClick={() => {
-                dispatch(removeList({ boardId: board.id, listId: props.list.id }));
+                dispatch(
+                  removeList({ boardId: board.id, listId: props.list.id })
+                );
               }}
             >
               <ListItemIcon className="min-w-40">

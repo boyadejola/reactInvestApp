@@ -1,10 +1,10 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Typography from '@mui/material/Typography';
-import Skeleton from '@mui/material/Skeleton';
-import Grid from '@mui/material/Grid';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Typography from "@mui/material/Typography";
+import Skeleton from "@mui/material/Skeleton";
+import Grid from "@mui/material/Grid";
 
-const variants = ['h1', 'h3', 'body1', 'caption'];
+const variants = ["h1", "h3", "body1", "caption"];
 
 function TypographyDemo(props) {
   const { loading = false } = props;

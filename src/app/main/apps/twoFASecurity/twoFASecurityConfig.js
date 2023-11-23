@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const TwoFASecurityConfig = {
   settings: {
@@ -26,8 +26,8 @@ const TwoFASecurityConfig = {
   auth: authRoles.investUser,
   routes: [
     {
-      path: '/venapp/twofasecure',
-      component: lazy(() => import('./twoFASecurity')),
+      path: "/venapp/twofasecure",
+      component: lazy(() => import("./twoFASecurity")),
     },
   ],
 };

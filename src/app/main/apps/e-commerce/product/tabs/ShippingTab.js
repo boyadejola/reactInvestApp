@@ -1,6 +1,6 @@
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
-import { Controller, useFormContext } from 'react-hook-form';
+import InputAdornment from "@mui/material/InputAdornment";
+import TextField from "@mui/material/TextField";
+import { Controller, useFormContext } from "react-hook-form";
 
 function ShippingTab(props) {
   const methods = useFormContext();
@@ -81,7 +81,9 @@ function ShippingTab(props) {
             id="extraShippingFee"
             variant="outlined"
             InputProps={{
-              startAdornment: <InputAdornment position="start">$</InputAdornment>,
+              startAdornment: (
+                <InputAdornment position="start">$</InputAdornment>
+              ),
             }}
             fullWidth
           />

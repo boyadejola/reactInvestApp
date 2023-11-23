@@ -1,28 +1,28 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect, forwardRef, useImperativeHandle, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useEffect, forwardRef, useImperativeHandle, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 
-import * as yup from 'yup';
-import _ from '@lodash';
+import * as yup from "yup";
+import _ from "@lodash";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  name: yup.string().required('You must enter a title'),
+  name: yup.string().required("You must enter a title"),
 });
 
 const CardChecklistName = forwardRef(function CardChecklistName(props, ref) {
   const [formOpen, setFormOpen] = useState(false);
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues: {
       name: props.name,
     },
@@ -90,7 +90,10 @@ const CardChecklistName = forwardRef(function CardChecklistName(props, ref) {
       </form>
     </ClickAwayListener>
   ) : (
-    <Typography className="text-16 font-semibold cursor-pointer mx-8" onClick={handleOpenForm}>
+    <Typography
+      className="text-16 font-semibold cursor-pointer mx-8"
+      onClick={handleOpenForm}
+    >
       {props.name}
     </Typography>
   );

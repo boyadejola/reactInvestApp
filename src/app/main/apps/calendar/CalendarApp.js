@@ -1,76 +1,76 @@
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles';
-import Icon from '@mui/material/Icon';
-import Typography from '@mui/material/Typography';
-import withReducer from 'app/store/withReducer';
-import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import CalendarHeader from './CalendarHeader';
-import EventDialog from './EventDialog';
-import reducer from './store';
+import Fab from "@mui/material/Fab";
+import { styled } from "@mui/material/styles";
+import Icon from "@mui/material/Icon";
+import Typography from "@mui/material/Typography";
+import withReducer from "app/store/withReducer";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import CalendarHeader from "./CalendarHeader";
+import EventDialog from "./EventDialog";
+import reducer from "./store";
 import {
   selectEvents,
   openNewEventDialog,
   openEditEventDialog,
   updateEvent,
   getEvents,
-} from './store/eventsSlice';
+} from "./store/eventsSlice";
 
-const Root = styled('div')(({ theme }) => ({
-  '& a': {
+const Root = styled("div")(({ theme }) => ({
+  "& a": {
     color: `${theme.palette.text.primary}!important`,
-    textDecoration: 'none!important',
+    textDecoration: "none!important",
   },
-  '&  .fc-media-screen': {
-    minHeight: '100%',
+  "&  .fc-media-screen": {
+    minHeight: "100%",
   },
-  '& .fc-scrollgrid, & .fc-theme-standard td, & .fc-theme-standard th': {
+  "& .fc-scrollgrid, & .fc-theme-standard td, & .fc-theme-standard th": {
     borderColor: `${theme.palette.divider}!important`,
   },
-  '&  .fc-scrollgrid-section > td': {
+  "&  .fc-scrollgrid-section > td": {
     border: 0,
   },
-  '& .fc-daygrid-day': {
-    '&:last-child': {
+  "& .fc-daygrid-day": {
+    "&:last-child": {
       borderRight: 0,
     },
   },
-  '& .fc-col-header-cell': {
-    borderWidth: '0 0 1px 0',
-    padding: '16px 0',
-    '& .fc-col-header-cell-cushion': {
+  "& .fc-col-header-cell": {
+    borderWidth: "0 0 1px 0",
+    padding: "16px 0",
+    "& .fc-col-header-cell-cushion": {
       color: theme.palette.text.secondary,
       fontWeight: 500,
     },
   },
-  '& .fc-view ': {
+  "& .fc-view ": {
     borderRadius: 20,
-    overflow: 'hidden',
+    overflow: "hidden",
     border: `1px solid ${theme.palette.divider}`,
-    '& > .fc-scrollgrid': {
+    "& > .fc-scrollgrid": {
       border: 0,
     },
   },
-  '& .fc-daygrid-day-number': {
+  "& .fc-daygrid-day-number": {
     color: theme.palette.text.secondary,
     fontWeight: 500,
   },
-  '& .fc-event': {
+  "& .fc-event": {
     backgroundColor: `${theme.palette.primary.dark}!important`,
     color: `${theme.palette.primary.contrastText}!important`,
     border: 0,
-    padding: '0 6px',
-    borderRadius: '16px!important',
+    padding: "0 6px",
+    borderRadius: "16px!important",
   },
 }));
 
-const StyledAddButton = styled('div')(({ theme }) => ({
-  position: 'absolute',
+const StyledAddButton = styled("div")(({ theme }) => ({
+  position: "absolute",
   right: 12,
   top: 172,
   zIndex: 99,
@@ -99,7 +99,8 @@ function CalendarApp(props) {
   };
 
   const handleEventDrop = (eventDropInfo) => {
-    const { id, title, allDay, start, end, extendedProps } = eventDropInfo.event;
+    const { id, title, allDay, start, end, extendedProps } =
+      eventDropInfo.event;
     dispatch(
       updateEvent({
         id,
@@ -197,10 +198,14 @@ function CalendarApp(props) {
 function renderEventContent(eventInfo) {
   return (
     <div className="flex items-center">
-      <Typography className="text-12 font-semibold">{eventInfo.timeText}</Typography>
-      <Typography className="text-12 px-4 truncate">{eventInfo.event.title}</Typography>
+      <Typography className="text-12 font-semibold">
+        {eventInfo.timeText}
+      </Typography>
+      <Typography className="text-12 px-4 truncate">
+        {eventInfo.event.title}
+      </Typography>
     </div>
   );
 }
 
-export default withReducer('calendarApp', reducer)(CalendarApp);
+export default withReducer("calendarApp", reducer)(CalendarApp);

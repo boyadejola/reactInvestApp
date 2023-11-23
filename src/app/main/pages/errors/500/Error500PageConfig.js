@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const Error500PageConfig = {
   settings: {
@@ -8,8 +8,8 @@ const Error500PageConfig = {
   },
   routes: [
     {
-      path: '/pages/errors/error-500',
-      component: lazy(() => import('./Error500Page')),
+      path: "/pages/errors/error-500",
+      component: lazy(() => import("./Error500Page")),
     },
   ],
 };

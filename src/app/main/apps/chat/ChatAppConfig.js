@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const ChatAppConfig = {
   settings: {
@@ -8,8 +8,8 @@ const ChatAppConfig = {
   },
   routes: [
     {
-      path: '/apps/chat',
-      component: lazy(() => import('./ChatApp')),
+      path: "/apps/chat",
+      component: lazy(() => import("./ChatApp")),
     },
   ],
 };

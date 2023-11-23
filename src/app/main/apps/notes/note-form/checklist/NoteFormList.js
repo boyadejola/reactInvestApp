@@ -1,10 +1,12 @@
-import List from '@mui/material/List';
-import NoteFormAddListItem from './NoteFormAddListItem';
-import NoteFormListItem from './NoteFormListItem';
+import List from "@mui/material/List";
+import NoteFormAddListItem from "./NoteFormAddListItem";
+import NoteFormListItem from "./NoteFormListItem";
 
 function NoteFormList(props) {
   function handleListItemChange(item) {
-    props.onCheckListChange(props.checklist.map((_item) => (_item.id === item.id ? item : _item)));
+    props.onCheckListChange(
+      props.checklist.map((_item) => (_item.id === item.id ? item : _item))
+    );
   }
 
   function handleListItemRemove(id) {

@@ -1,28 +1,28 @@
-import FusePageCarded from '@fuse/core/FusePageCarded';
-import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
-import { useTheme, styled } from '@mui/material/styles';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
-import withReducer from 'app/store/withReducer';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import { useDeepCompareEffect } from '@fuse/hooks';
-import reducer from '../store';
-import { resetOrder, getOrder } from '../store/orderSlice';
-import InvoiceTab from './tabs/InvoiceTab';
-import OrderDetailsTab from './tabs/OrderDetailsTab';
-import ProductsTab from './tabs/ProductsTab';
+import FusePageCarded from "@fuse/core/FusePageCarded";
+import Button from "@mui/material/Button";
+import Icon from "@mui/material/Icon";
+import { useTheme, styled } from "@mui/material/styles";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import withReducer from "app/store/withReducer";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { useDeepCompareEffect } from "@fuse/hooks";
+import reducer from "../store";
+import { resetOrder, getOrder } from "../store/orderSlice";
+import InvoiceTab from "./tabs/InvoiceTab";
+import OrderDetailsTab from "./tabs/OrderDetailsTab";
+import ProductsTab from "./tabs/ProductsTab";
 
 const Root = styled(FusePageCarded)(({ theme }) => ({
-  '& .FusePageCarded-header': {
+  "& .FusePageCarded-header": {
     minHeight: 72,
     height: 72,
-    alignItems: 'center',
-    [theme.breakpoints.up('sm')]: {
+    alignItems: "center",
+    [theme.breakpoints.up("sm")]: {
       minHeight: 136,
       height: 136,
     },
@@ -98,7 +98,7 @@ function Order(props) {
                   color="inherit"
                 >
                   <Icon className="text-20">
-                    {theme.direction === 'ltr' ? 'arrow_back' : 'arrow_forward'}
+                    {theme.direction === "ltr" ? "arrow_back" : "arrow_forward"}
                   </Icon>
                   <span className="mx-4 font-medium">Orders</span>
                 </Typography>
@@ -129,7 +129,7 @@ function Order(props) {
           textColor="primary"
           variant="scrollable"
           scrollButtons="auto"
-          classes={{ root: 'w-full h-64' }}
+          classes={{ root: "w-full h-64" }}
         >
           <Tab className="h-64" label="Order Details" />
           <Tab className="h-64" label="Products" />
@@ -150,4 +150,4 @@ function Order(props) {
   );
 }
 
-export default withReducer('eCommerceApp', reducer)(Order);
+export default withReducer("eCommerceApp", reducer)(Order);

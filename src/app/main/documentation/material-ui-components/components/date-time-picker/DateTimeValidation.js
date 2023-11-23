@@ -1,9 +1,9 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DateTimePicker from '@mui/lab/DateTimePicker';
-import Stack from '@mui/material/Stack';
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import DateTimePicker from "@mui/lab/DateTimePicker";
+import Stack from "@mui/material/Stack";
 
 export default function DateTimeValidation() {
   const [value, setValue] = React.useState(new Date());
@@ -27,7 +27,7 @@ export default function DateTimeValidation() {
           onChange={(newValue) => {
             setValue(newValue);
           }}
-          minDate={new Date('2020-02-14')}
+          minDate={new Date("2020-02-14")}
           minTime={new Date(0, 0, 0, 8)}
           maxTime={new Date(0, 0, 0, 18, 45)}
         />

@@ -1,18 +1,18 @@
-import Card from '@mui/material/Card';
-import Icon from '@mui/material/Icon';
-import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import { useDispatch, useSelector } from 'react-redux';
-import _ from '@lodash';
-import ReactApexChart from 'react-apexcharts';
-import i18next from 'i18next';
+import Card from "@mui/material/Card";
+import Icon from "@mui/material/Icon";
+import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import { useDispatch, useSelector } from "react-redux";
+import _ from "@lodash";
+import ReactApexChart from "react-apexcharts";
+import i18next from "i18next";
 
 function Widget2(props) {
   const theme = useTheme();
   const data = _.merge({}, props.data);
   const dashData = useSelector(({ auth }) => auth.sharedData.dashboardData);
 
-  _.setWith(data, 'options.colors', [theme.palette.primary.main]);
+  _.setWith(data, "options.colors", [theme.palette.primary.main]);
 
   return (
     <Card className="w-full rounded-20 shadow">
@@ -23,8 +23,10 @@ function Widget2(props) {
 
         <div className="flex flex-row flex-wrap items-center mt-12">
           <Typography className="text-48 font-semibold leading-none tracking-tighter">
-            <Icon className='text-32'>attach_money</Icon>
-            {dashData && dashData.totalpayout ? parseFloat(dashData.totalpayout).toFixed(2) : '0.00'}
+            <Icon className="text-32">attach_money</Icon>
+            {dashData && dashData.totalpayout
+              ? parseFloat(dashData.totalpayout).toFixed(2)
+              : "0.00"}
           </Typography>
 
           <div className="flex flex-col mx-8">
@@ -39,7 +41,10 @@ function Widget2(props) {
               <Typography className="font-semibold" color="textSecondary">
                 Payouts
               </Typography>
-              <Typography className="whitespace-nowrap mx-4" color="textSecondary">
+              <Typography
+                className="whitespace-nowrap mx-4"
+                color="textSecondary"
+              >
                 of target
               </Typography>
             </div>

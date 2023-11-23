@@ -1,25 +1,30 @@
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import Hidden from '@mui/material/Hidden';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Toolbar from '@mui/material/Toolbar';
-import withReducer from 'app/store/withReducer';
-import clsx from 'clsx';
-import { useRef, useState } from 'react';
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, withRouter, useParams } from 'react-router-dom';
-import { useDeepCompareEffect } from '@fuse/hooks';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import reducer from '../store';
-import { reorderCard, reorderList, resetBoard, getBoard } from '../store/boardSlice';
-import BoardAddList from './BoardAddList';
-import BoardList from './BoardList';
-import BoardTitle from './BoardTitle';
-import BoardCardDialog from './dialogs/card/BoardCardDialog';
-import BoardSettingsSidebar from './sidebars/settings/BoardSettingsSidebar';
+import AppBar from "@mui/material/AppBar";
+import Button from "@mui/material/Button";
+import Hidden from "@mui/material/Hidden";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Toolbar from "@mui/material/Toolbar";
+import withReducer from "app/store/withReducer";
+import clsx from "clsx";
+import { useRef, useState } from "react";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, withRouter, useParams } from "react-router-dom";
+import { useDeepCompareEffect } from "@fuse/hooks";
+import GlobalStyles from "@mui/material/GlobalStyles";
+import reducer from "../store";
+import {
+  reorderCard,
+  reorderList,
+  resetBoard,
+  getBoard,
+} from "../store/boardSlice";
+import BoardAddList from "./BoardAddList";
+import BoardList from "./BoardList";
+import BoardTitle from "./BoardTitle";
+import BoardCardDialog from "./dialogs/card/BoardCardDialog";
+import BoardSettingsSidebar from "./sidebars/settings/BoardSettingsSidebar";
 
 function Board(props) {
   const dispatch = useDispatch();
@@ -45,17 +50,20 @@ function Board(props) {
     }
 
     // did not move anywhere - can bail early
-    if (source.droppableId === destination.droppableId && source.index === destination.index) {
+    if (
+      source.droppableId === destination.droppableId &&
+      source.index === destination.index
+    ) {
       return;
     }
 
     // reordering list
-    if (result.type === 'list') {
+    if (result.type === "list") {
       dispatch(reorderList(result));
     }
 
     // reordering card
-    if (result.type === 'card') {
+    if (result.type === "card") {
       dispatch(reorderCard(result));
     }
   }
@@ -72,12 +80,15 @@ function Board(props) {
     <>
       <GlobalStyles
         styles={(theme) => ({
-          '#fuse-main': {
-            height: '100vh',
+          "#fuse-main": {
+            height: "100vh",
           },
         })}
       />
-      <div className="flex flex-1 flex-auto flex-col w-full h-full relative" ref={containerRef}>
+      <div
+        className="flex flex-1 flex-auto flex-col w-full h-full relative"
+        ref={containerRef}
+      >
         <AppBar position="static" color="primary" elevation={0}>
           <Toolbar className="flex items-center justify-between px-4 sm:px-24 h-48 sm:h-64 sm:h-96 container">
             <Hidden smDown>
@@ -107,13 +118,17 @@ function Board(props) {
               <BoardTitle />
             </div>
 
-            <IconButton color="inherit" onClick={() => toggleSettingsDrawer(true)} size="large">
+            <IconButton
+              color="inherit"
+              onClick={() => toggleSettingsDrawer(true)}
+              size="large"
+            >
               <Icon>settings</Icon>
             </IconButton>
           </Toolbar>
         </AppBar>
 
-        <div className={clsx('flex flex-1 overflow-x-auto overflow-y-hidden')}>
+        <div className={clsx("flex flex-1 overflow-x-auto overflow-y-hidden")}>
           <DragDropContext onDragEnd={onDragEnd}>
             <Droppable droppableId="list" type="list" direction="horizontal">
               {(provided) => (
@@ -137,17 +152,17 @@ function Board(props) {
           anchor="right"
           className="absolute overflow-hidden"
           classes={{
-            paper: 'absolute w-320',
+            paper: "absolute w-320",
           }}
           BackdropProps={{
             classes: {
-              root: 'absolute',
+              root: "absolute",
             },
           }}
           container={containerRef.current}
           ModalProps={{
             keepMounted: true,
-            style: { position: 'absolute' },
+            style: { position: "absolute" },
           }}
           open={settingsDrawerOpen}
           onOpen={(ev) => {}}
@@ -163,4 +178,4 @@ function Board(props) {
   );
 }
 
-export default withReducer('scrumboardApp', reducer)(withRouter(Board));
+export default withReducer("scrumboardApp", reducer)(withRouter(Board));

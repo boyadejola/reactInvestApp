@@ -1,11 +1,11 @@
-import Checkbox from '@mui/material/Checkbox';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
-import { useState } from 'react';
-import ToolbarMenu from './ToolbarMenu';
+import Checkbox from "@mui/material/Checkbox";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import MenuItem from "@mui/material/MenuItem";
+import { useState } from "react";
+import ToolbarMenu from "./ToolbarMenu";
 
 function LabelsMenu(props) {
   const [anchorEl, setAnchorEl] = useState(null);

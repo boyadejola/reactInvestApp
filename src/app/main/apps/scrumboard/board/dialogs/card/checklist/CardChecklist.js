@@ -1,24 +1,27 @@
-import { Controller, useForm } from 'react-hook-form';
-import _ from '@lodash';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import LinearProgress from '@mui/material/LinearProgress';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
-import { useRef, useState, useEffect } from 'react';
-import CardAddChecklistItem from './CardAddChecklistItem';
-import CardChecklistItem from './CardChecklistItem';
-import CardChecklistName from './CardChecklistName';
+import { Controller, useForm } from "react-hook-form";
+import _ from "@lodash";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import LinearProgress from "@mui/material/LinearProgress";
+import List from "@mui/material/List";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
+import { useRef, useState, useEffect } from "react";
+import CardAddChecklistItem from "./CardAddChecklistItem";
+import CardChecklistItem from "./CardChecklistItem";
+import CardChecklistName from "./CardChecklistName";
 
 function CardChecklist(props) {
   const { onCheckListChange, checklist, index } = props;
   const [anchorEl, setAnchorEl] = useState(null);
   const checkListNameRef = useRef();
-  const { watch, control } = useForm({ mode: 'onChange', defaultValues: checklist });
+  const { watch, control } = useForm({
+    mode: "onChange",
+    defaultValues: checklist,
+  });
   const form = watch();
 
   useEffect(() => {
@@ -67,7 +70,7 @@ function CardChecklist(props) {
         </div>
         <div className="">
           <IconButton
-            aria-owns={anchorEl ? 'actions-menu' : null}
+            aria-owns={anchorEl ? "actions-menu" : null}
             aria-haspopup="true"
             onClick={handleMenuOpen}
             variant="outlined"
@@ -128,7 +131,9 @@ function CardChecklist(props) {
                   }}
                 />
               ))}
-              <CardAddChecklistItem onListItemAdd={(item) => onChange([...value, item])} />
+              <CardAddChecklistItem
+                onListItemAdd={(item) => onChange([...value, item])}
+              />
             </List>
           )}
         />

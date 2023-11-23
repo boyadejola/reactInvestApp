@@ -1,22 +1,26 @@
-import AppBar from '@mui/material/AppBar';
-import Card from '@mui/material/Card';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import { useTheme } from '@mui/material/styles';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
-import { memo, useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import _ from '@lodash';
+import AppBar from "@mui/material/AppBar";
+import Card from "@mui/material/Card";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import { useTheme } from "@mui/material/styles";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import { memo, useState } from "react";
+import ReactApexChart from "react-apexcharts";
+import _ from "@lodash";
 
 function Widget8(props) {
   const theme = useTheme();
   const [tabIndex, setTabIndex] = useState(0);
   const data = _.merge({}, props.data);
 
-  _.setWith(data, 'options.colors', [theme.palette.secondary.main]);
-  _.setWith(data, 'options.markers.strokeColor', theme.palette.background.default);
+  _.setWith(data, "options.colors", [theme.palette.secondary.main]);
+  _.setWith(
+    data,
+    "options.markers.strokeColor",
+    theme.palette.background.default
+  );
 
   return (
     <Card className="w-full rounded-20 shadow">
@@ -36,18 +40,29 @@ function Widget8(props) {
           </div>
         </div>
         <div className="p-16 pt-8 flex flex-row items-end">
-          <Typography className="text-44 font-semibold leading-none" color="inherit">
+          <Typography
+            className="text-44 font-semibold leading-none"
+            color="inherit"
+          >
             {data.today}
           </Typography>
           <div className="flex flex-col mx-8">
-            {data.change.value > 0 && <Icon className="text-green text-20">trending_up</Icon>}
-            {data.change.value < 0 && <Icon className="text-red text-20">trending_down</Icon>}
+            {data.change.value > 0 && (
+              <Icon className="text-green text-20">trending_up</Icon>
+            )}
+            {data.change.value < 0 && (
+              <Icon className="text-red text-20">trending_down</Icon>
+            )}
             <Typography className="font-semibold" color="textSecondary">
               {`${data.change.value}(${data.change.percentage}%)`}
             </Typography>
           </div>
         </div>
-        <Tabs value={tabIndex} onChange={(ev, index) => setTabIndex(index)} variant="fullWidth">
+        <Tabs
+          value={tabIndex}
+          onChange={(ev, index) => setTabIndex(index)}
+          variant="fullWidth"
+        >
           <Tab label="1Day" className="min-w-0" />
           <Tab label="1Week" className="min-w-0" />
           <Tab label="1Month" className="min-w-0" />

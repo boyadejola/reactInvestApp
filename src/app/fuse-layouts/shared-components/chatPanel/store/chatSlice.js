@@ -1,15 +1,15 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { setSelectedContactId } from './contactsSlice';
-import { closeChatPanel } from './stateSlice';
-import { updateUserChatList } from './userSlice';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { setSelectedContactId } from "./contactsSlice";
+import { closeChatPanel } from "./stateSlice";
+import { updateUserChatList } from "./userSlice";
 
 export const getChat = createAsyncThunk(
-  'chatPanel/chat/getChat',
+  "chatPanel/chat/getChat",
   async ({ contactId }, { dispatch, getState }) => {
     const { id: userId } = getState().chatPanel.user;
 
-    const response = await axios.get('/api/chat/get-chat', {
+    const response = await axios.get("/api/chat/get-chat", {
       params: {
         contactId,
         userId,
@@ -25,9 +25,13 @@ export const getChat = createAsyncThunk(
 );
 
 export const sendMessage = createAsyncThunk(
-  'chatPanel/chat/sendMessage',
+  "chatPanel/chat/sendMessage",
   async ({ messageText, chatId, contactId }, { dispatch, getState }) => {
-    const response = await axios.post('/api/chat/send-message', { chatId, messageText, contactId });
+    const response = await axios.post("/api/chat/send-message", {
+      chatId,
+      messageText,
+      contactId,
+    });
 
     const { message, userChatList } = await response.data;
 
@@ -38,7 +42,7 @@ export const sendMessage = createAsyncThunk(
 );
 
 const chatSlice = createSlice({
-  name: 'chatPanel/chat',
+  name: "chatPanel/chat",
   initialState: null,
   reducers: {
     removeChat: (state, action) => null,

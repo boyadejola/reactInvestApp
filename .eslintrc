@@ -24,25 +24,7 @@
         }
     },
     "rules": {
-        // Prettier configs based on airbnb guide
-        "prettier/prettier": [
-            "warn",
-            {
-                "arrowParens": "always",
-                "bracketSpacing": true,
-                "jsxBracketSameLine": false,
-                "jsxSingleQuote": false,
-                "printWidth": 100,
-                "proseWrap": "always",
-                "quoteProps": "as-needed",
-                "semi": true,
-                "singleQuote": true,
-                "tabWidth": 2,
-                "trailingComma": "es5",
-                "useTabs": false,
-                "endOfLine": "auto",
-            }
-        ],
+
         "react/jsx-filename-extension": [
             "warn",
             {
@@ -52,7 +34,7 @@
                 ]
             }
         ],
-        "import/no-extraneous-dependencies": ["warn", {"devDependencies": true}],
+        // "import/no-extraneous-dependencies": ["warn", {"devDependencies": true}],
         "no-unused-vars": "off",
         "no-console": "off",
         "no-use-before-define": "off",
@@ -74,6 +56,6 @@
         "react/react-in-jsx-scope": "off", // after react v17
         "react/jsx-uses-react": "off", // after react v17
         "react/jsx-no-bind": "off",
-        "unused-imports/no-unused-imports": "warn"
+        // "unused-imports/no-unused-imports": "warn"
     }
 }

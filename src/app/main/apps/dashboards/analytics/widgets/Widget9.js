@@ -1,10 +1,10 @@
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import Divider from '@mui/material/Divider';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { memo } from 'react';
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import Divider from "@mui/material/Divider";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { memo } from "react";
 
 function Widget9(props) {
   return (

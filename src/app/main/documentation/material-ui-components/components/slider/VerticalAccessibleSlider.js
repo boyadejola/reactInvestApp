@@ -1,10 +1,10 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
 
 export default function VerticalSlider() {
   function preventHorizontalKeyboardNavigation(event) {
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
     }
   }
@@ -14,7 +14,7 @@ export default function VerticalSlider() {
       <Slider
         sx={{
           '& input[type="range"]': {
-            WebkitAppearance: 'slider-vertical',
+            WebkitAppearance: "slider-vertical",
           },
         }}
         orientation="vertical"

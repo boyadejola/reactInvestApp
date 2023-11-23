@@ -1,64 +1,64 @@
-import TableCell from '@mui/material/TableCell';
-import TableRow from '@mui/material/TableRow';
-import { useDispatch } from 'react-redux';
-import TableHead from '@mui/material/TableHead';
-import i18next from 'i18next';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import { useDispatch } from "react-redux";
+import TableHead from "@mui/material/TableHead";
+import i18next from "i18next";
 
 const rows = [
   {
-    id: 'driver',
-    align: 'center',
+    id: "driver",
+    align: "center",
     disablePadding: false,
-    label: 'TRANSID',
+    label: "TRANSID",
     sort: false,
   },
   {
-    id: 'vehisscle',
-    align: 'center',
+    id: "vehisscle",
+    align: "center",
     disablePadding: false,
-    label: 'GATEWAY',
+    label: "GATEWAY",
     sort: false,
   },
   {
-    id: 'vehicle',
-    align: 'center',
+    id: "vehicle",
+    align: "center",
     disablePadding: false,
-    label: 'AMOUNT',
+    label: "AMOUNT",
     sort: false,
   },
   {
-    id: 'emirates',
-    align: 'center',
+    id: "emirates",
+    align: "center",
     disablePadding: false,
-    label: 'CHARGE',
+    label: "CHARGE",
     sort: false,
   },
   {
-    id: 'cats',
-    align: 'center',
+    id: "cats",
+    align: "center",
     disablePadding: false,
-    label: 'AFTERCHARGE',
+    label: "AFTERCHARGE",
     sort: false,
   },
   {
-    id: 'casssassts',
-    align: 'center',
+    id: "casssassts",
+    align: "center",
     disablePadding: false,
-    label: 'RATE',
+    label: "RATE",
     sort: false,
   },
   {
-    id: 'caseests',
-    align: 'center',
+    id: "caseests",
+    align: "center",
     disablePadding: false,
-    label: 'RECEIVEABLE',
+    label: "RECEIVEABLE",
     sort: false,
   },
   {
-    id: 'caasdssts',
-    align: 'center',
+    id: "caasdssts",
+    align: "center",
     disablePadding: false,
-    label: 'TIME',
+    label: "TIME",
     sort: false,
   },
 ];
@@ -75,9 +75,9 @@ function WithdrawHistoryTableHead(props) {
               className="p-4 md:p-16"
               key={o}
               align={row.align}
-              padding={row.disablePadding ? 'none' : 'normal'}
-              style={{ paddingLeft: row.id === 'driver' ? 22 : '' }}
-            // sortDirection={props.order.id === row.id ? props.order.direction : false}
+              padding={row.disablePadding ? "none" : "normal"}
+              style={{ paddingLeft: row.id === "driver" ? 22 : "" }}
+              // sortDirection={props.order.id === row.id ? props.order.direction : false}
             >
               {i18next.t(`navigation:${row.label}`)}
             </TableCell>

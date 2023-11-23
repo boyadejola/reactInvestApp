@@ -1,11 +1,11 @@
-import * as React from 'react';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
+import * as React from "react";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
 
 export default function EmptyTextarea() {
   return (
     <TextareaAutosize
-      aria-label='empty textarea'
-      placeholder='Empty'
+      aria-label="empty textarea"
+      placeholder="Empty"
       style={{ width: 200 }}
     />
   );

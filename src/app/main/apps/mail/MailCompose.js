@@ -1,47 +1,50 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import TextField from '@mui/material/TextField';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useForm, Controller } from 'react-hook-form';
-import * as yup from 'yup';
-import _ from '@lodash';
-import WYSIWYGEditor from 'app/shared-components/WYSIWYGEditor';
-import MailAttachment from './MailAttachment';
+import { yupResolver } from "@hookform/resolvers/yup";
+import AppBar from "@mui/material/AppBar";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import TextField from "@mui/material/TextField";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useForm, Controller } from "react-hook-form";
+import * as yup from "yup";
+import _ from "@lodash";
+import WYSIWYGEditor from "app/shared-components/WYSIWYGEditor";
+import MailAttachment from "./MailAttachment";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  to: yup.string().required('You must enter an e-mail').email('You must enter a valid e-mail.'),
+  to: yup
+    .string()
+    .required("You must enter an e-mail")
+    .email("You must enter a valid e-mail."),
 });
 
 function MailCompose() {
   const [openDialog, setOpenDialog] = useState(false);
   const { watch, handleSubmit, formState, control } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues: {
-      from: 'johndoe@creapond.com',
-      to: '',
-      cc: '',
-      bcc: '',
-      subject: '',
-      message: '',
+      from: "johndoe@creapond.com",
+      to: "",
+      cc: "",
+      bcc: "",
+      subject: "",
+      message: "",
     },
     resolver: yupResolver(schema),
   });
 
   const { isValid, dirtyFields, errors } = formState;
 
-  const { t } = useTranslation('mailApp');
+  const { t } = useTranslation("mailApp");
 
   function handleOpenDialog() {
     setOpenDialog(true);
@@ -62,8 +65,13 @@ function MailCompose() {
 
   return (
     <div className="p-24 pb-8">
-      <Button variant="contained" color="secondary" className="w-full" onClick={handleOpenDialog}>
-        {t('COMPOSE')}
+      <Button
+        variant="contained"
+        color="secondary"
+        className="w-full"
+        onClick={handleOpenDialog}
+      >
+        {t("COMPOSE")}
       </Button>
 
       <Dialog
@@ -80,8 +88,12 @@ function MailCompose() {
           </Toolbar>
         </AppBar>
 
-        <form noValidate onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
-          <DialogContent classes={{ root: 'p-16 pb-0 sm:p-24 sm:pb-0' }}>
+        <form
+          noValidate
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col"
+        >
+          <DialogContent classes={{ root: "p-16 pb-0 sm:p-24 sm:pb-0" }}>
             <Controller
               name="from"
               control={control}

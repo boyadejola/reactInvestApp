@@ -1,7 +1,7 @@
-import DemoContent from '@fuse/core/DemoContent';
-import { styled } from '@mui/material/styles';
+import DemoContent from "@fuse/core/DemoContent";
+import { styled } from "@mui/material/styles";
 
-const Root = styled('div')({
+const Root = styled("div")({
   padding: 24,
 });
 

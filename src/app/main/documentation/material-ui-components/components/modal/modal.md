@@ -1,7 +1,7 @@
 ---
 title: React Modal component
 components: Modal, ModalUnstyled
-githubLabel: 'component: Modal'
+githubLabel: "component: Modal"
 waiAria: https://www.w3.org/TR/wai-aria-practices/#dialog_modal
 ---
 
@@ -47,7 +47,7 @@ The modal also comes with an unstyled version.
 It's ideal for doing heavy customizations and minimizing bundle size.
 
 ```js
-import ModalUnstyled from '@mui/core/ModalUnstyled';
+import ModalUnstyled from "@mui/core/ModalUnstyled";
 ```
 
 {{"demo": "pages/components/modal/ModalUnstyled.js"}}

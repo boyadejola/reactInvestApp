@@ -1,14 +1,14 @@
-import * as React from 'react';
-import frLocale from 'date-fns/locale/fr';
-import ruLocale from 'date-fns/locale/ru';
-import deLocale from 'date-fns/locale/de';
-import enLocale from 'date-fns/locale/en-US';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import DatePicker from '@mui/lab/DatePicker';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import * as React from "react";
+import frLocale from "date-fns/locale/fr";
+import ruLocale from "date-fns/locale/ru";
+import deLocale from "date-fns/locale/de";
+import enLocale from "date-fns/locale/en-US";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import DatePicker from "@mui/lab/DatePicker";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
 
 const localeMap = {
   en: enLocale,
@@ -18,14 +18,14 @@ const localeMap = {
 };
 
 const maskMap = {
-  fr: '__/__/____',
-  en: '__/__/____',
-  ru: '__.__.____',
-  de: '__.__.____',
+  fr: "__/__/____",
+  en: "__/__/____",
+  ru: "__.__.____",
+  de: "__.__.____",
 };
 
 export default function LocalizedDatePicker() {
-  const [locale, setLocale] = React.useState('ru');
+  const [locale, setLocale] = React.useState("ru");
   const [value, setValue] = React.useState(new Date());
 
   const selectLocale = (newLocale) => {
@@ -33,9 +33,16 @@ export default function LocalizedDatePicker() {
   };
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns} locale={localeMap[locale]}>
+    <LocalizationProvider
+      dateAdapter={AdapterDateFns}
+      locale={localeMap[locale]}
+    >
       <div>
-        <ToggleButtonGroup value={locale} exclusive sx={{ mb: 2, display: 'block' }}>
+        <ToggleButtonGroup
+          value={locale}
+          exclusive
+          sx={{ mb: 2, display: "block" }}
+        >
           {Object.keys(localeMap).map((localeItem) => (
             <ToggleButton
               key={localeItem}

@@ -1,28 +1,42 @@
-import * as React from 'react';
-import { motion } from 'framer-motion';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Icon from '@mui/material/Icon';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import LinearProgress from '@mui/material/LinearProgress';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import { useDispatch, useSelector } from 'react-redux';
-import Typography from '@mui/material/Typography';
-import Dialog from '@mui/material/Dialog';
-import { useHistory } from 'react-router-dom';
-import _ from '@lodash';
-import { setDepositLoader, setJoinPlanLoader } from 'app/auth/store/loadersSlice';
-import i18next from 'i18next';
-import { handleResponse, displayPopup } from '../../auth/store/commonMethods';
-import { postJoinPlan } from '../../auth/store/commonServices';
-import { showMessage } from 'app/store/fuse/messageSlice';
-import { ReqColorCodes, PlansDetails, Wallets, Plans } from 'app/auth/store/constants';
-import { Box, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
-import { setShowJoinPlan } from '../../auth/store/sharedData';
+import * as React from "react";
+import { motion } from "framer-motion";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Icon from "@mui/material/Icon";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import LinearProgress from "@mui/material/LinearProgress";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import { useDispatch, useSelector } from "react-redux";
+import Typography from "@mui/material/Typography";
+import Dialog from "@mui/material/Dialog";
+import { useHistory } from "react-router-dom";
+import _ from "@lodash";
+import {
+  setDepositLoader,
+  setJoinPlanLoader,
+} from "app/auth/store/loadersSlice";
+import i18next from "i18next";
+import { handleResponse, displayPopup } from "../../auth/store/commonMethods";
+import { postJoinPlan } from "../../auth/store/commonServices";
+import { showMessage } from "app/store/fuse/messageSlice";
+import {
+  ReqColorCodes,
+  PlansDetails,
+  Wallets,
+  Plans,
+} from "app/auth/store/constants";
+import {
+  Box,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from "@mui/material";
+import { setShowJoinPlan } from "../../auth/store/sharedData";
 
 function JoinPlanDialog(props) {
   const { planid } = props;
@@ -70,11 +84,15 @@ function JoinPlanDialog(props) {
 
   function handleJoin() {
     if (getAmount && planid && getWallet) {
-      const planData = PlansDetails.filter(a => a.id == planid).length > 0 ?
-        PlansDetails.filter(a => a.id == planid)[0] : false;
+      const planData =
+        PlansDetails.filter((a) => a.id == planid).length > 0
+          ? PlansDetails.filter((a) => a.id == planid)[0]
+          : false;
       if (planData) {
         if (getAmount < planData.min) {
-          dispatch(displayPopup(`Min Amount is ${planData.min}`, 'warning', 3000));
+          dispatch(
+            displayPopup(`Min Amount is ${planData.min}`, "warning", 3000)
+          );
           return;
         }
       }
@@ -82,7 +100,7 @@ function JoinPlanDialog(props) {
         id: planid,
         amount: getAmount,
         wallet: getWallet,
-      }
+      };
       handleCloseReset();
       dispatch(postJoinPlan(body));
     }
@@ -91,12 +109,12 @@ function JoinPlanDialog(props) {
   return (
     <Dialog
       open={openReset}
-    // onClose={handleCloseReset}
+      // onClose={handleCloseReset}
     >
       <IconButton color="default" className="fixed" onClick={handleCloseReset}>
         <Icon>cancel</Icon>
       </IconButton>
-      <DialogTitle className='my-16 text-center'>
+      <DialogTitle className="my-16 text-center">
         {i18next.t(`navigation:INVESTMENTS`)}
       </DialogTitle>
       <DialogContent>
@@ -115,20 +133,35 @@ function JoinPlanDialog(props) {
             >
               <CardContent className="flex flex-col items-center justify-center p-4 sm:p-8 md:p-12 md:pt-20 ">
                 <div>
-                  <Typography variant="h6" className="mb-16 font-semibold text-18 sm:text-24 text-center">
+                  <Typography
+                    variant="h6"
+                    className="mb-16 font-semibold text-18 sm:text-24 text-center"
+                  >
                     {i18next.t(`navigation:INVEPROFITS`)}
                   </Typography>
-                  <Typography variant="subtitle2" className="text-14 sm:text-16 mb-24 text-center">
+                  <Typography
+                    variant="subtitle2"
+                    className="text-14 sm:text-16 mb-24 text-center"
+                  >
                     {i18next.t(`navigation:INVESIN`)}:
-                      <span>
-                      <strong>{` ${planid ?
-                        `${PlansDetails.filter(a => a.id == planid)[0].name}`
-                        : ""}`}</strong>
+                    <span>
+                      <strong>{` ${
+                        planid
+                          ? `${
+                              PlansDetails.filter((a) => a.id == planid)[0].name
+                            }`
+                          : ""
+                      }`}</strong>
                     </span>
                   </Typography>
                 </div>
-                <FormControl className="flex w-full sm:w-full mb-24" variant="outlined">
-                  <InputLabel id="category-select-label">{i18next.t(`navigation:SELWALLET`)}</InputLabel>
+                <FormControl
+                  className="flex w-full sm:w-full mb-24"
+                  variant="outlined"
+                >
+                  <InputLabel id="category-select-label">
+                    {i18next.t(`navigation:SELWALLET`)}
+                  </InputLabel>
                   <Select
                     labelId="category-select-label"
                     id="category-select"
@@ -137,7 +170,7 @@ function JoinPlanDialog(props) {
                     onChange={(e) => {
                       setWallet(e.target.value);
                     }}
-                  // error={getLeagueHelper ? true : false}
+                    // error={getLeagueHelper ? true : false}
                   >
                     <MenuItem value={0}>
                       <em> Select Wallet </em>
@@ -150,43 +183,52 @@ function JoinPlanDialog(props) {
                         <MenuItem value={e.id} key={i}>
                           {e.name}
                         </MenuItem>
-                      )
+                      );
                     })}
                   </Select>
                   {/* <FormHelperText style={{ color: 'red' }}>{getLeagueHelper}</FormHelperText> */}
                 </FormControl>
                 <Box
-                  style={{ width: '100%' }}
+                  style={{ width: "100%" }}
                   component="form"
                   sx={{
-                    '& .MuiTextField-root': { width: '100%', },
-                    alignContent: 'center',
+                    "& .MuiTextField-root": { width: "100%" },
+                    alignContent: "center",
                     // marginTop: 3
                   }}
                   noValidate
-                  autoComplete="off">
+                  autoComplete="off"
+                >
                   <TextField
                     type="number"
                     id="outlined-multiline-static"
                     label={i18next.t(`navigation:INVAMOUNT`)}
                     value={getAmount}
                     onChange={(e) => setAmount(e.target.value)}
-                  // dir='rtl'
+                    // dir='rtl'
                   />
                 </Box>
-                <Typography className='text-center mt-12'>
+                <Typography className="text-center mt-12">
                   <Button
-                    variant='contained'
+                    variant="contained"
                     style={{
-                      color: planid && getWallet && getAmount ? ReqColorCodes.btnText : '',
-                      backgroundImage: planid && getWallet && getAmount ? ReqColorCodes.btn : '',
+                      color:
+                        planid && getWallet && getAmount
+                          ? ReqColorCodes.btnText
+                          : "",
+                      backgroundImage:
+                        planid && getWallet && getAmount
+                          ? ReqColorCodes.btn
+                          : "",
                     }}
                     disabled={!planid || !getWallet || !getAmount}
                     onClick={() => {
                       if (getAmount && getAmount > 0) {
                         handleJoin();
                       } else {
-                        dispatch(handleResponse(false, false, true, 'PROVAMOUNT'));
+                        dispatch(
+                          handleResponse(false, false, true, "PROVAMOUNT")
+                        );
                       }
                     }}
                   >
@@ -199,11 +241,7 @@ function JoinPlanDialog(props) {
         </div>
       </DialogContent>
       <DialogActions>
-        <Button
-          variant='contained'
-          color='primary'
-          onClick={handleCloseReset}
-        >
+        <Button variant="contained" color="primary" onClick={handleCloseReset}>
           {i18next.t(`navigation:CAN`)}
         </Button>
       </DialogActions>

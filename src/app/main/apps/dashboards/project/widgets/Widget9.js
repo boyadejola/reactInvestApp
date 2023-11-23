@@ -1,12 +1,12 @@
-import Divider from '@mui/material/Divider';
-import Paper from '@mui/material/Paper';
-import Select from '@mui/material/Select';
-import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import _ from '@lodash';
-import { memo, useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import MenuItem from '@mui/material/MenuItem';
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
+import Select from "@mui/material/Select";
+import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import _ from "@lodash";
+import { memo, useState } from "react";
+import ReactApexChart from "react-apexcharts";
+import MenuItem from "@mui/material/MenuItem";
 
 function Widget9(props) {
   const [currentRange, setCurrentRange] = useState(props.widget.currentRange);
@@ -26,9 +26,9 @@ function Widget9(props) {
           value={currentRange}
           onChange={handleChangeRange}
           inputProps={{
-            name: 'currentRange',
+            name: "currentRange",
           }}
-          classes={{ select: 'py-8' }}
+          classes={{ select: "py-8" }}
           variant="filled"
         >
           {Object.entries(widget.ranges).map(([key, n]) => {
@@ -40,7 +40,7 @@ function Widget9(props) {
           })}
         </Select>
       </div>
-      {['weeklySpent', 'totalSpent', 'remaining'].map((id) => (
+      {["weeklySpent", "totalSpent", "remaining"].map((id) => (
         <div className="flex flex-wrap items-center w-full p-12" key={id}>
           <div className="flex flex-col w-full sm:w-1/2 p-8">
             <Typography className="text-13 font-semibold" color="textSecondary">
@@ -58,7 +58,10 @@ function Widget9(props) {
           <div className="flex w-full sm:w-1/2">
             <div className="h-64 w-full">
               <ReactApexChart
-                options={{ ...widget[id].chart.options, colors: [theme.palette.secondary.main] }}
+                options={{
+                  ...widget[id].chart.options,
+                  colors: [theme.palette.secondary.main],
+                }}
                 series={widget[id].chart[currentRange].series}
                 type={widget[id].chart.options.chart.type}
                 height={widget[id].chart.options.chart.height}

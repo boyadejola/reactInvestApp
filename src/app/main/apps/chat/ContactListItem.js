@@ -1,11 +1,11 @@
-import Avatar from '@mui/material/Avatar';
-import { styled } from '@mui/material/styles';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-import format from 'date-fns/format';
-import { Box } from '@mui/system';
-import StatusIcon from './StatusIcon';
+import Avatar from "@mui/material/Avatar";
+import { styled } from "@mui/material/styles";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
+import format from "date-fns/format";
+import { Box } from "@mui/system";
+import StatusIcon from "./StatusIcon";
 
 const StyledListItem = styled(ListItem)(({ theme, active }) => ({
   ...(active && {
@@ -27,15 +27,17 @@ function ContactListItem(props) {
         </div>
 
         <Avatar src={props.contact.avatar} alt={props.contact.name}>
-          {!props.contact.avatar || props.contact.avatar === '' ? props.contact.name[0] : ''}
+          {!props.contact.avatar || props.contact.avatar === ""
+            ? props.contact.name[0]
+            : ""}
         </Avatar>
       </div>
 
       <ListItemText
         classes={{
-          root: 'min-w-px px-16',
-          primary: 'font-medium text-14',
-          secondary: 'truncate',
+          root: "min-w-px px-16",
+          primary: "font-medium text-14",
+          secondary: "truncate",
         }}
         primary={props.contact.name}
         secondary={props.contact.mood}
@@ -48,14 +50,14 @@ function ContactListItem(props) {
               className="whitespace-nowrap mb-8 font-medium text-12"
               color="textSecondary"
             >
-              {format(new Date(props.contact.lastMessageTime), 'PP')}
+              {format(new Date(props.contact.lastMessageTime), "PP")}
             </Typography>
           )}
           {props.contact.unread && (
             <Box
               sx={{
-                backgroundColor: 'secondary.main',
-                color: 'secondary.contrastText',
+                backgroundColor: "secondary.main",
+                color: "secondary.contrastText",
               }}
               className="flex items-center justify-center min-w-24 h-24 rounded-full font-medium text-12 text-center"
             >

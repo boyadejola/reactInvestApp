@@ -1,8 +1,8 @@
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import { memo } from 'react';
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import { memo } from "react";
 
 function Widget3(props) {
   return (

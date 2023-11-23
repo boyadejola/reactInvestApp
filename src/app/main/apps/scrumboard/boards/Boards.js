@@ -1,18 +1,23 @@
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
-import Icon from '@mui/material/Icon';
-import Typography from '@mui/material/Typography';
-import withReducer from 'app/store/withReducer';
-import { motion } from 'framer-motion';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import reducer from '../store';
-import { selectBoards, newBoard, getBoards, resetBoards } from '../store/boardsSlice';
+import Paper from "@mui/material/Paper";
+import { styled } from "@mui/material/styles";
+import Icon from "@mui/material/Icon";
+import Typography from "@mui/material/Typography";
+import withReducer from "app/store/withReducer";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import reducer from "../store";
+import {
+  selectBoards,
+  newBoard,
+  getBoards,
+  resetBoards,
+} from "../store/boardsSlice";
 
-const Root = styled('div')(({ theme }) => ({
-  '& .board': {
-    transitionProperty: 'box-shadow border-color',
+const Root = styled("div")(({ theme }) => ({
+  "& .board": {
+    transitionProperty: "box-shadow border-color",
     transitionDuration: theme.transitions.duration.short,
     transitionTimingFunction: theme.transitions.easing.easeInOut,
   },
@@ -45,7 +50,10 @@ function Boards(props) {
   return (
     <Root className="flex flex-grow flex-shrink-0 flex-col items-center">
       <div className="flex flex-grow flex-shrink-0 flex-col items-center container px-16 md:px-24">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.1 } }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: 0.1 } }}
+        >
           <Typography
             className="mt-44 sm:mt-88 sm:py-24 text-32 sm:text-40 font-bold"
             color="inherit"
@@ -61,7 +69,11 @@ function Boards(props) {
           className="flex flex-wrap w-full justify-center py-32 px-16"
         >
           {boards.map((board) => (
-            <motion.div variants={item} className="w-224 h-224 p-16" key={board.id}>
+            <motion.div
+              variants={item}
+              className="w-224 h-224 p-16"
+              key={board.id}
+            >
               <Paper
                 to={`/apps/scrumboard/boards/${board.id}/${board.uri}`}
                 className="board flex flex-col items-center justify-center w-full h-full rounded-16 py-24 shadow hover:shadow-lg cursor-pointer"
@@ -71,7 +83,10 @@ function Boards(props) {
                 <Icon className="text-56" color="action">
                   assessment
                 </Icon>
-                <Typography className="text-16 font-medium text-center pt-16 px-32" color="inherit">
+                <Typography
+                  className="text-16 font-medium text-center pt-16 px-32"
+                  color="inherit"
+                >
                   {board.name}
                 </Typography>
               </Paper>
@@ -88,7 +103,10 @@ function Boards(props) {
               <Icon className="text-56" color="secondary">
                 add_circle
               </Icon>
-              <Typography className="text-16 font-medium text-center pt-16 px-32" color="inherit">
+              <Typography
+                className="text-16 font-medium text-center pt-16 px-32"
+                color="inherit"
+              >
                 Add new board
               </Typography>
             </Paper>
@@ -99,4 +117,4 @@ function Boards(props) {
   );
 }
 
-export default withReducer('scrumboardApp', reducer)(Boards);
+export default withReducer("scrumboardApp", reducer)(Boards);

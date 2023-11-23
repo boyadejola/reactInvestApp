@@ -1,17 +1,17 @@
-import _ from '@lodash';
-import Avatar from '@mui/material/Avatar';
-import Divider from '@mui/material/Divider';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { withRouter, useParams } from 'react-router-dom';
-import { useDeepCompareEffect } from '@fuse/hooks';
-import MailChip from '../MailChip';
-import { selectLabelsEntities } from '../store/labelsSlice';
-import { getMail } from '../store/mailSlice';
+import _ from "@lodash";
+import Avatar from "@mui/material/Avatar";
+import Divider from "@mui/material/Divider";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { withRouter, useParams } from "react-router-dom";
+import { useDeepCompareEffect } from "@fuse/hooks";
+import MailChip from "../MailChip";
+import { selectLabelsEntities } from "../store/labelsSlice";
+import { getMail } from "../store/mailSlice";
 
 function MailDetails(props) {
   const dispatch = useDispatch();
@@ -33,7 +33,10 @@ function MailDetails(props) {
     <div className="p-16 sm:p-24">
       <div className="flex items-center justify-between overflow-hidden">
         <div className="flex flex-col">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.1 } }}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.1 } }}
+          >
             <Typography variant="subtitle1" className="flex">
               {mail.subject}
             </Typography>
@@ -94,7 +97,11 @@ function MailDetails(props) {
               setShowDetails(!showDetails);
             }}
           >
-            {showDetails ? <span>Hide Details</span> : <span>Show Details</span>}
+            {showDetails ? (
+              <span>Hide Details</span>
+            ) : (
+              <span>Show Details</span>
+            )}
           </Typography>
 
           {showDetails && (
@@ -105,7 +112,11 @@ function MailDetails(props) {
                 <span>Date:</span>
               </Typography>
 
-              <Typography variant="body2" color="textSecondary" className="px-4 flex flex-col">
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                className="px-4 flex flex-col"
+              >
                 <span>{mail.from.email}</span>
                 <span>{mail.to[0].email}</span>
                 <span>{mail.time}</span>
@@ -152,7 +163,9 @@ function MailDetails(props) {
                     >
                       Download
                     </Typography>
-                    <Typography className="text-12">({attachment.size})</Typography>
+                    <Typography className="text-12">
+                      ({attachment.size})
+                    </Typography>
                   </div>
                 </div>
               ))}

@@ -1,50 +1,50 @@
-import TableCell from '@mui/material/TableCell';
-import TableRow from '@mui/material/TableRow';
-import { useDispatch } from 'react-redux';
-import TableHead from '@mui/material/TableHead';
-import i18next from 'i18next';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import { useDispatch } from "react-redux";
+import TableHead from "@mui/material/TableHead";
+import i18next from "i18next";
 
 const rows = [
   {
-    id: 'driver',
-    align: 'center',
+    id: "driver",
+    align: "center",
     disablePadding: false,
-    label: 'HASH',
+    label: "HASH",
     sort: false,
   },
   {
-    id: 'vehisscle',
-    align: 'center',
+    id: "vehisscle",
+    align: "center",
     disablePadding: false,
-    label: 'COIN',
+    label: "COIN",
     sort: false,
   },
   {
-    id: 'vehicle',
-    align: 'center',
+    id: "vehicle",
+    align: "center",
     disablePadding: false,
-    label: 'PRICE',
+    label: "PRICE",
     sort: false,
   },
   {
-    id: 'emirdfgates',
-    align: 'left',
+    id: "emirdfgates",
+    align: "left",
     disablePadding: false,
-    label: 'TWNTYFR',
+    label: "TWNTYFR",
     sort: false,
   },
   {
-    id: 'emiadrates',
-    align: 'left',
+    id: "emiadrates",
+    align: "left",
     disablePadding: false,
-    label: 'VOL',
+    label: "VOL",
     sort: false,
   },
   {
-    id: 'emiraasdtes',
-    align: 'left',
+    id: "emiraasdtes",
+    align: "left",
     disablePadding: false,
-    label: 'MARKETCAP',
+    label: "MARKETCAP",
     sort: false,
   },
 ];
@@ -61,9 +61,9 @@ function CryptoTableHead(props) {
               className="p-4 md:p-16"
               key={o}
               align={row.align}
-              padding={row.disablePadding ? 'none' : 'normal'}
-              style={{ paddingLeft: row.id === 'driver' ? 22 : '' }}
-            // sortDirection={props.order.id === row.id ? props.order.direction : false}
+              padding={row.disablePadding ? "none" : "normal"}
+              style={{ paddingLeft: row.id === "driver" ? 22 : "" }}
+              // sortDirection={props.order.id === row.id ? props.order.direction : false}
             >
               {i18next.t(`navigation:${row.label}`)}
             </TableCell>

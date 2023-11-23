@@ -1,20 +1,20 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
+import Button from "@mui/material/Button";
+import CircularProgress from "@mui/material/CircularProgress";
+import Typography from "@mui/material/Typography";
 
 export default function DelayingAppearance() {
   const [loading, setLoading] = React.useState(false);
-  const [query, setQuery] = React.useState('idle');
+  const [query, setQuery] = React.useState("idle");
   const timerRef = React.useRef();
 
   React.useEffect(
     () => () => {
       clearTimeout(timerRef.current);
     },
-    [],
+    []
   );
 
   const handleClickLoading = () => {
@@ -26,24 +26,26 @@ export default function DelayingAppearance() {
       clearTimeout(timerRef.current);
     }
 
-    if (query !== 'idle') {
-      setQuery('idle');
+    if (query !== "idle") {
+      setQuery("idle");
       return;
     }
 
-    setQuery('progress');
+    setQuery("progress");
     timerRef.current = window.setTimeout(() => {
-      setQuery('success');
+      setQuery("success");
     }, 2000);
   };
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <Box sx={{ height: 40 }}>
         <Fade
           in={loading}
           style={{
-            transitionDelay: loading ? '800ms' : '0ms',
+            transitionDelay: loading ? "800ms" : "0ms",
           }}
           unmountOnExit
         >
@@ -51,16 +53,16 @@ export default function DelayingAppearance() {
         </Fade>
       </Box>
       <Button onClick={handleClickLoading} sx={{ m: 2 }}>
-        {loading ? 'Stop loading' : 'Loading'}
+        {loading ? "Stop loading" : "Loading"}
       </Button>
       <Box sx={{ height: 40 }}>
-        {query === 'success' ? (
+        {query === "success" ? (
           <Typography>Success!</Typography>
         ) : (
           <Fade
-            in={query === 'progress'}
+            in={query === "progress"}
             style={{
-              transitionDelay: query === 'progress' ? '800ms' : '0ms',
+              transitionDelay: query === "progress" ? "800ms" : "0ms",
             }}
             unmountOnExit
           >
@@ -69,7 +71,7 @@ export default function DelayingAppearance() {
         )}
       </Box>
       <Button onClick={handleClickQuery} sx={{ m: 2 }}>
-        {query !== 'idle' ? 'Reset' : 'Simulate a load'}
+        {query !== "idle" ? "Reset" : "Simulate a load"}
       </Button>
     </Box>
   );

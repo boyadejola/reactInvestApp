@@ -1,15 +1,17 @@
-import FuseUtils from '@fuse/utils';
-import Typography from '@mui/material/Typography';
-import { useEffect, useState } from 'react';
-import Masonry from 'react-masonry-css';
-import { useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import NoteListItem from './NoteListItem';
-import { selectNotes } from './store/notesSlice';
+import FuseUtils from "@fuse/utils";
+import Typography from "@mui/material/Typography";
+import { useEffect, useState } from "react";
+import Masonry from "react-masonry-css";
+import { useSelector } from "react-redux";
+import { withRouter } from "react-router-dom";
+import NoteListItem from "./NoteListItem";
+import { selectNotes } from "./store/notesSlice";
 
 function NoteList(props) {
   const notes = useSelector(selectNotes);
-  const variateDescSize = useSelector(({ notesApp }) => notesApp.notes.variateDescSize);
+  const variateDescSize = useSelector(
+    ({ notesApp }) => notesApp.notes.variateDescSize
+  );
   const searchText = useSelector(({ notesApp }) => notesApp.notes.searchText);
 
   const [filteredData, setFilteredData] = useState(null);
@@ -22,18 +24,20 @@ function NoteList(props) {
       let data = notes;
 
       if (labelId) {
-        data = data.filter((note) => note.labels.includes(labelId) && !note.archive);
+        data = data.filter(
+          (note) => note.labels.includes(labelId) && !note.archive
+        );
       }
 
       if (!id) {
         data = data.filter((note) => !note.archive);
       }
 
-      if (id === 'archive') {
+      if (id === "archive") {
         data = data.filter((note) => note.archive);
       }
 
-      if (id === 'reminders') {
+      if (id === "reminders") {
         data = data.filter((note) => Boolean(note.reminder) && !note.archive);
       }
 

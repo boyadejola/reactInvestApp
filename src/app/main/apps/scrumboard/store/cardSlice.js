@@ -1,11 +1,11 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { showMessage } from 'app/store/fuse/messageSlice';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { showMessage } from "app/store/fuse/messageSlice";
 
 export const updateCard = createAsyncThunk(
-  'scrumboardApp/card/updateCard',
+  "scrumboardApp/card/updateCard",
   async ({ boardId, card }, { dispatch }) => {
-    const response = await axios.post('/api/scrumboard-app/card/update', {
+    const response = await axios.post("/api/scrumboard-app/card/update", {
       boardId,
       card,
     });
@@ -14,11 +14,11 @@ export const updateCard = createAsyncThunk(
 
     dispatch(
       showMessage({
-        message: 'Card Saved',
+        message: "Card Saved",
         autoHideDuration: 2000,
         anchorOrigin: {
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         },
       })
     );
@@ -28,9 +28,9 @@ export const updateCard = createAsyncThunk(
 );
 
 export const removeCard = createAsyncThunk(
-  'scrumboardApp/card/removeCard',
+  "scrumboardApp/card/removeCard",
   async ({ boardId, cardId }, { dispatch }) => {
-    const response = await axios.post('/api/scrumboard-app/card/remove', {
+    const response = await axios.post("/api/scrumboard-app/card/remove", {
       boardId,
       cardId,
     });
@@ -43,7 +43,7 @@ export const removeCard = createAsyncThunk(
 );
 
 const cardSlice = createSlice({
-  name: 'scrumboardApp/card',
+  name: "scrumboardApp/card",
   initialState: {
     dialogOpen: false,
     data: null,

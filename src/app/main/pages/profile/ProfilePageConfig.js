@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const ProfilePageConfig = {
   settings: {
@@ -8,8 +8,8 @@ const ProfilePageConfig = {
   },
   routes: [
     {
-      path: '/pages/profile',
-      component: lazy(() => import('./ProfilePage')),
+      path: "/pages/profile",
+      component: lazy(() => import("./ProfilePage")),
     },
   ],
 };

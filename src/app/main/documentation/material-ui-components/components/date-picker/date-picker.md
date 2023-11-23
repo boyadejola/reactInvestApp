@@ -1,8 +1,8 @@
 ---
 title: React Date Picker component
 components: CalendarPicker, CalendarPickerSkeleton, DatePicker, DesktopDatePicker, MobileDatePicker, MonthPicker, PickersDay, StaticDatePicker, YearPicker
-githubLabel: 'component: DatePicker'
-packageName: '@mui/lab'
+githubLabel: "component: DatePicker"
+packageName: "@mui/lab"
 materialDesign: https://material.io/components/date-pickers
 ---
 
@@ -25,12 +25,14 @@ Please install any of these libraries and set up the right date engine by wrappi
 
 ```jsx
 // or @mui/lab/Adapter{Dayjs,Luxon,Moment} or any valid date-io adapter
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
 
 function App() {
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>...</LocalizationProvider>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      ...
+    </LocalizationProvider>
   );
 }
 ```

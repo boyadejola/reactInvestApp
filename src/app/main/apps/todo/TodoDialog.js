@@ -1,43 +1,43 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import { DateTimePicker } from '@mui/lab';
-import { Controller, useForm } from 'react-hook-form';
-import FuseUtils from '@fuse/utils';
-import _ from '@lodash';
-import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
-import { amber, red } from '@mui/material/colors';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import Divider from '@mui/material/Divider';
-import FormControl from '@mui/material/FormControl';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import TextField from '@mui/material/TextField';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as yup from 'yup';
-import { selectLabels } from './store/labelsSlice';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { DateTimePicker } from "@mui/lab";
+import { Controller, useForm } from "react-hook-form";
+import FuseUtils from "@fuse/utils";
+import _ from "@lodash";
+import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Chip from "@mui/material/Chip";
+import { amber, red } from "@mui/material/colors";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import Divider from "@mui/material/Divider";
+import FormControl from "@mui/material/FormControl";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
+import { selectLabels } from "./store/labelsSlice";
 import {
   removeTodo,
   addTodo,
   closeNewTodoDialog,
   closeEditTodoDialog,
   updateTodo,
-} from './store/todosSlice';
+} from "./store/todosSlice";
 
 const defaultValues = {
-  id: '',
-  title: '',
-  notes: '',
+  id: "",
+  title: "",
+  notes: "",
   startDate: new Date(),
   dueDate: new Date(),
   completed: false,
@@ -51,7 +51,7 @@ const defaultValues = {
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  title: yup.string().required('You must enter a title'),
+  title: yup.string().required("You must enter a title"),
 });
 
 function TodoDialog(props) {
@@ -61,16 +61,16 @@ function TodoDialog(props) {
 
   const [labelMenuEl, setLabelMenuEl] = useState(null);
   const { watch, handleSubmit, formState, reset, control, setValue } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
 
   const { errors, isValid, dirtyFields } = formState;
-  const formId = watch('id');
-  const formLabels = watch('labels');
-  const dueDate = watch('deuDate');
-  const startDate = watch('startDate');
+  const formId = watch("id");
+  const formLabels = watch("labels");
+  const dueDate = watch("deuDate");
+  const startDate = watch("startDate");
 
   /**
    * Initialize Dialog with Data
@@ -79,14 +79,14 @@ function TodoDialog(props) {
     /**
      * Dialog type: 'edit'
      */
-    if (todoDialog.type === 'edit' && todoDialog.data) {
+    if (todoDialog.type === "edit" && todoDialog.data) {
       reset({ ...todoDialog.data });
     }
 
     /**
      * Dialog type: 'new'
      */
-    if (todoDialog.type === 'new') {
+    if (todoDialog.type === "new") {
       reset({
         ...defaultValues,
         ...todoDialog.data,
@@ -107,7 +107,7 @@ function TodoDialog(props) {
    * Close Dialog
    */
   function closeTodoDialog() {
-    return todoDialog.type === 'edit'
+    return todoDialog.type === "edit"
       ? dispatch(closeEditTodoDialog())
       : dispatch(closeNewTodoDialog());
   }
@@ -116,7 +116,7 @@ function TodoDialog(props) {
    * Form Submit
    */
   function onSubmit(data) {
-    if (todoDialog.type === 'new') {
+    if (todoDialog.type === "new") {
       dispatch(addTodo({ id: FuseUtils.generateGUID(), ...data }));
     } else {
       dispatch(updateTodo({ ...todoDialog.data, ...data }));
@@ -134,16 +134,22 @@ function TodoDialog(props) {
   }
 
   return (
-    <Dialog {...todoDialog.props} onClose={closeTodoDialog} fullWidth maxWidth="sm" scroll="body">
+    <Dialog
+      {...todoDialog.props}
+      onClose={closeTodoDialog}
+      fullWidth
+      maxWidth="sm"
+      scroll="body"
+    >
       <AppBar position="static" elevation={0}>
         <Toolbar className="flex w-full">
           <Typography variant="subtitle1" color="inherit">
-            {todoDialog.type === 'new' ? 'New Todo' : 'Edit Todo'}
+            {todoDialog.type === "new" ? "New Todo" : "Edit Todo"}
           </Typography>
         </Toolbar>
       </AppBar>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <DialogContent classes={{ root: 'p-0' }}>
+        <DialogContent classes={{ root: "p-0" }}>
           <div className="mb-16">
             <div className="flex items-center justify-between p-12">
               <div className="flex">
@@ -198,7 +204,7 @@ function TodoDialog(props) {
 
                 <div>
                   <IconButton
-                    aria-owns={labelMenuEl ? 'label-menu' : null}
+                    aria-owns={labelMenuEl ? "label-menu" : null}
                     aria-haspopup="true"
                     onClick={(ev) => setLabelMenuEl(ev.currentTarget)}
                     size="large"
@@ -218,14 +224,16 @@ function TodoDialog(props) {
                         {labels.length > 0 &&
                           labels.map((label) => (
                             <MenuItem
-                              onClick={(ev) => onChange(_.xor(formLabelsVal, [label.id]))}
+                              onClick={(ev) =>
+                                onChange(_.xor(formLabelsVal, [label.id]))
+                              }
                               key={label.id}
                             >
                               <ListItemIcon className="min-w-24">
                                 <Icon color="action">
                                   {formLabelsVal.includes(label.id)
-                                    ? 'check_box'
-                                    : 'check_box_outline_blank'}
+                                    ? "check_box"
+                                    : "check_box_outline_blank"}
                                 </Icon>
                               </ListItemIcon>
                               <ListItemText
@@ -234,7 +242,10 @@ function TodoDialog(props) {
                                 disableTypography
                               />
                               <ListItemIcon className="min-w-24">
-                                <Icon style={{ color: label.color }} color="action">
+                                <Icon
+                                  style={{ color: label.color }}
+                                  color="action"
+                                >
                                   label
                                 </Icon>
                               </ListItemIcon>
@@ -256,8 +267,11 @@ function TodoDialog(props) {
                 return (
                   <Chip
                     avatar={
-                      <Avatar classes={{ colorDefault: 'bg-transparent' }}>
-                        <Icon className="text-20" style={{ color: label.color }}>
+                      <Avatar classes={{ colorDefault: "bg-transparent" }}>
+                        <Icon
+                          className="text-20"
+                          style={{ color: label.color }}
+                        >
                           label
                         </Icon>
                       </Avatar>
@@ -265,12 +279,12 @@ function TodoDialog(props) {
                     label={label.title}
                     onDelete={(ev) =>
                       setValue(
-                        'labels',
+                        "labels",
                         formLabels.filter((_id) => labelId !== _id)
                       )
                     }
                     className="mx-4 my-4"
-                    classes={{ label: 'px-8' }}
+                    classes={{ label: "px-8" }}
                     key={labelId}
                   />
                 );
@@ -302,7 +316,13 @@ function TodoDialog(props) {
                 name="notes"
                 control={control}
                 render={({ field }) => (
-                  <TextField {...field} label="Notes" multiline rows="6" variant="outlined" />
+                  <TextField
+                    {...field}
+                    label="Notes"
+                    multiline
+                    rows="6"
+                    variant="outlined"
+                  />
                 )}
               />
             </FormControl>
@@ -318,7 +338,11 @@ function TodoDialog(props) {
                     onChange={onChange}
                     maxDate={dueDate}
                     renderInput={(_props) => (
-                      <TextField label="Start Date" className="mt-8 mb-16 mx-4" {..._props} />
+                      <TextField
+                        label="Start Date"
+                        className="mt-8 mb-16 mx-4"
+                        {..._props}
+                      />
                     )}
                   />
                 )}
@@ -334,7 +358,11 @@ function TodoDialog(props) {
                     onChange={onChange}
                     minDate={startDate}
                     renderInput={(_props) => (
-                      <TextField label="Due Date" className="mt-8 mb-16 mx-4" {..._props} />
+                      <TextField
+                        label="Due Date"
+                        className="mt-8 mb-16 mx-4"
+                        {..._props}
+                      />
                     )}
                   />
                 )}
@@ -343,7 +371,7 @@ function TodoDialog(props) {
           </div>
         </DialogContent>
 
-        {todoDialog.type === 'new' ? (
+        {todoDialog.type === "new" ? (
           <DialogActions className="justify-between px-8 py-16">
             <div className="px-16">
               <Button
@@ -368,7 +396,11 @@ function TodoDialog(props) {
                 Save
               </Button>
             </div>
-            <IconButton className="min-w-auto" onClick={handleRemove} size="large">
+            <IconButton
+              className="min-w-auto"
+              onClick={handleRemove}
+              size="large"
+            >
               <Icon>delete</Icon>
             </IconButton>
           </DialogActions>

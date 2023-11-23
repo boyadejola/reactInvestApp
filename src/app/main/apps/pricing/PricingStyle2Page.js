@@ -1,26 +1,26 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import FuseLoading from '@fuse/core/FuseLoading';
-import i18next from 'i18next';
-import { ReqColorCodes, Plans } from 'app/auth/store/constants';
-import { setShowJoinPlan } from 'app/auth/store/sharedData';
-import { postJoinPlan } from 'app/auth/store/commonServices';
-import { useDispatch, useSelector } from 'react-redux';
-import History from '@history';
-import JoinPlanDialog from 'app/fuse-layouts/shared-components/JoinPlanDialog';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import FuseLoading from "@fuse/core/FuseLoading";
+import i18next from "i18next";
+import { ReqColorCodes, Plans } from "app/auth/store/constants";
+import { setShowJoinPlan } from "app/auth/store/sharedData";
+import { postJoinPlan } from "app/auth/store/commonServices";
+import { useDispatch, useSelector } from "react-redux";
+import History from "@history";
+import JoinPlanDialog from "app/fuse-layouts/shared-components/JoinPlanDialog";
 
-const Root = styled('div')(({ theme }) => ({
-  '& .PricingStyle2Page-header': {
+const Root = styled("div")(({ theme }) => ({
+  "& .PricingStyle2Page-header": {
     height: 600,
     background: `linear-gradient(to right, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 100%)`,
     color: theme.palette.primary.contrastText,
   },
-  '& .PricingStyle2Page-badge': {
+  "& .PricingStyle2Page-badge": {
     backgroundColor: theme.palette.error.main,
     color: theme.palette.getContrastText(theme.palette.error.main),
   },
@@ -48,18 +48,18 @@ function PricingStyle2Page() {
   function onInvestClick(id) {
     if (!loggedin) {
       setPlanID(0);
-      History.push('/login');
-    }
-    else {
+      History.push("/login");
+    } else {
       if (id) {
         setPlanID(id);
         dispatch(setShowJoinPlan(true));
-      }
-      else setPlanID(0);
+      } else setPlanID(0);
     }
   }
 
-  return loaders ? <FuseLoading /> : (
+  return loaders ? (
+    <FuseLoading />
+  ) : (
     <Root className="w-full">
       <JoinPlanDialog planid={planID} />
       <div className="PricingStyle2Page-header flex">
@@ -69,7 +69,10 @@ function PricingStyle2Page() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
             >
-              <Typography color="inherit" className="font-bold text-32 md:text-52">
+              <Typography
+                color="inherit"
+                className="font-bold text-32 md:text-52"
+              >
                 {i18next.t(`navigation:PRICINGPLAN`)}
               </Typography>
             </motion.div>
@@ -77,7 +80,10 @@ function PricingStyle2Page() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { delay: 0.3 } }}
             >
-              <Typography color="inherit" className="text-16 opacity-75 mt-16 mx-auto max-w-512">
+              <Typography
+                color="inherit"
+                className="text-16 opacity-75 mt-16 mx-auto max-w-512"
+              >
                 {i18next.t(`navigation:PRICINGPLANTITLE`)}
               </Typography>
             </motion.div>
@@ -93,10 +99,17 @@ function PricingStyle2Page() {
             animate="show"
             className="flex items-center justify-center flex-wrap"
           >
-            <motion.div variants={item} className="w-full max-w-320 sm:w-1/4 p-12">
+            <motion.div
+              variants={item}
+              className="w-full max-w-320 sm:w-1/4 p-12"
+            >
               <Card className="relative rounded-16">
                 <div className="pt-48 pb-24 text-center">
-                  <Typography variant="subtitle1" color="inherit" className="text-20 font-semibold">
+                  <Typography
+                    variant="subtitle1"
+                    color="inherit"
+                    className="text-20 font-semibold"
+                  >
                     {i18next.t(`navigation:ULTRAPLAN`)}
                   </Typography>
                 </div>
@@ -111,7 +124,10 @@ function PricingStyle2Page() {
                         {i18next.t(`navigation:ULTRAPERCENT`)}%
                       </Typography>
                     </div>
-                    <Typography color="textSecondary" className="font-medium text-12">
+                    <Typography
+                      color="textSecondary"
+                      className="font-medium text-12"
+                    >
                       {i18next.t(`navigation:RETURNULTRA`)}
                     </Typography>
                   </div>
@@ -134,11 +150,15 @@ function PricingStyle2Page() {
                       {i18next.t(`navigation:Package3`)}
                     </Typography>
                     <Typography variant="subtitle1" className="">
-                      <span className="font-semibold mx-4">{i18next.t(`navigation:MINULTRA1`)}</span>
+                      <span className="font-semibold mx-4">
+                        {i18next.t(`navigation:MINULTRA1`)}
+                      </span>
                       {/* {i18next.t(`navigation:MINULTRA`)} */}
                     </Typography>
                     <Typography variant="subtitle1" className="mb-8">
-                      <span className="font-semibold mx-4">{i18next.t(`navigation:MINULTRA2`)}</span>
+                      <span className="font-semibold mx-4">
+                        {i18next.t(`navigation:MINULTRA2`)}
+                      </span>
                     </Typography>
                   </div>
                 </CardContent>
@@ -150,7 +170,7 @@ function PricingStyle2Page() {
                       backgroundImage: ReqColorCodes.btn,
                     }}
                     variant="contained"
-                    // color='secondary' 
+                    // color='secondary'
                     className="w-128"
                     onClick={() => onInvestClick(Plans.plan1)}
                   >
@@ -160,10 +180,17 @@ function PricingStyle2Page() {
               </Card>
             </motion.div>
 
-            <motion.div variants={item} className="w-full max-w-320 sm:w-1/4 p-12">
+            <motion.div
+              variants={item}
+              className="w-full max-w-320 sm:w-1/4 p-12"
+            >
               <Card className="relative rounded-16">
                 <div className="pt-48 pb-24 text-center">
-                  <Typography variant="subtitle1" color="inherit" className="text-20 font-semibold">
+                  <Typography
+                    variant="subtitle1"
+                    color="inherit"
+                    className="text-20 font-semibold"
+                  >
                     {i18next.t(`navigation:PLATINUMPLAN`)}
                   </Typography>
                 </div>
@@ -178,7 +205,10 @@ function PricingStyle2Page() {
                         {i18next.t(`navigation:PLATINUMPERCENT`)}%
                       </Typography>
                     </div>
-                    <Typography color="textSecondary" className="font-medium text-12">
+                    <Typography
+                      color="textSecondary"
+                      className="font-medium text-12"
+                    >
                       {i18next.t(`navigation:RETURNPLATINUM`)}
                     </Typography>
                   </div>
@@ -201,11 +231,15 @@ function PricingStyle2Page() {
                       {i18next.t(`navigation:Package3`)}
                     </Typography>
                     <Typography variant="subtitle1" className="">
-                      <span className="font-semibold mx-4">{i18next.t(`navigation:MINPALTINUM1`)}</span>
+                      <span className="font-semibold mx-4">
+                        {i18next.t(`navigation:MINPALTINUM1`)}
+                      </span>
                       {/* {i18next.t(`navigation:MINULTRA`)} */}
                     </Typography>
                     <Typography variant="subtitle1" className="mb-8">
-                      <span className="font-semibold mx-4">{i18next.t(`navigation:MINPALTINUM2`)}</span>
+                      <span className="font-semibold mx-4">
+                        {i18next.t(`navigation:MINPALTINUM2`)}
+                      </span>
                     </Typography>
                   </div>
                 </CardContent>
@@ -217,7 +251,7 @@ function PricingStyle2Page() {
                       backgroundImage: ReqColorCodes.btn,
                     }}
                     variant="contained"
-                    // color='secondary' 
+                    // color='secondary'
                     className="w-128"
                     onClick={() => onInvestClick(Plans.plan2)}
                   >
@@ -227,10 +261,17 @@ function PricingStyle2Page() {
               </Card>
             </motion.div>
 
-            <motion.div variants={item} className="w-full max-w-320 sm:w-1/4 p-12">
+            <motion.div
+              variants={item}
+              className="w-full max-w-320 sm:w-1/4 p-12"
+            >
               <Card className="relative rounded-16">
                 <div className="pt-48 pb-24 text-center">
-                  <Typography variant="subtitle1" color="inherit" className="text-20 font-semibold">
+                  <Typography
+                    variant="subtitle1"
+                    color="inherit"
+                    className="text-20 font-semibold"
+                  >
                     {i18next.t(`navigation:STANDARDPLAN`)}
                   </Typography>
                 </div>
@@ -245,7 +286,10 @@ function PricingStyle2Page() {
                         {i18next.t(`navigation:STANDARDPERCENT`)}%
                       </Typography>
                     </div>
-                    <Typography color="textSecondary" className="font-medium text-12">
+                    <Typography
+                      color="textSecondary"
+                      className="font-medium text-12"
+                    >
                       {i18next.t(`navigation:RETURNSTANDARD`)}
                     </Typography>
                   </div>
@@ -268,11 +312,15 @@ function PricingStyle2Page() {
                       {i18next.t(`navigation:Package3`)}
                     </Typography>
                     <Typography variant="subtitle1" className="">
-                      <span className="font-semibold mx-4">{i18next.t(`navigation:MINSTANDARD1`)}</span>
+                      <span className="font-semibold mx-4">
+                        {i18next.t(`navigation:MINSTANDARD1`)}
+                      </span>
                       {/* {i18next.t(`navigation:MINULTRA`)} */}
                     </Typography>
                     <Typography variant="subtitle1" className="mb-8">
-                      <span className="font-semibold mx-4">{i18next.t(`navigation:MINSTANDARD2`)}</span>
+                      <span className="font-semibold mx-4">
+                        {i18next.t(`navigation:MINSTANDARD2`)}
+                      </span>
                     </Typography>
                   </div>
                 </CardContent>
@@ -284,7 +332,7 @@ function PricingStyle2Page() {
                       backgroundImage: ReqColorCodes.btn,
                     }}
                     variant="contained"
-                    // color='secondary' 
+                    // color='secondary'
                     className="w-128"
                     onClick={() => onInvestClick(Plans.plan3)}
                   >
@@ -294,10 +342,17 @@ function PricingStyle2Page() {
               </Card>
             </motion.div>
 
-            <motion.div variants={item} className="w-full max-w-320 sm:w-1/4 p-12">
+            <motion.div
+              variants={item}
+              className="w-full max-w-320 sm:w-1/4 p-12"
+            >
               <Card className="relative rounded-16">
                 <div className="pt-48 pb-24 text-center">
-                  <Typography variant="subtitle1" color="inherit" className="text-20 font-semibold">
+                  <Typography
+                    variant="subtitle1"
+                    color="inherit"
+                    className="text-20 font-semibold"
+                  >
                     {i18next.t(`navigation:BEGINNERPLAN`)}
                   </Typography>
                 </div>
@@ -312,7 +367,10 @@ function PricingStyle2Page() {
                         {i18next.t(`navigation:BEGINNERPERCENT`)}%
                       </Typography>
                     </div>
-                    <Typography color="textSecondary" className="font-medium text-12">
+                    <Typography
+                      color="textSecondary"
+                      className="font-medium text-12"
+                    >
                       {i18next.t(`navigation:RETURNBEGINNER`)}
                     </Typography>
                   </div>
@@ -335,11 +393,15 @@ function PricingStyle2Page() {
                       {i18next.t(`navigation:Package3`)}
                     </Typography>
                     <Typography variant="subtitle1" className="">
-                      <span className="font-semibold mx-4">{i18next.t(`navigation:MINBEGINNER1`)}</span>
+                      <span className="font-semibold mx-4">
+                        {i18next.t(`navigation:MINBEGINNER1`)}
+                      </span>
                       {/* {i18next.t(`navigation:MINULTRA`)} */}
                     </Typography>
                     <Typography variant="subtitle1" className="mb-8">
-                      <span className="font-semibold mx-4">{i18next.t(`navigation:MINBEGINNER2`)}</span>
+                      <span className="font-semibold mx-4">
+                        {i18next.t(`navigation:MINBEGINNER2`)}
+                      </span>
                     </Typography>
                   </div>
                 </CardContent>
@@ -351,7 +413,7 @@ function PricingStyle2Page() {
                       backgroundImage: ReqColorCodes.btn,
                     }}
                     variant="contained"
-                    // color='secondary' 
+                    // color='secondary'
                     className="w-128"
                     onClick={() => onInvestClick(Plans.plan4)}
                   >
@@ -369,34 +431,46 @@ function PricingStyle2Page() {
 
             <div className="flex flex-wrap w-full">
               <div className="w-full sm:w-1/2 p-24">
-                <Typography className="text-20 mb-8">How does free trial work?</Typography>
+                <Typography className="text-20 mb-8">
+                  How does free trial work?
+                </Typography>
                 <Typography className="text-16" color="textSecondary">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a diam nec
-                  augue tincidunt accumsan. In dignissim laoreet ipsum eu interdum.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur a diam nec augue tincidunt accumsan. In dignissim
+                  laoreet ipsum eu interdum.
                 </Typography>
               </div>
 
               <div className="w-full sm:w-1/2 p-24">
-                <Typography className="text-20 mb-8">Can I cancel any time?</Typography>
+                <Typography className="text-20 mb-8">
+                  Can I cancel any time?
+                </Typography>
                 <Typography className="text-16" color="textSecondary">
-                  Aliquam erat volutpat. Etiam luctus massa ex, at tempus tellus blandit quis. Sed
-                  quis neque tellus. Donec maximus ipsum in malesuada hendrerit.
+                  Aliquam erat volutpat. Etiam luctus massa ex, at tempus tellus
+                  blandit quis. Sed quis neque tellus. Donec maximus ipsum in
+                  malesuada hendrerit.
                 </Typography>
               </div>
 
               <div className="w-full sm:w-1/2 p-24">
-                <Typography className="text-20 mb-8">What happens after my trial ended?</Typography>
+                <Typography className="text-20 mb-8">
+                  What happens after my trial ended?
+                </Typography>
                 <Typography className="text-16" color="textSecondary">
-                  Aliquam erat volutpat. Etiam luctus massa ex, at tempus tellus blandit quis. Sed
-                  quis neque tellus. Donec maximus ipsum in malesuada hendrerit.
+                  Aliquam erat volutpat. Etiam luctus massa ex, at tempus tellus
+                  blandit quis. Sed quis neque tellus. Donec maximus ipsum in
+                  malesuada hendrerit.
                 </Typography>
               </div>
 
               <div className="w-full sm:w-1/2 p-24">
-                <Typography className="text-20 mb-8">Can I have a discount?</Typography>
+                <Typography className="text-20 mb-8">
+                  Can I have a discount?
+                </Typography>
                 <Typography className="text-16" color="textSecondary">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a diam nec
-                  augue tincidunt accumsan. In dignissim laoreet ipsum eu interdum.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur a diam nec augue tincidunt accumsan. In dignissim
+                  laoreet ipsum eu interdum.
                 </Typography>
               </div>
             </div>

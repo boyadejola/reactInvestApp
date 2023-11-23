@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const sidebarsSlice = createSlice({
-  name: 'chatApp/sidebars',
+  name: "chatApp/sidebars",
   initialState: {
     mobileChatsSidebarOpen: false,
     userSidebarOpen: false,

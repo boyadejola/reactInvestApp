@@ -1,7 +1,7 @@
 ---
 title: React Drawer component
 components: Drawer, SwipeableDrawer
-githubLabel: 'component: Drawer'
+githubLabel: "component: Drawer"
 materialDesign: https://material.io/components/navigation-drawer
 ---
 
@@ -44,7 +44,8 @@ The following properties are used in this documentation website for optimal usab
 
 ```jsx
 const iOS =
-  typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+  typeof navigator !== "undefined" &&
+  /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 <SwipeableDrawer disableBackdropTransition={!iOS} disableDiscovery={iOS} />;
 ```

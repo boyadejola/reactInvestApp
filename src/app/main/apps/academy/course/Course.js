@@ -1,40 +1,40 @@
-import FusePageSimple from '@fuse/core/FusePageSimple';
-import { useTheme, styled } from '@mui/material/styles';
-import FuseScrollbars from '@fuse/core/FuseScrollbars';
-import { green } from '@mui/material/colors';
-import Fab from '@mui/material/Fab';
-import Hidden from '@mui/material/Hidden';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import Paper from '@mui/material/Paper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import Stepper from '@mui/material/Stepper';
-import Typography from '@mui/material/Typography';
-import withReducer from 'app/store/withReducer';
-import { useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import { useDeepCompareEffect } from '@fuse/hooks';
-import SwipeableViews from 'react-swipeable-views';
-import reducer from '../store';
-import { getCourse, updateCourse } from '../store/courseSlice';
+import FusePageSimple from "@fuse/core/FusePageSimple";
+import { useTheme, styled } from "@mui/material/styles";
+import FuseScrollbars from "@fuse/core/FuseScrollbars";
+import { green } from "@mui/material/colors";
+import Fab from "@mui/material/Fab";
+import Hidden from "@mui/material/Hidden";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import Stepper from "@mui/material/Stepper";
+import Typography from "@mui/material/Typography";
+import withReducer from "app/store/withReducer";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { useDeepCompareEffect } from "@fuse/hooks";
+import SwipeableViews from "react-swipeable-views";
+import reducer from "../store";
+import { getCourse, updateCourse } from "../store/courseSlice";
 
 const Root = styled(FusePageSimple)(({ theme }) => ({
-  '& .FusePageSimple-header': {
+  "& .FusePageSimple-header": {
     minHeight: 72,
     height: 72,
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up("lg")]: {
       borderBottomLeftRadius: 20,
     },
   },
-  '& .FusePageSimple-content': {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: '1 1 auto',
-    overflow: 'hidden',
+  "& .FusePageSimple-content": {
+    display: "flex",
+    flexDirection: "column",
+    flex: "1 1 auto",
+    overflow: "hidden",
   },
-  '& .FusePageSimple-sidebar': {
+  "& .FusePageSimple-sidebar": {
     padding: 24,
     border: 0,
   },
@@ -94,9 +94,15 @@ function Course(props) {
             </IconButton>
           </Hidden>
           <IconButton to="/apps/academy/courses" component={Link} size="large">
-            <Icon>{theme.direction === 'ltr' ? 'arrow_back' : 'arrow_forward'}</Icon>
+            <Icon>
+              {theme.direction === "ltr" ? "arrow_back" : "arrow_forward"}
+            </Icon>
           </IconButton>
-          {course && <Typography className="flex-1 text-20 mx-16">{course.title}</Typography>}
+          {course && (
+            <Typography className="flex-1 text-20 mx-16">
+              {course.title}
+            </Typography>
+          )}
         </div>
       }
       content={
@@ -130,18 +136,29 @@ function Course(props) {
                 <div>
                   {activeStep !== 1 && (
                     <Fab className="" color="secondary" onClick={handleBack}>
-                      <Icon>{theme.direction === 'ltr' ? 'chevron_left' : 'chevron_right'}</Icon>
+                      <Icon>
+                        {theme.direction === "ltr"
+                          ? "chevron_left"
+                          : "chevron_right"}
+                      </Icon>
                     </Fab>
                   )}
                 </div>
                 <div>
                   {activeStep < course.steps.length ? (
                     <Fab className="" color="secondary" onClick={handleNext}>
-                      <Icon>{theme.direction === 'ltr' ? 'chevron_right' : 'chevron_left'}</Icon>
+                      <Icon>
+                        {theme.direction === "ltr"
+                          ? "chevron_right"
+                          : "chevron_left"}
+                      </Icon>
                     </Fab>
                   ) : (
                     <Fab
-                      sx={{ background: `${green[500]}!important`, color: 'white!important' }}
+                      sx={{
+                        background: `${green[500]}!important`,
+                        color: "white!important",
+                      }}
                       to="/apps/academy/courses"
                       component={Link}
                     >
@@ -157,14 +174,19 @@ function Course(props) {
       leftSidebarContent={
         course && (
           <Stepper
-            classes={{ root: 'bg-transparent' }}
+            classes={{ root: "bg-transparent" }}
             activeStep={activeStep - 1}
             orientation="vertical"
           >
             {course.steps.map((step, index) => {
               return (
-                <Step key={step.id} onClick={() => handleChangeActiveStep(index)}>
-                  <StepLabel sx={{ cursor: 'pointer!important' }}>{step.title}</StepLabel>
+                <Step
+                  key={step.id}
+                  onClick={() => handleChangeActiveStep(index)}
+                >
+                  <StepLabel sx={{ cursor: "pointer!important" }}>
+                    {step.title}
+                  </StepLabel>
                 </Step>
               );
             })}
@@ -177,4 +199,4 @@ function Course(props) {
   );
 }
 
-export default withReducer('academyApp', reducer)(Course);
+export default withReducer("academyApp", reducer)(Course);

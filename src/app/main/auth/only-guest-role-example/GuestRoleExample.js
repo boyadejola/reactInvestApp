@@ -1,25 +1,27 @@
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import FusePageSimple from '@fuse/core/FusePageSimple';
-import Typography from '@mui/material/Typography';
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import FusePageSimple from "@fuse/core/FusePageSimple";
+import Typography from "@mui/material/Typography";
 
 function GuestRoleExample() {
   return (
     <FusePageSimple
       header={
-        <div className='p-24 flex items-center'>
-          <Typography className='h2'>Guest: Auth role example page</Typography>
+        <div className="p-24 flex items-center">
+          <Typography className="h2">Guest: Auth role example page</Typography>
         </div>
       }
       content={
-        <div className='p-24'>
-          <Typography className='mb-24'>
-            You can see this page because you have not logged in. Otherwise you should be redirected
-            to root page.
+        <div className="p-24">
+          <Typography className="mb-24">
+            You can see this page because you have not logged in. Otherwise you
+            should be redirected to root page.
           </Typography>
 
-          <Typography className='mb-24'>This is the page's config file:</Typography>
+          <Typography className="mb-24">
+            This is the page's config file:
+          </Typography>
 
-          <FuseHighlight component='pre' className='language-js'>
+          <FuseHighlight component="pre" className="language-js">
             {`
                             import {authRoles} from 'auth';
                             import StaffRoleExample from 'app/main/auth/staff-role-example/StaffRoleExample';
@@ -41,12 +43,12 @@ function GuestRoleExample() {
                             `}
           </FuseHighlight>
 
-          <Typography className='my-24'>
-            You can also hide the navigation item/collapse/group with user roles by giving auth
-            property.
+          <Typography className="my-24">
+            You can also hide the navigation item/collapse/group with user roles
+            by giving auth property.
           </Typography>
 
-          <FuseHighlight component='pre' className='language-json'>
+          <FuseHighlight component="pre" className="language-json">
             {`
                                 export const fuseNavigationConfig = [
                                    {

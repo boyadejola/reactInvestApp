@@ -1,7 +1,7 @@
-import FuseCountdown from '@fuse/core/FuseCountdown';
-import FuseHighlight from '@fuse/core/FuseHighlight';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import FuseCountdown from "@fuse/core/FuseCountdown";
+import FuseHighlight from "@fuse/core/FuseHighlight";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 function FuseCountdownDoc() {
   return (
@@ -11,8 +11,8 @@ function FuseCountdownDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        <code>FuseCountdown</code> is a custom-built Fuse component that allows you to create
-        countdowns.
+        <code>FuseCountdown</code> is a custom-built Fuse component that allows
+        you to create countdowns.
       </Typography>
 
       <Typography className="text-20 mt-20 mb-10 font-700" variant="h5">

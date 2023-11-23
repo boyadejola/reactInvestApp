@@ -1,6 +1,6 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Popper from '@mui/material/Popper';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Popper from "@mui/material/Popper";
 
 export default function SimplePopper() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -10,7 +10,7 @@ export default function SimplePopper() {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popper' : undefined;
+  const id = open ? "simple-popper" : undefined;
 
   return (
     <div>
@@ -18,7 +18,7 @@ export default function SimplePopper() {
         Toggle Popper
       </button>
       <Popper id={id} open={open} anchorEl={anchorEl}>
-        <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+        <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
           The content of the Popper.
         </Box>
       </Popper>

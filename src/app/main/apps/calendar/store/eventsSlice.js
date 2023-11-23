@@ -1,20 +1,27 @@
-import { createEntityAdapter, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import formatISO from 'date-fns/formatISO';
+import {
+  createEntityAdapter,
+  createSlice,
+  createAsyncThunk,
+} from "@reduxjs/toolkit";
+import axios from "axios";
+import formatISO from "date-fns/formatISO";
 
-export const dateFormat = 'YYYY-MM-DDTHH:mm:ss.sssZ';
+export const dateFormat = "YYYY-MM-DDTHH:mm:ss.sssZ";
 
-export const getEvents = createAsyncThunk('calendarApp/events/getEvents', async () => {
-  const response = await axios.get('/api/calendar-app/events');
-  const data = await response.data;
+export const getEvents = createAsyncThunk(
+  "calendarApp/events/getEvents",
+  async () => {
+    const response = await axios.get("/api/calendar-app/events");
+    const data = await response.data;
 
-  return data;
-});
+    return data;
+  }
+);
 
 export const addEvent = createAsyncThunk(
-  'calendarApp/events/addEvent',
+  "calendarApp/events/addEvent",
   async (newEvent, { dispatch }) => {
-    const response = await axios.post('/api/calendar-app/add-event', {
+    const response = await axios.post("/api/calendar-app/add-event", {
       newEvent,
     });
     const data = await response.data;
@@ -24,9 +31,11 @@ export const addEvent = createAsyncThunk(
 );
 
 export const updateEvent = createAsyncThunk(
-  'calendarApp/events/updateEvent',
+  "calendarApp/events/updateEvent",
   async (event, { dispatch }) => {
-    const response = await axios.post('/api/calendar-app/update-event', { event });
+    const response = await axios.post("/api/calendar-app/update-event", {
+      event,
+    });
     const data = await response.data;
 
     return data;
@@ -34,9 +43,11 @@ export const updateEvent = createAsyncThunk(
 );
 
 export const removeEvent = createAsyncThunk(
-  'calendarApp/events/remove-event',
+  "calendarApp/events/remove-event",
   async (eventId, { dispatch }) => {
-    const response = await axios.post('/api/calendar-app/remove-event', { eventId });
+    const response = await axios.post("/api/calendar-app/remove-event", {
+      eventId,
+    });
     const data = await response.data;
 
     return data.id;
@@ -52,10 +63,10 @@ export const {
 } = eventsAdapter.getSelectors((state) => state.calendarApp.events);
 
 const eventsSlice = createSlice({
-  name: 'calendarApp/events',
+  name: "calendarApp/events",
   initialState: eventsAdapter.getInitialState({
     eventDialog: {
-      type: 'new',
+      type: "new",
       props: {
         open: false,
       },
@@ -66,7 +77,7 @@ const eventsSlice = createSlice({
     openNewEventDialog: {
       prepare: (event) => {
         const payload = {
-          type: 'new',
+          type: "new",
           props: {
             open: true,
           },
@@ -84,7 +95,7 @@ const eventsSlice = createSlice({
     openEditEventDialog: {
       prepare: (event) => {
         const payload = {
-          type: 'edit',
+          type: "edit",
           props: {
             open: true,
           },
@@ -102,7 +113,7 @@ const eventsSlice = createSlice({
     },
     closeNewEventDialog: (state, action) => {
       state.eventDialog = {
-        type: 'new',
+        type: "new",
         props: {
           open: false,
         },
@@ -111,7 +122,7 @@ const eventsSlice = createSlice({
     },
     closeEditEventDialog: (state, action) => {
       state.eventDialog = {
-        type: 'edit',
+        type: "edit",
         props: {
           open: false,
         },

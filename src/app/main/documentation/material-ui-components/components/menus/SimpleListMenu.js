@@ -1,15 +1,15 @@
-import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
+import * as React from "react";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
 
 const options = [
-  'Show some love to MUI',
-  'Show all notification content',
-  'Hide sensitive notification content',
-  'Hide all notification content',
+  "Show some love to MUI",
+  "Show all notification content",
+  "Hide sensitive notification content",
+  "Hide all notification content",
 ];
 
 export default function SimpleListMenu() {
@@ -34,7 +34,7 @@ export default function SimpleListMenu() {
       <List
         component="nav"
         aria-label="Device settings"
-        sx={{ bgcolor: 'background.paper' }}
+        sx={{ bgcolor: "background.paper" }}
       >
         <ListItem
           button
@@ -42,7 +42,7 @@ export default function SimpleListMenu() {
           aria-haspopup="listbox"
           aria-controls="lock-menu"
           aria-label="when device is locked"
-          aria-expanded={open ? 'true' : undefined}
+          aria-expanded={open ? "true" : undefined}
           onClick={handleClickListItem}
         >
           <ListItemText
@@ -57,8 +57,8 @@ export default function SimpleListMenu() {
         open={open}
         onClose={handleClose}
         MenuListProps={{
-          'aria-labelledby': 'lock-button',
-          role: 'listbox',
+          "aria-labelledby": "lock-button",
+          role: "listbox",
         }}
       >
         {options.map((option, index) => (

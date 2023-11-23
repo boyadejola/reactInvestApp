@@ -1,35 +1,35 @@
-import FuseLoading from '@fuse/core/FuseLoading';
-import FusePageCarded from '@fuse/core/FusePageCarded';
-import { useDeepCompareEffect } from '@fuse/hooks';
-import Button from '@mui/material/Button';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
-import withReducer from 'app/store/withReducer';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import _ from '@lodash';
-import { useForm, FormProvider } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { styled } from '@mui/material/styles';
-import { resetProduct, newProduct, getProduct } from '../store/productSlice';
-import reducer from '../store';
-import ProductHeader from './ProductHeader';
-import BasicInfoTab from './tabs/BasicInfoTab';
-import InventoryTab from './tabs/InventoryTab';
-import PricingTab from './tabs/PricingTab';
-import ProductImagesTab from './tabs/ProductImagesTab';
-import ShippingTab from './tabs/ShippingTab';
+import FuseLoading from "@fuse/core/FuseLoading";
+import FusePageCarded from "@fuse/core/FusePageCarded";
+import { useDeepCompareEffect } from "@fuse/hooks";
+import Button from "@mui/material/Button";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import withReducer from "app/store/withReducer";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import _ from "@lodash";
+import { useForm, FormProvider } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { styled } from "@mui/material/styles";
+import { resetProduct, newProduct, getProduct } from "../store/productSlice";
+import reducer from "../store";
+import ProductHeader from "./ProductHeader";
+import BasicInfoTab from "./tabs/BasicInfoTab";
+import InventoryTab from "./tabs/InventoryTab";
+import PricingTab from "./tabs/PricingTab";
+import ProductImagesTab from "./tabs/ProductImagesTab";
+import ShippingTab from "./tabs/ShippingTab";
 
 const Root = styled(FusePageCarded)(({ theme }) => ({
-  '& .FusePageCarded-header': {
+  "& .FusePageCarded-header": {
     minHeight: 72,
     height: 72,
-    alignItems: 'center',
-    [theme.breakpoints.up('sm')]: {
+    alignItems: "center",
+    [theme.breakpoints.up("sm")]: {
       minHeight: 136,
       height: 136,
     },
@@ -42,8 +42,8 @@ const Root = styled(FusePageCarded)(({ theme }) => ({
 const schema = yup.object().shape({
   name: yup
     .string()
-    .required('You must enter a product name')
-    .min(5, 'The product name must be at least 5 characters'),
+    .required("You must enter a product name")
+    .min(5, "The product name must be at least 5 characters"),
 });
 
 function Product(props) {
@@ -54,7 +54,7 @@ function Product(props) {
   const [tabValue, setTabValue] = useState(0);
   const [noProduct, setNoProduct] = useState(false);
   const methods = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues: {},
     resolver: yupResolver(schema),
   });
@@ -65,7 +65,7 @@ function Product(props) {
     function updateProductState() {
       const { productId } = routeParams;
 
-      if (productId === 'new') {
+      if (productId === "new") {
         /**
          * Create New Product data
          */
@@ -146,7 +146,9 @@ function Product(props) {
    */
   if (
     _.isEmpty(form) ||
-    (product && routeParams.productId !== product.id && routeParams.productId !== 'new')
+    (product &&
+      routeParams.productId !== product.id &&
+      routeParams.productId !== "new")
   ) {
     return <FuseLoading />;
   }
@@ -163,7 +165,7 @@ function Product(props) {
             textColor="primary"
             variant="scrollable"
             scrollButtons="auto"
-            classes={{ root: 'w-full h-64' }}
+            classes={{ root: "w-full h-64" }}
           >
             <Tab className="h-64" label="Basic Info" />
             <Tab className="h-64" label="Product Images" />
@@ -174,23 +176,23 @@ function Product(props) {
         }
         content={
           <div className="p-16 sm:p-24 max-w-2xl">
-            <div className={tabValue !== 0 ? 'hidden' : ''}>
+            <div className={tabValue !== 0 ? "hidden" : ""}>
               <BasicInfoTab />
             </div>
 
-            <div className={tabValue !== 1 ? 'hidden' : ''}>
+            <div className={tabValue !== 1 ? "hidden" : ""}>
               <ProductImagesTab />
             </div>
 
-            <div className={tabValue !== 2 ? 'hidden' : ''}>
+            <div className={tabValue !== 2 ? "hidden" : ""}>
               <PricingTab />
             </div>
 
-            <div className={tabValue !== 3 ? 'hidden' : ''}>
+            <div className={tabValue !== 3 ? "hidden" : ""}>
               <InventoryTab />
             </div>
 
-            <div className={tabValue !== 4 ? 'hidden' : ''}>
+            <div className={tabValue !== 4 ? "hidden" : ""}>
               <ShippingTab />
             </div>
           </div>
@@ -201,4 +203,4 @@ function Product(props) {
   );
 }
 
-export default withReducer('eCommerceApp', reducer)(Product);
+export default withReducer("eCommerceApp", reducer)(Product);

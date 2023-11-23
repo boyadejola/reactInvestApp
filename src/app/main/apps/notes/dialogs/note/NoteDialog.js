@@ -1,10 +1,14 @@
-import { useDebounce } from '@fuse/hooks';
-import Dialog from '@mui/material/Dialog';
-import Slide from '@mui/material/Slide';
-import NoteForm from 'app/main/apps/notes/note-form/NoteForm';
-import { forwardRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { closeNoteDialog, removeNote, updateNote } from '../../store/notesSlice';
+import { useDebounce } from "@fuse/hooks";
+import Dialog from "@mui/material/Dialog";
+import Slide from "@mui/material/Slide";
+import NoteForm from "app/main/apps/notes/note-form/NoteForm";
+import { forwardRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  closeNoteDialog,
+  removeNote,
+  updateNote,
+} from "../../store/notesSlice";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -29,7 +33,7 @@ function NoteDialog(props) {
   return (
     <Dialog
       classes={{
-        paper: 'w-full m-24',
+        paper: "w-full m-24",
       }}
       TransitionComponent={Transition}
       onClose={(ev) => dispatch(closeNoteDialog())}

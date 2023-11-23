@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { DEFAULTUSERPIC } from './constants';
+import { createSlice } from "@reduxjs/toolkit";
+import { DEFAULTUSERPIC } from "./constants";
 
 const initialState = {
   showChangePass: false,
-  userFirstName: '',
-  userLastName: '',
-  userEmail: '',
+  userFirstName: "",
+  userLastName: "",
+  userEmail: "",
   userImage: DEFAULTUSERPIC,
   isTwoFAEnable: false,
   showTwoFA: false,
@@ -58,7 +58,7 @@ const initialState = {
 };
 
 const sharedData = createSlice({
-  name: 'auth/shared',
+  name: "auth/shared",
   initialState,
   reducers: {
     changeShowResetPass: (state, action) => {

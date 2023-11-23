@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const AnalyticsDashboardAppConfig = {
   settings: {
@@ -23,11 +23,11 @@ const AnalyticsDashboardAppConfig = {
       },
     },
   },
-	auth: authRoles.investUser,
+  auth: authRoles.investUser,
   routes: [
     {
-      path: '/venapp/dashboard',
-      component: lazy(() => import('./AnalyticsDashboardApp')),
+      path: "/venapp/dashboard",
+      component: lazy(() => import("./AnalyticsDashboardApp")),
     },
   ],
 };

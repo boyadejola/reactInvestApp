@@ -1,10 +1,10 @@
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { useSelector } from 'react-redux';
-import { selectFileById } from './store/filesSlice';
-import StyledIcon from './StyledIcon';
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { selectFileById } from "./store/filesSlice";
+import StyledIcon from "./StyledIcon";
 
 function DetailSidebarContent(props) {
   const selectedItem = useSelector((state) =>
@@ -22,14 +22,22 @@ function DetailSidebarContent(props) {
       className="file-details p-16 sm:p-24"
     >
       <div className="preview h-128 sm:h-256 file-icon flex items-center justify-center">
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1, transition: { delay: 0.3 } }}>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1, transition: { delay: 0.3 } }}
+        >
           <StyledIcon className="text-48" type={selectedItem.type} />
         </motion.div>
       </div>
 
       <FormControlLabel
         className="offline-switch"
-        control={<Switch checked={selectedItem.offline} aria-label="Available Offline" />}
+        control={
+          <Switch
+            checked={selectedItem.offline}
+            aria-label="Available Offline"
+          />
+        }
         label="Available Offline"
       />
 
@@ -46,7 +54,7 @@ function DetailSidebarContent(props) {
 
           <tr className="size h-52">
             <th className="font-semibold">Size</th>
-            <td>{selectedItem.size === '' ? '-' : selectedItem.size}</td>
+            <td>{selectedItem.size === "" ? "-" : selectedItem.size}</td>
           </tr>
 
           <tr className="location h-52 text-left">

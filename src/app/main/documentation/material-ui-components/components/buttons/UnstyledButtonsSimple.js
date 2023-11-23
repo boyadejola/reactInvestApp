@@ -1,9 +1,11 @@
-import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/core/ButtonUnstyled';
-import { styled } from '@mui/system';
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import ButtonUnstyled, {
+  buttonUnstyledClasses,
+} from "@mui/core/ButtonUnstyled";
+import { styled } from "@mui/system";
 
-const CustomButtonRoot = styled('button')(`
+const CustomButtonRoot = styled("button")(`
   background-color: #007fff;
   padding: 15px 20px;
   border-radius: 10px;

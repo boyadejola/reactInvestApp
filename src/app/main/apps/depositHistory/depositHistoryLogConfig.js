@@ -1,5 +1,5 @@
-import { authRoles } from 'app/auth';
-import { lazy } from 'react';
+import { authRoles } from "app/auth";
+import { lazy } from "react";
 
 const DepositHistoryLogConfig = {
   settings: {
@@ -26,8 +26,8 @@ const DepositHistoryLogConfig = {
   auth: authRoles.investUser,
   routes: [
     {
-      path: '/venapp/deposithistory',
-      component: lazy(() => import('./depositHistory')),
+      path: "/venapp/deposithistory",
+      component: lazy(() => import("./depositHistory")),
     },
   ],
 };

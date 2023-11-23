@@ -1,5 +1,5 @@
-import Typography from '@mui/material/Typography';
-import FuseHighlight from '@fuse/core/FuseHighlight';
+import Typography from "@mui/material/Typography";
+import FuseHighlight from "@fuse/core/FuseHighlight";
 
 function ApiCallsDoc() {
   return (
@@ -9,10 +9,14 @@ function ApiCallsDoc() {
       </Typography>
 
       <Typography className="mb-24" component="p">
-        We are using HTTP request library{' '}
-        <a href="https://github.com/axios" target="_blank" rel="noreferrer noopener">
+        We are using HTTP request library{" "}
+        <a
+          href="https://github.com/axios"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           Axios
-        </a>{' '}
+        </a>{" "}
         for to make API calls.
       </Typography>
 
@@ -21,8 +25,8 @@ function ApiCallsDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        You can config global axios defaults as below. For example you can define baseUrl for the
-        api connection. Check out for more detils at:{' '}
+        You can config global axios defaults as below. For example you can
+        define baseUrl for the api connection. Check out for more detils at:{" "}
         <a
           href="https://github.com/axios/axios#config-defaults"
           target="_blank"
@@ -44,20 +48,21 @@ function ApiCallsDoc() {
         @fake-db
       </Typography>
       <Typography className="mb-16" component="p">
-        We are using{' '}
+        We are using{" "}
         <a
           href="https://github.com/ctimmerm/axios-mock-adapter"
           target="_blank"
           rel="noreferrer noopener"
         >
           axios-mock-adapter
-        </a>{' '}
-        to demonstrate http requests, all of the example backend data is located at src/@fake-db.
+        </a>{" "}
+        to demonstrate http requests, all of the example backend data is located
+        at src/@fake-db.
       </Typography>
 
       <Typography className="mb-16" component="p">
-        You can adjust <code>delayResponse</code> value to test slow networks in the file:{' '}
-        <code>src/@fake-db/mock.js</code>.
+        You can adjust <code>delayResponse</code> value to test slow networks in
+        the file: <code>src/@fake-db/mock.js</code>.
       </Typography>
 
       <FuseHighlight component="pre" className="language-js">

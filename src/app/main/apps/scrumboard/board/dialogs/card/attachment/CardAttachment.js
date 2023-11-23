@@ -1,12 +1,12 @@
-import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import format from 'date-fns/format';
-import fromUnixTime from 'date-fns/fromUnixTime';
-import { useState } from 'react';
+import Button from "@mui/material/Button";
+import Icon from "@mui/material/Icon";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import format from "date-fns/format";
+import fromUnixTime from "date-fns/fromUnixTime";
+import { useState } from "react";
 
 function CardAttachment(props) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -20,12 +20,16 @@ function CardAttachment(props) {
   }
 
   switch (props.item.type) {
-    case 'image': {
+    case "image": {
       return (
         <div className="flex w-full sm:w-1/2 mb-16 px-16" key={props.item.id}>
           <div className="flex items-center justify-center min-w-128 w-128 h-128">
             <Paper className="overflow-hidden shadow">
-              <img className="block max-h-full max-h-full" src={props.item.src} alt="attachment" />
+              <img
+                className="block max-h-full max-h-full"
+                src={props.item.src}
+                alt="attachment"
+              />
             </Paper>
           </div>
           <div className="flex flex-auto flex-col justify-center items-start min-w-0 px-16">
@@ -38,10 +42,10 @@ function CardAttachment(props) {
               )}
             </div>
             <Typography className="truncate w-full mb-12" color="textSecondary">
-              {format(fromUnixTime(props.item.time), 'Pp')}
+              {format(fromUnixTime(props.item.time), "Pp")}
             </Typography>
             <Button
-              aria-owns={anchorEl ? 'actions-menu' : null}
+              aria-owns={anchorEl ? "actions-menu" : null}
               aria-haspopup="true"
               onClick={handleMenuOpen}
               variant="outlined"
@@ -88,7 +92,7 @@ function CardAttachment(props) {
         </div>
       );
     }
-    case 'link': {
+    case "link": {
       return (
         <div className="flex w-full sm:w-1/2 mb-16 px-16" key={props.item.id}>
           <Paper className="min-w-128 w-128 h-128 flex items-center justify-center rounded-4 overflow-hidden shadow">
@@ -102,7 +106,7 @@ function CardAttachment(props) {
               {props.item.time}
             </Typography>
             <Button
-              aria-owns={anchorEl ? 'actions-menu' : null}
+              aria-owns={anchorEl ? "actions-menu" : null}
               aria-haspopup="true"
               onClick={handleMenuOpen}
               variant="outlined"
