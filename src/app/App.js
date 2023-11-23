@@ -1,4 +1,4 @@
-import "@fake-db";
+// import "@fake-db"
 import { Router } from "react-router-dom";
 import FuseAuthorization from "@fuse/core/FuseAuthorization";
 import FuseLayout from "@fuse/core/FuseLayout";
