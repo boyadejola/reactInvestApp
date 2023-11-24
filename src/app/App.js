@@ -4,7 +4,8 @@ import FuseAuthorization from "@fuse/core/FuseAuthorization";
 import FuseLayout from "@fuse/core/FuseLayout";
 import FuseTheme from "@fuse/core/FuseTheme";
 import history from "@history";
-// import { ChatwootScript } from "chatwoot-react"
+// import { ChatwootScript } from "chatwoot-react";
+import  Livechat  from "./LiveChat";
 import { SnackbarProvider } from "notistack";
 import { useSelector } from "react-redux";
 import rtlPlugin from "stylis-plugin-rtl";
@@ -14,7 +15,7 @@ import { selectCurrLangDir } from "app/store/i18nSlice";
 import withAppProviders from "./withAppProviders";
 import { Auth } from "./auth";
 
-import axios from "axios";
+// import axios from "axios";
 /**
  * Axios HTTP Request defaults
  */
@@ -57,6 +58,7 @@ const App = () => {
               >
                 {/* <ChatwootScript token="ScuNgw91dkJhEXDwN5ooDdma" /> */}
                 <FuseLayout />
+                <Livechat />
               </SnackbarProvider>
             </FuseTheme>
           </FuseAuthorization>

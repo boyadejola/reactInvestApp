@@ -16,7 +16,7 @@ export const updateCourse = createAsyncThunk(
   async (_data, { getState, dispatch }) => {
     const { id } = getState().academyApp.course;
 
-    const response = await axios.post("/api/academy-app/course/update", {
+    const response = await axios.post("api/academy-app/course/update", {
       id,
       ..._data,
     });

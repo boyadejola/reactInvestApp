@@ -1,10 +1,12 @@
-import { env } from "../../env";
+// import { env } from "../../env";
+// const env = require("dotenv");
+// env.config()
 
-const { REACT_APP_API_ENDPOINT } = env;
+// const { process.env.REACT_APP_API_ENDPOINT } = env;
 
 // *** baseURL & version control **** //
 const serverUri = ""; //REACT_APP_API_ENDPOINT;
-const BASE_URL = REACT_APP_API_ENDPOINT;
+const BASE_URL = "/api" ;
 
 // *** headers ***
 const lockHeader = {

@@ -1,3 +1,4 @@
+const HttpsProxyAgent = require('https-proxy-agent');
 const webpack = require('webpack');
 
 
@@ -8,7 +9,24 @@ module.exports = {
       plugins: [require("tailwindcss"), require("autoprefixer")],
     },
   },
+  
   webpack: {
+
+
+devServer: {
+  historyApiFallback: true,
+  hot: true,
+  host: '0.0.0.0',
+  port: 3000,
+  proxy: {
+    '/api': {
+      agent: new HttpsProxyAgent('http://localhost:3000/'),
+      target: 'https://localhost:5000/',
+      pathRewrite: { '^/api': '' },
+      changeOrigin: true,
+    },
+  },
+},
     configure:{
 
       ignoreWarnings: [

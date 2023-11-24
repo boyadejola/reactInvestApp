@@ -16,8 +16,10 @@ import { setTwoFAEnable } from "app/auth/store/sharedData";
 import { useHistory } from "react-router-dom";
 import { postDeposit } from "app/auth/store/commonServices";
 import { Gateways } from "app/auth/store/constants";
+require('dotenv').config()
 // import { env } from '../../env'
 // const { REACT_APP_BTC_WALLET } = env;
+
 
 function DepositNowContent(props) {
   const amount =
