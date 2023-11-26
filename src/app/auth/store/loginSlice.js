@@ -1,8 +1,12 @@
+
 import { createSlice } from "@reduxjs/toolkit";
 import { showMessage } from "app/store/fuse/messageSlice";
 import firebaseService from "app/services/firebaseService";
+import config from "../../services/firebaseService/firebaseServiceConfig";
+import firebase from "firebase/compat/app";
+import "firebase/auth";
 import jwtService from "app/services/jwtService";
-import { setUser, setUserData } from "./userSlice";
+import { setUser, setUserData , setUserDataFirebase } from "./userSlice";
 import history from "@history";
 import { setLoginLoader } from "./loadersSlice";
 import { setLoggedIn } from "./sharedData";
@@ -25,7 +29,7 @@ export const submitLogin = (body) => async (dispatch) => {
         const body = {
           userid: res.user.userId,
           role: [res.user.role],
-          // role: res.user.role == ZombRoles.superadmin ? authRoles.zombSuperAdmin :
+// role: res.user.role == ZombRoles.superadmin ? authRoles.zombSuperAdmin :
           //   res.user.role == ZombRoles.admin ? authRoles.zombAdmin :
           //     res.user.role == ZombRoles.manager ? authRoles.zombManager :
           //       res.user.role == ZombRoles.player ? authRoles.zombUser :
@@ -50,7 +54,7 @@ export const submitLogin = (body) => async (dispatch) => {
         };
         localStorage.setItem("ghuid", JSON.stringify(body));
         dispatch(setUser(body));
-        // dispatch(loginSuccess());
+        dispatch(loginSuccess());
         dispatch(signedInDefaultRedirect(res.user.role));
       } else {
         if (res && res.error) {
@@ -61,7 +65,7 @@ export const submitLogin = (body) => async (dispatch) => {
       }
     })
     .catch((e) => {
-      dispatch(setLoggedIn(false));
+      dispatch(setLoggedIn(true));
       dispatch(setLoginLoader(false));
       const msg =
         e && e.response && e.response.data && isString(e.response.data)
@@ -73,15 +77,79 @@ export const submitLogin = (body) => async (dispatch) => {
             isString(e.response.data.data)
           ? e.response.data.data
           : "Something Went Wrong";
+// console.log the error here
       dispatch(displayPopup(msg ? msg : "Something Went Wrong", "error", 2000));
     });
+};
+// this function is not working properly
+export const submitLoginWithFireBase = (model) => async (dispatch) => {
+  try {
+    if (!firebaseService.auth) {
+      console.warn(
+        'Firebase Service didn"t initialize, check your configuration'
+      );
+  
+      return () => false;
+    }
+    const { email, password, displayName } = model;
+    /** return firebaseService.auth
+.signInWithEmailAndPassword(email,password)    
+.then((response) => {
+      dispatch(setLoginLoader(true));
+      dispatch(setUserDataFirebase(user));
+  }
+      ); */
+    dispatch(setLoginLoader(true));
+    // firebase.initializeApp(config);
+    const userCredential = await firebaseService.auth().signInWithEmailAndPassword(email,password);
+    const user = userCredential.user;
+
+    const userData = {
+      userid: user.uid,
+      roleid: res.user.role,
+      roleName:
+        res.user.role === InvestRoles.superadmin
+          ? "Super Admin"
+          : res.user.role === InvestRoles.admin
+          ? "Admin"
+          : res.user.role === InvestRoles.user
+          ? "User"
+          : "",
+      data: {
+        displayName: user.displayName ? user.displayName : "User",
+        photoURL: user.photoURL ? user.photoURL : "",
+        email: user.email ? user.email : "",
+        shortcuts: [], // setShortcutMenus(user.role),
+      },
+    };
+
+    localStorage.setItem("cred", "1");
+    localStorage.removeItem("loggedout");
+    dispatch(setLoggedIn(true));
+    dispatch(handleResponse("SUCCESSLOGIN", true));
+    jwtService.setSession(user.uid);
+    localStorage.setItem("ghuid", JSON.stringify(userData));
+    dispatch(setUser(userData));
+    dispatch(loginSuccess());
+    dispatch(signedInDefaultRedirect(userData.roleid));
+  } catch (error) {
+    dispatch(setLoggedIn(false));
+    dispatch(setLoginLoader(false));
+
+    const msg =
+      error && error.message && isString(error.message)
+        ? error.message
+        : "Something Went Wrong";
+
+    dispatch(displayPopup(msg ? msg : "Something Went Wrong", "error", 2000));
+  }
 };
 
 export const signedInDefaultRedirect = (id) => (dispatch, getState) => {
   const role = getState().auth.user.roleid ? getState().auth.user.roleid : id;
   history.push({
     pathname: "/venapp/dashboard",
-    // pathname: '/apps/jic/items',
+  // pathname: '/apps/jic/items',
   });
   // if (Roles.admin == role || Roles.charity == role) {
   //   history.push({
@@ -105,7 +173,7 @@ export const checkGimminie = (roleid) => (dispatch) => {
     : false;
   if (!token) {
     localStorage.clear();
-    // if (isSignIn) {
+// if (isSignIn) {
     //   localStorage.clear();
     // } else {
     //   // dispatch(logoutUser());
@@ -141,3 +209,19 @@ const loginSlice = createSlice({
 export const { loginSuccess, loginError } = loginSlice.actions;
 
 export default loginSlice.reducer;
+
+// Helper function to get role name based on role id
+function getRoleName(roleId) {
+  switch (roleId) {
+    case InvestRoles.superadmin:
+      return "Super Admin";
+    case InvestRoles.admin:
+      return "Admin";
+    case InvestRoles.user:
+      return "User";
+    default:
+      return "";
+  }
+}
+
+// This code includes the `submitLoginWithFirebase` function, which uses Firebase authentication. Replace the role-related logic with your actual roles and naming conventions. Adjust the Firebase configuration based on your project setup.

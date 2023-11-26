@@ -11,9 +11,7 @@ module.exports = {
   },
   
   webpack: {
-
-
-devServer: {
+  devServer: {
   historyApiFallback: true,
   hot: true,
   host: '0.0.0.0',
@@ -21,7 +19,7 @@ devServer: {
   proxy: {
     '/api': {
       agent: new HttpsProxyAgent('http://localhost:3000/'),
-      target: 'https://localhost:5000/',
+      target: 'https://localhost:5000/api/v1',
       pathRewrite: { '^/api': '' },
       changeOrigin: true,
     },

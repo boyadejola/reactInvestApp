@@ -1,4 +1,10 @@
 import React, {useEffect} from 'react'
+import axios from 'axios';
+import { env } from "../env";
+
+
+// const { REACT_APP_API_ENDPOINT } = env;
+
 
 function Livechat () {
   useEffect(() => {
@@ -26,7 +32,10 @@ function Livechat () {
       }
     })(document,"script");
 
-  
+ axios.get("/api/user")
+  // .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
   }, []);
 
   return null;

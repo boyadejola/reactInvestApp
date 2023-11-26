@@ -72,7 +72,7 @@ function Register() {
               </div>
             </motion.div>
 
-            {/* <Tabs
+           <Tabs
               value={selectedTab}
               onChange={handleTabChange}
               variant='fullWidth'
@@ -101,11 +101,11 @@ function Register() {
                 className='min-w-0'
                 label='Auth0'
               />
-            </Tabs> */}
+            </Tabs> 
 
             {selectedTab === 0 && <JWTRegisterTab />}
-            {/* {selectedTab === 1 && <FirebaseRegisterTab />}
-            {selectedTab === 2 && <Auth0RegisterTab />} */}
+             {selectedTab === 1 && <FirebaseRegisterTab />}
+            {selectedTab === 2 && <Auth0RegisterTab />} 
           </CardContent>
 
           <div className="flex flex-col items-center justify-center pb-32">

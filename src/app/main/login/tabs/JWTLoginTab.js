@@ -73,6 +73,7 @@ function JWTLoginTab(props) {
   function onSubmit(model) {
     dispatch(setLoginLoader(true));
     dispatch(submitLogin(model));
+    dispatch( setLoggedIn(true) )
   }
 
   return (

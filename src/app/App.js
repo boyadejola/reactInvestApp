@@ -19,9 +19,9 @@ import { Auth } from "./auth";
 /**
  * Axios HTTP Request defaults
  */
-// axios.defaults.baseURL = "";
-// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-// axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
+//  axios.defaults.baseURL = "";
+//  axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+//  axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
 
 const emotionCacheOptions = {
   rtl: {

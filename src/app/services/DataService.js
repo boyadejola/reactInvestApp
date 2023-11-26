@@ -1,22 +1,22 @@
-// import { env } from "../../env";
-// const env = require("dotenv");
-// env.config()
+import { env } from "../../env";
 
-// const { process.env.REACT_APP_API_ENDPOINT } = env;
+
+const { REACT_APP_API_ENDPOINT } = env;
 
 // *** baseURL & version control **** //
 const serverUri = ""; //REACT_APP_API_ENDPOINT;
-const BASE_URL = "/api" ;
+const BASE_URL = REACT_APP_API_ENDPOINT //as string; 
+console.log(BASE_URL)
 
 // *** headers ***
 const lockHeader = {
   "Content-Type": "application/json",
-  // Authorization: `Bearer ${localStorage.getItem('userguid')}`,
+  Authorization: `Bearer ${localStorage.getItem('userguid')}`,
   "Access-Control-Allow-Origin": BASE_URL,
   "Access-Control-Allow-Credentials": true,
-  // 'Content-Type': 'application/json',
-  // // 'x-api-version': `${version}`,
-  // Authorization: `Bearer ${localStorage.getItem('userguid')}`,
+  'Content-Type': 'application/json',
+  // 'x-api-version': `${version}`,
+  Authorization: `Bearer ${localStorage.getItem('userguid')}`,
 };
 const openHeader = {
   "Content-Type": "application/json",
@@ -125,6 +125,7 @@ function loginService(body) {
     _postCustom(GATEWAY_LOGIN, body)
       .then((res) => {
         resolve(res.data);
+        console.log(res.data)
       })
       .catch((error) => {
         reject(error);
@@ -137,6 +138,7 @@ function registerService(body) {
     _postWithOutHeader(GATEWAY_REGISTER, body)
       .then((res) => {
         resolve(res.data);
+        console.log(res.data)
       })
       .catch((error) => {
         reject(error);

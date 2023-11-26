@@ -72,7 +72,7 @@ function Login() {
               </div>
             </motion.div>
 
-            {/* <Tabs
+          <Tabs
               value={selectedTab}
               onChange={handleTabChange}
               variant="fullWidth"
@@ -101,11 +101,11 @@ function Login() {
                 className="min-w-0"
                 label="Auth0"
               />
-            </Tabs> */}
+              </Tabs> 
 
             {selectedTab === 0 && <JWTLoginTab />}
-            {/* {selectedTab === 1 && <FirebaseLoginTab />}
-            {selectedTab === 2 && <Auth0LoginTab />} */}
+             {selectedTab === 1 && <FirebaseLoginTab />}
+         {selectedTab === 2 && <Auth0LoginTab />} 
           </CardContent>
 
           <div className="flex flex-col items-center justify-center pb-32">

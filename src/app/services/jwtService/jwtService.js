@@ -52,6 +52,7 @@ class JwtService extends FuseUtils.EventEmitter {
   createUser = (data) => {
     return new Promise((resolve, reject) => {
       axios.post("/api/auth/register", data).then((response) => {
+        console.log(response)
         if (response.data.user) {
           this.setSession(response.data.access_token);
           resolve(response.data.user);
@@ -72,6 +73,7 @@ class JwtService extends FuseUtils.EventEmitter {
           },
         })
         .then((response) => {
+          console.log(response)
           if (response.data.user) {
             this.setSession(response.data.access_token);
             resolve(response.data.user);
@@ -114,11 +116,11 @@ class JwtService extends FuseUtils.EventEmitter {
 
   setSession = (access_token) => {
     if (access_token) {
-      // localStorage.setItem('jwt_access_token', access_token);
+      localStorage.setItem('jwt_access_token', access_token);
       localStorage.setItem("userguid", access_token);
       axios.defaults.headers.common.Authorization = `Bearer ${access_token}`;
     } else {
-      // localStorage.removeItem('jwt_access_token');
+      localStorage.removeItem('jwt_access_token');
       localStorage.removeItem("userguid");
       localStorage.removeItem("ghuid");
       localStorage.removeItem("cred");

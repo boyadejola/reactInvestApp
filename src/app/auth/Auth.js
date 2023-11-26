@@ -19,21 +19,20 @@ class Auth extends Component {
     waitAuthCheck: true,
   };
 
-  componentDidMount() {
-    return Promise.all([
+  async componentDidMount() {
+    await Promise.all([
       // Comment the lines which you do not use
-      // this.firebaseCheck(),
-      // this.auth0Check(),
-      // this.jwtCheck(),
-    ]).then(() => {
-      this.setState({ waitAuthCheck: false });
-    });
+      // () => this.firebaseCheck(),
+       this.auth0Check(),
+      // () => this.jwtCheck(),
+    ]);
+    this.setState({ waitAuthCheck: false });
   }
 
   jwtCheck = () =>
     new Promise((resolve) => {
       jwtService.on("onAutoLogin", () => {
-        // this.props.showMessage({ message: 'Logging in with JWT' });
+        this.props.showMessage({ message: 'Logging in with JWT' });
 
         /**
          * Sign in and retrieve user data from Api
@@ -45,7 +44,7 @@ class Auth extends Component {
 
             resolve();
 
-            // this.props.showMessage({ message: 'Logged in with JWT' });
+            this.props.showMessage({ message: 'Logged in with JWT' });
           })
           .catch((error) => {
             this.props.showMessage({ message: error.message });

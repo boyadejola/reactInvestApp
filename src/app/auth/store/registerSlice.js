@@ -40,7 +40,7 @@ export const submitRegister =
             dispatch(handleResponse("TRYLATER", false));
           }
         }
-        // dispatch(setUserData(user));
+        dispatch(setUserData(user));
         return dispatch(registerSuccess());
       })
       .catch((e) => {
@@ -62,22 +62,22 @@ export const submitRegister =
   };
 
 // export const submitRegister =
-//   ({ displayName, password, email }) =>
-//   async (dispatch) => {
-//     return jwtService
-//       .createUser({
-//         displayName,
-//         password,
-//         email,
-//       })
-//       .then((user) => {
-//         dispatch(setUserData(user));
-//         return dispatch(registerSuccess());
-//       })
-//       .catch((errors) => {
-//         return dispatch(registerError(errors));
-//       });
-//   };
+  //   ({ displayName, password, email }) =>
+  //   async (dispatch) => {
+    //     return jwtService
+      //       .createUser({
+        //         displayName,
+        //         password,
+        //         email,
+      //       })
+      //       .then((user) => {
+        //         dispatch(setUserData(user));
+        //         return dispatch(registerSuccess());
+      //       })
+      //       .catch((errors) => {
+        //         return dispatch(registerError(errors));
+      //       });
+  //   };
 
 export const registerWithFirebase = (model) => async (dispatch) => {
   if (!firebaseService.auth) {

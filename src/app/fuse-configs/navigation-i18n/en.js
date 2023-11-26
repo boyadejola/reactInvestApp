@@ -195,7 +195,7 @@ const locale = {
   INSBELOW: "Please follow the instruction bellow",
   BTCSENTTO:
     "BTC sent to this address will automatically be allocated to your account after the transaction is confirmed",
-  DELAYWN: "Delay: 24 hours",
+  DELAYWN: "Delay: 24-48 hours",
   INPUTTRANSDETAIL: "Input your transaction Details",
   DOLLCAP: "DOLLARS",
   COPY: "Copy",
@@ -233,7 +233,7 @@ const locale = {
 
   TEAMCHAT: "Venax Support",
   SENDMSG: "Send message to get support for any kind of assist",
-  STARTCONVO: "Start a conversation by typing your message below.",
+  STARTCONVO: "Start a conversation by typing your message live support our in house support will be back shortly",
   SETT: "Setting",
   FOUROFOUR: "Sorry but we could not find the page you are looking for",
 
